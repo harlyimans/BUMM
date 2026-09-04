@@ -1,0 +1,1443 @@
+/* ==========================================================================
+   BUMM — Custom design tokens & hero styles
+   Layered on top of Bootstrap 5.3.8 (assets/bootstrap-5.3.8-dist/css/bootstrap.min.css)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  /* --- Color tokens — LIGHT mode (red & white base, default) ---------- */
+  --bumm-bg:          #ffffff;   /* white body */
+  --bumm-bg-alt:      #fbf1ef;   /* faint warm-red-tinted panel surface */
+  --bumm-ink:         #1e1210;   /* near-black warm ink for text on light */
+  --bumm-ink-muted:   #7a6b66;   /* muted warm grey */
+  --bumm-line:        #ecdcd9;   /* hairline borders / dividers */
+  --bumm-accent:      #e63a2e;   /* signal red — used sparingly */
+  --bumm-accent-dim:  #a8281f;
+  --bumm-on-accent:   #ffffff;   /* text/icon color on top of solid red */
+
+  /* Effects that need different treatment per-mode (see dark override below) */
+  --bumm-hero-scrim-1:      rgba(255,255,255,.95);
+  --bumm-hero-scrim-2:      rgba(255,255,255,.86);
+  --bumm-hero-scrim-3:      rgba(255,255,255,.62);
+  --bumm-btn-secondary-hover: rgba(230,58,46,.045);
+  --bumm-marquee-filter:    grayscale(1) contrast(1.05);
+  --bumm-map-filter:        grayscale(.15);
+  --bumm-nav-shadow:        rgba(30,18,16,.10);
+  --bumm-toggler-icon-bg:   url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2830, 18, 16, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+  /* --- Type ------------------------------------------------------------ */
+  --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
+}
+
+/* --- Color tokens — DARK mode (original graphite / cast-iron base) ----
+   Toggled via [data-bumm-theme="dark"] on <html>, set by assets/js/custom.js
+   and persisted to localStorage so the choice sticks across pages/visits. */
+[data-bumm-theme="dark"] {
+  --bumm-bg:          #1e1c1a;
+  --bumm-bg-alt:      #26231f;
+  --bumm-ink:         #f2eee7;
+  --bumm-ink-muted:   #a79f95;
+  --bumm-line:        #3a3630;
+  --bumm-accent:      #e63a2e;
+  --bumm-accent-dim:  #a8281f;
+  --bumm-on-accent:   #1a0906;
+
+  --bumm-hero-scrim-1:      rgba(20,18,17,.94);
+  --bumm-hero-scrim-2:      rgba(20,18,17,.82);
+  --bumm-hero-scrim-3:      rgba(20,18,17,.55);
+  --bumm-btn-secondary-hover: rgba(255,255,255,.03);
+  --bumm-marquee-filter:    grayscale(1) brightness(1.8) contrast(.85);
+  --bumm-map-filter:        grayscale(.3) invert(.92) contrast(.9);
+  --bumm-nav-shadow:        rgba(0,0,0,.35);
+  --bumm-toggler-icon-bg:   url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28242, 238, 231, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Smooth, non-jarring transition between modes on the surfaces that change
+   most; kept short and excluded from prefers-reduced-motion via the rule
+   below. */
+body, .bumm-navbar, .bumm-hero, .bumm-plate, .bumm-victory-card,
+.bumm-product-card, .bumm-job-card, .bumm-team-card, .bumm-empty-state {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bumm-bg);
+  color: var(--bumm-ink);
+}
+
+/* Respect reduced motion everywhere in this file */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* Prevent any accidental horizontal scroll on mobile from full-bleed
+   decorative elements (hero glow, marquee track, etc). */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* --------------------------------------------------------------------
+   Subpage header (About, Product, Career, News listing pages) — same
+   dark surface + eyebrow/heading pattern as the homepage sections, plus
+   a breadcrumb styled to match instead of Bootstrap's default light
+   breadcrumb (which would look broken against this dark theme).
+   -------------------------------------------------------------------- */
+.bumm-page-header {
+  background-color: var(--bumm-bg-alt);
+  border-bottom: 1px solid var(--bumm-line);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.bumm-breadcrumb {
+  --bs-breadcrumb-divider-color: var(--bumm-ink-muted);
+  --bs-breadcrumb-item-active-color: var(--bumm-ink-muted);
+  font-size: .82rem;
+  margin-bottom: 1.2rem;
+}
+
+.bumm-breadcrumb a {
+  color: var(--bumm-ink-muted);
+  text-decoration: none;
+}
+
+.bumm-breadcrumb a:hover {
+  color: var(--bumm-accent);
+}
+
+/* --------------------------------------------------------------------
+   Navbar
+   -------------------------------------------------------------------- */
+.bumm-navbar {
+  background-color: var(--bumm-bg);
+  border-bottom: 1px solid var(--bumm-line);
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+}
+
+/* Depth on scroll — class toggled by assets/js/custom.js instead of an
+   inline style, so the shadow color stays correct in both modes. */
+.bumm-navbar.is-scrolled {
+  box-shadow: 0 1px 0 var(--bumm-nav-shadow);
+}
+
+/* --------------------------------------------------------------------
+   Light/dark mode toggle button (navbar)
+   -------------------------------------------------------------------- */
+.bumm-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid var(--bumm-line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--bumm-ink-muted);
+  font-size: 1.02rem;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease, background-color .2s ease;
+}
+
+.bumm-theme-toggle:hover,
+.bumm-theme-toggle:focus-visible {
+  border-color: var(--bumm-accent);
+  color: var(--bumm-accent);
+}
+
+@media (max-width: 991.98px) {
+  .bumm-theme-toggle {
+    width: auto;
+    height: auto;
+    border-radius: 2px;
+    padding: .45rem 1.1rem;
+    gap: .55rem;
+  }
+  .bumm-theme-toggle::after {
+    content: attr(data-label);
+    font-size: .88rem;
+    font-weight: 500;
+  }
+}
+
+.bumm-navbar .navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: .01em;
+  color: var(--bumm-ink);
+  font-size: 1.05rem;
+}
+
+.bumm-navbar .nav-link {
+  color: var(--bumm-ink-muted);
+  font-weight: 500;
+  font-size: .92rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.bumm-navbar .nav-link:hover,
+.bumm-navbar .nav-link:focus-visible {
+  color: var(--bumm-ink);
+}
+
+.bumm-navbar .btn-bumm-outline {
+  border: 1px solid var(--bumm-line);
+  color: var(--bumm-ink);
+  font-size: .88rem;
+  padding: .45rem 1.1rem;
+}
+
+.bumm-navbar .btn-bumm-outline:hover {
+  border-color: var(--bumm-accent);
+  color: var(--bumm-accent);
+}
+
+/* Bootstrap's default toggler icon is dark-line-on-transparent, meant for
+   LIGHT navbars. This navbar is always dark, but never got the
+   navbar-dark / data-bs-theme="dark" treatment — so on mobile the
+   hamburger icon was rendering as near-black lines on a near-black
+   background (invisible). Override just the icon color to the light
+   "ink" token so it's actually visible. */
+.bumm-navbar .navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg: var(--bumm-toggler-icon-bg);
+}
+
+.bumm-navbar .navbar-toggler {
+  padding: .35rem .5rem;
+}
+
+.bumm-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 .2rem rgba(230, 58, 46, .35);
+}
+
+/* Language switch */
+.bumm-lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--bumm-line);
+  overflow: hidden;
+}
+
+.bumm-lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--bumm-ink-muted);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  padding: .38rem .7rem;
+  cursor: pointer;
+  transition: color .15s ease, background-color .15s ease;
+}
+
+.bumm-lang-btn + .bumm-lang-btn {
+  border-left: 1px solid var(--bumm-line);
+}
+
+.bumm-lang-btn:hover {
+  color: var(--bumm-ink);
+}
+
+.bumm-lang-btn.is-active {
+  background-color: var(--bumm-accent);
+  color: var(--bumm-on-accent);
+}
+
+/* Visible keyboard focus everywhere, not just navbar */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--bumm-accent);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------- */
+.bumm-hero {
+  background-color: var(--bumm-bg);
+  padding-top: 5.5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Faint radial glow, anchored to the spec plate side only — the one
+   deliberate accent moment on the page. */
+.bumm-hero::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  right: -10%;
+  width: 46rem;
+  height: 46rem;
+  background: radial-gradient(circle, rgba(230,58,46,.10) 0%, rgba(230,58,46,0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Background media layer — image is always present (this is what LCP
+   measures); video is injected by JS only when the connection/viewport
+   make it worthwhile, and fades in on top of the image once ready. */
+.bumm-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bumm-hero-bg-image,
+.bumm-hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bumm-hero-bg-video {
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+.bumm-hero-bg-video.is-ready {
+  opacity: 1;
+}
+
+/* Scrim so hero text stays legible over a photo/video instead of the
+   flat background color. */
+.bumm-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(100deg, var(--bumm-hero-scrim-1) 0%, var(--bumm-hero-scrim-2) 42%, var(--bumm-hero-scrim-3) 75%);
+  pointer-events: none;
+}
+
+.bumm-hero > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.bumm-hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--bumm-ink-muted);
+  margin-bottom: 1.1rem;
+}
+
+.bumm-hero-eyebrow strong {
+  color: var(--bumm-ink);
+  font-weight: 600;
+}
+
+.bumm-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  color: var(--bumm-ink);
+  max-width: 14ch;
+  margin-bottom: 1.4rem;
+}
+
+.bumm-hero-lead {
+  color: var(--bumm-ink-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 46ch;
+  margin-bottom: 2.1rem;
+}
+
+.btn-bumm-primary {
+  background-color: var(--bumm-accent);
+  border: 1px solid var(--bumm-accent);
+  color: var(--bumm-on-accent);
+  font-weight: 600;
+  padding: .72rem 1.6rem;
+  border-radius: 2px;
+}
+
+.btn-bumm-primary:hover {
+  background-color: #f04c3f;
+  border-color: #f04c3f;
+  color: var(--bumm-on-accent);
+}
+
+.btn-bumm-secondary {
+  background: transparent;
+  border: 1px solid var(--bumm-line);
+  color: var(--bumm-ink);
+  font-weight: 500;
+  padding: .72rem 1.5rem;
+  border-radius: 2px;
+}
+
+.btn-bumm-secondary:hover {
+  border-color: var(--bumm-ink-muted);
+  color: var(--bumm-ink);
+  background: var(--bumm-btn-secondary-hover);
+}
+
+/* --------------------------------------------------------------------
+   Spec plate — the hero's signature device.
+   Modeled on the cast/riveted nameplates bolted onto foundry equipment,
+   showing the company's own numbers the way a machine shows its own specs.
+   -------------------------------------------------------------------- */
+.bumm-plate {
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  position: relative;
+  padding: 2.1rem 2rem;
+  max-width: 24rem;
+  margin-left: auto;
+}
+
+.bumm-plate::before {
+  /* top accent edge — the one glowing line on the page */
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bumm-accent), transparent 85%);
+}
+
+.bumm-plate-rivet {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bumm-line);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.04);
+}
+.bumm-plate-rivet.tl { top: 10px; left: 10px; }
+.bumm-plate-rivet.tr { top: 10px; right: 10px; }
+.bumm-plate-rivet.bl { bottom: 10px; left: 10px; }
+.bumm-plate-rivet.br { bottom: 10px; right: 10px; }
+
+.bumm-plate-title {
+  font-family: var(--font-body);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bumm-ink-muted);
+  border-bottom: 1px solid var(--bumm-line);
+  padding-bottom: .9rem;
+  margin-bottom: 1.1rem;
+}
+
+.bumm-plate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--bumm-line);
+}
+.bumm-plate-row:last-child { border-bottom: none; }
+
+.bumm-plate-label {
+  font-size: .78rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--bumm-ink-muted);
+}
+
+.bumm-plate-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--bumm-ink);
+}
+
+/* --------------------------------------------------------------------
+   Client marquee
+   -------------------------------------------------------------------- */
+.bumm-trusted {
+  background-color: var(--bumm-bg-alt);
+  border-top: 1px solid var(--bumm-line);
+  border-bottom: 1px solid var(--bumm-line);
+  padding: 1.6rem 0;
+  overflow: hidden;
+}
+
+.bumm-trusted-label {
+  font-size: .78rem;
+  color: var(--bumm-ink-muted);
+  white-space: nowrap;
+  padding-right: 2rem;
+  border-right: 1px solid var(--bumm-line);
+}
+
+.bumm-marquee-viewport {
+  overflow: hidden;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.bumm-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  width: max-content;
+  animation: bumm-marquee 28s linear infinite;
+}
+
+.bumm-marquee-track img {
+  height: 26px;
+  width: auto;
+  filter: var(--bumm-marquee-filter);
+  opacity: .75;
+  transition: opacity .2s ease, filter .2s ease;
+}
+
+.bumm-marquee-track img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes bumm-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pause marquee on hover/focus for readability and to respect motion prefs */
+.bumm-marquee-wrap:hover .bumm-marquee-track,
+.bumm-marquee-wrap:focus-within .bumm-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bumm-marquee-track { animation: none; flex-wrap: wrap; }
+}
+
+/* --------------------------------------------------------------------
+   Shared section eyebrow — small accent tick + uppercase label, reused
+   wherever a section needs a header (About, Capability, Products...).
+   -------------------------------------------------------------------- */
+.bumm-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bumm-ink-muted);
+  margin-bottom: 1rem;
+}
+
+.bumm-eyebrow::before {
+  content: "";
+  width: 1.4rem;
+  height: 2px;
+  background: var(--bumm-accent);
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------
+   About / VICTORY values
+   -------------------------------------------------------------------- */
+.bumm-about {
+  background-color: var(--bumm-bg-alt);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-top: 1px solid var(--bumm-line);
+}
+
+.bumm-about-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  color: var(--bumm-ink);
+  margin-bottom: 1.1rem;
+}
+
+.bumm-about-lead {
+  color: var(--bumm-ink-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+
+.bumm-victory-card {
+  background-color: var(--bumm-bg);
+  border: 1px solid var(--bumm-line);
+  border-radius: 2px;
+  padding: 1.9rem 1.7rem;
+  height: 100%;
+  transition: border-color .2s ease;
+}
+
+.bumm-victory-card:hover {
+  border-color: var(--bumm-accent);
+}
+
+.bumm-victory-letter {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--bumm-accent);
+  margin-bottom: 1rem;
+}
+
+.bumm-victory-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--bumm-ink);
+  margin-bottom: .5rem;
+}
+
+.bumm-victory-desc {
+  color: var(--bumm-ink-muted);
+  font-size: .92rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------
+   Capability & Certification
+   -------------------------------------------------------------------- */
+.bumm-capability {
+  background-color: var(--bumm-bg);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-top: 1px solid var(--bumm-line);
+}
+
+.bumm-capability-item {
+  height: 100%;
+}
+
+.bumm-capability-icon {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--bumm-accent);
+  margin-bottom: .9rem;
+}
+
+.bumm-capability-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .98rem;
+  color: var(--bumm-ink);
+  margin-bottom: .45rem;
+}
+
+.bumm-capability-desc {
+  color: var(--bumm-ink-muted);
+  font-size: .9rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+.bumm-cert-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+}
+
+.bumm-cert-strip img {
+  height: 56px;
+  width: auto;
+}
+
+.bumm-cert-caption {
+  font-size: .85rem;
+  color: var(--bumm-ink-muted);
+  letter-spacing: .01em;
+}
+
+/* --------------------------------------------------------------------
+   Product Highlight
+   -------------------------------------------------------------------- */
+.bumm-products {
+  background-color: var(--bumm-bg-alt);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-top: 1px solid var(--bumm-line);
+}
+
+.bumm-product-card {
+  display: block;
+  background-color: var(--bumm-bg);
+  border: 1px solid var(--bumm-line);
+  border-radius: 2px;
+  padding: 1.4rem 1.4rem 1.6rem;
+  height: 100%;
+  text-decoration: none;
+  transition: border-color .2s ease;
+}
+
+.bumm-product-card:hover {
+  border-color: var(--bumm-accent);
+}
+
+.bumm-product-card:hover .bumm-product-link {
+  color: var(--bumm-accent);
+}
+
+.bumm-product-thumb {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  margin-bottom: 1.1rem;
+  overflow: hidden;
+}
+
+.bumm-product-thumb img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.bumm-product-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--bumm-ink);
+  margin-bottom: .4rem;
+}
+
+.bumm-product-desc {
+  color: var(--bumm-ink-muted);
+  font-size: .88rem;
+  line-height: 1.5;
+  margin-bottom: .9rem;
+}
+
+.bumm-product-link {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--bumm-ink-muted);
+  transition: color .2s ease;
+}
+
+/* --------------------------------------------------------------------
+   Achievement timeline
+   -------------------------------------------------------------------- */
+.bumm-achievement {
+  background-color: var(--bumm-bg);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-top: 1px solid var(--bumm-line);
+}
+
+.bumm-timeline {
+  position: relative;
+  max-width: 44rem;
+  padding-left: 2.1rem;
+  border-left: 1px solid var(--bumm-line);
+}
+
+.bumm-timeline-item {
+  position: relative;
+  padding-bottom: 2.3rem;
+}
+
+.bumm-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.bumm-timeline-dot {
+  position: absolute;
+  left: -2.36rem;
+  top: .3rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bumm-accent);
+  box-shadow: 0 0 0 3px var(--bumm-bg);
+}
+
+.bumm-timeline-year {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: .85rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--bumm-accent);
+  margin-bottom: .35rem;
+}
+
+.bumm-timeline-company {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--bumm-ink);
+  margin-bottom: .3rem;
+}
+
+.bumm-timeline-award {
+  color: var(--bumm-ink-muted);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------
+   News & Activity
+   -------------------------------------------------------------------- */
+.bumm-news {
+  background-color: var(--bumm-bg-alt);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-top: 1px solid var(--bumm-line);
+}
+
+.bumm-news-card {
+  display: block;
+  text-decoration: none;
+}
+
+.bumm-news-thumb {
+  aspect-ratio: 16 / 10;
+  background-color: var(--bumm-bg);
+  border: 1px solid var(--bumm-line);
+  margin-bottom: 1rem;
+}
+
+.bumm-news-date {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--bumm-accent);
+  margin-bottom: .4rem;
+}
+
+.bumm-news-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--bumm-ink);
+  margin-bottom: .5rem;
+}
+
+.bumm-news-excerpt {
+  color: var(--bumm-ink-muted);
+  font-size: .88rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------
+   CTA banner — the one section where the accent fills the background;
+   everywhere else it's a restrained detail, but this is the deliberate
+   conversion moment.
+   -------------------------------------------------------------------- */
+.bumm-cta {
+  background-color: var(--bumm-accent);
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.bumm-cta-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  color: var(--bumm-on-accent);
+  max-width: 38ch;
+  margin: 0 auto 1rem;
+  line-height: 1.2;
+}
+
+.bumm-cta-lead {
+  color: rgba(255, 255, 255, .82);
+  font-size: 1rem;
+  margin-bottom: 1.9rem;
+}
+
+.btn-bumm-cta {
+  background-color: var(--bumm-on-accent);
+  border: 1px solid var(--bumm-on-accent);
+  color: var(--bumm-accent);
+  font-weight: 600;
+  padding: .75rem 2rem;
+  border-radius: 2px;
+}
+
+.btn-bumm-cta:hover {
+  background-color: transparent;
+  border-color: var(--bumm-on-accent);
+  color: var(--bumm-on-accent);
+}
+
+/* --------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------- */
+.bumm-contact {
+  background-color: var(--bumm-bg);
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  border-top: 1px solid var(--bumm-line);
+}
+
+/* Contact-info plate: same "spec plate" component as the hero, just
+   full-width and with stacked (not inline) label/value rows since the
+   values here are longer than a stat number. */
+.bumm-plate--contact {
+  margin-left: 0;
+  max-width: 100%;
+}
+
+.bumm-plate-row--stacked {
+  display: block;
+}
+
+.bumm-plate-row--stacked .bumm-plate-label {
+  display: block;
+  margin-bottom: .35rem;
+}
+
+.bumm-plate-row--last {
+  border-bottom: none;
+}
+
+.bumm-plate-value--sm {
+  font-size: 1rem;
+}
+
+.bumm-plate-value--wrap {
+  font-size: .95rem;
+  line-height: 1.4;
+}
+
+.bumm-map-frame {
+  border: 1px solid var(--bumm-line);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.bumm-map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  /* the embed renders on a light basemap by default; this keeps it from
+     looking like a stray white rectangle against the dark page */
+  filter: var(--bumm-map-filter);
+}
+
+.bumm-form-label {
+  display: block;
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--bumm-ink-muted);
+  margin-bottom: .4rem;
+}
+
+.bumm-form-input {
+  width: 100%;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  border-radius: 2px;
+  color: var(--bumm-ink);
+  font-family: var(--font-body);
+  /* 1rem (16px), not smaller: iOS Safari auto-zooms the whole page on
+     focus for any input with a computed font-size under 16px — very
+     easy to miss in desktop DevTools since only real iOS does it. */
+  font-size: 1rem;
+  padding: .6rem .8rem;
+}
+
+.bumm-form-input:focus {
+  outline: none;
+  border-color: var(--bumm-accent);
+  background-color: var(--bumm-bg);
+}
+
+.bumm-form-input::placeholder {
+  color: var(--bumm-ink-muted);
+  opacity: .6;
+}
+
+/* --------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------- */
+.bumm-footer {
+  background-color: var(--bumm-bg-alt);
+  border-top: 1px solid var(--bumm-line);
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+}
+
+.bumm-footer-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--bumm-ink);
+  margin-bottom: .9rem;
+}
+
+.bumm-footer-desc {
+  color: var(--bumm-ink-muted);
+  font-size: .88rem;
+  line-height: 1.6;
+  max-width: 34ch;
+  margin-bottom: 1.2rem;
+}
+
+.bumm-footer-social {
+  display: flex;
+  gap: .8rem;
+}
+
+.bumm-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--bumm-line);
+  color: var(--bumm-ink-muted);
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.bumm-footer-social a:hover {
+  border-color: var(--bumm-accent);
+  color: var(--bumm-accent);
+}
+
+.bumm-footer-heading {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--bumm-ink-muted);
+  margin-bottom: 1rem;
+}
+
+.bumm-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bumm-footer-links li {
+  margin-bottom: .6rem;
+}
+
+.bumm-footer-links a {
+  color: var(--bumm-ink);
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.bumm-footer-links a:hover {
+  color: var(--bumm-accent);
+}
+
+.bumm-footer-cert {
+  height: 48px;
+  width: auto;
+}
+
+.bumm-footer-bottom {
+  border-top: 1px solid var(--bumm-line);
+  margin-top: 2.8rem;
+  padding-top: 1.5rem;
+  font-size: .82rem;
+  color: var(--bumm-ink-muted);
+}
+
+/* --------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .bumm-plate { margin-left: 0; margin-top: 3rem; max-width: 100%; }
+  .bumm-hero h1 { max-width: 100%; }
+}
+
+/* Tablet/phone: stack the spec-plate label/value rows instead of forcing
+   them onto one line — long labels ("Foundry Experience") next to a
+   bold value could get cramped or wrap awkwardly at these widths. */
+@media (max-width: 767.98px) {
+  .bumm-plate-row:not(.bumm-plate-row--stacked) {
+    display: block;
+  }
+  .bumm-plate-row:not(.bumm-plate-row--stacked) .bumm-plate-label {
+    display: block;
+    margin-bottom: .3rem;
+  }
+  .bumm-marquee-track { gap: 2.2rem; }
+}
+
+@media (max-width: 575.98px) {
+  .bumm-hero { padding-top: 3.5rem; padding-bottom: 3rem; }
+  .bumm-plate { padding: 1.6rem 1.4rem; }
+  .bumm-trusted-label { border-right: none; padding-right: 0; margin-bottom: .75rem; }
+  .bumm-about { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .bumm-capability { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .bumm-products { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .bumm-achievement { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .bumm-timeline { padding-left: 1.6rem; }
+  .bumm-timeline-dot { left: -1.86rem; }
+  .bumm-news { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .bumm-cta { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .bumm-contact { padding-top: 3.5rem; padding-bottom: 4rem; }
+  .bumm-page-header { padding-top: 2.2rem; padding-bottom: 2.2rem; }
+  .bumm-cert-strip { padding: 1rem 1.1rem; gap: 1rem; }
+  .bumm-footer-cert { height: 40px; }
+
+  /* Bootstrap's stacked mobile nav puts these inline items on their own
+     rows by default, but gives no breathing room between them — tighten
+     that up and make the lang switch + button full-width so they read
+     as clear, separately-tappable rows instead of a cramped strip. */
+  .bumm-navbar .navbar-nav .nav-item {
+    margin-bottom: .35rem;
+  }
+  .bumm-navbar .bumm-lang-switch {
+    display: flex;
+  }
+  .bumm-navbar .bumm-lang-btn {
+    flex: 1 1 0;
+    padding-top: .55rem;
+    padding-bottom: .55rem;
+  }
+  .bumm-navbar .btn-bumm-outline {
+    display: block;
+    text-align: center;
+  }
+  .bumm-navbar .bumm-theme-toggle {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   New pages: About sub-nav, content prose, team, jobs, spec table, pagination
+   Added when building out About/*, Career, News and Product detail pages.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------
+   About section sub-nav — pill tabs linking between the four About
+   sub-pages (Company Profile / Vision & Mission / Corporate Value /
+   Management). Reuses page-header surface, sits right under the H1.
+   -------------------------------------------------------------------- */
+.bumm-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: 1.75rem;
+}
+
+.bumm-subnav a {
+  display: inline-block;
+  padding: .55rem 1.1rem;
+  border: 1px solid var(--bumm-line);
+  border-radius: 2px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--bumm-ink-muted);
+  text-decoration: none;
+  transition: border-color .2s ease, color .2s ease, background-color .2s ease;
+}
+
+.bumm-subnav a:hover {
+  border-color: var(--bumm-accent);
+  color: var(--bumm-ink);
+}
+
+.bumm-subnav a.is-active {
+  background-color: var(--bumm-accent);
+  border-color: var(--bumm-accent);
+  color: var(--bumm-on-accent);
+}
+
+/* --------------------------------------------------------------------
+   Generic long-form content block — company history prose, vision/
+   mission text, job description body. Keeps line length readable on
+   the dark surface.
+   -------------------------------------------------------------------- */
+.bumm-content {
+  color: var(--bumm-ink-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 72ch;
+}
+
+.bumm-content p { margin-bottom: 1.2rem; }
+
+.bumm-content h2,
+.bumm-content h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--bumm-ink);
+  margin-top: 2.2rem;
+  margin-bottom: .9rem;
+}
+
+.bumm-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.4rem;
+}
+
+.bumm-content ul li {
+  position: relative;
+  padding-left: 1.9rem;
+  margin-bottom: .7rem;
+}
+
+.bumm-content ul li::before {
+  content: "\f26b"; /* bootstrap-icons check-circle glyph fallback */
+  font-family: "bootstrap-icons";
+  position: absolute;
+  left: 0;
+  top: .05em;
+  color: var(--bumm-accent);
+  font-size: .95em;
+}
+
+/* --------------------------------------------------------------------
+   Company history timeline row — used on Company Profile. Reuses the
+   Achievement timeline visuals (.bumm-timeline / -item / -dot) already
+   defined above; this only adds the "detail" line those rows didn't
+   need before.
+   -------------------------------------------------------------------- */
+.bumm-timeline-detail {
+  color: var(--bumm-ink-muted);
+  font-size: .9rem;
+  line-height: 1.55;
+  margin-top: .2rem;
+}
+
+/* --------------------------------------------------------------------
+   Management team cards. TODO(client): no headshots or confirmed exec
+   names were available for this build — cards use a placeholder avatar
+   and generic role titles. Swap in real photos/names + real headcount
+   before publishing this page.
+   -------------------------------------------------------------------- */
+.bumm-team-card {
+  background-color: var(--bumm-bg);
+  border: 1px solid var(--bumm-line);
+  border-radius: 2px;
+  padding: 1.6rem 1.4rem;
+  height: 100%;
+  text-align: center;
+}
+
+.bumm-team-avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto .9rem;
+  border-radius: 50%;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--bumm-ink-muted);
+}
+
+.bumm-team-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .98rem;
+  color: var(--bumm-ink);
+  margin-bottom: .25rem;
+}
+
+.bumm-team-role {
+  font-size: .8rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--bumm-accent);
+}
+
+/* --------------------------------------------------------------------
+   Career — job opening cards + empty state.
+   -------------------------------------------------------------------- */
+.bumm-job-card {
+  display: block;
+  background-color: var(--bumm-bg);
+  border: 1px solid var(--bumm-line);
+  border-radius: 2px;
+  padding: 1.5rem 1.6rem;
+  text-decoration: none;
+  transition: border-color .2s ease;
+}
+
+.bumm-job-card:hover {
+  border-color: var(--bumm-accent);
+}
+
+.bumm-job-card + .bumm-job-card {
+  margin-top: 1rem;
+}
+
+.bumm-job-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--bumm-ink);
+  margin-bottom: .5rem;
+}
+
+.bumm-job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: .8rem;
+}
+
+.bumm-job-tag {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--bumm-ink-muted);
+  border: 1px solid var(--bumm-line);
+  border-radius: 2px;
+  padding: .2rem .55rem;
+}
+
+.bumm-job-desc {
+  color: var(--bumm-ink-muted);
+  font-size: .9rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+.bumm-empty-state {
+  background-color: var(--bumm-bg);
+  border: 1px dashed var(--bumm-line);
+  border-radius: 2px;
+  padding: 2.4rem 2rem;
+  text-align: center;
+  color: var(--bumm-ink-muted);
+}
+
+.bumm-empty-state i {
+  font-size: 1.8rem;
+  color: var(--bumm-ink-muted);
+  margin-bottom: .8rem;
+  display: block;
+}
+
+/* --------------------------------------------------------------------
+   News listing pagination — Bootstrap's default pagination is styled
+   for a light surface, so it disappears against this dark theme.
+   -------------------------------------------------------------------- */
+.bumm-pagination .page-link {
+  background-color: var(--bumm-bg);
+  border-color: var(--bumm-line);
+  color: var(--bumm-ink-muted);
+}
+
+.bumm-pagination .page-link:hover {
+  background-color: var(--bumm-bg-alt);
+  border-color: var(--bumm-accent);
+  color: var(--bumm-ink);
+}
+
+.bumm-pagination .page-item.active .page-link {
+  background-color: var(--bumm-accent);
+  border-color: var(--bumm-accent);
+  color: var(--bumm-on-accent);
+}
+
+.bumm-pagination .page-item.disabled .page-link {
+  background-color: var(--bumm-bg);
+  border-color: var(--bumm-line);
+  color: var(--bumm-ink-muted);
+  opacity: .5;
+}
+
+/* --------------------------------------------------------------------
+   Product detail — spec table + related products strip.
+   -------------------------------------------------------------------- */
+.bumm-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .92rem;
+}
+
+.bumm-spec-table tr {
+  border-bottom: 1px solid var(--bumm-line);
+}
+
+.bumm-spec-table tr:last-child {
+  border-bottom: none;
+}
+
+.bumm-spec-table th,
+.bumm-spec-table td {
+  padding: .75rem 0;
+  text-align: left;
+  font-weight: 400;
+}
+
+.bumm-spec-table th {
+  width: 42%;
+  color: var(--bumm-ink-muted);
+  font-size: .8rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  vertical-align: top;
+}
+
+.bumm-spec-table td {
+  color: var(--bumm-ink);
+}
+
+.bumm-detail-hero {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  overflow: hidden;
+}
+
+.bumm-detail-hero img {
+  max-width: 65%;
+  max-height: 65%;
+  object-fit: contain;
+}
+
+.bumm-applications-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.bumm-applications-list li {
+  position: relative;
+  padding-left: 1.7rem;
+  margin-bottom: .65rem;
+  color: var(--bumm-ink-muted);
+  font-size: .92rem;
+  line-height: 1.5;
+}
+
+.bumm-applications-list li::before {
+  content: "\f26b";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  left: 0;
+  top: .1em;
+  color: var(--bumm-accent);
+  font-size: .9em;
+}

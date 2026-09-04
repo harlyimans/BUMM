@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('bumm-theme');
+      var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+      document.documentElement.setAttribute('data-bumm-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-bumm-theme', 'light');
+    }
+  })();
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Management — PT Bina Usaha Mandiri Mizusawa (BUMM)</title>
+  <meta name="description" content="Struktur manajemen PT. Bina Usaha Mandiri Mizusawa (BUMM), anak perusahaan Bakrie Autoparts yang bergerak di bidang ferrous foundry, general casting & machining.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#e63a2e">
+  <link rel="canonical" href="https://bumm.co.id/about/management">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PT. Bina Usaha Mandiri Mizusawa">
+  <meta property="og:title" content="Management — PT Bina Usaha Mandiri Mizusawa (BUMM)">
+  <meta property="og:description" content="Struktur manajemen PT. Bina Usaha Mandiri Mizusawa (BUMM), anak perusahaan Bakrie Autoparts yang bergerak di bidang ferrous foundry, general casting & machining.">
+  <meta property="og:image" content="https://bumm.co.id/assets/img/foundry.webp">
+  <meta property="og:url" content="https://bumm.co.id/about/management">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bumm.co.id/"},
+      {"@type": "ListItem", "position": 2, "name": "About", "item": "https://bumm.co.id/about/company-profile"},
+      {"@type": "ListItem", "position": 3, "name": "Management", "item": "https://bumm.co.id/about/management"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg bumm-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">BUMM</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bummNav" aria-controls="bummNav" aria-expanded="false" aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bummNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="/" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career" data-i18n="nav_career">Career</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/about/company-profile" aria-current="page" data-i18n="nav_about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/product" data-i18n="nav_product">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="/news" data-i18n="nav_news">News</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <div class="bumm-lang-switch" role="group" aria-label="Language switch">
+              <button type="button" class="bumm-lang-btn is-active" data-lang="en">EN</button>
+              <button type="button" class="bumm-lang-btn" data-lang="id">ID</button>
+            </div>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">
+              <i class="bi bi-moon-stars" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="/#contact" class="btn btn-bumm-outline" data-i18n="contact_us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="bumm-page-header">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bumm-breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About</li>
+          <li class="breadcrumb-item active" aria-current="page">Management</li>
+        </ol>
+      </nav>
+      <p class="bumm-eyebrow" data-i18n="about_eyebrow">About Us</p>
+      <h1 class="bumm-about-heading" data-i18n="mgmt_heading">The team running the foundry floor.</h1>
+      <p class="bumm-about-lead" data-i18n="mgmt_lead">
+        BUMM's management structure spans production, quality, and support
+        functions working together to keep every batch on spec.
+      </p>
+      <div class="bumm-subnav">
+        <a href="/about/company-profile" class="">Company Profile</a>
+        <a href="/about/vision-mission" class="">Vision &amp; Mission</a>
+        <a href="/about/corporate-value" class="">Corporate Value</a>
+        <a href="/about/management" class="is-active">Management</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MANAGEMENT GRID ============ -->
+  <!-- TODO(client): no confirmed executive names or headshots were available
+       for this build. Cards below are structural placeholders (role titles
+       only) — replace with real names, titles and photos before publishing. -->
+  <section class="bumm-about" style="border-top:none;">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="bumm-team-card">
+            <div class="bumm-team-avatar"><i class="bi bi-person"></i></div>
+            <div class="bumm-team-name">Name — TBD</div>
+            <div class="bumm-team-role">President Director</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bumm-team-card">
+            <div class="bumm-team-avatar"><i class="bi bi-person"></i></div>
+            <div class="bumm-team-name">Name — TBD</div>
+            <div class="bumm-team-role">Plant Director</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bumm-team-card">
+            <div class="bumm-team-avatar"><i class="bi bi-person"></i></div>
+            <div class="bumm-team-name">Name — TBD</div>
+            <div class="bumm-team-role">Manufacturing Manager</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bumm-team-card">
+            <div class="bumm-team-avatar"><i class="bi bi-person"></i></div>
+            <div class="bumm-team-name">Name — TBD</div>
+            <div class="bumm-team-role">Quality Assurance Manager</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bumm-team-card">
+            <div class="bumm-team-avatar"><i class="bi bi-person"></i></div>
+            <div class="bumm-team-name">Name — TBD</div>
+            <div class="bumm-team-role">Finance & Accounting Manager</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bumm-team-card">
+            <div class="bumm-team-avatar"><i class="bi bi-person"></i></div>
+            <div class="bumm-team-name">Name — TBD</div>
+            <div class="bumm-team-role">Human Resources Manager</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="bumm-cta">
+    <div class="container text-center">
+      <h2 class="bumm-cta-heading" data-i18n="cta_heading">Looking for the best iron cast and foundry company?</h2>
+      <p class="bumm-cta-lead" data-i18n="cta_lead">Let us know — our team will get back to you.</p>
+      <a href="/#contact" class="btn btn-bumm-cta" data-i18n="contact_us">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bumm-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <div class="bumm-footer-brand">BUMM</div>
+          <p class="bumm-footer-desc">
+            PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
+            Kel. Alam Jaya, Kota Tangerang, Banten 15133, Indonesia
+          </p>
+          <div class="bumm-footer-social">
+            <a href="https://www.facebook.com/PT-BUMM-981977421946203" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/bummizusawa" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/bummizusawa" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
+          <ul class="bumm-footer-links">
+            <li><a href="/about/company-profile" data-i18n="nav_about">About</a></li>
+            <li><a href="/career" data-i18n="nav_career">Career</a></li>
+            <li><a href="/product" data-i18n="nav_product">Product</a></li>
+            <li><a href="/news" data-i18n="nav_news">News</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-8">
+          <div class="bumm-footer-heading" data-i18n="footer_certification">Certification</div>
+          <img src="../../assets/img/sertifikat.webp" alt="BUMM certification" class="bumm-footer-cert" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <div class="bumm-footer-bottom">
+        <span data-i18n="footer_copyright">© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/jquery-4.0.0.min.js"></script>
+  <script src="../../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+</body>
+</html>
