@@ -123,6 +123,29 @@ html, body { max-width: 100%; overflow-x: hidden; }
 }
 
 /* --------------------------------------------------------------------
+   Home hero overlay variant — transparent bar sitting on top of the
+   hero photo until the page scrolls, then it picks up the normal solid
+   background from .is-scrolled above. Only used on the homepage (the
+   only page with a full-bleed hero behind the navbar); inner pages keep
+   the plain always-solid .bumm-navbar since their page header isn't a
+   photo background.
+   -------------------------------------------------------------------- */
+.bumm-navbar--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.bumm-navbar--overlay.is-scrolled {
+  background-color: var(--bumm-bg);
+  border-bottom-color: var(--bumm-line);
+}
+
+/* --------------------------------------------------------------------
    Light/dark mode toggle button (navbar)
    -------------------------------------------------------------------- */
 .bumm-theme-toggle {

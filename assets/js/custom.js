@@ -250,15 +250,27 @@ $(function () {
   });
 
   // Subtle navbar depth once the page scrolls, so it reads as "lifted"
-  // above the hero rather than just a flat bar.
+  // above the hero rather than just a flat bar. On the homepage this is
+  // also what switches the transparent hero-overlay navbar
+  // (.bumm-navbar--overlay) over to its solid background.
   var $nav = $('.bumm-navbar');
-  $(window).on('scroll', function () {
+  function syncNavScrollState() {
     if ($(window).scrollTop() > 8) {
       $nav.addClass('is-scrolled');
     } else {
       $nav.removeClass('is-scrolled');
     }
-  });
+  }
+  $(window).on('scroll', syncNavScrollState);
+  syncNavScrollState();
+
+  // Force the solid background while the mobile menu is open, so the
+  // (possibly transparent, hero-overlay) navbar doesn't leave the open
+  // menu items floating unreadable over the hero photo. Falls back to
+  // whatever the scroll position says once it's closed again.
+  $('#bummNav')
+    .on('show.bs.collapse', function () { $nav.addClass('is-scrolled'); })
+    .on('hidden.bs.collapse', syncNavScrollState);
 
   // --------------------------------------------------------------------
   // Light / dark mode toggle. The actual attribute (data-bumm-theme on
