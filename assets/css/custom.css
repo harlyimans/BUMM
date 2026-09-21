@@ -2211,3 +2211,22 @@ button:focus-visible {
   .bumm-vb-card { min-height: 15.5rem; padding: 1.05rem .85rem 0; }
   .bumm-vb-photo { height: 5rem; margin-left: -.85rem; margin-right: -.85rem; }
 }
+
+/* ==========================================================================
+   Desktop scale — makes the site render like a browser zoomed to 80%.
+   Browser zoom is stored per-origin, so the 80% you see on 127.0.0.1:5500
+   never carried over to github.io. This bakes the same scale into the CSS
+   so every visitor sees it. Desktop only (>= 992px); tablets/phones are
+   untouched. To change the scale, edit --bumm-zoom (1 = 100%).
+   ========================================================================== */
+@media (min-width: 992px) {
+  :root { --bumm-zoom: .8; }
+  html { zoom: var(--bumm-zoom); }
+
+  /* Viewport units are scaled by zoom too, so divide it back out or the
+     full-screen hero would only fill 80% of the window height. */
+  .bumm-hero-media {
+    min-height: calc(100vh / var(--bumm-zoom));
+    min-height: calc(100svh / var(--bumm-zoom));
+  }
+}
