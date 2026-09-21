@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('bumm-theme');
+      var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+      document.documentElement.setAttribute('data-bumm-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-bumm-theme', 'light');
+    }
+  })();
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>PT Bina Usaha Mandiri Mizusawa (BUMM) — Iron Cast & Foundry Manufacturer Indonesia</title>
+  <meta name="description" content="PT. Bina Usaha Mandiri Mizusawa (BUMM) — produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts. Water pump, diesel, heavy duty & komponen otomotif untuk OEM Indonesia.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#e63a2e">
+  <!-- TODO(client): confirm the production domain, then keep this canonical
+       in sync per-page once subpages exist (see the multi-page note below). -->
+  <link rel="canonical" href="https://bumm.co.id/">
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PT. Bina Usaha Mandiri Mizusawa">
+  <meta property="og:title" content="PT Bina Usaha Mandiri Mizusawa (BUMM) — Iron Cast & Foundry Manufacturer Indonesia">
+  <meta property="og:description" content="Produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts. Water pump, diesel, heavy duty & komponen otomotif untuk OEM Indonesia.">
+  <meta property="og:image" content="https://bumm.co.id/assets/img/hero-pour.jpg">
+  <meta property="og:url" content="https://bumm.co.id/">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PT Bina Usaha Mandiri Mizusawa (BUMM) — Iron Cast & Foundry Manufacturer Indonesia">
+  <meta name="twitter:description" content="Produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts.">
+  <meta name="twitter:image" content="https://bumm.co.id/assets/img/hero-pour.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <!-- Ganti path ini sesuai lokasi vendor di projek kamu -->
+  <link rel="stylesheet" href="assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!-- Hero banner is the LCP element — preload it, don't lazy-load it. -->
+  <link rel="preload" as="image" href="assets/img/hero-pour.webp" imagesrcset="assets/img/hero-pour-mobile.webp 900w, assets/img/hero-pour.webp 1600w" imagesizes="100vw" fetchpriority="high">
+
+  <!-- Structured data: helps Google show a Knowledge Panel / local pack
+       result for brand + "foundry Tangerang" type searches. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PT. Bina Usaha Mandiri Mizusawa",
+    "alternateName": "BUMM",
+    "url": "https://bumm.co.id/",
+    "logo": "https://bumm.co.id/assets/img/hero-pour.jpg",
+    "foundingDate": "1983",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Bakrie Autoparts"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. KH. EZ Muttaqien, Kec. Jatiuwung, Kel. Alam Jaya",
+      "addressLocality": "Kota Tangerang",
+      "addressRegion": "Banten",
+      "postalCode": "15133",
+      "addressCountry": "ID"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+62-21-5902488",
+      "contactType": "sales"
+    },
+    "sameAs": [
+      "https://www.facebook.com/PT-BUMM-981977421946203",
+      "https://www.twitter.com/bummizusawa",
+      "https://www.instagram.com/bummizusawa"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <!-- --overlay: this page opens on the photo hero, so the bar sits on top
+       of it, transparent, and only takes on its surface colour once the page
+       scrolls (is-scrolled, toggled in custom.js). Subpages keep the plain
+       sticky bar. -->
+  <nav class="navbar navbar-expand-lg bumm-navbar bumm-navbar--overlay">
+    <div class="container">
+      <a class="navbar-brand" href="/">BUMM</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bummNav" aria-controls="bummNav" aria-expanded="false" aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bummNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="/" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career" data-i18n="nav_career">Career</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/company-profile" data-i18n="nav_about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/product" data-i18n="nav_product">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="/news" data-i18n="nav_news">News</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <div class="bumm-lang-switch" role="group" aria-label="Language switch">
+              <button type="button" class="bumm-lang-btn is-active" data-lang="en">EN</button>
+              <button type="button" class="bumm-lang-btn" data-lang="id">ID</button>
+            </div>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">
+              <i class="bi bi-moon-stars" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="#contact" class="btn btn-bumm-outline" data-i18n="contact_us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="bumm-hero">
+    <!-- The photograph is now a clean background plate — headline, company
+         line and lead are real HTML text layered on top. That means the
+         copy scales per breakpoint, switches EN/ID with the language
+         toggle, and is read once by screen readers / crawlers instead of
+         being baked into the JPEG and duplicated in a visually-hidden
+         block. The photo itself is decorative (alt=""). A video (if
+         eligible — see custom.js) still fades in over it. -->
+    <div class="bumm-hero-media">
+      <picture>
+        <source media="(max-width: 575.98px)" type="image/webp" srcset="assets/img/hero-pour-mobile.webp">
+        <source media="(max-width: 575.98px)" srcset="assets/img/hero-pour-mobile.jpg">
+        <source type="image/webp" srcset="assets/img/hero-pour.webp">
+        <img
+          class="bumm-hero-bg-image"
+          src="assets/img/hero-pour.jpg"
+          alt=""
+          width="1600" height="1103"
+          loading="eager"
+          fetchpriority="high"
+          onerror="this.style.display='none'">
+      </picture>
+
+      <div class="container bumm-hero-copy">
+        <div class="row align-items-end gy-4">
+
+          <div class="col-lg-7 col-xl-6">
+            <p class="bumm-hero-eyebrow">
+              <strong>PT Bina Usaha Mandiri Mizusawa</strong>
+              <span class="bumm-hero-eyebrow-rule" aria-hidden="true"></span>
+              <span data-i18n="hero_eyebrow_group">a subsidiary of Bakrie Autoparts</span>
+            </p>
+
+            <!-- Two lines, two states of the same part: the first is solid
+                 (the finished casting), the second is outlined (the mould it
+                 came out of). Falls back to solid white on small screens and
+                 where text-stroke isn't supported. -->
+            <h1 class="bumm-hero-headline">
+              <span class="bumm-hero-headline-solid" data-i18n="hero_headline_cast">Made to cast,</span>
+              <span class="bumm-hero-headline-outline" data-i18n="hero_headline_last">build to last.</span>
+            </h1>
+
+            <p class="bumm-hero-lead" data-i18n="hero_lead">
+              From precision iron casting to high-performance components for automotive,
+              heavy duty, agriculture and industrial applications.
+            </p>
+
+            <div class="bumm-hero-actions">
+              <a href="/product" class="btn btn-bumm-primary" data-i18n="btn_view_product">View Products</a>
+              <a href="#contact" class="btn btn-bumm-secondary btn-bumm-secondary--on-photo" data-i18n="contact_us">Contact Us</a>
+            </div>
+          </div>
+
+          <!-- Spec plate — sits on the photo now, so it uses the --hero
+               variant: smoked glass instead of the page surface colour. -->
+          <div class="col-lg-5 col-xl-6">
+            <div class="bumm-plate bumm-plate--hero">
+              <span class="bumm-plate-rivet tl"></span>
+              <span class="bumm-plate-rivet tr"></span>
+              <span class="bumm-plate-rivet bl"></span>
+              <span class="bumm-plate-rivet br"></span>
+
+              <div class="bumm-plate-title" data-i18n="plate_title">Company Profile</div>
+
+              <div class="bumm-plate-row">
+                <span class="bumm-plate-label" data-i18n="plate_established_label">Established</span>
+                <span class="bumm-plate-value">1983</span>
+              </div>
+              <div class="bumm-plate-row">
+                <span class="bumm-plate-label" data-i18n="plate_experience_label">Foundry Experience</span>
+                <span class="bumm-plate-value" data-i18n="plate_experience_value">40+ years</span>
+              </div>
+              <div class="bumm-plate-row">
+                <span class="bumm-plate-label" data-i18n="plate_oem_label">OEM Partners</span>
+                <span class="bumm-plate-value">40+</span>
+              </div>
+              <div class="bumm-plate-row">
+                <span class="bumm-plate-label" data-i18n="plate_parent_label">Parent Company</span>
+                <span class="bumm-plate-value">Bakrie Autoparts</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ TRUSTED BY MARQUEE ============ -->
+  <section class="bumm-trusted">
+    <div class="container">
+      <div class="d-flex align-items-center bumm-marquee-wrap">
+        <div class="bumm-trusted-label d-none d-md-block" data-i18n="trusted_label">Trusted by</div>
+        <div class="bumm-marquee-viewport ms-md-4">
+          <div class="bumm-marquee-track">
+            <img src="assets/img/clients/komatsu.png" alt="Komatsu" loading="lazy">
+            <img src="assets/img/clients/yanmar.png" alt="Yanmar" loading="lazy">
+            <img src="assets/img/clients/tomoe.png" alt="Tomoe" loading="lazy">
+            <img src="assets/img/clients/mk.png" alt="MK" loading="lazy">
+            <img src="assets/img/clients/velasto.png" alt="Velasto Indonesia" loading="lazy">
+            <img src="assets/img/clients/nice.png" alt="Nice" loading="lazy">
+            <img src="assets/img/clients/gobel-panasonic.png" alt="Gobel Panasonic" loading="lazy">
+            <img src="assets/img/clients/fuso.png" alt="Mitsubishi Fuso" loading="lazy">
+            <img src="assets/img/clients/isuzu.png" alt="Isuzu" loading="lazy">
+            <img src="assets/img/clients/denso.png" alt="Denso" loading="lazy">
+            <img src="assets/img/clients/sankei-gohsyu.png" alt="Sankei Gohsyu Industries" loading="lazy">
+            <img src="assets/img/clients/unknown-6m.png" alt="" loading="lazy">
+            <img src="assets/img/clients/toyota-indonesia.png" alt="Toyota Indonesia" loading="lazy">
+            <img src="assets/img/clients/tjokro-group.png" alt="Tjokro Group" loading="lazy">
+            <img src="assets/img/clients/daihatsu.png" alt="Daihatsu" loading="lazy">
+            <img src="assets/img/clients/hino.png" alt="Hino" loading="lazy">
+            <img src="assets/img/clients/fukoku.png" alt="Fukoku" loading="lazy">
+            <!-- diulang supaya loop marquee terlihat mulus -->
+            <img src="assets/img/clients/komatsu.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/yanmar.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/tomoe.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/mk.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/velasto.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/nice.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/gobel-panasonic.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/fuso.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/isuzu.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/denso.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/sankei-gohsyu.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/unknown-6m.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/toyota-indonesia.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/tjokro-group.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/daihatsu.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/hino.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="assets/img/clients/fukoku.png" alt="" aria-hidden="true" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT INTRO ============ -->
+  <!-- Photo bleeds from the left edge and fades into the section's own
+       surface colour via a CSS gradient (not baked into the JPEG), so it
+       reads correctly in both light and dark mode and the copy stays real,
+       selectable HTML. Stacks to a short banner + copy below on phones. -->
+  <section class="bumm-about-intro" id="about">
+    <div class="bumm-about-intro-media">
+      <picture>
+        <source media="(max-width: 991.98px)" type="image/webp" srcset="assets/img/about-foundry-mobile.webp">
+        <source media="(max-width: 991.98px)" srcset="assets/img/about-foundry-mobile.jpg">
+        <source type="image/webp" srcset="assets/img/about-foundry.webp">
+        <img
+          src="assets/img/about-foundry.jpg"
+          alt="Foundry operator directing a ladle pour on the BUMM casting floor"
+          loading="lazy"
+          width="1500" height="1060">
+      </picture>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-lg-6 col-xl-5">
+          <div class="bumm-about-intro-copy">
+            <p class="bumm-eyebrow" data-i18n="about_intro_eyebrow">About BUMM</p>
+            <h2 class="bumm-about-heading" data-i18n="about_intro_heading">More than just casting.</h2>
+            <p class="bumm-about-lead" data-i18n="about_lead">
+              PT. Bina Usaha Mandiri Mizusawa (BUMM) was established in 1983 and is a
+              subsidiary of Bakrie Autoparts, based in Jatiuwung, Tangerang. We specialize
+              in auto components and general casting — foundry manufacturing built to meet
+              the demands of Indonesia's automotive and heavy-equipment industry.
+            </p>
+            <a href="/about/company-profile" class="btn btn-bumm-primary mt-2" data-i18n="about_intro_cta">Learn About BUMM</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUILT ON EXPERIENCE ============ -->
+  <!-- Stat band. The foundry photo behind it is a real <img> so it can be
+       art-directed and lazy-loaded; the white fade is a CSS scrim on top,
+       not baked into the file, so it also works in dark mode. -->
+  <section class="bumm-experience">
+    <div class="bumm-experience-media" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 991.98px)" type="image/webp" srcset="assets/img/experience-foundry-mobile.webp">
+        <source media="(max-width: 991.98px)" srcset="assets/img/experience-foundry-mobile.jpg">
+        <source type="image/webp" srcset="assets/img/experience-foundry.webp">
+        <img src="assets/img/experience-foundry.jpg" alt="" loading="lazy" width="1600" height="900">
+      </picture>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="bumm-experience-heading">
+            <span data-i18n="experience_heading_1">Built On</span>
+            <span class="bumm-experience-heading-accent" data-i18n="experience_heading_2">Experience</span>
+          </h2>
+          <p class="bumm-experience-lead" data-i18n="experience_lead">
+            Decades of commitment in delivering high quality iron casting solutions
+            for a stronger, more sustainable industry
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-3 g-lg-4 bumm-experience-stats">
+        <div class="col-6 col-lg-3">
+          <div class="bumm-stat-card">
+            <div class="bumm-stat-top">
+              <span class="bumm-stat-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></span>
+              <span class="bumm-stat-value">1983</span>
+            </div>
+            <div class="bumm-stat-label" data-i18n="experience_stat_established">Established</div>
+            <span class="bumm-stat-rule"></span>
+            <span class="bumm-stat-dash"></span>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="bumm-stat-card">
+            <div class="bumm-stat-top">
+              <span class="bumm-stat-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
+              <span class="bumm-stat-value">99.99%</span>
+            </div>
+            <div class="bumm-stat-label" data-i18n="experience_stat_ownership">Bakrie Autoparts ownership</div>
+            <span class="bumm-stat-rule"></span>
+            <span class="bumm-stat-dash"></span>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="bumm-stat-card">
+            <div class="bumm-stat-top">
+              <span class="bumm-stat-icon"><i class="bi bi-briefcase-fill" aria-hidden="true"></i></span>
+              <span class="bumm-stat-value">40+</span>
+            </div>
+            <div class="bumm-stat-label" data-i18n="experience_stat_years">Years Of Experience</div>
+            <span class="bumm-stat-rule"></span>
+            <span class="bumm-stat-dash"></span>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="bumm-stat-card">
+            <div class="bumm-stat-top">
+              <span class="bumm-stat-icon"><i class="bi bi-buildings-fill" aria-hidden="true"></i></span>
+              <span class="bumm-stat-value">6k+</span>
+            </div>
+            <div class="bumm-stat-label" data-i18n="experience_stat_capacity">Ton Installed Capacity</div>
+            <span class="bumm-stat-rule"></span>
+            <span class="bumm-stat-dash"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUES ============ -->
+  <!-- Seven VICTORY columns so the acronym reads in one line. The photo
+       foot on each card is optional — see .bumm-vb-photo in custom.css. -->
+  <section class="bumm-about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="bumm-eyebrow" data-i18n="about_eyebrow">Our Values</p>
+          <h2 class="bumm-about-heading" data-i18n="about_heading">Built on seven operating principles.</h2>
+        </div>
+      </div>
+
+      <div class="bumm-victory-b mt-4">
+        <div class="bumm-vb-card">
+          <span class="bumm-vb-letter">V</span>
+          <span class="bumm-vb-icon"><i class="bi bi-lightbulb" aria-hidden="true"></i></span>
+          <h3 class="bumm-vb-title" data-i18n="victory_v_title">Visionary</h3>
+          <span class="bumm-vb-dash"></span>
+          <div class="bumm-vb-photo" aria-hidden="true">
+            <img src="assets/img/value-visionary.webp" alt="" loading="lazy"
+                 onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
+          </div>
+        </div>
+        <div class="bumm-vb-card">
+          <span class="bumm-vb-letter">I</span>
+          <span class="bumm-vb-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+          <h3 class="bumm-vb-title" data-i18n="victory_i_title">Integrity</h3>
+          <span class="bumm-vb-dash"></span>
+          <div class="bumm-vb-photo" aria-hidden="true">
+            <img src="assets/img/value-integrity.webp" alt="" loading="lazy"
+                 onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
+          </div>
+        </div>
+        <div class="bumm-vb-card">
+          <span class="bumm-vb-letter">C</span>
+          <span class="bumm-vb-icon"><i class="bi bi-person-hearts" aria-hidden="true"></i></span>
+          <h3 class="bumm-vb-title" data-i18n="victory_c_title">Customer-oriented</h3>
+          <span class="bumm-vb-dash"></span>
+          <div class="bumm-vb-photo" aria-hidden="true">
+            <img src="assets/img/value-customer.webp" alt="" loading="lazy"
+                 onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
+          </div>
+        </div>
+        <div class="bumm-vb-card">
+          <span class="bumm-vb-letter">T</span>
+          <span class="bumm-vb-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
+          <h3 class="bumm-vb-title" data-i18n="victory_t_title">Teamwork</h3>
+          <span class="bumm-vb-dash"></span>
+          <div class="bumm-vb-photo" aria-hidden="true">
+            <img src="assets/img/value-teamwork.webp" alt="" loading="lazy"
+                 onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
+          </div>
+        </div>
+        <div class="bumm-vb-card">
+          <span class="bumm-vb-letter">O</span>
+          <span class="bumm-vb-icon"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></span>
+          <h3 class="bumm-vb-title" data-i18n="victory_o_title">Operational Excellence</h3>
+          <span class="bumm-vb-dash"></span>
+          <div class="bumm-vb-photo" aria-hidden="true">
+            <img src="assets/img/value-operational.webp" alt="" loading="lazy"
+                 onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
+          </div>
+        </div>
+        <div class="bumm-vb-card">
+          <span class="bumm-vb-letter">R</span>
+          <span class="bumm-vb-icon"><i class="bi bi-hand-thumbs-up-fill" aria-hidden="true"></i></span>
+          <h3 class="bumm-vb-title" data-i18n="victory_r_title">Responsibility</h3>
+          <span class="bumm-vb-dash"></span>
+          <div class="bumm-vb-photo" aria-hidden="true">
+            <img src="assets/img/value-responsibility.webp" alt="" loading="lazy"
+                 onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
+          </div>
+        </div>
+        <div class="bumm-vb-card">
+          <span class="bumm-vb-letter">Y</span>
+          <span class="bumm-vb-icon"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></span>
+          <h3 class="bumm-vb-title" data-i18n="victory_y_title">Yield Orientation</h3>
+          <span class="bumm-vb-dash"></span>
+          <div class="bumm-vb-photo" aria-hidden="true">
+            <img src="assets/img/value-yield.webp" alt="" loading="lazy"
+                 onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITY & CERTIFICATION ============ -->
+  <section class="bumm-capability">
+    <div class="container">
+      <div class="row align-items-start gy-5">
+
+        <div class="col-lg-5">
+          <p class="bumm-eyebrow" data-i18n="capability_eyebrow">Capability</p>
+          <h2 class="bumm-about-heading" data-i18n="capability_heading">Built to supply, not just to cast.</h2>
+          <p class="bumm-about-lead" data-i18n="capability_lead">
+            From single-piece prototypes to recurring OEM production runs, our foundry
+            supports both automotive supply chains and general industrial casting needs.
+          </p>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row row-cols-1 row-cols-sm-2 g-4">
+            <div class="col">
+              <div class="bumm-capability-item">
+                <i class="bi bi-truck bumm-capability-icon" aria-hidden="true"></i>
+                <h3 class="bumm-capability-title" data-i18n="capability_1_title">Direct OEM Supply</h3>
+                <p class="bumm-capability-desc" data-i18n="capability_1_desc">Supplying cast components directly into automotive and heavy-equipment OEM supply chains.</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="bumm-capability-item">
+                <i class="bi bi-gear-wide-connected bumm-capability-icon" aria-hidden="true"></i>
+                <h3 class="bumm-capability-title" data-i18n="capability_2_title">General &amp; Custom Casting</h3>
+                <p class="bumm-capability-desc" data-i18n="capability_2_desc">Beyond automotive parts, we also produce general iron casting to custom specification for a range of industrial needs.</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="bumm-capability-item">
+                <i class="bi bi-diagram-3 bumm-capability-icon" aria-hidden="true"></i>
+                <h3 class="bumm-capability-title" data-i18n="capability_3_title">Backed by Bakrie Autoparts</h3>
+                <p class="bumm-capability-desc" data-i18n="capability_3_desc">Part of the Bakrie Autoparts group, giving BUMM the scale and resources of an established industrial group.</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="bumm-capability-item">
+                <i class="bi bi-shield-check bumm-capability-icon" aria-hidden="true"></i>
+                <h3 class="bumm-capability-title" data-i18n="capability_4_title">Quality-First Process</h3>
+                <p class="bumm-capability-desc" data-i18n="capability_4_desc">Every batch goes through in-house quality control before it leaves the foundry.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Certification strip. TODO(client): swap in the real certificate
+           image + confirm the exact standard/number so the caption below
+           can name it precisely, instead of the generic label used here. -->
+      <div class="bumm-cert-strip mt-5">
+        <img src="assets/img/sertifikat.webp" alt="BUMM certification" onerror="this.style.display='none'">
+        <span class="bumm-cert-caption" data-i18n="cert_caption">Certification — confirm standard &amp; number</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT HIGHLIGHT ============ -->
+  <section class="bumm-products">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="bumm-eyebrow" data-i18n="product_eyebrow">Product</p>
+          <h2 class="bumm-about-heading" data-i18n="product_heading">Cast for the systems that keep running.</h2>
+          <p class="bumm-about-lead" data-i18n="product_lead">
+            Four categories of iron cast components, engineered and finished to the
+            tolerances automotive and heavy-equipment production lines require.
+          </p>
+        </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mt-2">
+        <div class="col">
+          <a href="/product" class="bumm-product-card">
+            <div class="bumm-product-thumb">
+              <img src="https://bumm.co.id/assets/img/water.png" alt="Water Pump component" loading="lazy">
+            </div>
+            <h3 class="bumm-product-title">Water Pump</h3>
+            <p class="bumm-product-desc" data-i18n="product_1_desc">Precision-cast water pump housings and components for automotive cooling systems.</p>
+            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
+          </a>
+        </div>
+        <div class="col">
+          <a href="/product" class="bumm-product-card">
+            <div class="bumm-product-thumb">
+              <img src="https://bumm.co.id/assets/img/diesel.png" alt="Diesel component" loading="lazy">
+            </div>
+            <h3 class="bumm-product-title">Diesel</h3>
+            <p class="bumm-product-desc" data-i18n="product_2_desc">Cast components built for diesel engine systems, from housings to structural parts.</p>
+            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
+          </a>
+        </div>
+        <div class="col">
+          <a href="/product" class="bumm-product-card">
+            <div class="bumm-product-thumb">
+              <img src="https://bumm.co.id/assets/img/heavy.png" alt="Heavy Duty component" loading="lazy">
+            </div>
+            <h3 class="bumm-product-title">Heavy Duty</h3>
+            <p class="bumm-product-desc" data-i18n="product_3_desc">Heavy-duty iron cast parts engineered for construction and industrial machinery.</p>
+            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
+          </a>
+        </div>
+        <div class="col">
+          <a href="/product" class="bumm-product-card">
+            <div class="bumm-product-thumb">
+              <img src="https://bumm.co.id/assets/img/otomotif.png" alt="Automotive component" loading="lazy">
+            </div>
+            <h3 class="bumm-product-title">Automotive</h3>
+            <p class="bumm-product-desc" data-i18n="product_4_desc">General automotive components cast to OEM specification.</p>
+            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/product" class="btn btn-bumm-secondary" data-i18n="btn_view_all_products">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACHIEVEMENT ============ -->
+  <section class="bumm-achievement">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="bumm-eyebrow" data-i18n="achievement_eyebrow">Achievement</p>
+          <h2 class="bumm-about-heading" data-i18n="achievement_heading">Recognized by the OEMs we supply.</h2>
+          <p class="bumm-about-lead" data-i18n="achievement_lead">
+            A track record of appreciation from long-term automotive and heavy-equipment
+            partners — not marketing claims, but recognitions given for actual performance.
+          </p>
+        </div>
+      </div>
+
+      <div class="bumm-timeline mt-5">
+        <div class="bumm-timeline-item">
+          <span class="bumm-timeline-dot"></span>
+          <div class="bumm-timeline-year">December 2006</div>
+          <div class="bumm-timeline-company">PT. Mitsubishi Motors</div>
+          <div class="bumm-timeline-award">Appreciation — Official Production Supporter, Indonesia Suppliers Meeting</div>
+        </div>
+        <div class="bumm-timeline-item">
+          <span class="bumm-timeline-dot"></span>
+          <div class="bumm-timeline-year">August 2010</div>
+          <div class="bumm-timeline-company">PT. Panasonic Manufacturing Indonesia</div>
+          <div class="bumm-timeline-award">The Longest Business Partnership</div>
+        </div>
+        <div class="bumm-timeline-item">
+          <span class="bumm-timeline-dot"></span>
+          <div class="bumm-timeline-year">March 2014</div>
+          <div class="bumm-timeline-company">PT. Mitsubishi Kramayudha Manufacturing</div>
+          <div class="bumm-timeline-award">Great Support and Contribution to the Success of Mitsubishi</div>
+        </div>
+        <div class="bumm-timeline-item">
+          <span class="bumm-timeline-dot"></span>
+          <div class="bumm-timeline-year">March 2014</div>
+          <div class="bumm-timeline-company">PT. Yanmar Diesel Indonesia</div>
+          <div class="bumm-timeline-award">Zero PPM Quality Achievement</div>
+        </div>
+        <div class="bumm-timeline-item">
+          <span class="bumm-timeline-dot"></span>
+          <div class="bumm-timeline-year">January 2017</div>
+          <div class="bumm-timeline-company">PT. Komatsu Undercarriage Indonesia</div>
+          <div class="bumm-timeline-award">Best Supplier Performance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWS & ACTIVITY ============ -->
+  <!-- TODO(client): this is a static template with 3 placeholder cards.
+       In the old site, this section is populated dynamically from the
+       database (baca-berita/<?php echo $row['id'] ?>). Wire this loop
+       up to that same source — image, date, title, excerpt, link — so
+       it's not maintained by hand in two places. -->
+  <section class="bumm-news">
+    <div class="container">
+      <div class="row align-items-end mb-4">
+        <div class="col-lg-8">
+          <p class="bumm-eyebrow" data-i18n="news_eyebrow">News &amp; Activity</p>
+          <h2 class="bumm-about-heading" data-i18n="news_heading">What's happening at the foundry.</h2>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="/news" class="bumm-product-link" data-i18n="news_view_all">View All News →</a>
+        </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <a href="#" class="bumm-news-card">
+            <div class="bumm-news-thumb"></div>
+            <div class="bumm-news-date">Placeholder date</div>
+            <h3 class="bumm-news-title">News headline placeholder</h3>
+            <p class="bumm-news-excerpt">Short excerpt placeholder — replace with the real article summary from the database.</p>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#" class="bumm-news-card">
+            <div class="bumm-news-thumb"></div>
+            <div class="bumm-news-date">Placeholder date</div>
+            <h3 class="bumm-news-title">News headline placeholder</h3>
+            <p class="bumm-news-excerpt">Short excerpt placeholder — replace with the real article summary from the database.</p>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#" class="bumm-news-card">
+            <div class="bumm-news-thumb"></div>
+            <div class="bumm-news-date">Placeholder date</div>
+            <h3 class="bumm-news-title">News headline placeholder</h3>
+            <p class="bumm-news-excerpt">Short excerpt placeholder — replace with the real article summary from the database.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="bumm-cta">
+    <div class="container text-center">
+      <h2 class="bumm-cta-heading" data-i18n="cta_heading">Looking for the best iron cast and foundry company?</h2>
+      <p class="bumm-cta-lead" data-i18n="cta_lead">Let us know — our team will get back to you.</p>
+      <a href="#contact" class="btn btn-bumm-cta" data-i18n="contact_us">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="bumm-contact" id="contact">
+    <div class="container">
+      <p class="bumm-eyebrow" data-i18n="contact_eyebrow">Contact</p>
+      <h2 class="bumm-about-heading mb-5" data-i18n="contact_heading">Let's talk about your production needs.</h2>
+
+      <div class="row g-5">
+        <!-- Info + map -->
+        <div class="col-lg-5">
+          <div class="bumm-plate bumm-plate--contact mb-4">
+            <span class="bumm-plate-rivet tl"></span>
+            <span class="bumm-plate-rivet tr"></span>
+            <span class="bumm-plate-rivet bl"></span>
+            <span class="bumm-plate-rivet br"></span>
+
+            <div class="bumm-plate-title" data-i18n="contact_plate_title">Contact Details</div>
+
+            <div class="bumm-plate-row bumm-plate-row--stacked">
+              <span class="bumm-plate-label" data-i18n="contact_phone_label">Phone</span>
+              <span class="bumm-plate-value bumm-plate-value--sm">(021) 5902488 / 89</span>
+            </div>
+            <div class="bumm-plate-row bumm-plate-row--stacked">
+              <span class="bumm-plate-label" data-i18n="contact_address_label">Address</span>
+              <span class="bumm-plate-value bumm-plate-value--wrap">Jl. KH. EZ Muttaqien, Kec. Jatiuwung, Kel. Alam Jaya, Kota Tangerang, Banten 15133</span>
+            </div>
+            <!-- TODO(client): the email on the old site is Cloudflare-obfuscated
+                 (rendered client-side), so it couldn't be read from the page
+                 source — drop the real address in here. -->
+            <div class="bumm-plate-row bumm-plate-row--stacked bumm-plate-row--last">
+              <span class="bumm-plate-label" data-i18n="contact_email_label">Email</span>
+              <span class="bumm-plate-value bumm-plate-value--sm">[email protected]</span>
+            </div>
+          </div>
+
+          <div class="bumm-map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=PT.+Bina+Usaha+Mandiri+Mizusawa,+Jl.+KH.+EZ+Muttaqien,+Jatiuwung,+Tangerang&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="BUMM location map">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="col-lg-7">
+          <form class="bumm-contact-form" onsubmit="return false;">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="bumm-form-label" for="cf-name" data-i18n="contact_form_name">Name</label>
+                <input type="text" class="bumm-form-input" id="cf-name" name="name" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="bumm-form-label" for="cf-email" data-i18n="contact_form_email">Email</label>
+                <input type="email" class="bumm-form-input" id="cf-email" name="email" required>
+              </div>
+              <div class="col-12">
+                <label class="bumm-form-label" for="cf-subject" data-i18n="contact_form_subject">Subject</label>
+                <input type="text" class="bumm-form-input" id="cf-subject" name="subject">
+              </div>
+              <div class="col-12">
+                <label class="bumm-form-label" for="cf-message" data-i18n="contact_form_message">Message</label>
+                <textarea class="bumm-form-input" id="cf-message" name="message" rows="5" required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-bumm-primary" data-i18n="contact_form_send">Send</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bumm-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <div class="bumm-footer-brand">BUMM</div>
+          <p class="bumm-footer-desc">
+            PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
+            Kel. Alam Jaya, Kota Tangerang, Banten 15133, Indonesia
+          </p>
+          <div class="bumm-footer-social">
+            <a href="https://www.facebook.com/PT-BUMM-981977421946203" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/bummizusawa" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/bummizusawa" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
+          <ul class="bumm-footer-links">
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="/career" data-i18n="nav_career">Career</a></li>
+            <li><a href="/product" data-i18n="nav_product">Product</a></li>
+            <li><a href="/news" data-i18n="nav_news">News</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-8">
+          <div class="bumm-footer-heading" data-i18n="footer_certification">Certification</div>
+          <img src="assets/img/sertifikat.webp" alt="BUMM certification" class="bumm-footer-cert" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <div class="bumm-footer-bottom">
+        <span data-i18n="footer_copyright">© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/jquery-4.0.0.min.js"></script>
+  <script src="assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+</html>
