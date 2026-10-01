@@ -1,132 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <script>
-  (function () {
-    try {
-      var stored = localStorage.getItem('bumm-theme');
-      var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
-      document.documentElement.setAttribute('data-bumm-theme', theme);
-    } catch (e) {
-      document.documentElement.setAttribute('data-bumm-theme', 'light');
-    }
-  })();
-  </script>
+---
+layout: "default"
+title: "PT BUMM — Iron Cast & Foundry Manufacturer in Tangerang"
+description: "Produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts. Water pump, diesel, heavy duty untuk OEM Indonesia."
+og_description: "Produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts. Water pump, diesel, heavy duty & komponen otomotif untuk OEM Indonesia."
+og_image: "/assets/img/hero-pour.jpg"
+navbar_overlay: true
+footer_map: true
+hero_preload: true
+schema_organization: true
+og_locale: "id_ID"
+og_locale_alternate: "en_US"
+twitter_description: "Produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts."
+---
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>PT BUMM — Iron Cast & Foundry Manufacturer in Tangerang</title>
-  <meta name="description" content="Produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts. Water pump, diesel, heavy duty untuk OEM Indonesia.">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#d61f26">
-  <!-- TODO(client): confirm the production domain, then keep this canonical
-       in sync per-page once subpages exist (see the multi-page note below). -->
-  <link rel="canonical" href="https://bumm.co.id/">
-
-  <!-- Open Graph / social share -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="PT. Bina Usaha Mandiri Mizusawa">
-  <meta property="og:title" content="PT BUMM — Iron Cast & Foundry Manufacturer in Tangerang">
-  <meta property="og:description" content="Produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts. Water pump, diesel, heavy duty & komponen otomotif untuk OEM Indonesia.">
-  <meta property="og:image" content="https://bumm.co.id/assets/img/hero-pour.jpg">
-  <meta property="og:url" content="https://bumm.co.id/">
-  <meta property="og:locale" content="id_ID">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PT BUMM — Iron Cast & Foundry Manufacturer in Tangerang">
-  <meta name="twitter:description" content="Produsen iron cast & komponen otomotif sejak 1983 di Tangerang, anak perusahaan Bakrie Autoparts.">
-  <meta name="twitter:image" content="https://bumm.co.id/assets/img/hero-pour.jpg">
-
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-
-  <!-- Ganti path ini sesuai lokasi vendor di projek kamu -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-
-  <link rel="stylesheet" href="assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
-
-  <!-- Hero banner is the LCP element — preload it, don't lazy-load it. -->
-  <link rel="preload" as="image" href="assets/img/hero-pour.webp" imagesrcset="assets/img/hero-pour-mobile.webp 900w, assets/img/hero-pour.webp 1600w" imagesizes="100vw" fetchpriority="high">
-
-  <!-- Structured data: helps Google show a Knowledge Panel / local pack
-       result for brand + "foundry Tangerang" type searches. -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "PT. Bina Usaha Mandiri Mizusawa",
-    "alternateName": "BUMM",
-    "url": "https://bumm.co.id/",
-    "logo": "https://bumm.co.id/assets/img/hero-pour.jpg",
-    "foundingDate": "1983",
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Bakrie Autoparts"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jl. KH. EZ Muttaqien, Kec. Jatiuwung, Kel. Alam Jaya",
-      "addressLocality": "Kota Tangerang",
-      "addressRegion": "Banten",
-      "postalCode": "15133",
-      "addressCountry": "ID"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+62-21-5902488",
-      "contactType": "sales"
-    },
-    "sameAs": [
-      "https://www.facebook.com/PT-BUMM-981977421946203",
-      "https://www.twitter.com/bummizusawa",
-      "https://www.instagram.com/bummizusawa"
-    ]
-  }
-  </script>
-</head>
-<body>
-
-  <!-- ============ NAVBAR ============ -->
-  <!-- --overlay: this page opens on the photo hero, so the bar sits on top
-       of it, transparent, and only takes on its surface colour once the page
-       scrolls (is-scrolled, toggled in custom.js). Subpages keep the plain
-       sticky bar. -->
-  <nav class="navbar navbar-expand-lg bumm-navbar bumm-navbar--overlay">
-    <div class="container">
-      <a class="navbar-brand" href="./">BUMM</a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bummNav" aria-controls="bummNav" aria-expanded="false" aria-label="Buka menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="bummNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="./" data-i18n="nav_home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="./career/" data-i18n="nav_career">Career</a></li>
-          <li class="nav-item"><a class="nav-link" href="./about/company-profile/" data-i18n="nav_about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="./product/" data-i18n="nav_product">Product</a></li>
-          <!-- <li class="nav-item"><a class="nav-link" href="./news/" data-i18n="nav_news">News</a></li> -->
-          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-            <div class="bumm-lang-switch" role="group" aria-label="Language switch">
-              <button type="button" class="bumm-lang-btn is-active" data-lang="en">EN</button>
-              <button type="button" class="bumm-lang-btn" data-lang="id">ID</button>
-            </div>
-          </li>
-          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-            <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">
-              <i class="bi bi-moon-stars" aria-hidden="true"></i>
-            </button>
-          </li>
-          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-            <a href="#contact" class="btn btn-bumm-outline" data-i18n="contact_us">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <main id="main">
 
   <!-- ============ HERO ============ -->
   <header class="bumm-hero">
@@ -139,12 +25,12 @@
          eligible — see custom.js) still fades in over it. -->
     <div class="bumm-hero-media">
       <picture>
-        <source media="(max-width: 575.98px)" type="image/webp" srcset="assets/img/hero-pour-mobile.webp">
-        <source media="(max-width: 575.98px)" srcset="assets/img/hero-pour-mobile.jpg">
-        <source type="image/webp" srcset="assets/img/hero-pour.webp">
+        <source media="(max-width: 575.98px)" type="image/webp" srcset="{{ '/assets/img/hero-pour-mobile.webp' | relative_url }}">
+        <source media="(max-width: 575.98px)" srcset="{{ '/assets/img/hero-pour-mobile.jpg' | relative_url }}">
+        <source type="image/webp" srcset="{{ '/assets/img/hero-pour.webp' | relative_url }}">
         <img
           class="bumm-hero-bg-image"
-          src="assets/img/hero-pour.jpg"
+          src="{{ '/assets/img/hero-pour.jpg' | relative_url }}"
           alt=""
           width="1600" height="1103"
           loading="eager"
@@ -177,7 +63,7 @@
             </p>
 
             <div class="bumm-hero-actions">
-              <a href="./product/" class="btn btn-bumm-primary" data-i18n="btn_view_product">View Products</a>
+              <a href="{{ '/product/' | relative_url }}" class="btn btn-bumm-primary" data-i18n="btn_view_product">View Products</a>
               <a href="#contact" class="btn btn-bumm-secondary btn-bumm-secondary--on-photo" data-i18n="contact_us">Contact Us</a>
             </div>
           </div>
@@ -224,41 +110,41 @@
         <div class="bumm-trusted-label d-none d-md-block" data-i18n="trusted_label">Trusted by</div>
         <div class="bumm-marquee-viewport ms-md-4">
           <div class="bumm-marquee-track">
-            <img src="assets/img/clients/komatsu.png" alt="Komatsu" loading="lazy">
-            <img src="assets/img/clients/yanmar.png" alt="Yanmar" loading="lazy">
-            <img src="assets/img/clients/tomoe.png" alt="Tomoe" loading="lazy">
-            <img src="assets/img/clients/mk.png" alt="MK" loading="lazy">
-            <img src="assets/img/clients/velasto.png" alt="Velasto Indonesia" loading="lazy">
-            <img src="assets/img/clients/nice.png" alt="Nice" loading="lazy">
-            <img src="assets/img/clients/gobel-panasonic.png" alt="Gobel Panasonic" loading="lazy">
-            <img src="assets/img/clients/fuso.png" alt="Mitsubishi Fuso" loading="lazy">
-            <img src="assets/img/clients/isuzu.png" alt="Isuzu" loading="lazy">
-            <img src="assets/img/clients/denso.png" alt="Denso" loading="lazy">
-            <img src="assets/img/clients/sankei-gohsyu.png" alt="Sankei Gohsyu Industries" loading="lazy">
-            <img src="assets/img/clients/unknown-6m.png" alt="" loading="lazy">
-            <img src="assets/img/clients/toyota-indonesia.png" alt="Toyota Indonesia" loading="lazy">
-            <img src="assets/img/clients/tjokro-group.png" alt="Tjokro Group" loading="lazy">
-            <img src="assets/img/clients/daihatsu.png" alt="Daihatsu" loading="lazy">
-            <img src="assets/img/clients/hino.png" alt="Hino" loading="lazy">
-            <img src="assets/img/clients/fukoku.png" alt="Fukoku" loading="lazy">
+            <img src="{{ '/assets/img/clients/komatsu.png' | relative_url }}" alt="Komatsu" loading="lazy">
+            <img src="{{ '/assets/img/clients/yanmar.png' | relative_url }}" alt="Yanmar" loading="lazy">
+            <img src="{{ '/assets/img/clients/tomoe.png' | relative_url }}" alt="Tomoe" loading="lazy">
+            <img src="{{ '/assets/img/clients/mk.png' | relative_url }}" alt="MK" loading="lazy">
+            <img src="{{ '/assets/img/clients/velasto.png' | relative_url }}" alt="Velasto Indonesia" loading="lazy">
+            <img src="{{ '/assets/img/clients/nice.png' | relative_url }}" alt="Nice" loading="lazy">
+            <img src="{{ '/assets/img/clients/gobel-panasonic.png' | relative_url }}" alt="Gobel Panasonic" loading="lazy">
+            <img src="{{ '/assets/img/clients/fuso.png' | relative_url }}" alt="Mitsubishi Fuso" loading="lazy">
+            <img src="{{ '/assets/img/clients/isuzu.png' | relative_url }}" alt="Isuzu" loading="lazy">
+            <img src="{{ '/assets/img/clients/denso.png' | relative_url }}" alt="Denso" loading="lazy">
+            <img src="{{ '/assets/img/clients/sankei-gohsyu.png' | relative_url }}" alt="Sankei Gohsyu Industries" loading="lazy">
+            <img src="{{ '/assets/img/clients/unknown-6m.png' | relative_url }}" alt="" loading="lazy">
+            <img src="{{ '/assets/img/clients/toyota-indonesia.png' | relative_url }}" alt="Toyota Indonesia" loading="lazy">
+            <img src="{{ '/assets/img/clients/tjokro-group.png' | relative_url }}" alt="Tjokro Group" loading="lazy">
+            <img src="{{ '/assets/img/clients/daihatsu.png' | relative_url }}" alt="Daihatsu" loading="lazy">
+            <img src="{{ '/assets/img/clients/hino.png' | relative_url }}" alt="Hino" loading="lazy">
+            <img src="{{ '/assets/img/clients/fukoku.png' | relative_url }}" alt="Fukoku" loading="lazy">
             <!-- diulang supaya loop marquee terlihat mulus -->
-            <img src="assets/img/clients/komatsu.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/yanmar.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/tomoe.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/mk.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/velasto.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/nice.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/gobel-panasonic.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/fuso.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/isuzu.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/denso.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/sankei-gohsyu.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/unknown-6m.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/toyota-indonesia.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/tjokro-group.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/daihatsu.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/hino.png" alt="" aria-hidden="true" loading="lazy">
-            <img src="assets/img/clients/fukoku.png" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/komatsu.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/yanmar.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/tomoe.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/mk.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/velasto.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/nice.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/gobel-panasonic.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/fuso.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/isuzu.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/denso.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/sankei-gohsyu.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/unknown-6m.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/toyota-indonesia.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/tjokro-group.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/daihatsu.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/hino.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ '/assets/img/clients/fukoku.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
           </div>
         </div>
       </div>
@@ -273,11 +159,11 @@
   <section class="bumm-about-intro" id="about">
     <div class="bumm-about-intro-media">
       <picture>
-        <source media="(max-width: 991.98px)" type="image/webp" srcset="assets/img/about-foundry-mobile.webp">
-        <source media="(max-width: 991.98px)" srcset="assets/img/about-foundry-mobile.jpg">
-        <source type="image/webp" srcset="assets/img/about-foundry.webp">
+        <source media="(max-width: 991.98px)" type="image/webp" srcset="{{ '/assets/img/about-foundry-mobile.webp' | relative_url }}">
+        <source media="(max-width: 991.98px)" srcset="{{ '/assets/img/about-foundry-mobile.jpg' | relative_url }}">
+        <source type="image/webp" srcset="{{ '/assets/img/about-foundry.webp' | relative_url }}">
         <img
-          src="assets/img/about-foundry.jpg"
+          src="{{ '/assets/img/about-foundry.jpg' | relative_url }}"
           alt="Foundry operator directing a ladle pour on the BUMM casting floor"
           loading="lazy"
           width="1500" height="1060">
@@ -296,7 +182,7 @@
               in auto components and general casting — foundry manufacturing built to meet
               the demands of Indonesia's automotive and heavy-equipment industry.
             </p>
-            <a href="./about/company-profile/" class="btn btn-bumm-primary mt-2" data-i18n="about_intro_cta">Learn About BUMM</a>
+            <a href="{{ '/about/company-profile/' | relative_url }}" class="btn btn-bumm-primary mt-2" data-i18n="about_intro_cta">Learn About BUMM</a>
           </div>
         </div>
       </div>
@@ -310,10 +196,10 @@
   <section class="bumm-experience">
     <div class="bumm-experience-media" aria-hidden="true">
       <picture>
-        <source media="(max-width: 991.98px)" type="image/webp" srcset="assets/img/experience-foundry-mobile.webp">
-        <source media="(max-width: 991.98px)" srcset="assets/img/experience-foundry-mobile.jpg">
-        <source type="image/webp" srcset="assets/img/experience-foundry.webp">
-        <img src="assets/img/experience-foundry.jpg" alt="" loading="lazy" width="1600" height="900">
+        <source media="(max-width: 991.98px)" type="image/webp" srcset="{{ '/assets/img/experience-foundry-mobile.webp' | relative_url }}">
+        <source media="(max-width: 991.98px)" srcset="{{ '/assets/img/experience-foundry-mobile.jpg' | relative_url }}">
+        <source type="image/webp" srcset="{{ '/assets/img/experience-foundry.webp' | relative_url }}">
+        <img src="{{ '/assets/img/experience-foundry.jpg' | relative_url }}" alt="" loading="lazy" width="1600" height="900">
       </picture>
     </div>
 
@@ -402,7 +288,7 @@
           <h3 class="bumm-vb-title" data-i18n="victory_v_title">Visionary</h3>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="assets/img/value-visionary.webp" alt="" loading="lazy"
+            <img src="{{ '/assets/img/value-visionary.webp' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -412,7 +298,7 @@
           <h3 class="bumm-vb-title" data-i18n="victory_i_title">Integrity</h3>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="assets/img/value-integrity.webp" alt="" loading="lazy"
+            <img src="{{ '/assets/img/value-integrity.webp' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -422,7 +308,7 @@
           <h3 class="bumm-vb-title" data-i18n="victory_c_title">Customer-oriented</h3>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="assets/img/value-customer.webp" alt="" loading="lazy"
+            <img src="{{ '/assets/img/value-customer.webp' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -432,7 +318,7 @@
           <h3 class="bumm-vb-title" data-i18n="victory_t_title">Teamwork</h3>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="assets/img/value-teamwork.webp" alt="" loading="lazy"
+            <img src="{{ '/assets/img/value-teamwork.webp' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -442,7 +328,7 @@
           <h3 class="bumm-vb-title" data-i18n="victory_o_title">Operational Excellence</h3>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="assets/img/value-operational.webp" alt="" loading="lazy"
+            <img src="{{ '/assets/img/value-operational.webp' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -452,7 +338,7 @@
           <h3 class="bumm-vb-title" data-i18n="victory_r_title">Responsibility</h3>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="assets/img/value-responsibility.webp" alt="" loading="lazy"
+            <img src="{{ '/assets/img/value-responsibility.webp' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -462,7 +348,7 @@
           <h3 class="bumm-vb-title" data-i18n="victory_y_title">Yield Orientation</h3>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="assets/img/value-yield.webp" alt="" loading="lazy"
+            <img src="{{ '/assets/img/value-yield.webp' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -485,8 +371,8 @@
         </div>
         <div class="bumm-cap-banner-photo">
           <picture>
-            <source srcset="assets/img/hero-pour.webp" type="image/webp">
-            <img src="assets/img/hero-pour.jpg" alt="Molten iron being poured at the BUMM foundry" loading="lazy">
+            <source srcset="{{ '/assets/img/hero-pour.webp' | relative_url }}" type="image/webp">
+            <img src="{{ '/assets/img/hero-pour.jpg' | relative_url }}" alt="Molten iron being poured at the BUMM foundry" loading="lazy">
           </picture>
         </div>
       </div>
@@ -506,8 +392,8 @@
           </div>
           <div class="bumm-cap-card-photo">
             <picture>
-              <source srcset="assets/img/capability-core-making.webp" type="image/webp">
-              <img itemprop="image" src="assets/img/capability-core-making.jpg" alt="Core making process at the BUMM iron foundry" width="480" height="320" loading="lazy">
+              <source srcset="{{ '/assets/img/capability-core-making.webp' | relative_url }}" type="image/webp">
+              <img itemprop="image" src="{{ '/assets/img/capability-core-making.jpg' | relative_url }}" alt="Core making process at the BUMM iron foundry" width="480" height="320" loading="lazy">
             </picture>
           </div>
         </div>
@@ -523,8 +409,8 @@
           </div>
           <div class="bumm-cap-card-photo">
             <picture>
-              <source srcset="assets/img/capability-molding.webp" type="image/webp">
-              <img itemprop="image" src="assets/img/capability-molding.jpg" alt="Molding process at the BUMM iron foundry" width="480" height="320" loading="lazy">
+              <source srcset="{{ '/assets/img/capability-molding.webp' | relative_url }}" type="image/webp">
+              <img itemprop="image" src="{{ '/assets/img/capability-molding.jpg' | relative_url }}" alt="Molding process at the BUMM iron foundry" width="480" height="320" loading="lazy">
             </picture>
           </div>
         </div>
@@ -540,8 +426,8 @@
           </div>
           <div class="bumm-cap-card-photo">
             <picture>
-              <source srcset="assets/img/capability-melting.webp" type="image/webp">
-              <img itemprop="image" src="assets/img/capability-melting.jpg" alt="Iron melting process at the BUMM foundry" width="480" height="320" loading="lazy">
+              <source srcset="{{ '/assets/img/capability-melting.webp' | relative_url }}" type="image/webp">
+              <img itemprop="image" src="{{ '/assets/img/capability-melting.jpg' | relative_url }}" alt="Iron melting process at the BUMM foundry" width="480" height="320" loading="lazy">
             </picture>
           </div>
         </div>
@@ -557,8 +443,8 @@
           </div>
           <div class="bumm-cap-card-photo">
             <picture>
-              <source srcset="assets/img/capability-pouring.webp" type="image/webp">
-              <img itemprop="image" src="assets/img/capability-pouring.jpg" alt="Molten iron pouring process at the BUMM foundry" width="480" height="320" loading="lazy">
+              <source srcset="{{ '/assets/img/capability-pouring.webp' | relative_url }}" type="image/webp">
+              <img itemprop="image" src="{{ '/assets/img/capability-pouring.jpg' | relative_url }}" alt="Molten iron pouring process at the BUMM foundry" width="480" height="320" loading="lazy">
             </picture>
           </div>
         </div>
@@ -574,8 +460,8 @@
           </div>
           <div class="bumm-cap-card-photo">
             <picture>
-              <source srcset="assets/img/capability-laboratory.webp" type="image/webp">
-              <img itemprop="image" src="assets/img/capability-laboratory.jpg" alt="Metallurgy laboratory testing at the BUMM foundry" width="480" height="320" loading="lazy">
+              <source srcset="{{ '/assets/img/capability-laboratory.webp' | relative_url }}" type="image/webp">
+              <img itemprop="image" src="{{ '/assets/img/capability-laboratory.jpg' | relative_url }}" alt="Metallurgy laboratory testing at the BUMM foundry" width="480" height="320" loading="lazy">
             </picture>
           </div>
         </div>
@@ -591,8 +477,8 @@
           </div>
           <div class="bumm-cap-card-photo">
             <picture>
-              <source srcset="assets/img/capability-machining.webp" type="image/webp">
-              <img itemprop="image" src="assets/img/capability-machining.jpg" alt="CNC machining process at the BUMM foundry" width="480" height="320" loading="lazy">
+              <source srcset="{{ '/assets/img/capability-machining.webp' | relative_url }}" type="image/webp">
+              <img itemprop="image" src="{{ '/assets/img/capability-machining.jpg' | relative_url }}" alt="CNC machining process at the BUMM foundry" width="480" height="320" loading="lazy">
             </picture>
           </div>
         </div>
@@ -608,8 +494,8 @@
           </div>
           <div class="bumm-cap-card-photo">
             <picture>
-              <source srcset="assets/img/capability-dimensional-inspection.webp" type="image/webp">
-              <img itemprop="image" src="assets/img/capability-dimensional-inspection.jpg" alt="Dimensional inspection with CMM at the BUMM foundry" width="480" height="320" loading="lazy">
+              <source srcset="{{ '/assets/img/capability-dimensional-inspection.webp' | relative_url }}" type="image/webp">
+              <img itemprop="image" src="{{ '/assets/img/capability-dimensional-inspection.jpg' | relative_url }}" alt="Dimensional inspection with CMM at the BUMM foundry" width="480" height="320" loading="lazy">
             </picture>
           </div>
         </div>
@@ -625,8 +511,8 @@
           </div>
           <div class="bumm-cap-card-photo">
             <picture>
-              <source srcset="assets/img/capability-quality-inspection.webp" type="image/webp">
-              <img itemprop="image" src="assets/img/capability-quality-inspection.jpg" alt="Final quality inspection at the BUMM foundry" width="480" height="320" loading="lazy">
+              <source srcset="{{ '/assets/img/capability-quality-inspection.webp' | relative_url }}" type="image/webp">
+              <img itemprop="image" src="{{ '/assets/img/capability-quality-inspection.jpg' | relative_url }}" alt="Final quality inspection at the BUMM foundry" width="480" height="320" loading="lazy">
             </picture>
           </div>
         </div>
@@ -636,7 +522,7 @@
            image + confirm the exact standard/number so the caption below
            can name it precisely, instead of the generic label used here. -->
       <div class="bumm-cert-strip mt-5">
-        <img src="assets/img/sertifikat.webp" alt="BUMM certification" onerror="this.style.display='none'">
+        <img src="{{ '/assets/img/sertifikat.webp' | relative_url }}" alt="BUMM certification" onerror="this.style.display='none'">
         <span class="bumm-cert-caption" data-i18n="cert_caption">Certification — confirm standard &amp; number</span>
       </div>
 
@@ -660,79 +546,80 @@
 
     <div class="container mt-4">
       <div class="bumm-segment-grid">
-        <a href="./product/automotive.html" class="bumm-segment-card tint-automotive">
+        <a href="{{ '/product/automotive.html' | relative_url }}" class="bumm-segment-card tint-automotive">
           <div class="bumm-segment-card-photo">
-            <img src="assets/img/segment-automotive.jpg" alt="" loading="lazy"
+            <img src="{{ '/assets/img/segment-automotive.jpg' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
             <span class="bumm-segment-card-icon" aria-hidden="true"><i class="bi bi-truck-front-fill"></i></span>
             <h2 class="bumm-segment-card-title" data-i18n="segment_automotive_title">Automotive</h2>
           </div>
           <div class="bumm-segment-card-parts">
-            <img src="assets/img/part-automotive-1.png" alt="Automotive iron cast component" loading="lazy">
-            <img src="assets/img/part-automotive-2.png" alt="" loading="lazy">
+            <img src="{{ '/assets/img/part-automotive-1.png' | relative_url }}" alt="Automotive iron cast component" loading="lazy">
+            <img src="{{ '/assets/img/part-automotive-2.png' | relative_url }}" alt="" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
             <span class="bumm-segment-card-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
           </div>
         </a>
-        <a href="./product/" class="bumm-segment-card tint-agriculture">
+        <a href="{{ '/product/' | relative_url }}" class="bumm-segment-card tint-agriculture">
           <div class="bumm-segment-card-photo">
-            <img src="assets/img/segment-agriculture.jpg" alt="" loading="lazy"
+            <img src="{{ '/assets/img/segment-agriculture.jpg' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
             <span class="bumm-segment-card-icon" aria-hidden="true"><i class="bi bi-tree-fill"></i></span>
             <h2 class="bumm-segment-card-title" data-i18n="segment_agriculture_title">Agriculture</h2>
           </div>
           <div class="bumm-segment-card-parts">
-            <img src="assets/img/part-agriculture-1.png" alt="Agriculture iron cast component" loading="lazy">
-            <img src="assets/img/part-agriculture-2.png" alt="" loading="lazy">
+            <img src="{{ '/assets/img/part-agriculture-1.png' | relative_url }}" alt="Agriculture iron cast component" loading="lazy">
+            <img src="{{ '/assets/img/part-agriculture-2.png' | relative_url }}" alt="" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
             <span class="bumm-segment-card-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
           </div>
         </a>
-        <a href="./product/heavy-duty.html" class="bumm-segment-card tint-heavy-duty">
+        <a href="{{ '/product/heavy-duty.html' | relative_url }}" class="bumm-segment-card tint-heavy-duty">
           <div class="bumm-segment-card-photo">
-            <img src="assets/img/segment-heavy-duty.jpg" alt="" loading="lazy"
+            <img src="{{ '/assets/img/segment-heavy-duty.jpg' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
             <span class="bumm-segment-card-icon" aria-hidden="true"><i class="bi bi-truck-flatbed"></i></span>
             <h2 class="bumm-segment-card-title" data-i18n="segment_heavy_duty_title">Heavy Duty</h2>
           </div>
           <div class="bumm-segment-card-parts">
-            <img src="assets/img/part-heavy-duty-1.png" alt="Heavy duty iron cast component" loading="lazy">
-            <img src="assets/img/part-heavy-duty-2.png" alt="" loading="lazy">
+            <img src="{{ '/assets/img/part-heavy-duty-1.png' | relative_url }}" alt="Heavy duty iron cast component" loading="lazy">
+            <img src="{{ '/assets/img/part-heavy-duty-2.png' | relative_url }}" alt="" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
             <span class="bumm-segment-card-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
           </div>
         </a>
-        <a href="./product/" class="bumm-segment-card tint-general-casting">
+        <a href="{{ '/product/' | relative_url }}" class="bumm-segment-card tint-general-casting">
           <div class="bumm-segment-card-photo">
-            <img src="assets/img/segment-general-casting.jpg" alt="" loading="lazy"
+            <img src="{{ '/assets/img/segment-general-casting.jpg' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
             <span class="bumm-segment-card-icon" aria-hidden="true"><i class="bi bi-droplet-fill"></i></span>
             <h2 class="bumm-segment-card-title" data-i18n="segment_general_casting_title">General Casting</h2>
           </div>
           <div class="bumm-segment-card-parts">
-            <img src="assets/img/part-general-casting-1.png" alt="General casting iron cast component" loading="lazy">
-            <img src="assets/img/part-general-casting-2.png" alt="" loading="lazy">
+            <img src="{{ '/assets/img/part-general-casting-1.png' | relative_url }}" alt="General casting iron cast component" loading="lazy">
+            <img src="{{ '/assets/img/part-general-casting-2.png' | relative_url }}" alt="" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
             <span class="bumm-segment-card-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
           </div>
         </a>
-        <a href="./product/" class="bumm-segment-card tint-train">
+        <a href="{{ '/product/' | relative_url }}" class="bumm-segment-card tint-train">
           <div class="bumm-segment-card-photo">
-            <img src="assets/img/segment-train.jpg" alt="" loading="lazy"
+            <img src="{{ '/assets/img/segment-train.jpg' | relative_url }}" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
             <span class="bumm-segment-card-icon" aria-hidden="true"><i class="bi bi-train-front-fill"></i></span>
             <h2 class="bumm-segment-card-title" data-i18n="segment_train_title">Train Component</h2>
           </div>
           <div class="bumm-segment-card-parts">
-            <img src="assets/img/part-train-1.png" alt="Train iron cast component" loading="lazy">
+            <img src="{{ '/assets/img/part-train-1.png' | relative_url }}" alt="Train iron cast component" loading="lazy">
+            <img src="{{ '/assets/img/part-train-2.jpg' | relative_url }}" alt="" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
@@ -742,7 +629,7 @@
       </div>
 
       <div class="text-center mt-5">
-        <a href="./product/" class="btn btn-bumm-secondary" data-i18n="btn_view_all_products">View All Products</a>
+        <a href="{{ '/product/' | relative_url }}" class="btn btn-bumm-secondary" data-i18n="btn_view_all_products">View All Products</a>
       </div>
     </div>
   </section>
@@ -810,7 +697,7 @@
           <h2 class="bumm-about-heading" data-i18n="news_heading">What's happening at the foundry.</h2>
         </div>
         <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-          <a href="./news/" class="bumm-product-link" data-i18n="news_view_all">View All News →</a>
+          <a href="{{ '/news/' | relative_url }}" class="bumm-product-link" data-i18n="news_view_all">View All News →</a>
         </div>
       </div>
 
@@ -941,62 +828,3 @@
       </div>
     </div>
   </section>
-
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="bumm-footer">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-4">
-          <div class="bumm-footer-brand">BUMM</div>
-          <p class="bumm-footer-desc">
-            PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
-            Kel. Alam Jaya, Kota Tangerang, Banten 15133, Indonesia
-          </p>
-          <div class="bumm-footer-social">
-            <a href="https://www.facebook.com/PT-BUMM-981977421946203" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.twitter.com/bummizusawa" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.instagram.com/bummizusawa" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-4">
-          <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
-          <ul class="bumm-footer-links">
-            <li><a href="#about" data-i18n="nav_about">About</a></li>
-            <li><a href="./career/" data-i18n="nav_career">Career</a></li>
-            <li><a href="./product/" data-i18n="nav_product">Product</a></li>
-            <!-- <li><a href="./news/" data-i18n="nav_news">News</a></li> -->
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-8">
-          <div class="bumm-footer-heading" data-i18n="footer_certification">Certification</div>
-          <img src="assets/img/sertifikat.webp" alt="BUMM certification" class="bumm-footer-cert" onerror="this.style.display='none'">
-        </div>
-
-        <div class="col-lg-4 col-12">
-          <div class="bumm-footer-heading" data-i18n="footer_location">Location</div>
-          <div class="bumm-map-frame">
-            <iframe
-              src="https://www.google.com/maps?q=PT.+Bina+Usaha+Mandiri+Mizusawa,+Jl.+KH.+EZ+Muttaqien,+Jatiuwung,+Tangerang&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="BUMM location map">
-            </iframe>
-          </div>
-        </div>
-      </div>
-
-      <div class="bumm-footer-bottom">
-        <span data-i18n="footer_copyright">© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/jquery-4.0.0.min.js"></script>
-  <script src="assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/custom.js"></script>
-</body>
-</html>

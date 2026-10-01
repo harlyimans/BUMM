@@ -1,0 +1,55 @@
+<!-- ============ FOOTER ============ -->
+  <!-- Satu footer untuk semua halaman. Link diatur di _data/navigation.yml.
+       Front matter `footer_map: true` menambah kolom peta lokasi (dipakai beranda). -->
+  <footer class="bumm-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="{% if page.footer_map %}col-lg-4{% else %}col-lg-5{% endif %}">
+          <div class="bumm-footer-brand">BUMM</div>
+          <p class="bumm-footer-desc">
+            PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
+            Kel. Alam Jaya, Kota Tangerang, Banten 15133, Indonesia
+          </p>
+          <div class="bumm-footer-social">
+            <a href="https://www.facebook.com/PT-BUMM-981977421946203" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/bummizusawa" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/bummizusawa" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="{% if page.footer_map %}col-lg-2{% else %}col-lg-3{% endif %} col-md-4">
+          <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
+          <ul class="bumm-footer-links">
+            {%- for item in site.data.navigation.footer %}
+            {%- unless item.hidden %}
+            <li><a href="{% if page.footer_map and item.id == 'about' %}#about{% else %}{{ item.url | relative_url }}{% endif %}" data-i18n="{{ item.i18n }}">{{ item.label }}</a></li>
+            {%- endunless %}
+            {%- endfor %}
+          </ul>
+        </div>
+
+        <div class="{% if page.footer_map %}col-lg-2{% else %}col-lg-4{% endif %} col-md-8">
+          <div class="bumm-footer-heading" data-i18n="footer_certification">Certification</div>
+          <img src="{{ '/assets/img/sertifikat.webp' | relative_url }}" alt="BUMM certification" class="bumm-footer-cert" onerror="this.style.display='none'">
+        </div>
+        {%- if page.footer_map %}
+
+        <div class="col-lg-4 col-12">
+          <div class="bumm-footer-heading" data-i18n="footer_location">Location</div>
+          <div class="bumm-map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=PT.+Bina+Usaha+Mandiri+Mizusawa,+Jl.+KH.+EZ+Muttaqien,+Jatiuwung,+Tangerang&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="BUMM location map">
+            </iframe>
+          </div>
+        </div>
+        {%- endif %}
+      </div>
+
+      <div class="bumm-footer-bottom">
+        <span data-i18n="footer_copyright">© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
