@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Project/
+
+Sitemap: https://bumm.co.id/sitemap.xml

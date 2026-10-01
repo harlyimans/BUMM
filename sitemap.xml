@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://bumm.co.id/</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/product</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/product/water-pump.html</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/product/diesel.html</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/product/heavy-duty.html</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/product/automotive.html</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/about/company-profile</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/about/vision-mission</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/about/corporate-value</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/career</loc>
+    <lastmod>2026-09-24</lastmod>
+  </url>
+  <!-- /news and /about/management are left out on purpose while they are noindex
+       (placeholder content) — add them back together with the meta robots change.
+       TODO(client): also add one entry per news article once /news/<slug> pages exist. -->
+</urlset>
