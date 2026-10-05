@@ -2958,3 +2958,172 @@ button:focus-visible {
   .bumm-segment-card-parts img { max-height: 3.4rem; }
 }
 
+
+/* ==========================================================================
+   Light-mode hero
+   --------------------------------------------------------------------------
+   The default hero is a dark photo with white copy (kept for dark mode). In
+   light mode the same photo now bleeds in from the right and fades into the
+   white page surface, with dark copy on the left — so the opener reads like
+   the rest of the light page instead of a black slab. Everything here is
+   scoped to [data-bumm-theme="light"]; dark mode is untouched.
+   ========================================================================== */
+[data-bumm-theme="light"] .bumm-hero-media {
+  background-color: var(--bumm-bg);
+}
+
+[data-bumm-theme="light"] .bumm-hero-media::after {
+  background:
+    linear-gradient(100deg,
+      rgba(255,255,255,.98) 0%,
+      rgba(255,255,255,.94) 30%,
+      rgba(255,255,255,.62) 50%,
+      rgba(255,255,255,.12) 72%,
+      rgba(255,255,255,0) 100%),
+    /* melts the bottom edge into the page so there is no hard seam */
+    linear-gradient(to top, var(--bumm-bg) 0%, rgba(255,255,255,0) 22%);
+}
+
+[data-bumm-theme="light"] .bumm-hero-eyebrow { color: var(--bumm-ink-muted); }
+[data-bumm-theme="light"] .bumm-hero-eyebrow strong { color: var(--bumm-ink); }
+
+[data-bumm-theme="light"] .bumm-hero-headline { color: var(--bumm-ink); }
+[data-bumm-theme="light"] .bumm-hero-headline-solid,
+[data-bumm-theme="light"] .bumm-hero-headline-outline { text-shadow: none; }
+
+/* Second line: red outline on wide screens, solid red where outlines are
+   switched off (phones). */
+[data-bumm-theme="light"] .bumm-hero-headline-outline { color: var(--bumm-accent); }
+@supports (-webkit-text-stroke: 2px #fff) {
+  @media (min-width: 768px) {
+    [data-bumm-theme="light"] .bumm-hero-headline-outline {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--bumm-accent);
+    }
+  }
+}
+
+[data-bumm-theme="light"] .bumm-hero-lead { color: var(--bumm-ink-muted); }
+
+[data-bumm-theme="light"] .btn-bumm-secondary.btn-bumm-secondary--on-photo {
+  border-color: var(--bumm-ink);
+  color: var(--bumm-ink);
+  backdrop-filter: none;
+}
+[data-bumm-theme="light"] .btn-bumm-secondary.btn-bumm-secondary--on-photo:hover,
+[data-bumm-theme="light"] .btn-bumm-secondary.btn-bumm-secondary--on-photo:focus-visible {
+  border-color: var(--bumm-accent);
+  color: var(--bumm-accent);
+  background: var(--bumm-btn-secondary-hover);
+}
+
+/* Navbar over the (now light) hero: dark ink instead of white */
+/* Soft white veil under the bar so dark links/buttons stay readable over
+   the bright top-right of the photo; fades out on scroll like the dark one. */
+[data-bumm-theme="light"] .bumm-navbar--overlay::before {
+  background: linear-gradient(to bottom, rgba(255,255,255,.92) 0%, rgba(255,255,255,.7) 55%, rgba(255,255,255,0) 100%);
+}
+
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .navbar-brand,
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .nav-link {
+  color: var(--bumm-ink);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .nav-link:hover,
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .nav-link:focus-visible {
+  color: var(--bumm-accent);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .btn-bumm-outline {
+  border-color: rgba(28,18,19,.35);
+  color: var(--bumm-ink);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .btn-bumm-outline:hover {
+  border-color: var(--bumm-accent);
+  background-color: var(--bumm-btn-secondary-hover);
+  color: var(--bumm-accent);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-theme-toggle {
+  border-color: rgba(28,18,19,.3);
+  color: var(--bumm-ink);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-theme-toggle:hover,
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-theme-toggle:focus-visible {
+  border-color: var(--bumm-accent);
+  color: var(--bumm-accent);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-switch,
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn + .bumm-lang-btn {
+  border-color: rgba(28,18,19,.3);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn {
+  color: var(--bumm-ink);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-switch,
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-theme-toggle {
+  background-color: rgba(255,255,255,.85);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn:hover {
+  color: var(--bumm-ink);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn.is-active {
+  color: var(--bumm-on-accent);
+}
+[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg: var(--bumm-toggler-icon-bg);
+}
+
+/* Tablet: copy column is wider relative to the frame, keep the white side
+   of the fade further across. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  [data-bumm-theme="light"] .bumm-hero-media::after {
+    background:
+      linear-gradient(100deg,
+        rgba(255,255,255,.98) 0%,
+        rgba(255,255,255,.92) 40%,
+        rgba(255,255,255,.66) 64%,
+        rgba(255,255,255,.30) 86%,
+        rgba(255,255,255,.22) 100%),
+      linear-gradient(to top, var(--bumm-bg) 0%, rgba(255,255,255,0) 22%);
+  }
+}
+
+/* Phones: photo shows through at the top, white wash rises from the bottom
+   where the copy sits (replaces the heavy black wash). */
+@media (max-width: 767.98px) {
+  [data-bumm-theme="light"] .bumm-hero-media::after {
+    background:
+      linear-gradient(to top,
+        var(--bumm-bg) 0%,
+        rgba(255,255,255,.96) 38%,
+        rgba(255,255,255,.62) 66%,
+        rgba(255,255,255,.28) 100%);
+  }
+}
+
+/* Open mobile menu: white panel instead of the black one */
+@media (max-width: 991.98px) {
+  [data-bumm-theme="light"] .bumm-navbar--overlay .navbar-collapse.show,
+  [data-bumm-theme="light"] .bumm-navbar--overlay .navbar-collapse.collapsing {
+    background-color: rgba(255,255,255,.98);
+    border-bottom-color: var(--bumm-line);
+  }
+  [data-bumm-theme="light"] .bumm-navbar--overlay:has(.navbar-collapse.show),
+  [data-bumm-theme="light"] .bumm-navbar--overlay:has(.navbar-collapse.collapsing) {
+    background-color: #fff;
+  }
+}
+
+/* --------------------------------------------------------------------
+   Navbar logo on dark surfaces (dark mode): the red-on-transparent logo
+   sinks into the graphite bar / dark photo, so it is lifted to a light
+   silhouette there. Light mode keeps the original red logo.
+   -------------------------------------------------------------------- */
+[data-bumm-theme="dark"] .bumm-navbar-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Active menu item: Bootstrap's default is near-black, which vanishes on the
+   graphite bar in dark mode. Use the accent in both modes. */
+.bumm-navbar .navbar-nav .nav-link.active,
+.bumm-navbar .navbar-nav .nav-link.active:hover {
+  color: var(--bumm-accent);
+}
