@@ -2686,6 +2686,10 @@ button:focus-visible {
   display: block;
 }
 
+.bumm-cap-card-photo img[src*="capability-quality-inspection"] {
+  object-position: 50% 80%;
+}
+
 @media (max-width: 991.98px) {
   .bumm-cap-banner { flex-direction: column; }
   .bumm-cap-banner-text { flex: 1 1 auto; max-width: 100%; padding: 2rem 1.5rem; }
