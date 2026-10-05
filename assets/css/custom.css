@@ -2556,8 +2556,8 @@ button:focus-visible {
   display: flex;
   align-items: stretch;
   background-color: var(--bumm-bg);
-  border: 1px solid var(--bumm-line);
-  border-radius: var(--bumm-radius-md);
+  /* border: 1px solid var(--bumm-line); */
+  /* border-radius: var(--bumm-radius-md); */
   overflow: hidden;
   margin-bottom: 2.25rem;
 }
@@ -2620,7 +2620,7 @@ button:focus-visible {
 .bumm-cap-card {
   display: flex;
   flex-direction: column;
-  border-radius: var(--bumm-radius-md);
+  /* border-radius: var(--bumm-radius-md); */
   overflow: hidden;
   background-color: var(--bumm-bg);
   border: 1px solid var(--bumm-line);
