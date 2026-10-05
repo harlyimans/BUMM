@@ -1,13 +1,98 @@
----
-layout: "default"
-title: "Corporate Value (VICTORY) — PT BUMM"
-description: "Tujuh nilai kerja BUMM (VICTORY): Visionary, Integrity, Customer-oriented, Teamwork, Operational Excellence, Responsibility, Yield Orientation."
-nav: "about"
-breadcrumb:
-  - { name: "Home", url: "/" }
-  - { name: "About", url: "/about/company-profile/" }
-  - { name: "Corporate Value", url: "/about/corporate-value/" }
----
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('bumm-theme');
+      var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+      document.documentElement.setAttribute('data-bumm-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-bumm-theme', 'light');
+    }
+  })();
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Corporate Value (VICTORY) — PT BUMM</title>
+  <meta name="description" content="Tujuh nilai kerja BUMM (VICTORY): Visionary, Integrity, Customer-oriented, Teamwork, Operational Excellence, Responsibility, Yield Orientation.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#d61f26">
+  <link rel="canonical" href="https://bumm.co.id/about/corporate-value/">
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PT. Bina Usaha Mandiri Mizusawa">
+  <meta property="og:title" content="Corporate Value (VICTORY) — PT BUMM">
+  <meta property="og:description" content="Tujuh nilai kerja BUMM (VICTORY): Visionary, Integrity, Customer-oriented, Teamwork, Operational Excellence, Responsibility, Yield Orientation.">
+  <meta property="og:image" content="https://bumm.co.id/assets/img/foundry.webp">
+  <meta property="og:url" content="https://bumm.co.id/about/corporate-value/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Corporate Value (VICTORY) — PT BUMM">
+  <meta name="twitter:description" content="Tujuh nilai kerja BUMM (VICTORY): Visionary, Integrity, Customer-oriented, Teamwork, Operational Excellence, Responsibility, Yield Orientation.">
+  <meta name="twitter:image" content="https://bumm.co.id/assets/img/foundry.webp">
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bumm.co.id/"},
+      {"@type": "ListItem", "position": 2, "name": "About", "item": "https://bumm.co.id/about/company-profile/"},
+      {"@type": "ListItem", "position": 3, "name": "Corporate Value", "item": "https://bumm.co.id/about/corporate-value/"}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ============ NAVBAR ============ -->
+  <!-- Satu navbar untuk semua halaman. Menu diatur di _data/navigation.yml.
+       Front matter: `nav: <id>` menandai menu aktif,
+                     `navbar_overlay: true` = transparan di atas hero (dipakai beranda). -->
+  <nav class="navbar navbar-expand-lg bumm-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../../" aria-label="BUMM — Home"><img src="../../assets/img/logo-bumm.png" alt="BUMM" class="bumm-navbar-logo" width="44" height="44"></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bummNav" aria-controls="bummNav" aria-expanded="false" aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bummNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../../" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../career/" data-i18n="nav_career">Career</a></li>
+          <li class="nav-item"><a class="nav-link active" href="../../about/company-profile/" aria-current="page" data-i18n="nav_about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../product/" data-i18n="nav_product">Product</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <div class="bumm-lang-switch" role="group" aria-label="Language switch">
+              <button type="button" class="bumm-lang-btn is-active" data-lang="en">EN</button>
+              <button type="button" class="bumm-lang-btn" data-lang="id">ID</button>
+            </div>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">
+              <i class="bi bi-moon-stars" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="../../#contact" class="btn btn-bumm-outline" data-i18n="contact_us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main id="main">
 
 
   <!-- ============ PAGE HEADER ============ -->
@@ -15,7 +100,7 @@ breadcrumb:
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb bumm-breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="../../">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">About</li>
           <li class="breadcrumb-item active" aria-current="page">Corporate Value</li>
         </ol>
@@ -28,10 +113,10 @@ breadcrumb:
         team at BUMM works, every day, on the foundry floor and beyond it.
       </p>
       <div class="bumm-subnav">
-        <a href="{{ '/about/company-profile/' | relative_url }}" class="">Company Profile</a>
-        <a href="{{ '/about/vision-mission/' | relative_url }}" class="">Vision &amp; Mission</a>
-        <a href="{{ '/about/corporate-value/' | relative_url }}" class="is-active">Corporate Value</a>
-        <a href="{{ '/about/management/' | relative_url }}" class="">Management</a>
+        <a href="../../about/company-profile/" class="">Company Profile</a>
+        <a href="../../about/vision-mission/" class="">Vision &amp; Mission</a>
+        <a href="../../about/corporate-value/" class="is-active">Corporate Value</a>
+        <a href="../../about/management/" class="">Management</a>
       </div>
     </div>
   </header>
@@ -46,7 +131,7 @@ breadcrumb:
           <h2 class="bumm-vb-title" data-i18n="victory_v_title">Visionary</h2>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="{{ '/assets/img/value-visionary.webp' | relative_url }}" alt="" loading="lazy"
+            <img src="../../assets/img/value-visionary.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -56,7 +141,7 @@ breadcrumb:
           <h2 class="bumm-vb-title" data-i18n="victory_i_title">Integrity</h2>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="{{ '/assets/img/value-integrity.webp' | relative_url }}" alt="" loading="lazy"
+            <img src="../../assets/img/value-integrity.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -66,7 +151,7 @@ breadcrumb:
           <h2 class="bumm-vb-title" data-i18n="victory_c_title">Customer-oriented</h2>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="{{ '/assets/img/value-customer.webp' | relative_url }}" alt="" loading="lazy"
+            <img src="../../assets/img/value-customer.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -76,7 +161,7 @@ breadcrumb:
           <h2 class="bumm-vb-title" data-i18n="victory_t_title">Teamwork</h2>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="{{ '/assets/img/value-teamwork.webp' | relative_url }}" alt="" loading="lazy"
+            <img src="../../assets/img/value-teamwork.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -86,7 +171,7 @@ breadcrumb:
           <h2 class="bumm-vb-title" data-i18n="victory_o_title">Operational Excellence</h2>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="{{ '/assets/img/value-operational.webp' | relative_url }}" alt="" loading="lazy"
+            <img src="../../assets/img/value-operational.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -96,7 +181,7 @@ breadcrumb:
           <h2 class="bumm-vb-title" data-i18n="victory_r_title">Responsibility</h2>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="{{ '/assets/img/value-responsibility.webp' | relative_url }}" alt="" loading="lazy"
+            <img src="../../assets/img/value-responsibility.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -106,7 +191,7 @@ breadcrumb:
           <h2 class="bumm-vb-title" data-i18n="victory_y_title">Yield Orientation</h2>
           <span class="bumm-vb-dash"></span>
           <div class="bumm-vb-photo" aria-hidden="true">
-            <img src="{{ '/assets/img/value-yield.webp' | relative_url }}" alt="" loading="lazy"
+            <img src="../../assets/img/value-yield.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
         </div>
@@ -143,6 +228,56 @@ breadcrumb:
     <div class="container text-center">
       <h2 class="bumm-cta-heading" data-i18n="cta_heading">Looking for the best iron cast and foundry company?</h2>
       <p class="bumm-cta-lead" data-i18n="cta_lead">Let us know — our team will get back to you.</p>
-      <a href="{{ '/#contact' | relative_url }}" class="btn btn-bumm-cta" data-i18n="contact_us">Contact Us</a>
+      <a href="../../#contact" class="btn btn-bumm-cta" data-i18n="contact_us">Contact Us</a>
     </div>
   </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- Satu footer untuk semua halaman. Link diatur di _data/navigation.yml.
+       Front matter `footer_map: true` menambah kolom peta lokasi (dipakai beranda). -->
+  <footer class="bumm-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <div class="bumm-footer-brand">BUMM</div>
+          <p class="bumm-footer-desc">
+            PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
+            Kel. Alam Jaya, Kota Tangerang, Banten 15133, Indonesia
+          </p>
+          <div class="bumm-footer-social">
+            <a href="https://www.facebook.com/PT-BUMM-981977421946203" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/bummizusawa" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/bummizusawa" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
+          <ul class="bumm-footer-links">
+            <li><a href="../../about/company-profile/" data-i18n="nav_about">About</a></li>
+            <li><a href="../../career/" data-i18n="nav_career">Career</a></li>
+            <li><a href="../../product/" data-i18n="nav_product">Product</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-8">
+          <div class="bumm-footer-heading" data-i18n="footer_certification">Certification</div>
+          <img src="../../assets/img/sertifikat.webp" alt="BUMM certification" class="bumm-footer-cert" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <div class="bumm-footer-bottom">
+        <span data-i18n="footer_copyright">© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="../../assets/jquery-4.0.0.min.js"></script>
+  <script src="../../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+
+</body>
+</html>

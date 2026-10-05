@@ -68,12 +68,12 @@ $(function () {
       nav_news: 'News',
       contact_us: 'Contact Us',
       hero_eyebrow_group: 'a subsidiary of Bakrie Autoparts',
-      hero_headline: "“Made to cast, build to last.”",
+      hero_headline: "“Casting perfection through quality.”",
       // Split across two lines in the hero so each line can take its own
       // type treatment (solid / outlined); hero_headline above stays as the
       // single-string version for any other surface that needs it.
-      hero_headline_cast: 'Made to cast,',
-      hero_headline_last: 'build to last.',
+      hero_headline_cast: 'Casting perfection',
+      hero_headline_last: 'through quality',
       hero_lead: 'From precision iron casting to high-performance components for automotive, heavy duty, agriculture and industrial applications.',
       btn_view_product: 'View Products',
       plate_title: 'Company Profile',
@@ -194,9 +194,9 @@ $(function () {
       nav_news: 'Berita',
       contact_us: 'Hubungi Kami',
       hero_eyebrow_group: 'anak perusahaan Bakrie Autoparts',
-      hero_headline: '“Dibuat untuk mengecor, dibangun untuk bertahan.”',
-      hero_headline_cast: 'Dibuat untuk mengecor,',
-      hero_headline_last: 'dibangun untuk bertahan.',
+      hero_headline: '“Mengecor kesempurnaan melalui kualitas.”',
+      hero_headline_cast: 'Mengecor kesempurnaan',
+      hero_headline_last: 'melalui kualitas',
       hero_lead: 'Dari pengecoran besi presisi hingga komponen berperforma tinggi untuk aplikasi otomotif, alat berat, pertanian, dan industri.',
       btn_view_product: 'Lihat Produk',
       plate_title: 'Profil Perusahaan',

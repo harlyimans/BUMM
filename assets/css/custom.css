@@ -322,6 +322,26 @@ html { scroll-padding-top: 5rem; }
   font-size: 1.05rem;
 }
 
+/* Logo image in place of the text wordmark */
+.bumm-navbar .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.bumm-navbar-logo {
+  display: block;
+  height: 44px;
+  width: auto;
+}
+
+@media (max-width: 575.98px) {
+  .bumm-navbar-logo {
+    height: 38px;
+  }
+}
+
 .bumm-navbar .nav-link {
   color: var(--bumm-ink-muted);
   font-weight: 500;
