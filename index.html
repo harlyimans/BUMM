@@ -463,25 +463,26 @@
 
   <!-- ============ CAPABILITY (PROCESS FLOW) & CERTIFICATION ============ -->
   <section class="bumm-cap-flow" id="capability">
-    <div class="container">
-      <div class="bumm-cap-banner">
-        <div class="bumm-cap-banner-text">
-          <p class="bumm-eyebrow" data-i18n="capflow_eyebrow">Our Capabilities</p>
-          <h2 class="bumm-cap-banner-heading"><span data-i18n="capflow_heading_1">From raw material to</span> <span class="bumm-cap-accent" data-i18n="capflow_heading_2">precision casting</span></h2>
-          <p class="bumm-about-lead mb-0" data-i18n="capflow_lead">
-            Supported by integrated facilities, skilled people and strict quality
-            control, we are committed to delivering reliable casting solutions
-            for a wide range of industries.
-          </p>
-        </div>
-        <div class="bumm-cap-banner-photo">
-          <picture>
-            <source srcset="./assets/img/hero-pour.webp" type="image/webp">
-            <img src="./assets/img/hero-pour.jpg" alt="Molten iron being poured at the BUMM foundry" loading="lazy">
-          </picture>
-        </div>
+    <!-- Full-bleed banner (spans the whole viewport; text re-aligned to the container grid in CSS) -->
+    <div class="bumm-cap-banner">
+      <div class="bumm-cap-banner-text">
+        <p class="bumm-eyebrow" data-i18n="capflow_eyebrow">Our Capabilities</p>
+        <h2 class="bumm-cap-banner-heading"><span data-i18n="capflow_heading_1">From raw material to</span> <span class="bumm-cap-accent" data-i18n="capflow_heading_2">precision casting</span></h2>
+        <p class="bumm-about-lead mb-0" data-i18n="capflow_lead">
+          Supported by integrated facilities, skilled people and strict quality
+          control, we are committed to delivering reliable casting solutions
+          for a wide range of industries.
+        </p>
       </div>
+      <div class="bumm-cap-banner-photo">
+        <picture>
+          <source srcset="./assets/img/capability.webp" type="image/webp">
+          <img src="./assets/img/capability.jpg" alt="Molten iron being poured at the BUMM foundry" loading="lazy">
+        </picture>
+      </div>
+    </div>
 
+    <div class="container">
       <div class="bumm-cap-grid" itemscope itemtype="https://schema.org/ItemList">
         <meta itemprop="name" content="BUMM Iron Casting Process">
         <meta itemprop="numberOfItems" content="8">
@@ -660,7 +661,8 @@
           </div>
           <div class="bumm-segment-card-parts">
             <img src="./assets/img/part-automotive-1.png" alt="Automotive iron cast component" loading="lazy">
-            <img src="./assets/img/part-automotive-2.png" alt="" loading="lazy">
+            <img src="./assets/img/part-automotive-2.png" alt="Automotive iron cast component" loading="lazy">
+            <img src="./assets/img/part-automotive-3.png" alt="Automotive iron cast component" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
@@ -676,7 +678,8 @@
           </div>
           <div class="bumm-segment-card-parts">
             <img src="./assets/img/part-agriculture-1.png" alt="Agriculture iron cast component" loading="lazy">
-            <img src="./assets/img/part-agriculture-2.png" alt="" loading="lazy">
+            <img src="./assets/img/part-agriculture-2.png" alt="Agriculture iron cast component" loading="lazy">
+            <img src="./assets/img/part-agriculture-3.png" alt="Agriculture iron cast component" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
@@ -692,7 +695,8 @@
           </div>
           <div class="bumm-segment-card-parts">
             <img src="./assets/img/part-heavy-duty-1.png" alt="Heavy duty iron cast component" loading="lazy">
-            <img src="./assets/img/part-heavy-duty-2.png" alt="" loading="lazy">
+            <img src="./assets/img/part-heavy-duty-2.png" alt="Heavy duty iron cast component" loading="lazy">
+            <img src="./assets/img/part-heavy-duty-3.png" alt="Heavy duty iron cast component" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
@@ -708,7 +712,8 @@
           </div>
           <div class="bumm-segment-card-parts">
             <img src="./assets/img/part-general-casting-1.png" alt="General casting iron cast component" loading="lazy">
-            <img src="./assets/img/part-general-casting-2.png" alt="" loading="lazy">
+            <img src="./assets/img/part-general-casting-2.png" alt="General casting iron cast component" loading="lazy">
+            <img src="./assets/img/part-general-casting-3.png" alt="General casting iron cast component" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
@@ -724,6 +729,8 @@
           </div>
           <div class="bumm-segment-card-parts">
             <img src="./assets/img/part-train-1.png" alt="Train iron cast component" loading="lazy">
+            <img src="./assets/img/part-train-2.png" alt="Train iron cast component" loading="lazy">
+            <img src="./assets/img/part-train-3.png" alt="Train iron cast component" loading="lazy">
           </div>
           <div class="bumm-segment-card-footer">
             <span class="bumm-segment-card-link" data-i18n="segment_learn_more">Learn More</span>
@@ -845,15 +852,10 @@
 
   <!-- ============ CONTACT ============ -->
   <section class="bumm-contact" id="contact">
-    <!-- Decorative backdrop: flange photo (top-right), site photo (bottom-left)
-         and the two maroon accent shapes. Swap the photos in custom.css
-         (--contact-photo-part / --contact-photo-site). -->
-    <div class="bumm-contact-bg" aria-hidden="true">
-      <span class="bumm-contact-photo bumm-contact-photo--part"></span>
-      <span class="bumm-contact-photo bumm-contact-photo--site"></span>
-      <span class="bumm-contact-shape bumm-contact-shape--a"></span>
-      <span class="bumm-contact-shape bumm-contact-shape--b"></span>
-    </div>
+    <!-- Decorative backdrop: single full-bleed image (flange part, site photo
+         and red accents are all baked into it). Swap the file in custom.css
+         (--contact-bg). -->
+    <div class="bumm-contact-bg" aria-hidden="true"></div>
 
     <div class="container bumm-contact-inner">
       <div class="bumm-contact-head">
