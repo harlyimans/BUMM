@@ -2327,7 +2327,7 @@ button:focus-visible {
   border: 1px solid var(--bumm-exp-card-border);
   border-radius: var(--bumm-radius-md);
   box-shadow: var(--bumm-exp-card-shadow);
-  padding: 1.25rem 1.25rem 1rem;
+  padding: 1.25rem 1.25rem 1.1rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -2371,15 +2371,7 @@ button:focus-visible {
   color: var(--bumm-ink-muted);
 }
 
-/* Hairline that bleeds to the card edges, then the short accent dash
-   under it — the two-rule detail from the design. */
-.bumm-stat-rule {
-  display: block;
-  height: 1px;
-  background-color: rgba(214, 31, 38,.35);
-  margin: 1rem -1.25rem .75rem;
-}
-
+/* Short accent dash sitting right under the label. */
 .bumm-stat-dash {
   display: block;
   width: 2.1rem;
@@ -2387,7 +2379,25 @@ button:focus-visible {
   border-radius: 2px;
   background-color: var(--bumm-accent);
   margin-left: 3.35rem;
-  margin-top: auto;
+  margin-top: .6rem;
+}
+
+/* Connector between neighbouring stat cards (desktop row only). The line
+   crosses the gutter at the vertical centre of the icon circles. */
+@media (min-width: 992px) {
+  .bumm-experience-stats > [class*="col-"] { position: relative; }
+  .bumm-experience-stats > [class*="col-"]:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 2.55rem;                 /* icon centre: padding-top 1.25rem + half of 2.6rem */
+    left: calc(100% - .75rem);    /* card's right edge (col padding = half the 1.5rem gutter) */
+    width: 1.5rem;                /* = gutter, reaches the next card */
+    height: 2px;
+    transform: translateY(-1px);
+    background-color: var(--bumm-accent);
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -2397,7 +2407,6 @@ button:focus-visible {
   .bumm-stat-top { gap: .55rem; }
   .bumm-stat-label,
   .bumm-stat-dash { margin-left: 0; }
-  .bumm-stat-rule { margin-left: -.9rem; margin-right: -.9rem; }
 }
 
 /* --------------------------------------------------------------------
