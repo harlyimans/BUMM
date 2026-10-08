@@ -74,7 +74,7 @@ $(function () {
       // single-string version for any other surface that needs it.
       hero_headline_cast: 'Casting perfection',
       hero_headline_last: 'through quality',
-      hero_lead: 'From precision iron casting to high-performance components for automotive, heavy duty, agriculture and industrial applications.',
+      hero_lead: 'A trusted foundry partner for high quality iron casting solutions for automotive, heavy duty, agriculture, train component and general casting.',
       btn_view_product: 'View Products',
       plate_title: 'Company Profile',
       plate_established_label: 'Established',
@@ -197,7 +197,7 @@ $(function () {
       hero_headline: '“MENGECOR KESEMPURNAAN MELALUI KUALITAS.”',
       hero_headline_cast: 'MENGECOR KESEMPURNAAN',
       hero_headline_last: 'MELALUI KUALITAS',
-      hero_lead: 'Dari pengecoran besi presisi hingga komponen berperforma tinggi untuk aplikasi otomotif, alat berat, pertanian, dan industri.',
+      hero_lead: 'Mitra pengecoran terpercaya yang menyediakan solusi pengecoran besi berkualitas tinggi untuk industri otomotif, alat berat, pertanian, komponen kereta api, serta pengecoran umum.',
       btn_view_product: 'Lihat Produk',
       plate_title: 'Profil Perusahaan',
       plate_established_label: 'Berdiri Sejak',
