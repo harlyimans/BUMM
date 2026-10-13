@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /Project/
+Disallow: /404.html
 
 Sitemap: https://bumm.co.id/sitemap.xml
