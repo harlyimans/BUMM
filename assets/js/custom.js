@@ -95,7 +95,7 @@ $(function () {
       experience_stat_capacity: 'Ton Installed Capacity',
       about_eyebrow: 'Our Values',
       about_heading: 'BUILT ON SEVEN OPERATING PRINCIPLES',
-      about_lead: "PT. Bina Usaha Mandiri Mizusawa (BUMM) was established in 1983 and is a subsidiary of Bakrie Autoparts, based in Jatiuwung, Tangerang. We specialize in auto components and general casting — foundry manufacturing built to meet the demands of Indonesia's automotive and heavy-equipment industry.",
+      about_lead: "PT Bina Usaha Mandiri Mizusawa (BUMM), established in 1983 as a subsidiary of Bakrie Autoparts, is a trusted iron casting manufacturer based in Jatiuwung, Tangerang, Indonesia. Specializing in foundry solutions for automotive, heavy equipment, agricultural machinery, railway components, and general industrial applications, BUMM is committed to producing high-quality castings that meet the evolving demands of various industries.",
       victory_v_desc: 'Looking ahead to anticipate what our industry and customers will need next.',
       victory_i_desc: "Doing what's right, consistently, even when no one's checking.",
       victory_c_desc: "Every process is built around what makes our customers' operations succeed.",
