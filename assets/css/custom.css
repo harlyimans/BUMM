@@ -894,8 +894,8 @@ button:focus-visible {
    -50% loop lands exactly on the duplicated set. */
 .bumm-marquee-track img {
   flex: 0 0 auto;
-  width: 140px;
-  height: 56px;
+  /* width/height are set per logo inline (same visual area for every logo,
+     whatever its aspect ratio), so gaps stay even. */
   margin-right: 3.2rem;
   object-fit: contain;
   object-position: center;
@@ -2000,7 +2000,8 @@ button:focus-visible {
     display: block;
     margin-bottom: .3rem;
   }
-  .bumm-marquee-track img { width: 112px; height: 46px; margin-right: 2.2rem; }
+  .bumm-marquee-track { zoom: .75; }
+  .bumm-marquee-track img { margin-right: 2.2rem; }
 }
 
 @media (max-width: 575.98px) {
