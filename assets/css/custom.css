@@ -568,14 +568,6 @@ button:focus-visible {
   text-shadow: 0 1px 22px rgba(15, 12, 13,.55);
 }
 
-/* The Indonesian tagline is roughly twice as long as the English one, so
-   it gets its own step down the scale instead of running four full-width
-   lines across the frame. */
-[lang="id"] .bumm-hero-headline {
-  font-size: clamp(1.95rem, 4.6vw, 3.5rem);
-  max-width: 26ch;
-}
-
 /* Second line (dark mode): solid white fill, no outline. */
 .bumm-hero-headline-outline {
   color: #fff;
