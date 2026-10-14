@@ -84,13 +84,24 @@
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="../" data-i18n="nav_home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="../career/" data-i18n="nav_career">Career</a></li>
-          <li class="nav-item"><a class="nav-link" href="../about/company-profile/" data-i18n="nav_about">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="../product/" aria-current="page" data-i18n="nav_product">Product</a></li>
-          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-            <div class="bumm-lang-switch" role="group" aria-label="Language switch">
-              <button type="button" class="bumm-lang-btn is-active" data-lang="en">EN</button>
-              <button type="button" class="bumm-lang-btn" data-lang="id">ID</button>
-            </div>
+          <li class="nav-item dropdown bumm-dropdown">
+            <a class="nav-link dropdown-toggle" href="../about/company-profile/" id="navAbout" aria-haspopup="true" aria-expanded="false" data-i18n="nav_about">About</a>
+            <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navAbout">
+              <li><a class="dropdown-item" href="../about/company-profile/" data-i18n="nav_about_profile">Company Profile</a></li>
+              <li><a class="dropdown-item" href="../about/vision-mission/" data-i18n="nav_about_vision">Vision &amp; Mission</a></li>
+              <li><a class="dropdown-item" href="../about/corporate-value/" data-i18n="nav_about_value">Corporate Value</a></li>
+              <li><a class="dropdown-item" href="../about/facility/" data-i18n="nav_about_facility">Facility</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown bumm-dropdown">
+            <a class="nav-link dropdown-toggle active" href="../product/" id="navProduct" aria-haspopup="true" aria-expanded="false" aria-current="page" data-i18n="nav_product">Product</a>
+            <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navProduct">
+              <li><a class="dropdown-item" href="../product/automotive.html" data-i18n="nav_prod_automotive">Automotive</a></li>
+              <li><a class="dropdown-item" href="../product/#agriculture" data-i18n="nav_prod_agriculture">Agriculture</a></li>
+              <li><a class="dropdown-item" href="../product/heavy-duty.html" data-i18n="nav_prod_heavy">Heavy Duty</a></li>
+              <li><a class="dropdown-item" href="../product/#general-casting" data-i18n="nav_prod_general">General Casting</a></li>
+              <li><a class="dropdown-item" href="../product/#train" data-i18n="nav_prod_train">Train Component</a></li>
+            </ul>
           </li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
             <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">

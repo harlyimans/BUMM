@@ -3283,3 +3283,125 @@ button:focus-visible {
 .bumm-navbar .navbar-nav .nav-link.active:hover {
   color: var(--bumm-accent);
 }
+
+/* --------------------------------------------------------------------
+   Navbar dropdowns (About / Product)
+   Desktop (lg+): opens on hover or keyboard focus; the parent link still
+   navigates. Mobile: tap toggles the sub-menu (see custom.js).
+   -------------------------------------------------------------------- */
+.bumm-navbar .dropdown-toggle::after {
+  margin-left: .4em;
+  vertical-align: .15em;
+  border-top-width: .28em;
+  border-right-width: .28em;
+  border-left-width: .28em;
+}
+
+.bumm-navbar .bumm-dropdown-menu {
+  min-width: 13.5rem;
+  margin: 0;
+  padding: .4rem;
+  background-color: var(--bumm-bg);
+  border: 1px solid var(--bumm-line);
+  border-radius: var(--bumm-radius-sm);
+  box-shadow: var(--bumm-shadow-md);
+}
+
+.bumm-navbar .bumm-dropdown-menu .dropdown-item {
+  padding: .55rem .85rem;
+  border-radius: 6px;
+  color: var(--bumm-ink-muted);
+  font-size: .9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.bumm-navbar .bumm-dropdown-menu .dropdown-item:hover,
+.bumm-navbar .bumm-dropdown-menu .dropdown-item:focus-visible {
+  background-color: var(--bumm-bg-alt);
+  color: var(--bumm-ink);
+}
+
+.bumm-navbar .bumm-dropdown-menu .dropdown-item.active,
+.bumm-navbar .bumm-dropdown-menu .dropdown-item:active {
+  background-color: var(--bumm-bg-alt);
+  color: var(--bumm-accent);
+}
+
+.bumm-navbar .nav-link.dropdown-toggle.active {
+  color: var(--bumm-ink);
+}
+
+@media (min-width: 992px) {
+  .bumm-navbar .bumm-dropdown > .bumm-dropdown-menu {
+    display: block;
+    top: 100%;
+    left: 0;
+    right: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+  }
+  .bumm-navbar .bumm-dropdown:hover > .bumm-dropdown-menu,
+  .bumm-navbar .bumm-dropdown:focus-within > .bumm-dropdown-menu,
+  .bumm-navbar .bumm-dropdown.is-open > .bumm-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+  /* Invisible bridge so the pointer can travel from link to menu. */
+  .bumm-navbar .bumm-dropdown::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: .9rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .bumm-navbar .bumm-dropdown > .bumm-dropdown-menu {
+    display: none;
+    position: static;
+    min-width: 0;
+    margin: .1rem 0 .25rem 1rem;
+    padding: 0 0 0 .6rem;
+    background: transparent;
+    border: 0;
+    border-left: 2px solid var(--bumm-line);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .bumm-navbar .bumm-dropdown.is-open > .bumm-dropdown-menu {
+    display: block;
+  }
+  .bumm-navbar .bumm-dropdown-menu .dropdown-item {
+    padding: .5rem .75rem;
+    white-space: normal;
+  }
+  /* Overlay navbar's open mobile panel is always dark. */
+  .bumm-navbar--overlay .bumm-dropdown-menu {
+    border-left-color: rgba(255,255,255,.18);
+  }
+  .bumm-navbar--overlay .bumm-dropdown-menu .dropdown-item {
+    color: rgba(255,255,255,.78);
+  }
+  .bumm-navbar--overlay .bumm-dropdown-menu .dropdown-item:hover,
+  .bumm-navbar--overlay .bumm-dropdown-menu .dropdown-item:focus-visible {
+    background-color: rgba(255,255,255,.08);
+    color: #fff;
+  }
+  .bumm-navbar--overlay .bumm-dropdown-menu .dropdown-item.active {
+    background-color: transparent;
+    color: #ee4a51;
+  }
+}
+
+/* Product index cards that the navbar deep-links to (#agriculture etc.)
+   must clear the sticky bar. */
+.bumm-segment-card[id] {
+  scroll-margin-top: 6rem;
+}

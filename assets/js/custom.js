@@ -66,6 +66,18 @@ $(function () {
       nav_about: 'About',
       nav_product: 'Product',
       nav_news: 'News',
+      nav_about_profile: 'Company Profile',
+      nav_about_vision: 'Vision & Mission',
+      nav_about_value: 'Corporate Value',
+      nav_about_facility: 'Facility',
+      nav_prod_automotive: 'Automotive',
+      nav_prod_agriculture: 'Agriculture',
+      nav_prod_heavy: 'Heavy Duty',
+      nav_prod_general: 'General Casting',
+      nav_prod_train: 'Train Component',
+      fac_eyebrow: 'Our Facility',
+      fac_heading: 'Our foundry facility.',
+      fac_lead: 'From core making to final inspection, every stage of production is done in-house under one roof.',
       contact_us: 'Contact Us',
       hero_eyebrow_group: 'A SUBSIDIARY OF BAKRIE AUTOPARTS',
       hero_headline: "“Casting perfection through quality.”",
@@ -192,6 +204,18 @@ $(function () {
       nav_about: 'Tentang',
       nav_product: 'Produk',
       nav_news: 'Berita',
+      nav_about_profile: 'Profil Perusahaan',
+      nav_about_vision: 'Visi & Misi',
+      nav_about_value: 'Nilai Perusahaan',
+      nav_about_facility: 'Fasilitas',
+      nav_prod_automotive: 'Otomotif',
+      nav_prod_agriculture: 'Pertanian',
+      nav_prod_heavy: 'Heavy Duty',
+      nav_prod_general: 'General Casting',
+      nav_prod_train: 'Komponen Kereta',
+      fac_eyebrow: 'Fasilitas Kami',
+      fac_heading: 'Fasilitas foundry kami.',
+      fac_lead: 'Dari pembuatan core hingga inspeksi akhir, setiap tahap produksi dikerjakan sendiri dalam satu lokasi.',
       contact_us: 'Hubungi Kami',
       hero_eyebrow_group: 'ANAK PERUSAHAAN BAKRIE AUTOPARTS',
       hero_headline: '“MENGECOR KESEMPURNAAN MELALUI KUALITAS.”',
@@ -368,6 +392,41 @@ $(function () {
   });
 
   // --------------------------------------------------------------------
+  // --------------------------------------------------------------------
+  // Navbar dropdowns. Desktop opens on hover/focus via CSS and the parent
+  // link navigates normally. On the mobile menu a tap toggles the sub-menu;
+  // on touch screens wider than that, the first tap opens it and a second
+  // tap follows the parent link.
+  // --------------------------------------------------------------------
+  var $dropdowns = $('.bumm-dropdown');
+  function closeDropdowns($except) {
+    $dropdowns.not($except || $()).removeClass('is-open')
+      .children('.dropdown-toggle').attr('aria-expanded', 'false');
+  }
+  $dropdowns.children('.dropdown-toggle').on('click', function (e) {
+    var $li = $(this).parent();
+    var mobileNav = window.matchMedia('(max-width: 991.98px)').matches;
+    var touch = window.matchMedia('(hover: none)').matches;
+    if (!mobileNav && !touch) { return; }
+    var open = $li.hasClass('is-open');
+    if (mobileNav || !open) {
+      e.preventDefault();
+      closeDropdowns($li);
+      $li.toggleClass('is-open', !open);
+      $(this).attr('aria-expanded', String(!open));
+    }
+  });
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.bumm-dropdown').length) { closeDropdowns(); }
+  });
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeDropdowns();
+      var $focused = $(document.activeElement).closest('.bumm-dropdown');
+      if ($focused.length) { $focused.children('.dropdown-toggle').trigger('focus'); document.activeElement.blur(); }
+    }
+  });
+
   // Light / dark mode toggle. The actual attribute (data-bumm-theme on
   // <html>) is already set as early as possible by the inline script in
   // <head> — before CSS renders — to avoid a flash of the wrong theme.

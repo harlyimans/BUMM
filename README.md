@@ -7,7 +7,7 @@ Bootstrap Icons 1.13.1, dan jQuery 4. Tidak butuh Ruby, Jekyll, maupun build ste
 
 ```
 index.html               Beranda
-about/*/index.html       About (company-profile, vision-mission, corporate-value, management)
+about/*/index.html       About (company-profile, vision-mission, corporate-value, facility)
 product/*.html           Produk
 career/  news/           Career, News
 Project/dashboard/       Halaman internal (statis, tidak di-index)

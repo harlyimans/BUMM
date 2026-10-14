@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('bumm-theme');
+      var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+      document.documentElement.setAttribute('data-bumm-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-bumm-theme', 'light');
+    }
+  })();
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Facility — Foundry & Machining Tangerang | PT BUMM</title>
+  <meta name="description" content="Fasilitas produksi PT. Bina Usaha Mandiri Mizusawa (BUMM): core making, molding, melting, pouring, laboratorium, machining, dan inspeksi kualitas dalam satu foundry di Tangerang.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#d61f26">
+  <link rel="canonical" href="https://bumm.co.id/about/facility/">
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PT. Bina Usaha Mandiri Mizusawa">
+  <meta property="og:title" content="Facility — Foundry & Machining Tangerang | PT BUMM">
+  <meta property="og:description" content="Fasilitas produksi PT. Bina Usaha Mandiri Mizusawa (BUMM): core making, molding, melting, pouring, laboratorium, machining, dan inspeksi kualitas dalam satu foundry di Tangerang.">
+  <meta property="og:image" content="https://bumm.co.id/assets/img/foundry.webp">
+  <meta property="og:url" content="https://bumm.co.id/about/facility/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@bummizusawa">
+  <meta name="twitter:title" content="Facility — Foundry & Machining Tangerang | PT BUMM">
+  <meta name="twitter:description" content="Fasilitas produksi PT. Bina Usaha Mandiri Mizusawa (BUMM): core making, molding, melting, pouring, laboratorium, machining, dan inspeksi kualitas dalam satu foundry di Tangerang.">
+  <meta name="twitter:image" content="https://bumm.co.id/assets/img/foundry.webp">
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+  <link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/archivo-latin-wght-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/ibm-plex-sans-latin-400-normal.woff2" crossorigin>
+
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bumm.co.id/"},
+      {"@type": "ListItem", "position": 2, "name": "Facility", "item": "https://bumm.co.id/about/facility/"}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
+  <!-- ============ NAVBAR ============ -->
+  <!-- Satu navbar untuk semua halaman. Menu diatur di _data/navigation.yml.
+       Front matter: `nav: <id>` menandai menu aktif,
+                     `navbar_overlay: true` = transparan di atas hero (dipakai beranda). -->
+  <nav class="navbar navbar-expand-lg bumm-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../../" aria-label="BUMM — Home"><img src="../../assets/img/logo-bumm.png" alt="BUMM" class="bumm-navbar-logo" width="44" height="44"></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bummNav" aria-controls="bummNav" aria-expanded="false" aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bummNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../../" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../career/" data-i18n="nav_career">Career</a></li>
+          <li class="nav-item dropdown bumm-dropdown">
+            <a class="nav-link dropdown-toggle active" href="../../about/company-profile/" id="navAbout" aria-haspopup="true" aria-expanded="false" data-i18n="nav_about">About</a>
+            <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navAbout">
+              <li><a class="dropdown-item" href="../../about/company-profile/" data-i18n="nav_about_profile">Company Profile</a></li>
+              <li><a class="dropdown-item" href="../../about/vision-mission/" data-i18n="nav_about_vision">Vision &amp; Mission</a></li>
+              <li><a class="dropdown-item" href="../../about/corporate-value/" data-i18n="nav_about_value">Corporate Value</a></li>
+              <li><a class="dropdown-item active" href="../../about/facility/" aria-current="page" data-i18n="nav_about_facility">Facility</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown bumm-dropdown">
+            <a class="nav-link dropdown-toggle" href="../../product/" id="navProduct" aria-haspopup="true" aria-expanded="false" data-i18n="nav_product">Product</a>
+            <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navProduct">
+              <li><a class="dropdown-item" href="../../product/automotive.html" data-i18n="nav_prod_automotive">Automotive</a></li>
+              <li><a class="dropdown-item" href="../../product/#agriculture" data-i18n="nav_prod_agriculture">Agriculture</a></li>
+              <li><a class="dropdown-item" href="../../product/heavy-duty.html" data-i18n="nav_prod_heavy">Heavy Duty</a></li>
+              <li><a class="dropdown-item" href="../../product/#general-casting" data-i18n="nav_prod_general">General Casting</a></li>
+              <li><a class="dropdown-item" href="../../product/#train" data-i18n="nav_prod_train">Train Component</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">
+              <i class="bi bi-moon-stars" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="../../#contact" class="btn btn-bumm-outline" data-i18n="contact_us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main id="main">
+
+
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="bumm-page-header">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bumm-breadcrumb">
+          <li class="breadcrumb-item"><a href="../../">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About</li>
+          <li class="breadcrumb-item active" aria-current="page">Facility</li>
+        </ol>
+      </nav>
+      <p class="bumm-eyebrow" data-i18n="fac_eyebrow">Our Facility</p>
+      <h1 class="bumm-about-heading" data-i18n="fac_heading">Our foundry facility.</h1>
+      <p class="bumm-about-lead" data-i18n="fac_lead">
+        From core making to final inspection, every stage of production is
+        done in-house under one roof.
+      </p>
+      <div class="bumm-subnav">
+        <a href="../../about/company-profile/" class="">Company Profile</a>
+        <a href="../../about/vision-mission/" class="">Vision &amp; Mission</a>
+        <a href="../../about/corporate-value/" class="">Corporate Value</a>
+        <a href="../../about/facility/" class="is-active">Facility</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FACILITY GRID ============ -->
+  <section class="bumm-about" style="border-top:none;">
+    <div class="container">
+      <div class="bumm-cap-grid">
+        <div class="bumm-cap-card">
+          <div class="bumm-cap-card-head">
+            <span class="bumm-cap-card-num" aria-hidden="true">01</span>
+            <span class="bumm-cap-card-headtext">
+              <span class="bumm-cap-card-label" data-i18n="capflow_1_label">Core Making</span>
+              <span class="bumm-cap-card-dash" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="bumm-cap-card-photo">
+            <picture>
+              <source srcset="../../assets/img/capability-core-making.webp" type="image/webp">
+              <img src="../../assets/img/capability-core-making.jpg" alt="Core Making at the BUMM foundry" width="480" height="320" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div class="bumm-cap-card">
+          <div class="bumm-cap-card-head">
+            <span class="bumm-cap-card-num" aria-hidden="true">02</span>
+            <span class="bumm-cap-card-headtext">
+              <span class="bumm-cap-card-label" data-i18n="capflow_2_label">Molding</span>
+              <span class="bumm-cap-card-dash" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="bumm-cap-card-photo">
+            <picture>
+              <source srcset="../../assets/img/capability-molding.webp" type="image/webp">
+              <img src="../../assets/img/capability-molding.jpg" alt="Molding at the BUMM foundry" width="480" height="320" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div class="bumm-cap-card">
+          <div class="bumm-cap-card-head">
+            <span class="bumm-cap-card-num" aria-hidden="true">03</span>
+            <span class="bumm-cap-card-headtext">
+              <span class="bumm-cap-card-label" data-i18n="capflow_3_label">Melting</span>
+              <span class="bumm-cap-card-dash" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="bumm-cap-card-photo">
+            <picture>
+              <source srcset="../../assets/img/capability-melting.webp" type="image/webp">
+              <img src="../../assets/img/capability-melting.jpeg" alt="Melting at the BUMM foundry" width="480" height="320" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div class="bumm-cap-card">
+          <div class="bumm-cap-card-head">
+            <span class="bumm-cap-card-num" aria-hidden="true">04</span>
+            <span class="bumm-cap-card-headtext">
+              <span class="bumm-cap-card-label" data-i18n="capflow_4_label">Pouring</span>
+              <span class="bumm-cap-card-dash" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="bumm-cap-card-photo">
+            <picture>
+              <source srcset="../../assets/img/capability-pouring.webp" type="image/webp">
+              <img src="../../assets/img/capability-pouring.jpg" alt="Pouring at the BUMM foundry" width="480" height="320" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div class="bumm-cap-card">
+          <div class="bumm-cap-card-head">
+            <span class="bumm-cap-card-num" aria-hidden="true">05</span>
+            <span class="bumm-cap-card-headtext">
+              <span class="bumm-cap-card-label" data-i18n="capflow_5_label">Laboratory</span>
+              <span class="bumm-cap-card-dash" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="bumm-cap-card-photo">
+            <picture>
+              <source srcset="../../assets/img/capability-laboratory.webp" type="image/webp">
+              <img src="../../assets/img/capability-laboratory.jpg" alt="Laboratory at the BUMM foundry" width="480" height="320" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div class="bumm-cap-card">
+          <div class="bumm-cap-card-head">
+            <span class="bumm-cap-card-num" aria-hidden="true">06</span>
+            <span class="bumm-cap-card-headtext">
+              <span class="bumm-cap-card-label" data-i18n="capflow_6_label">Machining</span>
+              <span class="bumm-cap-card-dash" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="bumm-cap-card-photo">
+            <picture>
+              <source srcset="../../assets/img/capability-machining.webp" type="image/webp">
+              <img src="../../assets/img/capability-machining.jpg" alt="Machining at the BUMM foundry" width="480" height="320" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div class="bumm-cap-card">
+          <div class="bumm-cap-card-head">
+            <span class="bumm-cap-card-num" aria-hidden="true">07</span>
+            <span class="bumm-cap-card-headtext">
+              <span class="bumm-cap-card-label" data-i18n="capflow_7_label">Dimensional Inspection</span>
+              <span class="bumm-cap-card-dash" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="bumm-cap-card-photo">
+            <picture>
+              <source srcset="../../assets/img/capability-dimensional-inspection.webp" type="image/webp">
+              <img src="../../assets/img/capability-dimensional-inspection.jpg" alt="Dimensional Inspection at the BUMM foundry" width="480" height="320" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div class="bumm-cap-card">
+          <div class="bumm-cap-card-head">
+            <span class="bumm-cap-card-num" aria-hidden="true">08</span>
+            <span class="bumm-cap-card-headtext">
+              <span class="bumm-cap-card-label" data-i18n="capflow_8_label">Quality Inspection</span>
+              <span class="bumm-cap-card-dash" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div class="bumm-cap-card-photo">
+            <picture>
+              <source srcset="../../assets/img/capability-quality-inspection.webp" type="image/webp">
+              <img src="../../assets/img/capability-quality-inspection.png" alt="Quality Inspection at the BUMM foundry" width="480" height="320" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="bumm-cta">
+    <div class="container text-center">
+      <h2 class="bumm-cta-heading" data-i18n="cta_heading">Looking for the best iron cast and foundry company?</h2>
+      <p class="bumm-cta-lead" data-i18n="cta_lead">Let us know — our team will get back to you.</p>
+      <a href="../../#contact" class="btn btn-bumm-cta" data-i18n="contact_us">Contact Us</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- Satu footer untuk semua halaman. Link diatur di _data/navigation.yml.
+       Front matter `footer_map: true` menambah kolom peta lokasi (dipakai beranda). -->
+  <footer class="bumm-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <div class="bumm-footer-brand">BUMM</div>
+          <p class="bumm-footer-desc">
+            PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
+            Kel. Alam Jaya, Kota Tangerang, Banten 15133, Indonesia
+          </p>
+          <div class="bumm-footer-social">
+            <a href="https://www.facebook.com/PT-BUMM-981977421946203" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/bummizusawa" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/bummizusawa" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
+          <ul class="bumm-footer-links">
+            <li><a href="../../about/company-profile/" data-i18n="nav_about">About</a></li>
+            <li><a href="../../career/" data-i18n="nav_career">Career</a></li>
+            <li><a href="../../product/" data-i18n="nav_product">Product</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-8">
+          <div class="bumm-footer-heading" data-i18n="footer_certification">Certification</div>
+          <img src="../../assets/img/sertifikat.webp" alt="BUMM certification" class="bumm-footer-cert" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <div class="bumm-footer-bottom">
+        <span data-i18n="footer_copyright">© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="../../assets/jquery-4.0.0.min.js"></script>
+  <script src="../../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+
+</body>
+</html>

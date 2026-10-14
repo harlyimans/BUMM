@@ -40,7 +40,11 @@
     <loc>https://bumm.co.id/career/</loc>
     <lastmod>2026-10-12</lastmod>
   </url>
-  <!-- /news and /about/management are left out on purpose while they are noindex
-       (placeholder content) — add them back together with the meta robots change.
+  <url>
+    <loc>https://bumm.co.id/about/facility/</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <!-- /news is left out on purpose while it is noindex
+       (placeholder content) — add it back together with the meta robots change.
        TODO(client): also add one entry per news article once /news/<slug> pages exist. -->
 </urlset>
