@@ -56,8 +56,8 @@ $(function () {
   loadHeroVideo();
 
   // --------------------------------------------------------------------
-  // Language switch — default English, persisted per visitor.
-  // Add more keys here as you translate more sections of the site.
+  // Site copy — English only (the Indonesian version and the EN/ID
+  // switch were removed). Elements with data-i18n get their text from here.
   // --------------------------------------------------------------------
   var translations = {
     en: {
@@ -98,8 +98,8 @@ $(function () {
       about_intro_eyebrow: 'About BUMM',
       about_intro_heading: 'MORE THAN JUST CASTING',
       about_intro_cta: 'Learn About BUMM',
-      experience_heading_1: 'Built On',
-      experience_heading_2: 'Experience',
+      experience_heading_1: 'BUILT ON',
+      experience_heading_2: 'EXPERIENCE',
       experience_lead: 'Decades of Foundry Expertise, Delivering Precision Iron Casting Solutions Engineered for Quality, Reliability, and Performance.',
       experience_stat_established: 'Established',
       experience_stat_ownership: 'Bakrie Autoparts ownership',
@@ -197,177 +197,23 @@ $(function () {
       footer_certification: 'Certification',
       footer_location: 'Location',
       footer_copyright: '© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.'
-    },
-    id: {
-      nav_home: 'Home',
-      nav_career: 'Karier',
-      nav_about: 'Tentang',
-      nav_product: 'Produk',
-      nav_news: 'Berita',
-      nav_about_profile: 'Profil Perusahaan',
-      nav_about_vision: 'Visi & Misi',
-      nav_about_value: 'Nilai Perusahaan',
-      nav_about_facility: 'Fasilitas',
-      nav_prod_automotive: 'Otomotif',
-      nav_prod_agriculture: 'Pertanian',
-      nav_prod_heavy: 'Heavy Duty',
-      nav_prod_general: 'General Casting',
-      nav_prod_train: 'Komponen Kereta',
-      fac_eyebrow: 'Fasilitas Kami',
-      fac_heading: 'Fasilitas foundry kami.',
-      fac_lead: 'Dari pembuatan core hingga inspeksi akhir, setiap tahap produksi dikerjakan sendiri dalam satu lokasi.',
-      contact_us: 'Hubungi Kami',
-      hero_eyebrow_group: 'ANAK PERUSAHAAN BAKRIE AUTOPARTS',
-      hero_headline: '“MENGECOR KESEMPURNAAN MELALUI KUALITAS.”',
-      hero_headline_cast: 'MENGECOR KESEMPURNAAN',
-      hero_headline_last: 'MELALUI KUALITAS',
-      hero_lead: 'Mitra pengecoran terpercaya yang menyediakan solusi pengecoran besi berkualitas tinggi untuk industri otomotif, alat berat, pertanian, komponen kereta api, serta pengecoran umum.',
-      btn_view_product: 'Lihat Produk',
-      plate_title: 'Profil Perusahaan',
-      plate_established_label: 'Berdiri Sejak',
-      plate_experience_label: 'Pengalaman Foundry',
-      plate_experience_value: '40+ tahun',
-      plate_oem_label: 'Mitra OEM',
-      plate_parent_label: 'Induk Usaha',
-      trusted_label: 'Dipercaya oleh',
-      about_intro_eyebrow: 'Tentang BUMM',
-      about_intro_heading: 'LEBIH DARI SEKEDAR MENGECOR',
-      about_intro_cta: 'Pelajari BUMM',
-      experience_heading_1: 'DIBANGUN DARI',
-      experience_heading_2: 'PENGALAMAN',
-      experience_lead: 'Keahlian di Bidang Pengecoran yang Telah Teruji Selama Beberapa Dekade, Menyediakan Solusi Pengecoran Besi Presisi yang Dirancang untuk Menjamin Kualitas, Keandalan, dan Kinerja.',
-      experience_stat_established: 'Berdiri Sejak',
-      experience_stat_ownership: 'Kepemilikan Bakrie Autoparts',
-      experience_stat_years: 'Tahun Pengalaman',
-      experience_stat_capacity: 'Ton Kapasitas Terpasang',
-      about_eyebrow: 'Nilai Kami',
-      about_heading: 'DIBANGUN DIATAS TUJUH PRINSIP KERJA',
-      about_lead: 'PT. Bina Usaha Mandiri Mizusawa (BUMM) berdiri sejak 1983 dan merupakan anak perusahaan Bakrie Autoparts, berlokasi di Jatiuwung, Tangerang. Kami berfokus pada komponen otomotif dan general casting — foundry manufacturing yang dibangun untuk memenuhi kebutuhan industri otomotif dan alat berat di Indonesia.',
-      victory_v_desc: 'Melihat ke depan untuk mengantisipasi kebutuhan industri dan pelanggan berikutnya.',
-      victory_i_desc: 'Melakukan hal yang benar secara konsisten, bahkan saat tidak ada yang mengawasi.',
-      victory_c_desc: 'Setiap proses dibangun berdasarkan apa yang membuat operasional pelanggan berhasil.',
-      victory_t_desc: 'Pekerjaan pengecoran yang kompleks hanya berjalan baik kalau seluruh tim solid.',
-      victory_o_desc: 'Menyempurnakan proses itu sendiri, bukan cuma hasil akhirnya.',
-      victory_v_title: 'Visioner',
-      victory_i_title: 'Integritas',
-      victory_c_title: 'Berorientasi Pelanggan',
-      victory_t_title: 'Kerja Sama Tim',
-      victory_o_title: 'Keunggulan Operasional',
-      victory_r_title: 'Tanggung Jawab',
-      victory_y_title: 'Orientasi Hasil',
-      victory_r_desc: 'Bertanggung jawab atas hasil kerja — bagi karyawan, produk, dan lingkungan di sekitar pabrik.',
-      victory_y_desc: 'Mengukur keberhasilan dari hasil nyata yang bisa dipakai — bukan sekadar aktivitas.',
-      capability_eyebrow: 'Kapabilitas',
-      capability_heading: 'Dibangun untuk memasok, bukan sekadar mencetak.',
-      capability_lead: 'Dari prototipe satu unit hingga produksi rutin untuk OEM, foundry kami mendukung kebutuhan rantai pasok otomotif maupun general casting industri lainnya.',
-      capability_1_title: 'Pemasok Langsung OEM',
-      capability_1_desc: 'Memasok komponen cor langsung ke rantai pasok OEM otomotif dan alat berat.',
-      capability_2_title: 'General & Custom Casting',
-      capability_2_desc: 'Selain komponen otomotif, kami juga memproduksi general iron casting sesuai spesifikasi khusus untuk berbagai kebutuhan industri.',
-      capability_3_title: 'Didukung Bakrie Autoparts',
-      capability_3_desc: 'Bagian dari grup Bakrie Autoparts, memberi BUMM skala dan sumber daya grup industri yang mapan.',
-      capability_4_title: 'Proses Mengutamakan Kualitas',
-      capability_4_desc: 'Setiap batch melalui quality control internal sebelum keluar dari foundry.',
-      capflow_eyebrow: 'Kapabilitas Kami',
-      capflow_heading_1: 'DARI BAHAN BAKU HINGGA',
-      capflow_heading_2: 'CASTING YANG PRESISI',
-      capflow_lead: 'Didukung fasilitas terintegrasi, tenaga kerja terampil, dan kontrol kualitas yang ketat, kami berkomitmen menghadirkan solusi casting yang andal untuk berbagai industri.',
-      capflow_1_label: 'Core Making',
-      capflow_1_desc: 'Inti pasir dibentuk secara presisi untuk membentuk rongga dan saluran internal pada setiap hasil coran.',
-      capflow_2_label: 'Molding',
-      capflow_2_desc: 'Cetakan dibuat dari inti dan pola untuk menentukan bentuk luar part secara presisi.',
-      capflow_3_label: 'Melting',
-      capflow_3_desc: 'Besi dilebur dan diolah secara internal hingga komposisi kimianya sesuai spesifikasi produk.',
-      capflow_4_label: 'Pouring',
-      capflow_4_desc: 'Besi cair dituang ke dalam cetakan dengan suhu dan waktu yang terkontrol untuk hasil coran yang solid dan bebas cacat.',
-      capflow_5_label: 'Laboratorium',
-      capflow_5_desc: 'Pengujian metalurgi internal memastikan komposisi kimia, kekerasan, dan struktur mikro sesuai standar yang dipersyaratkan.',
-      capflow_6_label: 'Machining',
-      capflow_6_desc: 'Proses machining CNC menyempurnakan dimensi akhir, toleransi, dan hasil permukaan setiap coran.',
-      capflow_7_label: 'Inspeksi Dimensi',
-      capflow_7_desc: 'Setiap batch diukur terhadap toleransi gambar menggunakan CMM dan alat ukur presisi.',
-      capflow_8_label: 'Inspeksi Kualitas',
-      capflow_8_desc: 'Inspeksi kualitas akhir memastikan setiap part siap dikemas dan dikirim ke pelanggan.',
-      cert_caption: 'Sertifikasi — konfirmasi standar & nomornya',
-      product_segment_eyebrow: 'Produk Kami',
-      product_segment_heading: 'Segmen Produk',
-      product_segment_lead: 'Solusi casting berkualitas tinggi untuk berbagai industri, mendukung masa depan yang lebih kuat dan berkelanjutan.',
-      segment_automotive_title: 'Otomotif',
-      segment_agriculture_title: 'Pertanian',
-      segment_heavy_duty_title: 'Heavy Duty',
-      segment_general_casting_title: 'General Casting',
-      segment_train_title: 'Komponen Kereta',
-      segment_learn_more: 'Lihat Selengkapnya',
-      product_eyebrow: 'Produk',
-      product_heading: 'DICOR UNTUK SISTEM YANG HARUS TERUS BERJALAN',
-      product_lead: 'Lima segmen industri komponen cor besi, dirancang dan diselesaikan sesuai toleransi yang dibutuhkan setiap lini produksi.',
-      product_1_desc: 'Housing dan komponen water pump hasil cor presisi untuk sistem pendingin otomotif.',
-      product_2_desc: 'Komponen cor untuk sistem mesin diesel, dari housing hingga bagian struktural.',
-      product_3_desc: 'Part cor besi heavy duty yang dirancang untuk mesin konstruksi dan industri.',
-      product_4_desc: 'Komponen otomotif umum yang dicor sesuai spesifikasi OEM.',
-      product_view_detail: 'Lihat Detail →',
-      btn_view_all_products: 'Lihat Semua Produk',
-      achievement_eyebrow: 'Pencapaian',
-      achievement_heading: 'Diakui oleh OEM yang kami pasok.',
-      achievement_lead: 'Rekam jejak apresiasi dari mitra otomotif dan alat berat jangka panjang — bukan klaim marketing, tapi pengakuan yang diberikan atas performa nyata.',
-      news_eyebrow: 'Berita & Aktivitas',
-      news_heading: 'Kabar terbaru dari foundry kami.',
-      news_view_all: 'Lihat Semua Berita →',
-      cta_heading: 'MENCARI PERUSAHAAN IRON CAST DAN INDUSTRY YANG TERBAIK?',
-      cta_lead: 'Beri tahu kami — tim kami akan segera menghubungi Anda kembali.',
-      contact_eyebrow: 'Hubungi Kami',
-      contact_heading_1: 'Mari bicarakan',
-      contact_heading_2: 'kebutuhan produksi Anda.',
-      contact_plate_title: 'Detail Kontak',
-      contact_phone_label: 'Telepon',
-      contact_address_label: 'Alamat',
-      contact_email_label: 'Email',
-      contact_form_title: 'Kirim Pesan',
-      contact_form_name: 'Nama',
-      contact_form_email: 'Email',
-      contact_form_subject: 'Subjek',
-      contact_form_message: 'Pesan',
-      contact_form_send: 'Kirim',
-      footer_company: 'Perusahaan',
-      footer_certification: 'Sertifikasi',
-      footer_location: 'Lokasi',
-      footer_copyright: '© PT. Bina Usaha Mandiri Mizusawa. Hak cipta dilindungi.'
     }
   };
 
-  var LANG_STORAGE_KEY = 'bumm-lang';
   var DEFAULT_LANG = 'en';
 
-  function applyLanguage(lang) {
-    var dict = translations[lang] || translations[DEFAULT_LANG];
+  function applyCopy() {
+    var dict = translations[DEFAULT_LANG];
     $('[data-i18n]').each(function () {
       var key = $(this).data('i18n');
       if (dict[key] !== undefined) {
         $(this).text(dict[key]);
       }
     });
-    $('.bumm-lang-btn').removeClass('is-active').attr('aria-pressed', 'false');
-    $('.bumm-lang-btn[data-lang="' + lang + '"]').addClass('is-active').attr('aria-pressed', 'true');
-    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('lang', DEFAULT_LANG);
   }
 
-  var savedLang = null;
-  try {
-    savedLang = window.localStorage.getItem(LANG_STORAGE_KEY);
-  } catch (e) {
-    // localStorage unavailable (privacy mode, etc.) — fall back to default.
-  }
-  applyLanguage(savedLang || DEFAULT_LANG);
-
-  $('.bumm-lang-btn').on('click', function () {
-    var lang = $(this).data('lang');
-    applyLanguage(lang);
-    try {
-      window.localStorage.setItem(LANG_STORAGE_KEY, lang);
-    } catch (e) {
-      // ignore if storage isn't available
-    }
-  });
+  applyCopy();
 
   // Pause the client-logo marquee when the tab isn't visible, so it isn't
   // silently animating (and burning a repaint cycle) in a background tab.

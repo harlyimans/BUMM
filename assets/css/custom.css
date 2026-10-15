@@ -214,24 +214,6 @@ html { scroll-padding-top: 5rem; }
   color: #fff;
 }
 
-.bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-switch,
-.bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn + .bumm-lang-btn {
-  border-color: rgba(255,255,255,.35);
-}
-
-.bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn {
-  color: rgba(255,255,255,.78);
-}
-
-.bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn:hover {
-  color: #fff;
-}
-
-/* .is-active keeps the accent fill — it's the one coloured thing up here. */
-.bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn.is-active {
-  color: var(--bumm-on-accent);
-}
-
 .bumm-navbar--overlay:not(.is-scrolled) .navbar-toggler-icon {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.92%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -385,38 +367,6 @@ html { scroll-padding-top: 5rem; }
 
 .bumm-navbar .navbar-toggler:focus {
   box-shadow: 0 0 0 .2rem rgba(214, 31, 38, .35);
-}
-
-/* Language switch */
-.bumm-lang-switch {
-  display: inline-flex;
-  border: 1px solid var(--bumm-line);
-  overflow: hidden;
-}
-
-.bumm-lang-btn {
-  background: transparent;
-  border: none;
-  color: var(--bumm-ink-muted);
-  font-size: .8rem;
-  font-weight: 600;
-  letter-spacing: .03em;
-  padding: .38rem .7rem;
-  cursor: pointer;
-  transition: color .15s ease, background-color .15s ease;
-}
-
-.bumm-lang-btn + .bumm-lang-btn {
-  border-left: 1px solid var(--bumm-line);
-}
-
-.bumm-lang-btn:hover {
-  color: var(--bumm-ink);
-}
-
-.bumm-lang-btn.is-active {
-  background-color: var(--bumm-accent);
-  color: var(--bumm-on-accent);
 }
 
 /* Visible keyboard focus everywhere, not just navbar */
@@ -2023,18 +1973,10 @@ button:focus-visible {
 
   /* Bootstrap's stacked mobile nav puts these inline items on their own
      rows by default, but gives no breathing room between them — tighten
-     that up and make the lang switch + button full-width so they read
-     as clear, separately-tappable rows instead of a cramped strip. */
+     that up and make the button full-width so it reads
+     as a clear, tappable row instead of a cramped strip. */
   .bumm-navbar .navbar-nav .nav-item {
     margin-bottom: .35rem;
-  }
-  .bumm-navbar .bumm-lang-switch {
-    display: flex;
-  }
-  .bumm-navbar .bumm-lang-btn {
-    flex: 1 1 0;
-    padding-top: .55rem;
-    padding-bottom: .55rem;
   }
   .bumm-navbar .btn-bumm-outline {
     display: block;
@@ -3207,22 +3149,8 @@ button:focus-visible {
   border-color: var(--bumm-accent);
   color: var(--bumm-accent);
 }
-[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-switch,
-[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn + .bumm-lang-btn {
-  border-color: rgba(28,18,19,.3);
-}
-[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn {
-  color: var(--bumm-ink);
-}
-[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-switch,
 [data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-theme-toggle {
   background-color: rgba(255,255,255,.85);
-}
-[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn:hover {
-  color: var(--bumm-ink);
-}
-[data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .bumm-lang-btn.is-active {
-  color: var(--bumm-on-accent);
 }
 [data-bumm-theme="light"] .bumm-navbar--overlay:not(.is-scrolled) .navbar-toggler-icon {
   --bs-navbar-toggler-icon-bg: var(--bumm-toggler-icon-bg);
@@ -3405,4 +3333,13 @@ button:focus-visible {
    must clear the sticky bar. */
 .bumm-segment-card[id] {
   scroll-margin-top: 6rem;
+}
+
+/* --- Headings: always uppercase --------------------------------------
+   Applies to every h1–h6 and to title classes that aren't heading tags,
+   so it also holds for text swapped in by JS. */
+h1, h2, h3, h4, h5, h6,
+.bumm-job-title,
+.bumm-victory-title {
+  text-transform: uppercase;
 }
