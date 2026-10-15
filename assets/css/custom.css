@@ -3696,3 +3696,101 @@ h1, h2, h3, h4, h5, h6,
   .bumm-insp-grid { grid-template-columns: 1fr; }
 }
 
+/* Corporate Value page — each card carries its own description underneath,
+   so text always lines up with its card at every breakpoint. */
+.bumm-vb-item { display: flex; flex-direction: column; min-width: 0; }
+.bumm-vb-item .bumm-vb-card { flex: 0 0 auto; }
+.bumm-vb-desc {
+  color: var(--bumm-ink-muted);
+  font-size: .88rem;
+  line-height: 1.55;
+  margin: .9rem .15rem 0;
+}
+.bumm-victory-b:has(> .bumm-vb-item) { row-gap: 1.8rem; }
+@media (max-width: 1199.98px) {
+  .bumm-victory-b > .bumm-vb-item { grid-column: span 2; }
+  .bumm-victory-b > .bumm-vb-item:nth-child(5) { grid-column: 2 / span 2; }
+}
+@media (max-width: 767.98px) {
+  .bumm-victory-b > .bumm-vb-item,
+  .bumm-victory-b > .bumm-vb-item:nth-child(5) { grid-column: auto; }
+  .bumm-victory-b > .bumm-vb-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+/* --------------------------------------------------------------------
+   Management page — one row per person: portrait + bio. Portrait falls
+   back to initials when assets/img/management/<slug>.webp is missing.
+   -------------------------------------------------------------------- */
+.bumm-mgmt .container { display: grid; gap: 1.6rem; max-width: 1000px; }
+.bumm-mgmt-card {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  padding: 1.6rem;
+  background-color: var(--bumm-bg);
+  border: 1px solid var(--bumm-line);
+  border-radius: var(--bumm-radius-md);
+  box-shadow: var(--bumm-shadow-sm);
+}
+.bumm-mgmt-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--bumm-radius-md);
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--bumm-bg-alt), var(--bumm-line));
+}
+.bumm-mgmt-photo::before {
+  content: attr(data-initials);
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3.2rem;
+  letter-spacing: .04em;
+  color: var(--bumm-accent-dim);
+  opacity: .55;
+}
+[data-bumm-theme="dark"] .bumm-mgmt-photo::before { color: var(--bumm-accent); }
+.bumm-mgmt-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+.bumm-mgmt-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  line-height: 1.15;
+  color: var(--bumm-ink);
+  margin: .2rem 0 .3rem;
+}
+.bumm-mgmt-role {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bumm-accent-dim);
+  padding-bottom: .7rem;
+  margin: 0 0 1rem;
+  border-bottom: 3px solid var(--bumm-accent);
+}
+[data-bumm-theme="dark"] .bumm-mgmt-role { color: var(--bumm-accent); }
+.bumm-mgmt-body p { font-size: .95rem; line-height: 1.65; color: var(--bumm-ink-muted); margin: 0 0 .8rem; }
+.bumm-mgmt-body p:last-child { margin-bottom: 0; }
+@media (max-width: 767.98px) {
+  .bumm-mgmt-card { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; }
+  .bumm-mgmt-photo { max-width: 220px; }
+}
+
+/* Footer video (replaces the certification thumbnails). 16:9 frame; the
+   poster image shows until the video file loads (or if it is missing). */
+.bumm-footer-video {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--bumm-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--bumm-line);
+  background-color: var(--bumm-bg-alt);
+}
+.bumm-footer-video video { width: 100%; height: 100%; object-fit: cover; display: block; }

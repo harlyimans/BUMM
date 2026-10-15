@@ -47,4 +47,8 @@
   <!-- /news is left out on purpose while it is noindex
        (placeholder content) — add it back together with the meta robots change.
        TODO(client): also add one entry per news article once /news/<slug> pages exist. -->
+  <url>
+    <loc>https://bumm.co.id/about/management/</loc>
+    <lastmod>2026-10-15</lastmod>
+  </url>
 </urlset>

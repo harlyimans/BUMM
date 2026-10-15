@@ -55,6 +55,20 @@ $(function () {
 
   loadHeroVideo();
 
+  // Footer video: autoplays muted + looped on every page. Visitors who
+  // ask the OS for reduced motion get it paused with controls instead.
+  $('.bumm-footer-video video').each(function () {
+    var v = this;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay');
+      v.pause();
+      v.setAttribute('controls', '');
+    } else {
+      var play = v.play();
+      if (play && play.catch) play.catch(function () {});
+    }
+  });
+
   // --------------------------------------------------------------------
   // Site copy — English only (the Indonesian version and the EN/ID
   // switch were removed). Elements with data-i18n get their text from here.
@@ -69,6 +83,8 @@ $(function () {
       nav_about_profile: 'Company Profile',
       nav_about_vision: 'Vision & Mission',
       nav_about_value: 'Corporate Value',
+      nav_about_management: 'Management',
+      mgmt_eyebrow: 'Our Management',
       nav_about_facility: 'Facility',
       nav_prod_automotive: 'Automotive',
       nav_prod_agriculture: 'Agriculture',
@@ -208,6 +224,7 @@ $(function () {
       contact_form_send: 'Send',
       footer_company: 'Company',
       footer_certification: 'Certification',
+      footer_video: 'Company Video',
       footer_location: 'Location',
       footer_copyright: '© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.'
     }
