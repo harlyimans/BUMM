@@ -3579,3 +3579,112 @@ h1, h2, h3, h4, h5, h6,
 .bumm-catalog--segment .bumm-cat-toolbar {
   justify-content: flex-start;
 }
+
+/* --------------------------------------------------------------------
+   Facility page — Inspection Facility section (5 cards on a faded
+   foundry backdrop). Uses the same tokens as the rest of the site so
+   light/dark theme both work.
+   -------------------------------------------------------------------- */
+.bumm-insp {
+  position: relative;
+  overflow: hidden;
+  padding: var(--bumm-section-y) 0;
+  border-top: 1px solid var(--bumm-line);
+  background-color: var(--bumm-bg);
+}
+.bumm-insp-bg {
+  position: absolute;
+  top: 0; right: 0;
+  width: min(100%, 1100px);
+  height: 62%;
+  object-fit: cover;
+  object-position: right top;
+  pointer-events: none;
+  user-select: none;
+  opacity: .9;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+[data-bumm-theme="dark"] .bumm-insp-bg {
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: .22;
+}
+.bumm-insp > .container { position: relative; z-index: 1; }
+.bumm-insp-head { max-width: 38rem; margin-bottom: 3rem; }
+.bumm-insp-title {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--bumm-ink);
+  margin: .5rem 0 1rem;
+}
+.bumm-insp-title .is-accent { color: var(--bumm-accent-dim); }
+[data-bumm-theme="dark"] .bumm-insp-title .is-accent { color: var(--bumm-accent); }
+.bumm-insp-lead {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--bumm-ink);
+  margin: 0;
+}
+.bumm-insp-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: clamp(1.5rem, 9vw, 7rem);
+}
+.bumm-insp-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bumm-bg);
+  border: 1px solid var(--bumm-line);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--bumm-shadow-sm);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.bumm-insp-card:hover { transform: translateY(-3px); box-shadow: var(--bumm-shadow-md); }
+.bumm-insp-photo { aspect-ratio: 16 / 9; overflow: hidden; background-color: var(--bumm-bg-alt); }
+.bumm-insp-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bumm-insp-body { padding: 1rem 1.1rem 1.4rem; }
+.bumm-insp-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem; height: 2.1rem;
+  border-radius: 50%;
+  background-color: var(--bumm-accent-dim);
+  color: #fff;
+  font-size: 1rem;
+}
+.bumm-insp-dash {
+  display: block;
+  width: 2.6rem; height: 3px;
+  margin: .85rem 0 .7rem;
+  background-color: var(--bumm-accent-dim);
+}
+[data-bumm-theme="dark"] .bumm-insp-dash { background-color: var(--bumm-accent); }
+.bumm-insp-label {
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bumm-ink);
+  margin: 0 0 .5rem;
+}
+.bumm-insp-desc { font-size: .82rem; line-height: 1.5; color: var(--bumm-ink-muted); margin: 0; }
+
+@media (max-width: 1199.98px) {
+  .bumm-insp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 767.98px) {
+  .bumm-insp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+  .bumm-insp-bg { height: 40%; opacity: .35; }
+}
+@media (max-width: 479.98px) {
+  .bumm-insp-grid { grid-template-columns: 1fr; }
+}
+
