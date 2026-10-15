@@ -26,13 +26,13 @@
   <meta property="og:site_name" content="PT. Bina Usaha Mandiri Mizusawa">
   <meta property="og:title" content="Heavy Duty Iron Cast Components | Heavy Equipment | BUMM">
   <meta property="og:description" content="Heavy duty iron cast parts for construction &amp; industrial machinery, produced by PT. Bina Usaha Mandiri Mizusawa (BUMM), an OEM partner for heavy equipment in Indonesia.">
-  <meta property="og:image" content="https://bumm.co.id/assets/img/heavy.png">
+  <meta property="og:image" content="https://bumm.co.id/assets/img/part-heavy-duty-1.png">
   <meta property="og:url" content="https://bumm.co.id/product/heavy-duty.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bummizusawa">
   <meta name="twitter:title" content="Heavy Duty Iron Cast Components | Heavy Equipment | BUMM">
   <meta name="twitter:description" content="Heavy duty iron cast parts for construction &amp; industrial machinery, produced by PT. Bina Usaha Mandiri Mizusawa (BUMM), an OEM partner for heavy equipment in Indonesia.">
-  <meta name="twitter:image" content="https://bumm.co.id/assets/img/heavy.png">
+  <meta name="twitter:image" content="https://bumm.co.id/assets/img/part-heavy-duty-1.png">
 
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
@@ -58,9 +58,9 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "url": "https://bumm.co.id/product/heavy-duty.html",
-    "image": "https://bumm.co.id/assets/img/part-heavy-duty-2.png",
+    "image": "https://bumm.co.id/assets/img/part-automotive-1.png",
     "category": "Iron cast components",
-    "name": "Heavy Duty Iron Cast Component",
+    "name": "Heavy Duty Iron Cast Components",
     "description": "Heavy-duty iron cast parts engineered for construction and industrial machinery, built to withstand sustained mechanical load in demanding operating environments.",
     "brand": {"@type": "Brand", "name": "PT. Bina Usaha Mandiri Mizusawa (BUMM)"},
     "manufacturer": {"@type": "Organization", "name": "PT. Bina Usaha Mandiri Mizusawa"}
@@ -97,10 +97,10 @@
             <a class="nav-link dropdown-toggle active" href="../product/" id="navProduct" aria-haspopup="true" aria-expanded="false" data-i18n="nav_product">Product</a>
             <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navProduct">
               <li><a class="dropdown-item" href="../product/automotive.html" data-i18n="nav_prod_automotive">Automotive</a></li>
-              <li><a class="dropdown-item" href="../product/#agriculture" data-i18n="nav_prod_agriculture">Agriculture</a></li>
+              <li><a class="dropdown-item" href="../product/agriculture.html" data-i18n="nav_prod_agriculture">Agriculture</a></li>
               <li><a class="dropdown-item active" href="../product/heavy-duty.html" aria-current="page" data-i18n="nav_prod_heavy">Heavy Duty</a></li>
-              <li><a class="dropdown-item" href="../product/#general-casting" data-i18n="nav_prod_general">General Casting</a></li>
-              <li><a class="dropdown-item" href="../product/#train" data-i18n="nav_prod_train">Train Component</a></li>
+              <li><a class="dropdown-item" href="../product/general-casting.html" data-i18n="nav_prod_general">General Casting</a></li>
+              <li><a class="dropdown-item" href="../product/train.html" data-i18n="nav_prod_train">Train Component</a></li>
             </ul>
           </li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
@@ -136,86 +136,29 @@
     </div>
   </header>
 
-  <!-- ============ PRODUCT DETAIL ============ -->
-  <section class="bumm-about" style="border-top:none;">
+  <!-- ============ PRODUCT CATALOG (Heavy Duty) ============ -->
+  <!-- Cards come from assets/js/catalog-data.js, filtered to this segment
+       by data-segment. -->
+  <section class="bumm-catalog bumm-catalog--segment" id="catalog" data-segment="heavy-duty">
     <div class="container">
-      <div class="row gy-5">
-        <div class="col-lg-5">
-          <div class="bumm-detail-hero">
-            <img src="https://bumm.co.id/assets/img/heavy.png" alt="Heavy Duty component" loading="lazy" onerror="this.parentElement.style.display='none'">
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <h2 class="bumm-about-heading" style="font-size:1.4rem;">Applications</h2>
-          <ul class="bumm-applications-list mb-4">
-              <li>Undercarriage and structural components for construction equipment</li>
-              <li>Heavy-machinery housings and load-bearing cast parts</li>
-              <li>General industrial casting to custom specification</li>
-          </ul>
+      <p class="bumm-eyebrow">Product Catalog</p>
+      <h2 class="bumm-about-heading">Parts catalog</h2>
 
-          <h2 class="bumm-about-heading" style="font-size:1.4rem;">Specifications</h2>
-          <!-- TODO(client): confirm exact tolerances, weight range and
-               dimensions per part so this table reflects real spec-sheet
-               data instead of general placeholders. -->
-          <table class="bumm-spec-table">
-            <tbody>
-              <tr>
-                <th scope="row">Material</th>
-                <td>Ductile iron (FCD) — grade to customer specification</td>
-              </tr>
-              <tr>
-                <th scope="row">Process</th>
-                <td>Sand casting, finish machining, in-house QC before dispatch</td>
-              </tr>
-              <tr>
-                <th scope="row">Specification</th>
-                <td>To customer drawing / OEM specification — TBD</td>
-              </tr>
-              <tr>
-                <th scope="row">Minimum Order</th>
-                <td>TBD — contact our team for quotation</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="bumm-cat-toolbar">
+        <div class="bumm-cat-filters">
+          <select class="bumm-cat-select" data-cat-customer aria-label="Filter by customer"></select>
+          <input type="search" class="bumm-cat-input" data-cat-search placeholder="Search part name or material no." aria-label="Search part name or material number">
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ RELATED PRODUCTS ============ -->
-  <section class="bumm-products">
-    <div class="container">
-      <p class="bumm-eyebrow" data-i18n="product_eyebrow">Product</p>
-      <h2 class="bumm-about-heading" style="font-size:1.4rem;">Other categories</h2>
-      <div class="row row-cols-1 row-cols-sm-3 g-4 mt-2">
-        <div class="col">
-          <a href="../product/water-pump.html" class="bumm-product-card">
-            <div class="bumm-product-thumb">
-              <img src="https://bumm.co.id/assets/img/water.png" alt="Water Pump component" loading="lazy">
-            </div>
-            <h3 class="bumm-product-title">Water Pump</h3>
-            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
-          </a>
-        </div>
-        <div class="col">
-          <a href="../product/diesel.html" class="bumm-product-card">
-            <div class="bumm-product-thumb">
-              <img src="https://bumm.co.id/assets/img/diesel.png" alt="Diesel component" loading="lazy">
-            </div>
-            <h3 class="bumm-product-title">Diesel</h3>
-            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
-          </a>
-        </div>
-        <div class="col">
-          <a href="../product/automotive.html" class="bumm-product-card">
-            <div class="bumm-product-thumb">
-              <img src="https://bumm.co.id/assets/img/otomotif.png" alt="Automotive component" loading="lazy">
-            </div>
-            <h3 class="bumm-product-title">Automotive</h3>
-            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
-          </a>
-        </div>
+      <div class="bumm-cat-status">
+        <span data-cat-count aria-live="polite"></span>
+        <button type="button" class="bumm-cat-reset" data-cat-reset hidden>Reset filters</button>
       </div>
+
+      <div class="bumm-cat-grid" data-cat-grid></div>
+      <div class="bumm-cat-empty" data-cat-empty hidden>No parts match your filters.</div>
+      <noscript><p class="bumm-cat-empty">Please enable JavaScript to browse the catalog.</p></noscript>
     </div>
   </section>
 
@@ -264,6 +207,8 @@
 
   <script src="../assets/jquery-4.0.0.min.js"></script>
   <script src="../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/catalog-data.js"></script>
+  <script src="../assets/js/catalog.js"></script>
   <script src="../assets/js/custom.js"></script>
 
 </body>

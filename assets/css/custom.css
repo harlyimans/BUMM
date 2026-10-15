@@ -3343,3 +3343,239 @@ h1, h2, h3, h4, h5, h6,
 .bumm-victory-title {
   text-transform: uppercase;
 }
+
+/* --- Product catalog (product/index.html #catalog) -------------------- */
+.bumm-catalog {
+  background-color: var(--bumm-bg);
+  padding-top: var(--bumm-section-y);
+  padding-bottom: var(--bumm-section-y);
+  border-top: 1px solid var(--bumm-line);
+}
+
+.bumm-cat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.75rem;
+}
+
+.bumm-cat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.bumm-cat-chip {
+  background: transparent;
+  border: 1px solid var(--bumm-line);
+  border-radius: 999px;
+  color: var(--bumm-ink-muted);
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .42rem .95rem;
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+}
+
+.bumm-cat-chip:hover {
+  color: var(--bumm-ink);
+  border-color: var(--bumm-ink-muted);
+}
+
+.bumm-cat-chip.is-active {
+  background-color: var(--bumm-accent);
+  border-color: var(--bumm-accent);
+  color: var(--bumm-on-accent);
+}
+
+.bumm-cat-chip-n {
+  opacity: .7;
+  font-weight: 500;
+  margin-left: .15rem;
+}
+
+.bumm-cat-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.bumm-cat-input,
+.bumm-cat-select {
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  border-radius: var(--bumm-radius-md);
+  color: var(--bumm-ink);
+  font-size: .9rem;
+  padding: .5rem .8rem;
+  min-width: 11rem;
+}
+
+.bumm-cat-input:focus,
+.bumm-cat-select:focus {
+  outline: 2px solid var(--bumm-accent);
+  outline-offset: 1px;
+}
+
+.bumm-cat-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--bumm-ink-muted);
+  font-size: .85rem;
+}
+
+.bumm-cat-reset {
+  background: none;
+  border: none;
+  color: var(--bumm-accent);
+  font-size: .85rem;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bumm-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.25rem;
+}
+
+.bumm-cat-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  border-radius: var(--bumm-radius-md);
+  overflow: hidden;
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.bumm-cat-card:hover {
+  border-color: var(--bumm-accent);
+  transform: translateY(-2px);
+}
+
+.bumm-cat-thumb {
+  position: relative;
+  flex: none;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bumm-bg);
+  border-bottom: 1px solid var(--bumm-line);
+}
+
+/* Image is absolutely positioned so its natural size can never stretch the
+   frame — every thumbnail stays exactly the same 4:3 box. */
+.bumm-cat-thumb img {
+  position: absolute;
+  inset: 1.1rem;
+  width: calc(100% - 2.2rem);
+  height: calc(100% - 2.2rem);
+  object-fit: contain;
+}
+
+.bumm-cat-thumb.is-placeholder::before {
+  content: "\F5EF"; /* bootstrap-icons: gear */
+  font-family: "bootstrap-icons";
+  font-size: 2.6rem;
+  color: var(--bumm-line);
+}
+
+.bumm-cat-body {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  padding: 1rem 1.1rem 1.2rem;
+  flex: 1;
+}
+
+.bumm-cat-seg {
+  align-self: flex-start;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bumm-accent);
+}
+
+.bumm-cat-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.25;
+  min-height: 2.5em;
+  margin: 0;
+  color: var(--bumm-ink);
+}
+
+.bumm-cat-meta {
+  margin: auto 0 0;
+  padding-top: .75rem;
+  border-top: 1px solid var(--bumm-line);
+  display: grid;
+  gap: .45rem;
+}
+
+.bumm-cat-meta > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: .85rem;
+}
+
+.bumm-cat-meta dt {
+  color: var(--bumm-ink-muted);
+  font-weight: 500;
+}
+
+.bumm-cat-meta dd {
+  margin: 0;
+  color: var(--bumm-ink);
+  font-weight: 600;
+  text-align: right;
+}
+
+.bumm-cat-mat {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .02em;
+}
+
+.bumm-cat-empty {
+  text-align: center;
+  color: var(--bumm-ink-muted);
+  padding: 3rem 1rem;
+  border: 1px dashed var(--bumm-line);
+  border-radius: var(--bumm-radius-md);
+}
+
+@media (max-width: 575.98px) {
+  .bumm-cat-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: .25rem;
+  }
+  .bumm-cat-chip { white-space: nowrap; }
+  .bumm-cat-filters { width: 100%; }
+  .bumm-cat-input, .bumm-cat-select { flex: 1 1 100%; }
+  .bumm-cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+  .bumm-cat-thumb img { inset: .7rem; width: calc(100% - 1.4rem); height: calc(100% - 1.4rem); }
+  .bumm-cat-body { padding: .8rem .8rem 1rem; }
+  .bumm-cat-meta > div { flex-direction: column; gap: .1rem; }
+  .bumm-cat-meta dd { text-align: left; }
+}
+
+/* Segment pages: no chips, so keep the filters on the left. */
+.bumm-catalog--segment {
+  border-top: none;
+}
+.bumm-catalog--segment .bumm-cat-toolbar {
+  justify-content: flex-start;
+}

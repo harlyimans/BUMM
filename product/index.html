@@ -83,10 +83,10 @@
             <a class="nav-link dropdown-toggle active" href="../product/" id="navProduct" aria-haspopup="true" aria-expanded="false" aria-current="page" data-i18n="nav_product">Product</a>
             <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navProduct">
               <li><a class="dropdown-item" href="../product/automotive.html" data-i18n="nav_prod_automotive">Automotive</a></li>
-              <li><a class="dropdown-item" href="../product/#agriculture" data-i18n="nav_prod_agriculture">Agriculture</a></li>
+              <li><a class="dropdown-item" href="../product/agriculture.html" data-i18n="nav_prod_agriculture">Agriculture</a></li>
               <li><a class="dropdown-item" href="../product/heavy-duty.html" data-i18n="nav_prod_heavy">Heavy Duty</a></li>
-              <li><a class="dropdown-item" href="../product/#general-casting" data-i18n="nav_prod_general">General Casting</a></li>
-              <li><a class="dropdown-item" href="../product/#train" data-i18n="nav_prod_train">Train Component</a></li>
+              <li><a class="dropdown-item" href="../product/general-casting.html" data-i18n="nav_prod_general">General Casting</a></li>
+              <li><a class="dropdown-item" href="../product/train.html" data-i18n="nav_prod_train">Train Component</a></li>
             </ul>
           </li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
@@ -158,7 +158,7 @@
             <span class="bumm-segment-card-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
           </div>
         </a>
-        <a href="#agriculture" id="agriculture" class="bumm-segment-card tint-agriculture">
+        <a href="../product/agriculture.html" id="agriculture" class="bumm-segment-card tint-agriculture">
           <div class="bumm-segment-card-photo">
             <img src="../assets/img/segment-agriculture.jpg" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
@@ -190,7 +190,7 @@
             <span class="bumm-segment-card-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
           </div>
         </a>
-        <a href="#general-casting" id="general-casting" class="bumm-segment-card tint-general-casting">
+        <a href="../product/general-casting.html" id="general-casting" class="bumm-segment-card tint-general-casting">
           <div class="bumm-segment-card-photo">
             <img src="../assets/img/segment-general-casting.jpg" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
@@ -206,7 +206,7 @@
             <span class="bumm-segment-card-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
           </div>
         </a>
-        <a href="#train" id="train" class="bumm-segment-card tint-train">
+        <a href="../product/train.html" id="train" class="bumm-segment-card tint-train">
           <div class="bumm-segment-card-photo">
             <img src="../assets/img/segment-train.jpg" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
@@ -226,66 +226,36 @@
     </div>
   </section>
 
-  <!-- ============ PRODUCT GRID (BY PRODUCT LINE) ============ -->
-  <section class="bumm-products">
+  <!-- ============ PRODUCT CATALOG ============ -->
+  <!-- Cards are rendered by assets/js/catalog.js from assets/js/catalog-data.js
+       (segment, customer, part name, material number, part image). -->
+  <section class="bumm-catalog" id="catalog">
     <div class="container">
-      <p class="bumm-eyebrow" data-i18n="product_eyebrow">Product</p>
-      <h2 class="bumm-about-heading" data-i18n="product_heading">Cast for the systems that keep running.</h2>
-      <p class="bumm-about-lead" data-i18n="product_lead">
-        Four categories of iron cast components, engineered and finished to the
-        tolerances automotive and heavy-equipment production lines require.
+      <p class="bumm-eyebrow">Product Catalog</p>
+      <h2 class="bumm-about-heading">Find a part by segment, customer or material number.</h2>
+      <p class="bumm-about-lead">
+        Browse the cast components we produce for each industry segment and customer.
       </p>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mt-2">
-        <div class="col">
-          <a href="../product/water-pump.html" class="bumm-product-card">
-            <div class="bumm-product-thumb">
-              <img src="https://bumm.co.id/assets/img/water.png" alt="Water Pump component" loading="lazy">
-            </div>
-            <h2 class="bumm-product-title">Water Pump</h2>
-            <p class="bumm-product-desc" data-i18n="product_1_desc">Precision-cast water pump housings and components for automotive cooling systems.</p>
-            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
-          </a>
-        </div>
-        <div class="col">
-          <a href="../product/diesel.html" class="bumm-product-card">
-            <div class="bumm-product-thumb">
-              <img src="https://bumm.co.id/assets/img/diesel.png" alt="Diesel component" loading="lazy">
-            </div>
-            <h2 class="bumm-product-title">Diesel</h2>
-            <p class="bumm-product-desc" data-i18n="product_2_desc">Cast components built for diesel engine systems, from housings to structural parts.</p>
-            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
-          </a>
-        </div>
-        <div class="col">
-          <a href="../product/heavy-duty.html" class="bumm-product-card">
-            <div class="bumm-product-thumb">
-              <img src="https://bumm.co.id/assets/img/heavy.png" alt="Heavy Duty component" loading="lazy">
-            </div>
-            <h2 class="bumm-product-title">Heavy Duty</h2>
-            <p class="bumm-product-desc" data-i18n="product_3_desc">Heavy-duty iron cast parts engineered for construction and industrial machinery.</p>
-            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
-          </a>
-        </div>
-        <div class="col">
-          <a href="../product/automotive.html" class="bumm-product-card">
-            <div class="bumm-product-thumb">
-              <img src="https://bumm.co.id/assets/img/otomotif.png" alt="Automotive component" loading="lazy">
-            </div>
-            <h2 class="bumm-product-title">Automotive</h2>
-            <p class="bumm-product-desc" data-i18n="product_4_desc">General automotive components cast to OEM specification.</p>
-            <span class="bumm-product-link" data-i18n="product_view_detail">View Details →</span>
-          </a>
+
+      <div class="bumm-cat-toolbar">
+        <div class="bumm-cat-chips" data-cat-chips role="group" aria-label="Filter by segment"></div>
+        <div class="bumm-cat-filters">
+          <select class="bumm-cat-select" data-cat-customer aria-label="Filter by customer"></select>
+          <input type="search" class="bumm-cat-input" data-cat-search placeholder="Search part name or material no." aria-label="Search part name or material number">
         </div>
       </div>
-      <!-- TODO(client): each card should link to its own detail page
-           (water-pump.html, diesel.html, etc.) with real spec sheets,
-           dimensions, materials, and photos — that's where actual
-           long-tail SEO traffic comes from ("iron cast water pump
-           housing Indonesia" type searches), not from this listing page
-           alone. Detail pages don't exist yet; the hrefs above are the
-           intended filenames once they're built. -->
+
+      <div class="bumm-cat-status">
+        <span data-cat-count aria-live="polite"></span>
+        <button type="button" class="bumm-cat-reset" data-cat-reset hidden>Reset filters</button>
+      </div>
+
+      <div class="bumm-cat-grid" data-cat-grid></div>
+      <div class="bumm-cat-empty" data-cat-empty hidden>No parts match your filters.</div>
+      <noscript><p class="bumm-cat-empty">Please enable JavaScript to browse the catalog.</p></noscript>
     </div>
   </section>
+
 
   <!-- ============ OUR CAPABILITIES (PROCESS FLOW) ============ -->
   <section class="bumm-cap-flow">
@@ -497,6 +467,8 @@
 
   <script src="../assets/jquery-4.0.0.min.js"></script>
   <script src="../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/catalog-data.js"></script>
+  <script src="../assets/js/catalog.js"></script>
   <script src="../assets/js/custom.js"></script>
 
 </body>
