@@ -238,7 +238,7 @@
   <footer class="bumm-footer">
     <div class="container">
       <div class="row gy-4">
-        <div class="col-lg-5">
+        <div class="col-lg-3 col-md-12">
           <div class="bumm-footer-brand">BUMM</div>
           <p class="bumm-footer-desc">
             PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
@@ -251,7 +251,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-2 col-md-4 col-6">
           <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
           <ul class="bumm-footer-links">
             <li><a href="../about/company-profile/" data-i18n="nav_about">About</a></li>
@@ -260,9 +260,25 @@
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-8">
+        <div class="col-lg-3 col-md-8 col-6">
           <div class="bumm-footer-heading" data-i18n="footer_certification">Certification</div>
-          <img src="../assets/img/sertifikat.webp" alt="BUMM certification" class="bumm-footer-cert" onerror="this.style.display='none'">
+          <div class="bumm-footer-certs">
+            <picture><source srcset="../assets/img/certificates/thumb-iso-9001-2015.webp" type="image/webp"><img src="../assets/img/certificates/thumb-iso-9001-2015.jpg" alt="ISO 9001:2015" class="bumm-footer-cert" width="55" height="78" loading="lazy"></picture>
+            <picture><source srcset="../assets/img/certificates/thumb-iso-14001-2015.webp" type="image/webp"><img src="../assets/img/certificates/thumb-iso-14001-2015.jpg" alt="ISO 14001:2015" class="bumm-footer-cert" width="55" height="78" loading="lazy"></picture>
+            <picture><source srcset="../assets/img/certificates/thumb-iatf-16949-2016.webp" type="image/webp"><img src="../assets/img/certificates/thumb-iatf-16949-2016.jpg" alt="IATF 16949:2016" class="bumm-footer-cert" width="55" height="78" loading="lazy"></picture>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-12">
+          <div class="bumm-footer-heading" data-i18n="footer_location">Location</div>
+          <div class="bumm-map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=PT.+Bina+Usaha+Mandiri+Mizusawa,+Jl.+KH.+EZ+Muttaqien,+Jatiuwung,+Tangerang&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="BUMM location map">
+            </iframe>
+          </div>
         </div>
       </div>
 

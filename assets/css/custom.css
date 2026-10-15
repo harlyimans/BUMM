@@ -1918,9 +1918,17 @@ button:focus-visible {
   color: var(--bumm-accent);
 }
 
+.bumm-footer-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
 .bumm-footer-cert {
-  height: 48px;
+  height: 78px;
   width: auto;
+  border: 1px solid var(--bumm-line);
+  border-radius: 4px;
+  background: #fff;
 }
 
 .bumm-footer-bottom {
@@ -1969,7 +1977,7 @@ button:focus-visible {
   .bumm-contact { padding-top: 3.25rem; padding-bottom: 3.5rem; }
   .bumm-page-header { padding-top: 2.2rem; padding-bottom: 2.2rem; }
   .bumm-cert-strip { padding: 1rem 1.1rem; gap: 1rem; }
-  .bumm-footer-cert { height: 40px; }
+  .bumm-footer-cert { height: 64px; }
 
   /* Bootstrap's stacked mobile nav puts these inline items on their own
      rows by default, but gives no breathing room between them — tighten
