@@ -23,6 +23,23 @@
   var base = { segment: locked || 'all', customer: 'all', q: '' };
   var state = { segment: base.segment, customer: 'all', q: '' };
 
+  // Awalnya hanya tampil ROWS baris; sisanya lewat tombol "Show all".
+  var ROWS = 2;
+  var expanded = false;
+  var current = [];
+  var moreWrap = document.createElement('div');
+  moreWrap.className = 'bumm-cat-more';
+  moreWrap.hidden = true;
+  moreWrap.innerHTML = '<button type="button" class="btn btn-bumm-secondary bumm-cat-more-btn" aria-expanded="false"></button>';
+  els.grid.parentNode.insertBefore(moreWrap, els.grid.nextSibling);
+  var moreBtn = moreWrap.firstChild;
+
+  // Jumlah kolom aktual (auto-fill) -> batas = kolom x ROWS, jadi baris selalu penuh.
+  function perRow() {
+    var cols = getComputedStyle(els.grid).gridTemplateColumns.split(' ').filter(Boolean).length;
+    return Math.max(cols, 1);
+  }
+
   var segLabel = {};
   data.segments.forEach(function (s) { segLabel[s.key] = s.label; });
 
@@ -80,19 +97,44 @@
       '</div></article>';
   }
 
+  function paint() {
+    var limit = perRow() * ROWS;
+    var canCollapse = current.length > limit;
+    var shown = (expanded || !canCollapse) ? current : current.slice(0, limit);
+    els.grid.innerHTML = shown.map(card).join('');
+    els.empty.hidden = current.length > 0;
+    els.count.textContent = (canCollapse && !expanded)
+      ? 'Showing ' + shown.length + ' of ' + current.length + ' parts'
+      : current.length + (current.length === 1 ? ' part' : ' parts');
+    moreWrap.hidden = !canCollapse;
+    moreBtn.textContent = expanded ? 'Show less' : 'Show all (' + current.length + ')';
+    moreBtn.setAttribute('aria-expanded', String(expanded));
+  }
+
   function render() {
     var q = state.q.trim().toLowerCase();
-    var list = data.parts.filter(function (p) {
+    current = data.parts.filter(function (p) {
       if (state.segment !== 'all' && p.segment !== state.segment) return false;
       if (state.customer !== 'all' && p.customer !== state.customer) return false;
       if (q && (p.partName + ' ' + p.materialNo).toLowerCase().indexOf(q) === -1) return false;
       return true;
     });
-    els.grid.innerHTML = list.map(card).join('');
-    els.empty.hidden = list.length > 0;
-    els.count.textContent = list.length + (list.length === 1 ? ' part' : ' parts');
+    expanded = false; // filter berubah -> kembali ke tampilan ringkas
+    paint();
     els.reset.hidden = !(state.segment !== base.segment || state.customer !== 'all' || q !== '');
   }
+
+  moreBtn.addEventListener('click', function () {
+    expanded = !expanded;
+    paint();
+    if (!expanded) root.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  });
+
+  var rz;
+  window.addEventListener('resize', function () {
+    clearTimeout(rz);
+    rz = setTimeout(paint, 150);
+  });
 
   if (els.chips) {
     els.chips.addEventListener('click', function (e) {
