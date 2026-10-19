@@ -172,7 +172,7 @@
       <p class="bumm-eyebrow" data-i18n="career_openings_eyebrow">Open Positions</p>
       <h2 class="bumm-about-heading" style="font-size:1.6rem;" data-i18n="career_openings_heading">Current vacancies</h2>
 
-      <div class="bumm-empty-state mt-4">
+      <div class="bumm-empty-state mt-4" id="jobEmpty">
         <i class="bi bi-clipboard-x"></i>
         <p class="mb-0" data-i18n="career_empty_state">
           There are no open positions listed right now. Send us your CV below and
@@ -180,6 +180,7 @@
         </p>
       </div>
 
+      <div class="mt-4" id="jobList"></div>
       <!-- Example markup for when real openings exist — kept as a template,
            not rendered (wrap in a loop / CMS once a job source is wired up):
       <div class="mt-4">
@@ -294,6 +295,8 @@
   <script src="../assets/jquery-4.0.0.min.js"></script>
   <script src="../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/custom.js"></script>
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/career-jobs.js"></script>
 
 </body>
 </html>

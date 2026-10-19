@@ -1319,7 +1319,10 @@ button:focus-visible {
 .bumm-cert-card-desc { font-size: .92rem; color: var(--bumm-ink-muted); }
 
 /* Viewer modal */
-.bumm-cert-modal { max-width: min(92vw, 640px); }
+/* Certificates are portrait (~1 : 1.41). Size the dialog from the viewport
+   height so the whole certificate plus its caption always fits on screen
+   instead of being cropped/scrolled. 10rem = dialog margins + caption bar. */
+.bumm-cert-modal { max-width: min(92vw, 640px, max(280px, calc((100vh - 10rem) * 0.707))); }
 .bumm-cert-modal .modal-content {
   position: relative;
   background-color: var(--bumm-bg);
