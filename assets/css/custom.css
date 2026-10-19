@@ -3797,3 +3797,88 @@ h1, h2, h3, h4, h5, h6,
   background-color: var(--bumm-bg-alt);
 }
 .bumm-footer-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ==========================================================================
+   Subpage hero with photo background + overlay navbar on every page
+   --------------------------------------------------------------------------
+   Navbar semua halaman = navbar beranda: fixed-top, transparan di atas hero,
+   solid setelah di-scroll (class .is-scrolled dari custom.js).
+   .bumm-page-header sekarang memakai foto (inline background-image di HTML)
+   + scrim gelap, teks putih di kedua tema (sama seperti .bumm-product-hero).
+   ========================================================================== */
+.bumm-page-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background-color: #0f0c0d;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 0;
+  /* navbar fixed -> sisakan tinggi navbar (~4.75rem) di atas konten */
+  padding-top: calc(4.75rem + 3.25rem);
+  padding-bottom: 3.5rem;
+}
+
+.bumm-page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(100deg, rgba(16, 6, 8,.92) 0%, rgba(16, 6, 8,.74) 45%, rgba(16, 6, 8,.45) 100%),
+    linear-gradient(to top, rgba(16, 6, 8,.55) 0%, rgba(16, 6, 8,0) 45%);
+}
+
+.bumm-page-header .bumm-breadcrumb {
+  --bs-breadcrumb-divider-color: rgba(255,255,255,.55);
+  --bs-breadcrumb-item-active-color: rgba(255,255,255,.75);
+}
+.bumm-page-header .bumm-breadcrumb a { color: rgba(255,255,255,.85); }
+.bumm-page-header .bumm-breadcrumb a:hover { color: #fff; }
+.bumm-page-header .bumm-eyebrow { color: rgba(255,255,255,.85); }
+.bumm-page-header .bumm-about-heading { color: #fff; }
+.bumm-page-header .bumm-about-lead { color: rgba(255,255,255,.85); }
+
+/* Product listing hero: ikut sisakan ruang untuk navbar fixed */
+.bumm-product-hero { padding-top: calc(4.75rem + 3rem); }
+
+@media (max-width: 575.98px) {
+  .bumm-page-header { padding-top: calc(4.5rem + 2rem); padding-bottom: 2.5rem; }
+  .bumm-product-hero { padding-top: calc(4.5rem + 2rem); }
+}
+
+/* Light mode: header foto tetap gelap, jadi navbar transparan di atasnya
+   memakai gaya terang-di-atas-gelap (bukan ink gelap + veil putih milik
+   hero beranda). Tidak berlaku saat menu mobile terbuka (panel putih). */
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing))::before {
+  background: linear-gradient(to bottom, rgba(15, 12, 13,.62), rgba(15, 12, 13,0));
+}
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-brand { color: #fff; }
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link { color: rgba(255,255,255,.80); }
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link:hover,
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link:focus-visible { color: #fff; }
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .btn-bumm-outline {
+  border-color: rgba(255,255,255,.50);
+  color: #fff;
+}
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .btn-bumm-outline:hover {
+  border-color: #fff;
+  background-color: rgba(255,255,255,.12);
+  color: #fff;
+}
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .bumm-theme-toggle {
+  background-color: transparent;
+  border-color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.82);
+}
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .bumm-theme-toggle:hover,
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .bumm-theme-toggle:focus-visible {
+  border-color: #fff;
+  color: #fff;
+}
+[data-bumm-theme="light"] .bumm-navbar--on-photo:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.92%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}

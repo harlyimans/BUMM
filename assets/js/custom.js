@@ -259,13 +259,11 @@ $(function () {
   // Subtle navbar depth once the page scrolls, so it reads as "lifted"
   // above the hero rather than just a flat bar.
   var $nav = $('.bumm-navbar');
-  $(window).on('scroll', function () {
-    if ($(window).scrollTop() > 8) {
-      $nav.addClass('is-scrolled');
-    } else {
-      $nav.removeClass('is-scrolled');
-    }
-  });
+  function syncNavbar() {
+    $nav.toggleClass('is-scrolled', $(window).scrollTop() > 8);
+  }
+  $(window).on('scroll', syncNavbar);
+  syncNavbar(); // also correct on load / refresh while already scrolled
 
   // --------------------------------------------------------------------
   // --------------------------------------------------------------------
