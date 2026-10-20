@@ -4423,3 +4423,7 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 /* Gambar ber-atribut width/height tetap proporsional (hindari CLS tanpa meregang).
    :where() = specificity 0, jadi rule class yang mengatur height tetap menang. */
 :where(img[width][height]) { height: auto; }
+/* Footer: logo BUMM yang sama dengan navbar (dark mode: siluet terang). */
+.bumm-footer-brand { display: inline-block; line-height: 0; }
+.bumm-footer-logo { display: block; height: 44px; width: auto; }
+[data-bumm-theme="dark"] .bumm-footer-logo { filter: brightness(0) invert(1); }
