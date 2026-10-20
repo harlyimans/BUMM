@@ -4341,7 +4341,7 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 }
 
 /* ---- 2. Mode terang: hero putih, teks gelap -------------------------------- */
-[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"],
+[data-bumm-theme="light"] .bumm-page-header,
 [data-bumm-theme="light"] .bumm-product-hero {
   background-color: #fff;
   color: var(--bumm-ink);
@@ -4349,56 +4349,67 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 }
 
 /* gradasi/scrim dihilangkan: foto produk tampil apa adanya di atas putih */
-[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"]::before,
+[data-bumm-theme="light"] .bumm-page-header::before,
 [data-bumm-theme="light"] .bumm-product-hero-media::after {
   background: none;
 }
 
 /* breadcrumb */
-[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-breadcrumb,
+[data-bumm-theme="light"] .bumm-page-header .bumm-breadcrumb,
 [data-bumm-theme="light"] .bumm-product-hero .bumm-breadcrumb {
   --bs-breadcrumb-divider-color: var(--bumm-ink-muted);
   --bs-breadcrumb-item-active-color: var(--bumm-ink-muted);
 }
-[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-breadcrumb a,
+[data-bumm-theme="light"] .bumm-page-header .bumm-breadcrumb a,
 [data-bumm-theme="light"] .bumm-product-hero .bumm-breadcrumb a { color: var(--bumm-ink-muted); }
-[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-breadcrumb a:hover,
+[data-bumm-theme="light"] .bumm-page-header .bumm-breadcrumb a:hover,
 [data-bumm-theme="light"] .bumm-product-hero .bumm-breadcrumb a:hover { color: var(--bumm-accent); }
 
 /* eyebrow, judul, paragraf */
-[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-eyebrow,
+[data-bumm-theme="light"] .bumm-page-header .bumm-eyebrow,
 [data-bumm-theme="light"] .bumm-product-hero .bumm-eyebrow { color: var(--bumm-accent); }
-[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-about-heading,
+[data-bumm-theme="light"] .bumm-page-header .bumm-about-heading,
 [data-bumm-theme="light"] .bumm-product-hero .bumm-product-hero-heading { color: var(--bumm-ink); font-weight: 800; }
 
 /* Kata belakang judul berwarna merah (mis. "Product" hitam + "Segment" merah) */
 .bumm-about-heading .bumm-heading-accent { color: var(--bumm-accent); }
-[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-about-lead,
+[data-bumm-theme="light"] .bumm-page-header .bumm-about-lead,
 [data-bumm-theme="light"] .bumm-product-hero .bumm-product-hero-lead { color: var(--bumm-ink-muted); }
 
 /* ---- 3. Navbar di atas hero putih: teks gelap (bukan putih) ----------------- */
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing))::before {
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing))::before {
   background: none;
 }
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-brand { color: var(--bumm-ink); }
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link { color: var(--bumm-ink-muted); }
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link:hover,
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link:focus-visible { color: var(--bumm-accent); }
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .btn-bumm-outline {
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-brand { color: var(--bumm-ink); }
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link { color: var(--bumm-ink-muted); }
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link:hover,
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link:focus-visible { color: var(--bumm-accent); }
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .btn-bumm-outline {
   border-color: var(--bumm-line);
   color: var(--bumm-ink);
 }
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .btn-bumm-outline:hover {
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .btn-bumm-outline:hover {
   border-color: var(--bumm-accent);
   background-color: transparent;
   color: var(--bumm-accent);
 }
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .bumm-theme-toggle {
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .bumm-theme-toggle {
   border-color: var(--bumm-line);
   color: var(--bumm-ink-muted);
 }
-[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-toggler-icon {
+[data-bumm-theme="light"] body:has(.bumm-page-header, .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-toggler-icon {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2828, 18, 19, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hero halaman non-Home (mode terang): tombol subnav diberi latar putih tipis agar terbaca di atas foto pucat */
+[data-bumm-theme="light"] .bumm-page-header .bumm-subnav a {
+  background-color: rgba(255,255,255,.75);
+  border-color: rgba(28, 18, 19,.18);
+}
+[data-bumm-theme="light"] .bumm-page-header .bumm-subnav a:hover { border-color: var(--bumm-accent); }
+[data-bumm-theme="light"] .bumm-page-header .bumm-subnav a.is-active {
+  background-color: var(--bumm-accent);
+  border-color: var(--bumm-accent);
 }
 
 /* Gambar ber-atribut width/height tetap proporsional (hindari CLS tanpa meregang).
