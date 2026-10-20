@@ -3891,3 +3891,78 @@ h1, h2, h3, h4, h5, h6,
 }
 .bumm-cat-more[hidden] { display: none; }
 .bumm-cat-more-btn { min-width: 11rem; }
+
+/* ==========================================================================
+   SECTION RHYTHM + TYPE SCALE  (rapikan pola warna section & ukuran judul)
+   Blok ini sengaja ditaruh paling bawah supaya menimpa aturan lama di atas.
+   Ubah nilai di token ini saja kalau ingin menyetel ulang seluruh situs.
+   ========================================================================== */
+:root {
+  --bumm-h2:      clamp(1.75rem, 3.2vw, 2.5rem);  /* judul section (semua halaman) */
+  --bumm-h2-sub:  1.5rem;                          /* sub-judul di halaman detail   */
+  --bumm-h3:      1.1rem;                          /* judul kartu                   */
+}
+
+/* ---- 1. Warna section: selang-seling putih (--bumm-bg) / tint (--bumm-bg-alt)
+   Beranda  : hero | Trusted putih | About-intro tint | Experience putih |
+              Principles tint | Capability putih | Products tint |
+              Certifications putih | CTA merah | Contact | Footer tint
+   Dulu Trusted+About-intro sama-sama tint, dan Products+Certifications
+   sama-sama tint (tint-tint). ------------------------------------------- */
+.bumm-trusted { background-color: var(--bumm-bg); }
+
+.bumm-cert { background: var(--bumm-bg); }
+.bumm-cert-card { background-color: var(--bumm-bg-alt); }
+.bumm-cert-card:hover { background-color: var(--bumm-bg-alt); }
+
+/* Halaman Product: Segments (putih) > Catalog (tint) > Capability (putih) */
+.bumm-catalog:not(.bumm-catalog--segment) { background-color: var(--bumm-bg-alt); }
+
+/* Section terakhir sebelum footer jangan sewarna footer (tint-tint) */
+main > .bumm-about:last-child,
+main > .bumm-news:last-child,
+main > .bumm-products:last-child { background-color: var(--bumm-bg); }
+
+/* ---- 2. Judul section (h2): satu font, satu ukuran, satu line-height ------ */
+.bumm-about-heading,
+.bumm-cert-heading,
+.bumm-cta-heading,
+.bumm-contact-heading,
+.bumm-experience-heading,
+.bumm-cap-banner-heading,
+.bumm-insp-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--bumm-h2);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+}
+
+/* Sub-judul di halaman detail (menggantikan inline style 1.4 / 1.5 / 1.6rem) */
+.bumm-about-heading--sub { font-size: var(--bumm-h2-sub); }
+
+/* ---- 3. Judul kartu (h3): satu font, satu ukuran ------------------------- */
+.bumm-victory-title,
+.bumm-capability-title,
+.bumm-product-title,
+.bumm-news-title,
+.bumm-job-title,
+.bumm-cert-card-title,
+.bumm-contact-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--bumm-h3);
+  line-height: 1.3;
+}
+
+/* ---- Trusted by: logo diperkecil (ukuran inline per logo dikecilkan proporsional) */
+.bumm-marquee-track { zoom: .72; }
+@media (max-width: 767.98px) { .bumm-marquee-track { zoom: .58; } }
+
+/* ---- Inspection Facility di beranda: menyambung dengan Capability di atasnya
+   (sama-sama putih, jadi dibuat satu blok tanpa garis & jarak ganda). */
+.bumm-cap-flow:has(+ .bumm-insp) { padding-bottom: 4.5rem; }
+.bumm-cap-flow + .bumm-insp { border-top: 0; }
+
+/* ---- Halaman Facility: Inspection (tint) tepat di bawah banner, lalu grid 8 kartu (putih) */
+.bumm-insp--tint { background-color: var(--bumm-bg-alt); border-top: 0; }
