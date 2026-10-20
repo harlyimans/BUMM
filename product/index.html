@@ -111,23 +111,17 @@
   <!-- TODO(client): using hero-pour.jpg as the backdrop for now — swap in
        a photo of finished/machined components laid out (brake discs,
        hubs, brackets) once available, closer to the reference mock. -->
-  <header class="bumm-product-hero">
-    <div class="bumm-product-hero-media" aria-hidden="true">
-      <picture>
-        <source srcset="../assets/img/product-banner.png" type="image/webp">
-        <img src="../assets/img/product-banner.png" alt="">
-      </picture>
-    </div>
+  <header class="bumm-page-header" style="background-image:url('../assets/img/product-hero.png')">
     <div class="container">
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb bumm-breadcrumb bumm-breadcrumb-on-photo">
+        <ol class="breadcrumb bumm-breadcrumb">
           <li class="breadcrumb-item"><a href="../">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">Product</li>
         </ol>
       </nav>
-      <p class="bumm-eyebrow bumm-eyebrow-on-photo" data-i18n="product_segment_eyebrow">Our Product</p>
-      <h1 class="bumm-product-hero-heading" data-i18n="product_segment_heading">Product Segment</h1>
-      <p class="bumm-product-hero-lead" data-i18n="product_segment_lead">
+      <p class="bumm-eyebrow" data-i18n="product_segment_eyebrow">Our Product</p>
+      <h1 class="bumm-about-heading" data-i18n="product_segment_heading">Product <span class="bumm-heading-accent">Segment</span></h1>
+      <p class="bumm-about-lead" data-i18n="product_segment_lead">
         High quality casting solutions for various industries, supporting a
         stronger and more sustainable future.
       </p>

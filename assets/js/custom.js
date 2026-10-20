@@ -184,7 +184,7 @@ $(function () {
       capflow_8_desc: 'A final quality inspection clears each part for packing and delivery to the customer.',
       cert_caption: 'Certification — confirm standard & number',
       product_segment_eyebrow: 'Our Product',
-      product_segment_heading: 'Product Segment',
+      product_segment_heading: 'Product <span class="bumm-heading-accent">Segment</span>',
       product_segment_lead: 'High quality casting solutions for various industries, supporting a stronger and more sustainable future.',
       segment_automotive_title: 'Automotive',
       segment_agriculture_title: 'Agriculture',
@@ -237,7 +237,9 @@ $(function () {
     $('[data-i18n]').each(function () {
       var key = $(this).data('i18n');
       if (dict[key] !== undefined) {
-        $(this).text(dict[key]);
+        // Entri yang memakai <span> (kata beraksen warna) ditulis sebagai HTML
+        if (/<span\b/.test(dict[key])) { $(this).html(dict[key]); }
+        else { $(this).text(dict[key]); }
       }
     });
     document.documentElement.setAttribute('lang', DEFAULT_LANG);

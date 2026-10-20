@@ -3613,8 +3613,12 @@ h1, h2, h3, h4, h5, h6,
   pointer-events: none;
   user-select: none;
   opacity: .9;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  /* Pudar ke bawah (menyatu dengan kartu) DAN pudar di sisi kiri, supaya judul
+     & paragraf di kiri tidak menimpa foto latar yang ramai. */
+  -webkit-mask-image: linear-gradient(to right, transparent 12%, #000 55%), linear-gradient(to bottom, #000 55%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 12%, #000 55%), linear-gradient(to bottom, #000 55%, transparent 100%);
+  mask-composite: intersect;
 }
 [data-bumm-theme="dark"] .bumm-insp-bg {
   filter: invert(1);
@@ -4286,7 +4290,7 @@ a.bumm-vb-card:focus-visible { outline: 3px solid var(--bumm-accent); outline-of
 /* ---- Train Component: part tengah diputar ke kiri (berlawanan arah jarum jam)
    Ubah sudutnya lewat --bumm-train-part-rotate (negatif = ke kiri). --------- */
 .tint-train .bumm-segment-card-parts img:nth-child(2) {
-  --bumm-train-part-rotate: -20deg;
+  --bumm-train-part-rotate: -90deg;
   transform: rotate(var(--bumm-train-part-rotate));
 }
 
@@ -4296,3 +4300,102 @@ a.bumm-mail { display: block; text-decoration: none; }
 a.bumm-mail:hover,
 a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underline; text-underline-offset: 3px; }
 .bumm-about-lead + .btn { margin-top: 1.25rem; }
+
+/* ==========================================================================
+   Hero halaman Product — satu desain untuk semua halaman, warna PUTIH (mode terang)
+   Tempel di PALING BAWAH assets/css/custom.css (sudah termasuk penyamaan hero
+   halaman Product utama dengan halaman kategori, jadi tidak perlu
+   product-hero-sync.css lagi).
+   Berlaku untuk: product/index.html (.bumm-product-hero) dan semua halaman
+   kategori (.bumm-page-header dengan foto product-hero). Mode gelap tetap
+   memakai hero gelap seperti sebelumnya.
+   ========================================================================== */
+
+/* ---- 1. Hero Product utama: samakan struktur dengan halaman kategori ------- */
+.bumm-product-hero {
+  isolation: isolate;
+  background-color: #0f0c0d;
+  padding-top: calc(4.75rem + 3.25rem);
+  padding-bottom: 3.5rem;
+}
+.bumm-product-hero-media::after {
+  background:
+    linear-gradient(100deg, rgba(16, 6, 8,.92) 0%, rgba(16, 6, 8,.74) 45%, rgba(16, 6, 8,.45) 100%),
+    linear-gradient(to top, rgba(16, 6, 8,.55) 0%, rgba(16, 6, 8,0) 45%);
+}
+.bumm-product-hero-heading {
+  font-size: var(--bumm-h2);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  margin: 0 0 .9rem;
+}
+.bumm-product-hero-lead {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 60ch;
+  color: rgba(255,255,255,.85);
+}
+@media (max-width: 575.98px) {
+  .bumm-product-hero { padding-top: calc(4.5rem + 2rem); padding-bottom: 2.5rem; }
+}
+
+/* ---- 2. Mode terang: hero putih, teks gelap -------------------------------- */
+[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"],
+[data-bumm-theme="light"] .bumm-product-hero {
+  background-color: #fff;
+  color: var(--bumm-ink);
+  border-bottom: 1px solid var(--bumm-line);
+}
+
+/* gradasi/scrim dihilangkan: foto produk tampil apa adanya di atas putih */
+[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"]::before,
+[data-bumm-theme="light"] .bumm-product-hero-media::after {
+  background: none;
+}
+
+/* breadcrumb */
+[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-breadcrumb,
+[data-bumm-theme="light"] .bumm-product-hero .bumm-breadcrumb {
+  --bs-breadcrumb-divider-color: var(--bumm-ink-muted);
+  --bs-breadcrumb-item-active-color: var(--bumm-ink-muted);
+}
+[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-breadcrumb a,
+[data-bumm-theme="light"] .bumm-product-hero .bumm-breadcrumb a { color: var(--bumm-ink-muted); }
+[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-breadcrumb a:hover,
+[data-bumm-theme="light"] .bumm-product-hero .bumm-breadcrumb a:hover { color: var(--bumm-accent); }
+
+/* eyebrow, judul, paragraf */
+[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-eyebrow,
+[data-bumm-theme="light"] .bumm-product-hero .bumm-eyebrow { color: var(--bumm-accent); }
+[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-about-heading,
+[data-bumm-theme="light"] .bumm-product-hero .bumm-product-hero-heading { color: var(--bumm-ink); font-weight: 800; }
+
+/* Kata belakang judul berwarna merah (mis. "Product" hitam + "Segment" merah) */
+.bumm-about-heading .bumm-heading-accent { color: var(--bumm-accent); }
+[data-bumm-theme="light"] .bumm-page-header[style*="product-hero"] .bumm-about-lead,
+[data-bumm-theme="light"] .bumm-product-hero .bumm-product-hero-lead { color: var(--bumm-ink-muted); }
+
+/* ---- 3. Navbar di atas hero putih: teks gelap (bukan putih) ----------------- */
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing))::before {
+  background: none;
+}
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-brand { color: var(--bumm-ink); }
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link { color: var(--bumm-ink-muted); }
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link:hover,
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .nav-link:focus-visible { color: var(--bumm-accent); }
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .btn-bumm-outline {
+  border-color: var(--bumm-line);
+  color: var(--bumm-ink);
+}
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .btn-bumm-outline:hover {
+  border-color: var(--bumm-accent);
+  background-color: transparent;
+  color: var(--bumm-accent);
+}
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .bumm-theme-toggle {
+  border-color: var(--bumm-line);
+  color: var(--bumm-ink-muted);
+}
+[data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2828, 18, 19, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
