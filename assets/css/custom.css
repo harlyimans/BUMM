@@ -3966,3 +3966,333 @@ main > .bumm-products:last-child { background-color: var(--bumm-bg); }
 
 /* ---- Halaman Facility: Inspection (tint) tepat di bawah banner, lalu grid 8 kartu (putih) */
 .bumm-insp--tint { background-color: var(--bumm-bg-alt); border-top: 0; }
+
+
+/* ---- Halaman Vision & Mission ------------------------------------------- */
+.bumm-vm { background-color: var(--bumm-bg); padding: 4.5rem 0 5rem; }
+
+.bumm-vm-card {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  border-top: 3px solid var(--bumm-accent);
+  border-radius: var(--bumm-radius-md);
+  padding: 2.4rem 2.2rem 2.5rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bumm-vm-card:hover { transform: translateY(-4px); box-shadow: var(--bumm-shadow-md); }
+
+.bumm-vm-num {
+  position: absolute;
+  top: .4rem;
+  right: 1.4rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 5.5rem;
+  line-height: 1;
+  color: var(--bumm-accent);
+  opacity: .09;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bumm-vm-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 1.4rem;
+  border-radius: 50%;
+  background-color: var(--bumm-accent);
+  color: var(--bumm-on-accent);
+  font-size: 1.4rem;
+}
+
+.bumm-vm-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--bumm-h2-sub);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--bumm-ink);
+}
+
+.bumm-vm-text {
+  margin: 0;
+  color: var(--bumm-ink-muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+/* Our Vision, Our Commitment */
+.bumm-vm-commit {
+  margin-bottom: 4rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--bumm-line);
+}
+.bumm-vm-commit-heading { margin-bottom: 0; }
+.bumm-vm-commit-text {
+  margin: 0;
+  color: var(--bumm-ink-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--bumm-accent);
+}
+
+.bumm-vm-pillars {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.bumm-vm-pillars li {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  padding: 1.1rem 1.2rem;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  border-radius: var(--bumm-radius-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .92rem;
+  line-height: 1.3;
+  color: var(--bumm-ink);
+}
+.bumm-vm-pillars i { font-size: 1.4rem; color: var(--bumm-accent); flex: 0 0 auto; }
+
+@media (max-width: 991.98px) {
+  .bumm-vm { padding: 3.5rem 0 4rem; }
+  .bumm-vm-commit { margin-bottom: 3rem; padding-bottom: 2.5rem; }
+  .bumm-vm-pillars { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575.98px) {
+  .bumm-vm-card { padding: 2rem 1.5rem 2.1rem; }
+  .bumm-vm-pillars { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bumm-vm-card, .bumm-vm-card:hover { transition: none; transform: none; }
+}
+
+
+/* ---- Penyeragaman judul (sisa yang masih berbeda) ------------------------
+   Hero judul produk ikut ukuran judul section; judul kartu besar (nama
+   manajemen, Vision/Mission) ikut ukuran sub-judul. ----------------------- */
+.bumm-product-hero-heading {
+  font-size: var(--bumm-h2);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+}
+.bumm-mgmt-name,
+.bumm-vm-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--bumm-h2-sub);
+  line-height: 1.2;
+}
+
+
+/* ---- Halaman Corporate Value (about) — layout baris selang-seling ---------
+   Sengaja beda dari kartu 7 kolom di beranda (.bumm-vb-*). Kartu beranda
+   menaut ke #id tiap baris di sini. ------------------------------------- */
+a.bumm-vb-card { color: inherit; text-decoration: none; }
+a.bumm-vb-card:focus-visible { outline: 3px solid var(--bumm-accent); outline-offset: 3px; }
+
+.bumm-cv { background-color: var(--bumm-bg); padding: 3.5rem 0 5rem; }
+
+.bumm-cv-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-bottom: 1.5rem;
+}
+.bumm-cv-index a {
+  flex: 1 1 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .2rem;
+  padding: .9rem .6rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--bumm-bg-alt);
+  border: 1px solid var(--bumm-line);
+  border-radius: var(--bumm-radius-sm);
+  color: var(--bumm-ink);
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.bumm-cv-index b {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--bumm-accent);
+  transition: color .2s ease;
+}
+.bumm-cv-index span {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+.bumm-cv-index a:hover,
+.bumm-cv-index a:focus-visible {
+  background-color: var(--bumm-accent);
+  border-color: var(--bumm-accent);
+  color: var(--bumm-on-accent);
+}
+.bumm-cv-index a:hover b,
+.bumm-cv-index a:focus-visible b { color: var(--bumm-on-accent); }
+
+.bumm-cv-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--bumm-line);
+  scroll-margin-top: 5.5rem;
+}
+.bumm-cv-row:nth-child(even) .bumm-cv-media { order: 2; }
+
+.bumm-cv-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--bumm-radius-md);
+  background: linear-gradient(135deg, var(--bumm-bg-alt), var(--bumm-line));
+  box-shadow: var(--bumm-shadow-md);
+}
+.bumm-cv-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.bumm-cv-row:hover .bumm-cv-media img { transform: scale(1.04); }
+.bumm-cv-media::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 34%;
+  height: 5px;
+  background-color: var(--bumm-accent);
+}
+.bumm-cv-badge {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 50%;
+  background-color: var(--bumm-accent);
+  color: var(--bumm-on-accent);
+  font-size: 1.4rem;
+}
+
+.bumm-cv-body { position: relative; }
+.bumm-cv-body > *:not(.bumm-cv-letter) { position: relative; z-index: 1; }
+.bumm-cv-letter {
+  position: absolute;
+  top: -3.2rem;
+  left: -.6rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 11rem;
+  line-height: 1;
+  color: var(--bumm-accent);
+  opacity: .09;
+  pointer-events: none;
+  user-select: none;
+}
+.bumm-cv-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--bumm-h2);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  color: var(--bumm-ink);
+  margin: 0 0 1rem;
+}
+.bumm-cv-desc {
+  max-width: 30rem;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--bumm-ink-muted);
+}
+
+/* baris yang dituju dari beranda (#id) disorot */
+.bumm-cv-row:target .bumm-cv-media { outline: 3px solid var(--bumm-accent); outline-offset: 5px; }
+.bumm-cv-row:target .bumm-cv-title { color: var(--bumm-accent); }
+
+@media (max-width: 991.98px) {
+  .bumm-cv { padding: 2.5rem 0 3.5rem; }
+  .bumm-cv-row { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; }
+  .bumm-cv-row:nth-child(even) .bumm-cv-media { order: 0; }
+  .bumm-cv-letter { font-size: 8rem; top: -2.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bumm-cv-media img, .bumm-cv-row:hover .bumm-cv-media img { transition: none; transform: none; }
+}
+
+
+/* ---- Halaman Facility: jarak grid 8 kartu -> Inspection dirapatkan ---------
+   Dua section sama-sama tint, dulu padding bawah (5rem) + padding atas (5rem)
+   menumpuk jadi ~10rem kosong. Sekarang cukup satu jarak antar-grup. */
+.bumm-about:has(+ .bumm-insp--tint) { padding-bottom: 0; }
+.bumm-about + .bumm-insp--tint { padding-top: 2.5rem; }
+@media (max-width: 575.98px) {
+  .bumm-about + .bumm-insp--tint { padding-top: 2rem; }
+}
+
+
+/* ---- Segment card: foto 3 part diseragamkan ---------------------------------
+   Penyebab ukuran tidak rata: PNG part punya ruang transparan yang berbeda-beda.
+   Aset part-*.png sudah dipangkas & ditaruh di kanvas persegi yang sama (400x400),
+   jadi tiap part kini mengisi slot 1:1 yang sama lebarnya. --------------------- */
+.bumm-segment-card-parts {
+  gap: .3rem;
+  padding: 0 .75rem;
+  min-height: 0;
+}
+.bumm-segment-card-parts img {
+  flex: 0 1 4.2rem;          /* ukuran slot tiap part: ubah angka ini untuk memperbesar/memperkecil */
+  min-width: 0;
+  width: 4.2rem;
+  height: auto;
+  max-width: 31%;
+  max-height: none;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+@media (max-width: 575.98px) {
+  .bumm-segment-card-parts img { flex-basis: 3.2rem; width: 3.2rem; }
+}
+
+
+/* ---- Train Component: part tengah diputar ke kiri (berlawanan arah jarum jam)
+   Ubah sudutnya lewat --bumm-train-part-rotate (negatif = ke kiri). --------- */
+.tint-train .bumm-segment-card-parts img:nth-child(2) {
+  --bumm-train-part-rotate: -20deg;
+  transform: rotate(var(--bumm-train-part-rotate));
+}
+
+
+/* ---- Link email (mailto): tampil seperti teks biasa, jelas bisa diklik ---- */
+a.bumm-mail { display: block; text-decoration: none; }
+a.bumm-mail:hover,
+a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underline; text-underline-offset: 3px; }
+.bumm-about-lead + .btn { margin-top: 1.25rem; }

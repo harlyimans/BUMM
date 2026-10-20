@@ -406,12 +406,12 @@
       <div class="row">
         <div class="col-lg-8">
           <p class="bumm-eyebrow" data-i18n="about_eyebrow">Our Values</p>
-          <h2 class="bumm-about-heading" data-i18n="about_heading">Built on seven operating principles.</h2>
+          <h2 class="bumm-about-heading" data-i18n="about_heading">Corporate Value</h2>
         </div>
       </div>
 
       <div class="bumm-victory-b mt-4">
-        <div class="bumm-vb-card">
+        <a class="bumm-vb-card" href="./about/corporate-value/#visionary">
           <span class="bumm-vb-letter">V</span>
           <span class="bumm-vb-icon"><i class="bi bi-lightbulb" aria-hidden="true"></i></span>
           <h3 class="bumm-vb-title" data-i18n="victory_v_title">Visionary</h3>
@@ -420,8 +420,8 @@
             <img src="./assets/img/value-visionary.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
-        </div>
-        <div class="bumm-vb-card">
+        </a>
+        <a class="bumm-vb-card" href="./about/corporate-value/#integrity">
           <span class="bumm-vb-letter">I</span>
           <span class="bumm-vb-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
           <h3 class="bumm-vb-title" data-i18n="victory_i_title">Integrity</h3>
@@ -430,8 +430,8 @@
             <img src="./assets/img/value-integrity.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
-        </div>
-        <div class="bumm-vb-card">
+        </a>
+        <a class="bumm-vb-card" href="./about/corporate-value/#customer-oriented">
           <span class="bumm-vb-letter">C</span>
           <span class="bumm-vb-icon"><i class="bi bi-person-hearts" aria-hidden="true"></i></span>
           <h3 class="bumm-vb-title" data-i18n="victory_c_title">Customer-oriented</h3>
@@ -440,8 +440,8 @@
             <img src="./assets/img/value-customer.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
-        </div>
-        <div class="bumm-vb-card">
+        </a>
+        <a class="bumm-vb-card" href="./about/corporate-value/#teamwork">
           <span class="bumm-vb-letter">T</span>
           <span class="bumm-vb-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
           <h3 class="bumm-vb-title" data-i18n="victory_t_title">Teamwork</h3>
@@ -450,8 +450,8 @@
             <img src="./assets/img/value-teamwork.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
-        </div>
-        <div class="bumm-vb-card">
+        </a>
+        <a class="bumm-vb-card" href="./about/corporate-value/#operational-excellence">
           <span class="bumm-vb-letter">O</span>
           <span class="bumm-vb-icon"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></span>
           <h3 class="bumm-vb-title" data-i18n="victory_o_title">Operational Excellence</h3>
@@ -460,8 +460,8 @@
             <img src="./assets/img/value-operational.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
-        </div>
-        <div class="bumm-vb-card">
+        </a>
+        <a class="bumm-vb-card" href="./about/corporate-value/#responsibility">
           <span class="bumm-vb-letter">R</span>
           <span class="bumm-vb-icon"><i class="bi bi-hand-thumbs-up-fill" aria-hidden="true"></i></span>
           <h3 class="bumm-vb-title" data-i18n="victory_r_title">Responsibility</h3>
@@ -470,8 +470,8 @@
             <img src="./assets/img/value-responsibility.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
-        </div>
-        <div class="bumm-vb-card">
+        </a>
+        <a class="bumm-vb-card" href="./about/corporate-value/#yield-orientation">
           <span class="bumm-vb-letter">Y</span>
           <span class="bumm-vb-icon"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></span>
           <h3 class="bumm-vb-title" data-i18n="victory_y_title">Yield Orientation</h3>
@@ -480,7 +480,7 @@
             <img src="./assets/img/value-yield.webp" alt="" loading="lazy"
                  onerror="this.parentNode.classList.add('is-placeholder');this.remove();">
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -1051,15 +1051,12 @@
                   <span class="bumm-contact-value">Jl. KH. EZ Muttaqien, Kec. Jatiuwung, Kel. Alam Jaya, Kota Tangerang, Banten 15133</span>
                 </div>
               </li>
-              <!-- TODO(client): the email on the old site is Cloudflare-obfuscated
-                   (rendered client-side), so it couldn't be read from the page
-                   source — drop the real address in here. -->
               <li class="bumm-contact-item">
                 <span class="bumm-contact-icon"><i class="bi bi-envelope-fill"></i></span>
                 <div class="bumm-contact-text">
                   <span class="bumm-contact-label" data-i18n="contact_email_label">Email</span>
-                  <span class="bumm-contact-value">arif@bumm.co.id</span>
-                  <span class="bumm-contact-value">vira@bumm.co.id</span>
+                  <a class="bumm-contact-value bumm-mail" href="mailto:arif@bumm.co.id">arif@bumm.co.id</a>
+                  <a class="bumm-contact-value bumm-mail" href="mailto:vira@bumm.co.id">vira@bumm.co.id</a>
                 </div>
               </li>
             </ul>

@@ -92,7 +92,7 @@
         '<h3 class="bumm-cat-name">' + esc(p.partName) + '</h3>' +
         '<dl class="bumm-cat-meta">' +
           '<div><dt>Customer</dt><dd>' + esc(p.customer) + '</dd></div>' +
-          '<div><dt>Material No.</dt><dd class="bumm-cat-mat">' + esc(p.materialNo) + '</dd></div>' +
+          '<div><dt>Material</dt><dd class="bumm-cat-mat">' + esc(p.materialNo) + '</dd></div>' +
         '</dl>' +
       '</div></article>';
   }
