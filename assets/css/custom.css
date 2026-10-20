@@ -3613,6 +3613,7 @@ h1, h2, h3, h4, h5, h6,
   pointer-events: none;
   user-select: none;
   opacity: .9;
+  filter: grayscale(1);
   /* Pudar ke bawah (menyatu dengan kartu) DAN pudar di sisi kiri, supaya judul
      & paragraf di kiri tidak menimpa foto latar yang ramai. */
   -webkit-mask-image: linear-gradient(to right, transparent 12%, #000 55%), linear-gradient(to bottom, #000 55%, transparent 100%);
@@ -3621,7 +3622,7 @@ h1, h2, h3, h4, h5, h6,
   mask-composite: intersect;
 }
 [data-bumm-theme="dark"] .bumm-insp-bg {
-  filter: invert(1);
+  filter: grayscale(1) invert(1);
   mix-blend-mode: screen;
   opacity: .22;
 }
@@ -4399,3 +4400,7 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 [data-bumm-theme="light"] body:has(.bumm-page-header[style*="product-hero"], .bumm-product-hero) .bumm-navbar--overlay:not(.is-scrolled):not(:has(.navbar-collapse.show)):not(:has(.navbar-collapse.collapsing)) .navbar-toggler-icon {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2828, 18, 19, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+/* Gambar ber-atribut width/height tetap proporsional (hindari CLS tanpa meregang).
+   :where() = specificity 0, jadi rule class yang mengatur height tetap menang. */
+:where(img[width][height]) { height: auto; }

@@ -53,7 +53,9 @@ $(function () {
     });
   }
 
-  loadHeroVideo();
+  // Dinonaktifkan sementara: assets/video/hero-foundry.webm/.mp4 belum ada, jadi
+  // setiap load menghasilkan request 404. Aktifkan lagi setelah filenya ditambahkan.
+  // loadHeroVideo();
 
   // Footer video: autoplays muted + looped on every page. Visitors who
   // ask the OS for reduced motion get it paused with controls instead.
@@ -63,6 +65,18 @@ $(function () {
       v.removeAttribute('autoplay');
       v.pause();
       v.setAttribute('controls', '');
+    } else if ('IntersectionObserver' in window) {
+      // Video footer berat: baru diunduh & diputar saat footer mendekati layar.
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          io.disconnect();
+          v.preload = 'auto';
+          var play = v.play();
+          if (play && play.catch) play.catch(function () {});
+        });
+      }, { rootMargin: '300px 0px' });
+      io.observe(v);
     } else {
       var play = v.play();
       if (play && play.catch) play.catch(function () {});

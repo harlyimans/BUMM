@@ -2,53 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bumm.co.id/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/product/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/product/water-pump.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/product/diesel.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/product/heavy-duty.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/product/automotive.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/product/agriculture.html</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/product/general-casting.html</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://bumm.co.id/product/train.html</loc>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/about/company-profile/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/about/vision-mission/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/about/corporate-value/</loc>
-    <lastmod>2026-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://bumm.co.id/career/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://bumm.co.id/about/facility/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
-  <!-- /news is left out on purpose while it is noindex
-       (placeholder content) — add it back together with the meta robots change.
-       TODO(client): also add one entry per news article once /news/<slug> pages exist. -->
   <url>
-    <loc>https://bumm.co.id/about/management/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <loc>https://bumm.co.id/career/</loc>
+    <lastmod>2026-10-20</lastmod>
   </url>
+  <!-- /news dan /about/management/ sengaja tidak dimasukkan selama masih noindex
+       (konten placeholder) — tambahkan kembali bersamaan dengan mengubah meta robots-nya.
+       TODO(client): tambahkan juga satu entri per artikel setelah halaman /news/<slug> ada. -->
 </urlset>
