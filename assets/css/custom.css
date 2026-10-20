@@ -3626,6 +3626,13 @@ h1, h2, h3, h4, h5, h6,
   mix-blend-mode: screen;
   opacity: .22;
 }
+/* Home: foto latar Inspection Facility tampil berwarna (tidak grayscale). */
+.bumm-insp--home .bumm-insp-bg { filter: none; }
+[data-bumm-theme="dark"] .bumm-insp--home .bumm-insp-bg {
+  filter: brightness(.8);
+  mix-blend-mode: normal;
+  opacity: .4;
+}
 .bumm-insp > .container { position: relative; z-index: 1; }
 .bumm-insp-head { max-width: 38rem; margin-bottom: 3rem; }
 .bumm-insp-title {
@@ -3641,9 +3648,10 @@ h1, h2, h3, h4, h5, h6,
 .bumm-insp-title .is-accent { color: var(--bumm-accent-dim); }
 [data-bumm-theme="dark"] .bumm-insp-title .is-accent { color: var(--bumm-accent); }
 .bumm-insp-lead {
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  line-height: 1.55;
-  color: var(--bumm-ink);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--bumm-ink-muted);
+  max-width: 60ch;
   margin: 0;
 }
 .bumm-insp-grid {
