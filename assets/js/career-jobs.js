@@ -1,7 +1,8 @@
 /* Menampilkan lowongan di halaman Career.
    Sumber data (berurutan):
-   1) window.BUMM_JOBS  -> assets/js/jobs-data.js (statis, hasil Export admin) -- default, selalu tersedia
-   2) api/jobs di panel admin -> hanya bila BUMM_SITE.adminUrl diisi (mode live)
+   1) api/jobs di panel admin -> hanya bila BUMM_SITE.adminUrl diisi (mode live)
+   2) window.BUMM_JOBS -> assets/js/jobs-data.js (statis, hasil Export admin): default,
+      dan cadangan otomatis bila admin tidak bisa dijangkau
    Tiap lowongan punya tombol "Lamar via Email" sendiri (subjek berisi judul posisi). */
 (function () {
   var cfg   = window.BUMM_SITE || {};
@@ -85,19 +86,24 @@
     if (empty) empty.style.display = 'none';
   }
 
-  // 1) Data statis (default)
-  if (window.BUMM_JOBS && window.BUMM_JOBS.jobs && window.BUMM_JOBS.jobs.length) {
-    show(window.BUMM_JOBS.jobs);
-    return;
+  function fromStatic() {
+    var d = window.BUMM_JOBS;
+    if (d && d.jobs) show(d.jobs);
   }
 
-  // 2) Mode live (opsional)
-  if (!cfg.adminUrl) return;
+  // Mode live (adminUrl terisi): admin dipakai bila bisa dijangkau.
+  // Admin mati / error -> otomatis pakai data statis (jobs-data.js).
+  if (!cfg.adminUrl) { fromStatic(); return; }
+
   var xhr = new XMLHttpRequest();
   xhr.open('GET', cfg.adminUrl.replace(/\/?$/, '/') + 'api/jobs');
+  xhr.timeout = 5000;
   xhr.onload = function () {
-    if (xhr.status !== 200) return;
-    try { show(JSON.parse(xhr.responseText).jobs || []); } catch (e) { /* abaikan */ }
+    var jobs;
+    if (xhr.status !== 200) { fromStatic(); return; }
+    try { jobs = JSON.parse(xhr.responseText).jobs; } catch (e) { fromStatic(); return; }
+    show(jobs || []);                              // admin menjawab -> itu data terbaru
   };
+  xhr.onerror = xhr.ontimeout = fromStatic;
   xhr.send();
 })();
