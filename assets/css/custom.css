@@ -3977,6 +3977,14 @@ main > .bumm-products:last-child { background-color: var(--bumm-bg); }
 .bumm-cap-flow:has(+ .bumm-insp) { padding-bottom: 4.5rem; }
 .bumm-cap-flow + .bumm-insp { border-top: 0; }
 
+/* Beranda: foto latar & judul Inspection dinonaktifkan, jadi tidak perlu ruang kosong
+   di atas grid (sebelumnya: padding Capability 4.5rem + padding Inspection 5rem +
+   margin grid sampai 7rem). Sekarang jarak antara grid 01-08 dan foto lab = 2.5rem.
+   Jika foto latar (.bumm-insp-bg) diaktifkan lagi, hapus aturan di bawah ini. */
+.bumm-cap-flow:has(+ .bumm-insp--home) { padding-bottom: 2.5rem; }
+.bumm-insp--home { padding-top: 0; }
+.bumm-insp--home .bumm-insp-grid { margin-top: 0; }
+
 /* ---- Halaman Facility: Inspection (tint) tepat di bawah banner, lalu grid 8 kartu (putih) */
 .bumm-insp--tint { background-color: var(--bumm-bg-alt); border-top: 0; }
 
@@ -4299,7 +4307,7 @@ a.bumm-vb-card:focus-visible { outline: 3px solid var(--bumm-accent); outline-of
 /* ---- Train Component: part tengah diputar ke kiri (berlawanan arah jarum jam)
    Ubah sudutnya lewat --bumm-train-part-rotate (negatif = ke kiri). --------- */
 .tint-train .bumm-segment-card-parts img:nth-child(2) {
-  --bumm-train-part-rotate: -90deg;
+  /* --bumm-train-part-rotate: -90deg; */
   transform: rotate(var(--bumm-train-part-rotate));
 }
 
