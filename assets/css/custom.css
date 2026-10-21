@@ -3981,7 +3981,7 @@ main > .bumm-products:last-child { background-color: var(--bumm-bg); }
    di atas grid (sebelumnya: padding Capability 4.5rem + padding Inspection 5rem +
    margin grid sampai 7rem). Sekarang jarak antara grid 01-08 dan foto lab = 2.5rem.
    Jika foto latar (.bumm-insp-bg) diaktifkan lagi, hapus aturan di bawah ini. */
-.bumm-cap-flow:has(+ .bumm-insp--home) { padding-bottom: 2.5rem; }
+.bumm-cap-flow:has(+ .bumm-insp--home) { padding-bottom: 6rem; }
 .bumm-insp--home { padding-top: 0; }
 .bumm-insp--home .bumm-insp-grid { margin-top: 0; }
 
