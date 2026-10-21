@@ -3,14 +3,12 @@
    1) api/jobs di panel admin -> hanya bila BUMM_SITE.adminUrl diisi (mode live)
    2) window.BUMM_JOBS -> assets/js/jobs-data.js (statis, hasil Export admin): default,
       dan cadangan otomatis bila admin tidak bisa dijangkau
-   Tiap lowongan punya tombol "Lamar via Email" sendiri (subjek berisi judul posisi). */
+   Tiap lowongan punya tombol "Lamar Sekarang" yang membuka form lamaran (career/apply/). */
 (function () {
   var cfg   = window.BUMM_SITE || {};
   var list  = document.getElementById('jobList');
   var empty = document.getElementById('jobEmpty');
   if (!list) return;
-
-  var HR_EMAIL = cfg.hrEmail || 'untari@bumm.co.id';
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -38,12 +36,9 @@
   // Data statis bisa berumur beberapa hari -> buang yang deadline-nya sudah lewat.
   function stillOpen(j) { return !j.deadline || j.deadline >= todayIso(); }
 
-  function mailLink(j) {
-    var subject = 'Lamaran: ' + j.title + ' - PT BUMM';
-    var body = 'Yth. HRD PT BUMM,\n\nSaya ingin melamar posisi "' + j.title + '"' +
-      (j.location ? ' (' + j.location + ')' : '') +
-      '.\nTerlampir CV dan dokumen pendukung saya.\n\nTerima kasih.';
-    return 'mailto:' + HR_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  // Tombol lamar membuka halaman form (career/apply/), bukan langsung ke email.
+  function applyLink(j) {
+    return 'apply/?job=' + encodeURIComponent(j.id);
   }
 
   function card(j) {
@@ -68,13 +63,13 @@
       box.appendChild(det);
     }
 
-    // Tombol email langsung, khusus untuk lowongan ini
+    // Tombol ke halaman form lamaran, posisi sudah terpilih otomatis
     var apply = el('a', 'btn btn-bumm-primary btn-sm mt-3');
-    apply.href = mailLink(j);
-    var ic = el('i', 'bi bi-envelope-fill me-2');
+    apply.href = applyLink(j);
+    var ic = el('i', 'bi bi-send-fill me-2');
     ic.setAttribute('aria-hidden', 'true');
     apply.appendChild(ic);
-    apply.appendChild(document.createTextNode('Lamar via Email'));
+    apply.appendChild(document.createTextNode('Lamar Sekarang'));
     box.appendChild(apply);
     return box;
   }

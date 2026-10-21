@@ -4427,3 +4427,15 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 .bumm-footer-brand { display: inline-block; line-height: 0; }
 .bumm-footer-logo { display: block; height: 44px; width: auto; }
 [data-bumm-theme="dark"] .bumm-footer-logo { filter: brightness(0) invert(1); }
+
+/* ---- Form lamaran kerja (career/apply) ---- */
+.bumm-apply-card { background-color: var(--bumm-bg); border: 1px solid var(--bumm-line); border-radius: var(--bumm-radius-md); padding: 2rem; }
+.bumm-apply-card .form-label { font-weight: 600; font-size: .9rem; color: var(--bumm-ink); }
+.bumm-apply-card .form-control:focus, .bumm-apply-card .form-select:focus { border-color: var(--bumm-accent); box-shadow: 0 0 0 .2rem rgba(214, 31, 38, .15); }
+.bumm-apply-card .form-check-input:checked { background-color: var(--bumm-accent); border-color: var(--bumm-accent); }
+.bumm-req { color: var(--bumm-accent); }
+.bumm-opt { color: var(--bumm-ink-muted); font-weight: 400; }
+.bumm-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.bumm-apply-done { text-align: center; padding: 2rem 1rem; }
+.bumm-apply-done > .bi { font-size: 3rem; color: var(--bumm-accent); }
+@media (max-width: 575.98px) { .bumm-apply-card { padding: 1.25rem; } }

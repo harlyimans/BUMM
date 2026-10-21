@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('bumm-theme');
+      var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+      document.documentElement.setAttribute('data-bumm-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-bumm-theme', 'light');
+    }
+  })();
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Form Lamaran Kerja | Career PT BUMM</title>
+  <meta name="description" content="Form lamaran kerja online PT. Bina Usaha Mandiri Mizusawa (BUMM). Lengkapi data dan unggah CV Anda.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#d61f26">
+  <link rel="canonical" href="https://bumm.co.id/career/apply/">
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PT. Bina Usaha Mandiri Mizusawa">
+  <meta property="og:title" content="Form Lamaran Kerja | Career PT BUMM">
+  <meta property="og:description" content="Form lamaran kerja online PT BUMM.">
+  <meta property="og:image" content="https://bumm.co.id/assets/img/foundry.webp">
+  <meta property="og:url" content="https://bumm.co.id/career/apply/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@bummizusawa">
+  <meta name="twitter:title" content="Form Lamaran Kerja | Career PT BUMM">
+  <meta name="twitter:description" content="Form lamaran kerja online PT BUMM.">
+  <meta name="twitter:image" content="https://bumm.co.id/assets/img/foundry.webp">
+
+  <link rel="icon" href="../../assets/img/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="../../assets/img/logo-bumm.png">
+
+  <link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/archivo-latin-wght-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/ibm-plex-sans-latin-400-normal.woff2" crossorigin>
+
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bumm.co.id/"},
+      {"@type": "ListItem", "position": 2, "name": "Career", "item": "https://bumm.co.id/career/"},
+      {"@type": "ListItem", "position": 3, "name": "Apply", "item": "https://bumm.co.id/career/apply/"}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
+  <!-- ============ NAVBAR ============ -->
+  <!-- Satu navbar untuk semua halaman. Menu diatur di _data/navigation.yml.
+       Front matter: `nav: <id>` menandai menu aktif,
+                     `navbar_overlay: true` = transparan di atas hero (dipakai beranda). -->
+  <nav class="navbar navbar-expand-lg bumm-navbar bumm-navbar--overlay bumm-navbar--on-photo">
+    <div class="container">
+      <a class="navbar-brand" href="../../" aria-label="BUMM — Home"><img src="../../assets/img/logo-bumm.png" alt="BUMM" class="bumm-navbar-logo" width="44" height="44"></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bummNav" aria-controls="bummNav" aria-expanded="false" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bummNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../../" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="../../career/" aria-current="page" data-i18n="nav_career">Career</a></li>
+          <li class="nav-item dropdown bumm-dropdown">
+            <a class="nav-link dropdown-toggle" href="../../about/company-profile/" id="navAbout" aria-haspopup="true" aria-expanded="false" data-i18n="nav_about">About</a>
+            <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navAbout">
+              <li><a class="dropdown-item" href="../../about/company-profile/" data-i18n="nav_about_profile">Company Profile</a></li>
+              <li><a class="dropdown-item" href="../../about/vision-mission/" data-i18n="nav_about_vision">Vision &amp; Mission</a></li>
+              <li><a class="dropdown-item" href="../../about/corporate-value/" data-i18n="nav_about_value">Corporate Value</a></li>
+              <li><a class="dropdown-item" href="../../about/management/" data-i18n="nav_about_management">Management</a></li>
+              <li><a class="dropdown-item" href="../../about/facility/" data-i18n="nav_about_facility">Facility</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown bumm-dropdown">
+            <a class="nav-link dropdown-toggle" href="../../product/" id="navProduct" aria-haspopup="true" aria-expanded="false" data-i18n="nav_product">Product</a>
+            <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navProduct">
+              <li><a class="dropdown-item" href="../../product/automotive.html" data-i18n="nav_prod_automotive">Automotive</a></li>
+              <li><a class="dropdown-item" href="../../product/agriculture.html" data-i18n="nav_prod_agriculture">Agriculture</a></li>
+              <li><a class="dropdown-item" href="../../product/heavy-duty.html" data-i18n="nav_prod_heavy">Heavy Duty</a></li>
+              <li><a class="dropdown-item" href="../../product/general-casting.html" data-i18n="nav_prod_general">General Casting</a></li>
+              <li><a class="dropdown-item" href="../../product/train.html" data-i18n="nav_prod_train">Train Component</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">
+              <i class="bi bi-moon-stars" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="../../#contact" class="btn btn-bumm-outline" data-i18n="contact_us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main id="main">
+
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="bumm-page-header" style="background-image:url('../../assets/img/career-header.webp')">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bumm-breadcrumb">
+          <li class="breadcrumb-item"><a href="../../">Home</a></li>
+          <li class="breadcrumb-item"><a href="../">Career</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Apply</li>
+        </ol>
+      </nav>
+      <p class="bumm-eyebrow">Career</p>
+      <h1 class="bumm-about-heading">Form <span class="bumm-heading-accent">lamaran kerja</span></h1>
+      <p class="bumm-about-lead">
+        Lengkapi data di bawah ini dan unggah CV Anda. Lamaran akan langsung
+        diteruskan ke tim HRD PT BUMM.
+      </p>
+    </div>
+  </header>
+
+  <!-- ============ FORM ============ -->
+  <section class="bumm-about" style="border-top:none;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <div class="bumm-apply-card" id="applyCard">
+            <form id="applyForm" novalidate enctype="multipart/form-data">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="fPosition" class="form-label">Posisi yang dilamar <span class="bumm-req">*</span></label>
+                  <select id="fPosition" name="job_id" class="form-select" required>
+                    <option value="0">Lamaran umum (tanpa posisi tertentu)</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="fName" class="form-label">Nama lengkap <span class="bumm-req">*</span></label>
+                  <input type="text" id="fName" name="full_name" class="form-control" maxlength="100" autocomplete="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="fEmail" class="form-label">Email <span class="bumm-req">*</span></label>
+                  <input type="email" id="fEmail" name="email" class="form-control" maxlength="120" autocomplete="email" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="fPhone" class="form-label">No. HP / WhatsApp <span class="bumm-req">*</span></label>
+                  <input type="tel" id="fPhone" name="phone" class="form-control" maxlength="30" autocomplete="tel" inputmode="tel" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="fEdu" class="form-label">Pendidikan terakhir <span class="bumm-req">*</span></label>
+                  <select id="fEdu" name="education" class="form-select" required>
+                    <option value="">Pilih…</option>
+                    <option>SMA / SMK</option>
+                    <option>D3</option>
+                    <option>S1 / D4</option>
+                    <option>S2</option>
+                    <option>Lainnya</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label for="fMsg" class="form-label">Pesan singkat <span class="bumm-opt">(opsional)</span></label>
+                  <textarea id="fMsg" name="message" class="form-control" rows="4" maxlength="2000" placeholder="Ceritakan secara singkat pengalaman atau alasan Anda melamar."></textarea>
+                </div>
+
+                <div class="col-12">
+                  <label for="fCv" class="form-label">Unggah CV <span class="bumm-req">*</span></label>
+                  <input type="file" id="fCv" name="cv" class="form-control" accept=".pdf,.doc,.docx" required>
+                  <div class="form-text">Format PDF, DOC, atau DOCX. Maksimal 2 MB.</div>
+                </div>
+
+                <!-- Honeypot anti-spam: disembunyikan dari pengguna -->
+                <div class="bumm-hp" aria-hidden="true">
+                  <label for="fWebsite">Website</label>
+                  <input type="text" id="fWebsite" name="website" tabindex="-1" autocomplete="off">
+                </div>
+                <input type="hidden" name="ts" id="fTs" value="">
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fConsent" required>
+                    <label class="form-check-label" for="fConsent">
+                      Saya menyatakan data yang diisi benar dan setuju data saya diproses oleh PT BUMM untuk keperluan rekrutmen.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div id="applyAlert" class="alert alert-danger d-none" role="alert"></div>
+                  <button type="submit" class="btn btn-bumm-primary" id="applyBtn">
+                    <i class="bi bi-send-fill me-2" aria-hidden="true"></i><span>Kirim Lamaran</span>
+                  </button>
+                  <a href="../" class="btn btn-bumm-outline ms-2">Kembali</a>
+                </div>
+              </div>
+            </form>
+
+            <div id="applyDone" class="bumm-apply-done d-none" role="status">
+              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+              <h2 class="bumm-job-title">Lamaran terkirim</h2>
+              <p class="bumm-job-desc">Terima kasih. Lamaran Anda sudah diterima tim HRD PT BUMM. Kami akan menghubungi Anda bila profil Anda sesuai.</p>
+              <a href="../" class="btn btn-bumm-primary mt-3">Kembali ke Career</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- Satu footer untuk semua halaman. Link diatur di _data/navigation.yml.
+       Front matter `footer_map: true` menambah kolom peta lokasi (dipakai beranda). -->
+  <footer class="bumm-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-12">
+          <a class="bumm-footer-brand" href="../../" aria-label="BUMM — Home"><img src="../../assets/img/logo-bumm.png" alt="BUMM" class="bumm-footer-logo" width="44" height="44" loading="lazy"></a>
+          <p class="bumm-footer-desc">
+            PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
+            Kel. Alam Jaya, Kota Tangerang, Banten 15133, Indonesia
+          </p>
+          <div class="bumm-footer-social">
+            <a href="https://www.facebook.com/PT-BUMM-981977421946203" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/bummizusawa" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/bummizusawa" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
+          <ul class="bumm-footer-links">
+            <li><a href="../../about/company-profile/" data-i18n="nav_about">About</a></li>
+            <li><a href="../../career/" data-i18n="nav_career">Career</a></li>
+            <li><a href="../../product/" data-i18n="nav_product">Product</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-8 col-6">
+          <div class="bumm-footer-heading" data-i18n="footer_video">Company Video</div>
+          <div class="bumm-footer-video">
+            <video muted loop playsinline preload="none" poster="../../assets/img/foundry.webp" aria-label="PT BUMM company video">
+              <source src="../../assets/video/footer-video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-12">
+          <div class="bumm-footer-heading" data-i18n="footer_location">Location</div>
+          <div class="bumm-map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=PT.+Bina+Usaha+Mandiri+Mizusawa,+Jl.+KH.+EZ+Muttaqien,+Jatiuwung,+Tangerang&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="BUMM location map">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="bumm-footer-bottom">
+        <span data-i18n="footer_copyright">© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="../../assets/jquery-4.0.0.min.js"></script>
+  <script src="../../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+  <script src="../../assets/js/site-config.js"></script>
+  <script src="../../assets/js/jobs-data.js"></script>
+  <script src="../../assets/js/career-apply.js"></script>
+
+</body>
+</html>
