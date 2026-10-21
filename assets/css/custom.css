@@ -3214,7 +3214,7 @@ button:focus-visible {
    silhouette there. Light mode keeps the original red logo.
    -------------------------------------------------------------------- */
 [data-bumm-theme="dark"] .bumm-navbar-logo {
-  filter: brightness(0) invert(1);
+  /* filter: brightness(1.35) invert(1.2); */
 }
 
 /* Active menu item: Bootstrap's default is near-black, which vanishes on the
@@ -4434,7 +4434,7 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 /* Footer: logo BUMM yang sama dengan navbar (dark mode: siluet terang). */
 .bumm-footer-brand { display: inline-block; line-height: 0; }
 .bumm-footer-logo { display: block; height: 44px; width: auto; }
-[data-bumm-theme="dark"] .bumm-footer-logo { filter: brightness(0) invert(1); }
+/* [data-bumm-theme="dark"] .bumm-footer-logo { filter: brightness(1.35) invert(1.2); } */
 
 /* ---- Form lamaran kerja (career/apply) ---- */
 .bumm-apply-card { background-color: var(--bumm-bg); border: 1px solid var(--bumm-line); border-radius: var(--bumm-radius-md); padding: 2rem; }

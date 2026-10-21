@@ -14,6 +14,6 @@
               (application/config/bumm.php -> hr_email). */
 window.BUMM_SITE = {
   adminUrl: '',
-  applyUrl: '',
-  hrEmail: 'untari@bumm.co.id'
+  applyUrl: 'http://localhost/bumm-admin/api/apply',
+  hrEmail: 'workharlyimans@gmail.com'
 };
