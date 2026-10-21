@@ -50,7 +50,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
-  function imgSrc(p) { return /^(https?:)?\/\/|\//.test(p) ? p : IMG_BASE + p; }
+  function imgSrc(p) { return /^((https?:)?\/\/|\/)/.test(p) ? p : IMG_BASE + encodeURI(p); }
 
   function setChips(activeKey) {
     if (!els.chips) return;

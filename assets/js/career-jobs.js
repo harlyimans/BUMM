@@ -1,9 +1,15 @@
-/* Menampilkan lowongan dari panel admin (api/jobs) di halaman Career. */
+/* Menampilkan lowongan di halaman Career.
+   Sumber data (berurutan):
+   1) window.BUMM_JOBS  -> assets/js/jobs-data.js (statis, hasil Export admin) -- default, selalu tersedia
+   2) api/jobs di panel admin -> hanya bila BUMM_SITE.adminUrl diisi (mode live)
+   Tiap lowongan punya tombol "Lamar via Email" sendiri (subjek berisi judul posisi). */
 (function () {
   var cfg   = window.BUMM_SITE || {};
   var list  = document.getElementById('jobList');
   var empty = document.getElementById('jobEmpty');
-  if (!cfg.adminUrl || !list) return;
+  if (!list) return;
+
+  var HR_EMAIL = cfg.hrEmail || 'untari@bumm.co.id';
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -24,6 +30,21 @@
     var d = new Date(iso + 'T00:00:00');
     return isNaN(d) ? iso : d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
   }
+  function todayIso() {
+    var d = new Date(), m = d.getMonth() + 1, day = d.getDate();
+    return d.getFullYear() + '-' + (m < 10 ? '0' : '') + m + '-' + (day < 10 ? '0' : '') + day;
+  }
+  // Data statis bisa berumur beberapa hari -> buang yang deadline-nya sudah lewat.
+  function stillOpen(j) { return !j.deadline || j.deadline >= todayIso(); }
+
+  function mailLink(j) {
+    var subject = 'Lamaran: ' + j.title + ' - PT BUMM';
+    var body = 'Yth. HRD PT BUMM,\n\nSaya ingin melamar posisi "' + j.title + '"' +
+      (j.location ? ' (' + j.location + ')' : '') +
+      '.\nTerlampir CV dan dokumen pendukung saya.\n\nTerima kasih.';
+    return 'mailto:' + HR_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
   function card(j) {
     var box = el('div', 'bumm-job-card');
     box.appendChild(el('div', 'bumm-job-title', j.title));
@@ -45,18 +66,38 @@
       det.appendChild(body);
       box.appendChild(det);
     }
+
+    // Tombol email langsung, khusus untuk lowongan ini
+    var apply = el('a', 'btn btn-bumm-primary btn-sm mt-3');
+    apply.href = mailLink(j);
+    var ic = el('i', 'bi bi-envelope-fill me-2');
+    ic.setAttribute('aria-hidden', 'true');
+    apply.appendChild(ic);
+    apply.appendChild(document.createTextNode('Lamar via Email'));
+    box.appendChild(apply);
     return box;
   }
 
+  function show(jobs) {
+    jobs = (jobs || []).filter(stillOpen);
+    if (!jobs.length) return;                      // kosong -> biarkan empty state tampil
+    jobs.forEach(function (j) { list.appendChild(card(j)); });
+    if (empty) empty.style.display = 'none';
+  }
+
+  // 1) Data statis (default)
+  if (window.BUMM_JOBS && window.BUMM_JOBS.jobs && window.BUMM_JOBS.jobs.length) {
+    show(window.BUMM_JOBS.jobs);
+    return;
+  }
+
+  // 2) Mode live (opsional)
+  if (!cfg.adminUrl) return;
   var xhr = new XMLHttpRequest();
   xhr.open('GET', cfg.adminUrl.replace(/\/?$/, '/') + 'api/jobs');
   xhr.onload = function () {
     if (xhr.status !== 200) return;
-    var jobs;
-    try { jobs = JSON.parse(xhr.responseText).jobs || []; } catch (e) { return; }
-    if (!jobs.length) return;                      // kosong -> biarkan empty state tampil
-    jobs.forEach(function (j) { list.appendChild(card(j)); });
-    if (empty) empty.style.display = 'none';
+    try { show(JSON.parse(xhr.responseText).jobs || []); } catch (e) { /* abaikan */ }
   };
   xhr.send();
 })();
