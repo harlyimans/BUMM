@@ -427,3 +427,56 @@ $(function () {
 
   for (var k = 0; k < els.length; k++) io.observe(els[k]);
 })();
+
+// ----------------------------------------------------------------------
+// Count-up angka statistik ("Built on Experience"). Berjalan sekali saat
+// angka masuk viewport. Teks akhir sudah ada di HTML, jadi tanpa JS /
+// reduce motion / tanpa IntersectionObserver angka tetap tampil benar.
+// ----------------------------------------------------------------------
+(function () {
+  var els = document.querySelectorAll('[data-count-to]');
+  if (!els.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  function format(el, v) {
+    var d = parseInt(el.getAttribute('data-count-decimals') || '0', 10);
+    var txt = v.toFixed(d);
+    if (!el.hasAttribute('data-count-plain')) {
+      var parts = txt.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      txt = parts.join('.');
+    }
+    return txt + (el.getAttribute('data-count-suffix') || '');
+  }
+
+  function run(el) {
+    var to = parseFloat(el.getAttribute('data-count-to'));
+    var dur = 1800;
+    var t0 = null;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      el.textContent = format(el, to * eased);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = format(el, to);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Mulai dari 0 hanya setelah JS siap; hindari kedipan angka final.
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      io.unobserve(en.target);
+      run(en.target);
+    });
+  }, { threshold: 0.4 });
+
+  for (var i = 0; i < els.length; i++) {
+    els[i].textContent = format(els[i], 0);
+    io.observe(els[i]);
+  }
+})();
+
