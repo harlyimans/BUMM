@@ -30,7 +30,6 @@
   --bumm-hero-scrim-3:      rgba(255,255,255,.62);
   --bumm-btn-secondary-hover: rgba(214, 31, 38,.045);
   --bumm-marquee-filter:    grayscale(1) contrast(1.05);
-  --bumm-marquee-filter-hover: none;
   --bumm-map-filter:        grayscale(.15);
   --bumm-nav-shadow:        rgba(28, 18, 19,.10);
   --bumm-toggler-icon-bg:   url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2830, 18, 16, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -61,7 +60,6 @@
   --bumm-hero-scrim-3:      rgba(20, 17, 18,.55);
   --bumm-btn-secondary-hover: rgba(255,255,255,.03);
   --bumm-marquee-filter:    grayscale(1) invert(1) brightness(1.2) contrast(.85);
-  --bumm-marquee-filter-hover: none;
   --bumm-map-filter:        grayscale(.3) invert(.92) contrast(.9);
   --bumm-nav-shadow:        rgba(0,0,0,.35);
   --bumm-toggler-icon-bg:   url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28242, 238, 231, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -834,12 +832,12 @@ button:focus-visible {
   animation: bumm-marquee 28s linear infinite;
 }
 
-/* Dark mode: logos rest as inverted light-grey (keeps the fine detail inside
-   each logo, unlike a flat silhouette) and turn full colour on hover (no shadow/glow). */
+/* Dark mode: logos are inverted light-grey (keeps the fine detail inside each
+   logo, unlike a flat silhouette). No hover effect on the logos. */
 /* Every logo gets an identical slot (same width + height, no box). The image
    is scaled to fit the slot with object-fit: contain, so wide logos (Komatsu,
    Tomoe, Denso) and tall ones (Fuso, Hino) end up visually balanced.
-   Light mode: grayscale. Dark mode: light-grey silhouette; full colour on hover (see the
+   Light mode: grayscale. Dark mode: light-grey silhouette (see the
    --bumm-marquee-filter tokens). The gap is a margin (not flex gap) so the
    -50% loop lands exactly on the duplicated set. */
 .bumm-marquee-track img {
@@ -851,16 +849,10 @@ button:focus-visible {
   object-position: center;
   filter: var(--bumm-marquee-filter);
   opacity: .85;
-  transition: opacity .2s ease, filter .2s ease;
-}
-
-.bumm-marquee-track img:hover {
-  filter: var(--bumm-marquee-filter-hover);
-  opacity: 1;
 }
 
 /* Sankei's crown is light yellow, so inverting would turn it near-black. */
-[data-bumm-theme="dark"] .bumm-marquee-track img[src*="sankei"]:not(:hover) {
+[data-bumm-theme="dark"] .bumm-marquee-track img[src*="sankei"] {
   filter: grayscale(1) brightness(1.1) contrast(.9);
 }
 
@@ -4447,3 +4439,75 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 .bumm-apply-done { text-align: center; padding: 2rem 1rem; }
 .bumm-apply-done > .bi { font-size: 3rem; color: var(--bumm-accent); }
 @media (max-width: 575.98px) { .bumm-apply-card { padding: 1.25rem; } }
+
+
+/* ====================================================================
+   Efek masuk per section (scroll reveal) — homepage saja
+   --------------------------------------------------------------------
+   Ringan & aman untuk performa/SEO:
+   - hanya opacity + translate (GPU, tidak memicu reflow -> tanpa CLS)
+   - tanpa library tambahan; pemicu = 1 IntersectionObserver di custom.js
+   - konten tetap ada di HTML (tidak display:none / visibility:hidden)
+   - hero (LCP) sengaja tidak dianimasikan
+   - kelas .bumm-reveal dipasang oleh script inline di <head> index.html,
+     dan TIDAK dipasang kalau pengunjung memilih "reduce motion"
+   - pakai animation + properti `translate` (bukan transform/transition),
+     jadi tidak bentrok dengan efek hover kartu yang sudah ada
+   - failsafe: kalau JS gagal, elemen muncul sendiri setelah 3 detik
+   Daftar selector di sini harus sama dengan REVEAL_SELECTORS di custom.js.
+   ==================================================================== */
+.bumm-reveal :is(
+  .bumm-trusted .container,
+  .bumm-about-intro-copy,
+  .bumm-experience .col-lg-7,
+  .bumm-stat-card,
+  .bumm-about .col-lg-8,
+  .bumm-vb-card,
+  .bumm-cap-banner-text,
+  .bumm-cap-card,
+  .bumm-cert-strip,
+  .bumm-insp-card,
+  .bumm-products .col-lg-8,
+  .bumm-segment-card,
+  .bumm-cert-head,
+  .bumm-cert-card,
+  .bumm-contact-head,
+  .bumm-contact .col-lg-7,
+  .bumm-contact .col-lg-5,
+  .bumm-about-intro-media
+):not(.is-in) {
+  opacity: 0;
+  animation: bumm-rv-failsafe 1ms 3s forwards;
+}
+
+.bumm-reveal :is(
+  .bumm-trusted .container,
+  .bumm-about-intro-copy,
+  .bumm-experience .col-lg-7,
+  .bumm-stat-card,
+  .bumm-about .col-lg-8,
+  .bumm-vb-card,
+  .bumm-cap-banner-text,
+  .bumm-cap-card,
+  .bumm-cert-strip,
+  .bumm-insp-card,
+  .bumm-products .col-lg-8,
+  .bumm-segment-card,
+  .bumm-cert-head,
+  .bumm-cert-card,
+  .bumm-contact-head,
+  .bumm-contact .col-lg-7,
+  .bumm-contact .col-lg-5,
+  .bumm-about-intro-media
+).is-in {
+  animation: bumm-rv .65s cubic-bezier(.22, .61, .36, 1) var(--rv-d, 0ms) backwards;
+}
+
+.bumm-reveal :is(.bumm-about-intro-media).is-in {
+  animation-name: bumm-rv-fade;
+  animation-duration: .9s;
+}
+
+@keyframes bumm-rv { from { opacity: 0; translate: 0 22px; } }
+@keyframes bumm-rv-fade { from { opacity: 0; } }
+@keyframes bumm-rv-failsafe { to { opacity: 1; } }

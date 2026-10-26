@@ -351,3 +351,62 @@ $(function () {
   });
 
 });
+
+// ----------------------------------------------------------------------
+// Scroll reveal per section (homepage). Tanpa library: satu
+// IntersectionObserver, hanya menambah kelas .is-in; animasinya murni CSS
+// (opacity + translate). Dilewati jika <html> tidak punya .bumm-reveal
+// (reduce motion / bukan homepage). Selector harus sama dengan custom.css.
+// ----------------------------------------------------------------------
+(function () {
+  if (!document.documentElement.classList.contains('bumm-reveal')) return;
+
+  var REVEAL_SELECTORS = [
+    '.bumm-trusted .container',
+    '.bumm-about-intro-copy',
+    '.bumm-experience .col-lg-7',
+    '.bumm-stat-card',
+    '.bumm-about .col-lg-8',
+    '.bumm-vb-card',
+    '.bumm-cap-banner-text',
+    '.bumm-cap-card',
+    '.bumm-cert-strip',
+    '.bumm-insp-card',
+    '.bumm-products .col-lg-8',
+    '.bumm-segment-card',
+    '.bumm-cert-head',
+    '.bumm-cert-card',
+    '.bumm-contact-head',
+    '.bumm-contact .col-lg-7',
+    '.bumm-contact .col-lg-5',
+    '.bumm-about-intro-media'
+  ];
+
+  var els = document.querySelectorAll(REVEAL_SELECTORS.join(','));
+  if (!els.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    for (var i = 0; i < els.length; i++) els[i].classList.add('is-in');
+    return;
+  }
+
+  // Jeda bertingkat antar saudara sekandung (maks. 4 langkah) supaya kartu
+  // dalam satu baris muncul berurutan, bukan serentak.
+  var seen = new Map();
+  for (var j = 0; j < els.length; j++) {
+    var p = els[j].parentElement;
+    var n = seen.get(p) || 0;
+    seen.set(p, n + 1);
+    if (n % 4) els[j].style.setProperty('--rv-d', (n % 4) * 80 + 'ms');
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('is-in');
+      io.unobserve(en.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+  for (var k = 0; k < els.length; k++) io.observe(els[k]);
+})();
