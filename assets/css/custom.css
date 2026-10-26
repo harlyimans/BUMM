@@ -10,10 +10,10 @@
   --bumm-ink:         #1c1213;   /* near-black warm ink for text on light */
   --bumm-ink-muted:   #706566;   /* muted warm grey */
   --bumm-line:        #eddfdf;   /* hairline borders / dividers */
-  --bumm-accent:      #d61f26;   /* signal red — used sparingly */
-  --bumm-accent-dim:  #a8141c;
+  --bumm-accent:      #6b1e17;   /* signal red — used sparingly */
+  --bumm-accent-dim:  #4a120e;
   --bumm-on-accent:   #ffffff;   /* text/icon color on top of solid red */
-  --bumm-accent-hover: #b9161e;  /* hover goes darker: keeps white-on-red contrast above 6:1 */
+  --bumm-accent-hover: #571812;  /* hover goes darker: keeps white-on-red contrast above 6:1 */
 
   /* Shape, depth & rhythm — one scale used by every card/button/input so
      the site stops mixing 2px, 8px, 10px, 16px and 36px corners. */
@@ -28,7 +28,7 @@
   --bumm-hero-scrim-1:      rgba(255,255,255,.95);
   --bumm-hero-scrim-2:      rgba(255,255,255,.86);
   --bumm-hero-scrim-3:      rgba(255,255,255,.62);
-  --bumm-btn-secondary-hover: rgba(214, 31, 38,.045);
+  --bumm-btn-secondary-hover: rgba(107, 30, 23,.045);
   --bumm-marquee-filter:    none;  /* logos keep their original colours */
   --bumm-map-filter:        grayscale(.15);
   --bumm-nav-shadow:        rgba(28, 18, 19,.10);
@@ -48,10 +48,10 @@
   --bumm-ink:         #f3eff0;
   --bumm-ink-muted:   #a59ea0;
   --bumm-line:        #3a3536;
-  --bumm-accent:      #ee4a51;
-  --bumm-accent-dim:  #a8141c;
+  --bumm-accent:      #d9675c;
+  --bumm-accent-dim:  #6b1e17;
   --bumm-on-accent:   #1a0708;
-  --bumm-accent-hover: #f4585f;
+  --bumm-accent-hover: #e27a70;
   --bumm-shadow-sm:   0 1px 2px rgba(0,0,0,.35), 0 6px 16px rgba(0,0,0,.30);
   --bumm-shadow-md:   0 2px 4px rgba(0,0,0,.35), 0 14px 30px rgba(0,0,0,.45);
 
@@ -364,7 +364,7 @@ html { scroll-padding-top: 5rem; }
 }
 
 .bumm-navbar .navbar-toggler:focus {
-  box-shadow: 0 0 0 .2rem rgba(214, 31, 38, .35);
+  box-shadow: 0 0 0 .2rem rgba(107, 30, 23, .35);
 }
 
 /* Visible keyboard focus everywhere, not just navbar */
@@ -1448,7 +1448,7 @@ button:focus-visible {
   overflow: hidden;
   aspect-ratio: 16 / 10;
   background-color: var(--bumm-bg);
-  background-image: repeating-linear-gradient(135deg, transparent 0 14px, rgba(214, 31, 38, .05) 14px 15px);
+  background-image: repeating-linear-gradient(135deg, transparent 0 14px, rgba(107, 30, 23, .05) 14px 15px);
   border: 1px solid var(--bumm-line);
   border-radius: var(--bumm-radius-md);
   margin-bottom: 1rem;
@@ -1459,7 +1459,7 @@ button:focus-visible {
   content: "\f42a";              /* bi-image */
   font-family: "bootstrap-icons";
   font-size: 2.2rem;
-  color: rgba(214, 31, 38, .32);
+  color: rgba(107, 30, 23, .32);
 }
 
 .bumm-news-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -1545,8 +1545,8 @@ button:focus-visible {
   --contact-bg-jpg:  url("../img/contact-bg.jpg");
   --contact-bg-webp: url("../img/contact-bg.webp");
 
-  --c-maroon:     #7d0f16;
-  --c-rose:       #d94a50;
+  --c-maroon:     #6b1e17;
+  --c-rose:       #8f3a30;
   --c-info-bg:    #efdcdd;
   --c-card-bg:    #ffffff;
   --c-head:       #150a0c;
@@ -1569,8 +1569,8 @@ button:focus-visible {
 }
 
 [data-bumm-theme="dark"] .bumm-contact {
-  --c-maroon:     #c4262d;
-  --c-rose:       #ee4a51;
+  --c-maroon:     #d9675c;
+  --c-rose:       #e0786d;
   --c-info-bg:    #312829;
   --c-card-bg:    #252223;
   --c-head:       #f3eff0;
@@ -2321,9 +2321,9 @@ button:focus-visible {
    -------------------------------------------------------------------- */
 .bumm-experience {
   --bumm-exp-card:        #fef5f5;
-  --bumm-exp-card-border: rgba(214, 31, 38,.10);
+  --bumm-exp-card-border: rgba(107, 30, 23,.10);
   --bumm-exp-card-shadow: 0 10px 30px rgba(28, 18, 19,.10);
-  --bumm-exp-icon-bg:     rgba(214, 31, 38,.12);
+  --bumm-exp-icon-bg:     rgba(107, 30, 23,.12);
   --bumm-exp-photo-filter: none;
   --bumm-exp-photo-opacity: 1;
 
@@ -2339,7 +2339,7 @@ button:focus-visible {
   --bumm-exp-card:        #2a2627;
   --bumm-exp-card-border: rgba(243, 239, 240,.08);
   --bumm-exp-card-shadow: 0 10px 30px rgba(0,0,0,.35);
-  --bumm-exp-icon-bg:     rgba(214, 31, 38,.18);
+  --bumm-exp-icon-bg:     rgba(217, 103, 92,.18);
   --bumm-exp-photo-filter: grayscale(.5) brightness(.26) contrast(1.1);
   --bumm-exp-photo-opacity: .9;
 }
@@ -2524,7 +2524,7 @@ button:focus-visible {
   --bumm-vb-card:      #252122;
   --bumm-vb-border:    rgba(243, 239, 240,.09);
   --bumm-vb-shadow:    0 6px 20px rgba(0,0,0,.35);
-  --bumm-vb-icon-bg:   rgba(214, 31, 38,.16);
+  --bumm-vb-icon-bg:   rgba(217, 103, 92,.16);
   --bumm-vb-photo-filter: grayscale(.5) brightness(.5);
   --bumm-vb-photo-opacity: .45;
 }
@@ -3330,7 +3330,7 @@ button:focus-visible {
   }
   .bumm-navbar--overlay .bumm-dropdown-menu .dropdown-item.active {
     background-color: transparent;
-    color: #ee4a51;
+    color: #e0786d;
   }
 }
 
@@ -4459,40 +4459,23 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
    Daftar selector di sini harus sama dengan REVEAL_SELECTORS di custom.js.
    ==================================================================== */
 .bumm-reveal :is(
-  .bumm-trusted .container,
-
-  .bumm-about-intro-copy,
-
-  .bumm-experience .col-lg-7,
-
-  .bumm-stat-card,
-
-  .bumm-about .col-lg-8,
-
-  .bumm-vb-card,
-
-  .bumm-cap-banner-text,
-
-  .bumm-cap-card,
-
-  .bumm-cert-strip,
-
-  .bumm-insp-card,
-
-  .bumm-products .col-lg-8,
-
-  .bumm-segment-card,
-
-  .bumm-cert-head,
-
-  .bumm-cert-card,
-
-  .bumm-contact-head,
-
-  .bumm-contact .col-lg-7,
-
-  .bumm-contact .col-lg-5,
-
+  .bumm-trusted .container,
+  .bumm-about-intro-copy,
+  .bumm-experience .col-lg-7,
+  .bumm-stat-card,
+  .bumm-about .col-lg-8,
+  .bumm-vb-card,
+  .bumm-cap-banner-text,
+  .bumm-cap-card,
+  .bumm-cert-strip,
+  .bumm-insp-card,
+  .bumm-products .col-lg-8,
+  .bumm-segment-card,
+  .bumm-cert-head,
+  .bumm-cert-card,
+  .bumm-contact-head,
+  .bumm-contact .col-lg-7,
+  .bumm-contact .col-lg-5,
   .bumm-about-intro-media
 ):not(.is-in) {
   opacity: 0;
@@ -4500,40 +4483,23 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 }
 
 .bumm-reveal :is(
-  .bumm-trusted .container,
-
-  .bumm-about-intro-copy,
-
-  .bumm-experience .col-lg-7,
-
-  .bumm-stat-card,
-
-  .bumm-about .col-lg-8,
-
-  .bumm-vb-card,
-
-  .bumm-cap-banner-text,
-
-  .bumm-cap-card,
-
-  .bumm-cert-strip,
-
-  .bumm-insp-card,
-
-  .bumm-products .col-lg-8,
-
-  .bumm-segment-card,
-
-  .bumm-cert-head,
-
-  .bumm-cert-card,
-
-  .bumm-contact-head,
-
-  .bumm-contact .col-lg-7,
-
-  .bumm-contact .col-lg-5,
-
+  .bumm-trusted .container,
+  .bumm-about-intro-copy,
+  .bumm-experience .col-lg-7,
+  .bumm-stat-card,
+  .bumm-about .col-lg-8,
+  .bumm-vb-card,
+  .bumm-cap-banner-text,
+  .bumm-cap-card,
+  .bumm-cert-strip,
+  .bumm-insp-card,
+  .bumm-products .col-lg-8,
+  .bumm-segment-card,
+  .bumm-cert-head,
+  .bumm-cert-card,
+  .bumm-contact-head,
+  .bumm-contact .col-lg-7,
+  .bumm-contact .col-lg-5,
   .bumm-about-intro-media
 ).is-in {
   animation: bumm-rv .65s cubic-bezier(.22, .61, .36, 1) var(--rv-d, 0ms) backwards;
@@ -4547,5 +4513,6 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 @keyframes bumm-rv { from { opacity: 0; translate: 0 22px; } }
 @keyframes bumm-rv-fade { from { opacity: 0; } }
 @keyframes bumm-rv-failsafe { to { opacity: 1; } }
+
 /* Count-up numbers: equal-width digits so the value does not jitter. */
 .bumm-stat-value[data-count-to] { font-variant-numeric: tabular-nums; }
