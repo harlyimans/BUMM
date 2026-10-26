@@ -362,23 +362,40 @@ $(function () {
   if (!document.documentElement.classList.contains('bumm-reveal')) return;
 
   var REVEAL_SELECTORS = [
-    '.bumm-trusted .container',
-    '.bumm-about-intro-copy',
-    '.bumm-experience .col-lg-7',
-    '.bumm-stat-card',
-    '.bumm-about .col-lg-8',
-    '.bumm-vb-card',
-    '.bumm-cap-banner-text',
-    '.bumm-cap-card',
-    '.bumm-cert-strip',
-    '.bumm-insp-card',
-    '.bumm-products .col-lg-8',
-    '.bumm-segment-card',
-    '.bumm-cert-head',
-    '.bumm-cert-card',
-    '.bumm-contact-head',
-    '.bumm-contact .col-lg-7',
-    '.bumm-contact .col-lg-5',
+    '.bumm-trusted .container',
+
+    '.bumm-about-intro-copy',
+
+    '.bumm-experience .col-lg-7',
+
+    '.bumm-stat-card',
+
+    '.bumm-about .col-lg-8',
+
+    '.bumm-vb-card',
+
+    '.bumm-cap-banner-text',
+
+    '.bumm-cap-card',
+
+    '.bumm-cert-strip',
+
+    '.bumm-insp-card',
+
+    '.bumm-products .col-lg-8',
+
+    '.bumm-segment-card',
+
+    '.bumm-cert-head',
+
+    '.bumm-cert-card',
+
+    '.bumm-contact-head',
+
+    '.bumm-contact .col-lg-7',
+
+    '.bumm-contact .col-lg-5',
+
     '.bumm-about-intro-media'
   ];
 

@@ -29,7 +29,7 @@
   --bumm-hero-scrim-2:      rgba(255,255,255,.86);
   --bumm-hero-scrim-3:      rgba(255,255,255,.62);
   --bumm-btn-secondary-hover: rgba(214, 31, 38,.045);
-  --bumm-marquee-filter:    grayscale(1) contrast(1.05);
+  --bumm-marquee-filter:    none;  /* logos keep their original colours */
   --bumm-map-filter:        grayscale(.15);
   --bumm-nav-shadow:        rgba(28, 18, 19,.10);
   --bumm-toggler-icon-bg:   url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2830, 18, 16, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -59,7 +59,7 @@
   --bumm-hero-scrim-2:      rgba(20, 17, 18,.82);
   --bumm-hero-scrim-3:      rgba(20, 17, 18,.55);
   --bumm-btn-secondary-hover: rgba(255,255,255,.03);
-  --bumm-marquee-filter:    grayscale(1) invert(1) brightness(1.2) contrast(.85);
+  --bumm-marquee-filter:    none;
   --bumm-map-filter:        grayscale(.3) invert(.92) contrast(.9);
   --bumm-nav-shadow:        rgba(0,0,0,.35);
   --bumm-toggler-icon-bg:   url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28242, 238, 231, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -848,12 +848,14 @@ button:focus-visible {
   object-fit: contain;
   object-position: center;
   filter: var(--bumm-marquee-filter);
-  opacity: .85;
+  opacity: 1;
 }
 
-/* Sankei's crown is light yellow, so inverting would turn it near-black. */
-[data-bumm-theme="dark"] .bumm-marquee-track img[src*="sankei"] {
-  filter: grayscale(1) brightness(1.1) contrast(.9);
+/* Dark mode: full-colour logos need a light backdrop to stay legible. */
+[data-bumm-theme="dark"] .bumm-marquee-viewport {
+  background: #fff;
+  border-radius: 12px;
+  padding: .85rem 0 .85rem 1.5rem;
 }
 
 @keyframes bumm-marquee {
@@ -4431,7 +4433,7 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 /* ---- Form lamaran kerja (career/apply) ---- */
 .bumm-apply-card { background-color: var(--bumm-bg); border: 1px solid var(--bumm-line); border-radius: var(--bumm-radius-md); padding: 2rem; }
 .bumm-apply-card .form-label { font-weight: 600; font-size: .9rem; color: var(--bumm-ink); }
-.bumm-apply-card .form-control:focus, .bumm-apply-card .form-select:focus { border-color: var(--bumm-accent); box-shadow: 0 0 0 .2rem rgba(214, 31, 38, .15); }
+.bumm-apply-card .form-control:focus, .bumm-apply-card .form-select:focus { border-color: var(--bumm-accent); box-shadow: 0 0 0 .2rem rgba(107, 30, 23, .15); }
 .bumm-apply-card .form-check-input:checked { background-color: var(--bumm-accent); border-color: var(--bumm-accent); }
 .bumm-req { color: var(--bumm-accent); }
 .bumm-opt { color: var(--bumm-ink-muted); font-weight: 400; }
@@ -4457,23 +4459,40 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
    Daftar selector di sini harus sama dengan REVEAL_SELECTORS di custom.js.
    ==================================================================== */
 .bumm-reveal :is(
-  .bumm-trusted .container,
-  .bumm-about-intro-copy,
-  .bumm-experience .col-lg-7,
-  .bumm-stat-card,
-  .bumm-about .col-lg-8,
-  .bumm-vb-card,
-  .bumm-cap-banner-text,
-  .bumm-cap-card,
-  .bumm-cert-strip,
-  .bumm-insp-card,
-  .bumm-products .col-lg-8,
-  .bumm-segment-card,
-  .bumm-cert-head,
-  .bumm-cert-card,
-  .bumm-contact-head,
-  .bumm-contact .col-lg-7,
-  .bumm-contact .col-lg-5,
+  .bumm-trusted .container,
+
+  .bumm-about-intro-copy,
+
+  .bumm-experience .col-lg-7,
+
+  .bumm-stat-card,
+
+  .bumm-about .col-lg-8,
+
+  .bumm-vb-card,
+
+  .bumm-cap-banner-text,
+
+  .bumm-cap-card,
+
+  .bumm-cert-strip,
+
+  .bumm-insp-card,
+
+  .bumm-products .col-lg-8,
+
+  .bumm-segment-card,
+
+  .bumm-cert-head,
+
+  .bumm-cert-card,
+
+  .bumm-contact-head,
+
+  .bumm-contact .col-lg-7,
+
+  .bumm-contact .col-lg-5,
+
   .bumm-about-intro-media
 ):not(.is-in) {
   opacity: 0;
@@ -4481,23 +4500,40 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 }
 
 .bumm-reveal :is(
-  .bumm-trusted .container,
-  .bumm-about-intro-copy,
-  .bumm-experience .col-lg-7,
-  .bumm-stat-card,
-  .bumm-about .col-lg-8,
-  .bumm-vb-card,
-  .bumm-cap-banner-text,
-  .bumm-cap-card,
-  .bumm-cert-strip,
-  .bumm-insp-card,
-  .bumm-products .col-lg-8,
-  .bumm-segment-card,
-  .bumm-cert-head,
-  .bumm-cert-card,
-  .bumm-contact-head,
-  .bumm-contact .col-lg-7,
-  .bumm-contact .col-lg-5,
+  .bumm-trusted .container,
+
+  .bumm-about-intro-copy,
+
+  .bumm-experience .col-lg-7,
+
+  .bumm-stat-card,
+
+  .bumm-about .col-lg-8,
+
+  .bumm-vb-card,
+
+  .bumm-cap-banner-text,
+
+  .bumm-cap-card,
+
+  .bumm-cert-strip,
+
+  .bumm-insp-card,
+
+  .bumm-products .col-lg-8,
+
+  .bumm-segment-card,
+
+  .bumm-cert-head,
+
+  .bumm-cert-card,
+
+  .bumm-contact-head,
+
+  .bumm-contact .col-lg-7,
+
+  .bumm-contact .col-lg-5,
+
   .bumm-about-intro-media
 ).is-in {
   animation: bumm-rv .65s cubic-bezier(.22, .61, .36, 1) var(--rv-d, 0ms) backwards;
@@ -4511,3 +4547,5 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 @keyframes bumm-rv { from { opacity: 0; translate: 0 22px; } }
 @keyframes bumm-rv-fade { from { opacity: 0; } }
 @keyframes bumm-rv-failsafe { to { opacity: 1; } }
+/* Count-up numbers: equal-width digits so the value does not jitter. */
+.bumm-stat-value[data-count-to] { font-variant-numeric: tabular-nums; }
