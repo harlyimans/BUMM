@@ -57,6 +57,34 @@ $(function () {
   // setiap load menghasilkan request 404. Aktifkan lagi setelah filenya ditambahkan.
   // loadHeroVideo();
 
+
+  // --------------------------------------------------------------------
+  // Hero carousel — Bootstrap fade carousel. Visitors who ask for reduced
+  // motion get it paused; everyone gets a pause/play button (WCAG 2.2.2).
+  // --------------------------------------------------------------------
+  (function () {
+    var el = document.getElementById('bummHeroCarousel');
+    if (!el || !window.bootstrap) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var carousel = bootstrap.Carousel.getOrCreateInstance(el, reduce ? { ride: false, interval: false } : {});
+    var btn = el.querySelector('.bumm-hero-pause');
+    var icon = btn && btn.querySelector('i');
+    var paused = reduce;
+
+    function paint() {
+      if (!btn) return;
+      btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      btn.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+      icon.className = 'bi ' + (paused ? 'bi-play-fill' : 'bi-pause-fill');
+    }
+    paint();
+    if (btn) btn.addEventListener('click', function () {
+      paused = !paused;
+      if (paused) { carousel.pause(); } else { carousel.cycle(); }
+      paint();
+    });
+  })();
+
   // Footer video: autoplays muted + looped on every page. Visitors who
   // ask the OS for reduced motion get it paused with controls instead.
   $('.bumm-footer-video video').each(function () {
@@ -131,6 +159,15 @@ $(function () {
       hero_headline_last: 'through quality',
       hero_lead: 'A trusted foundry partner for high quality iron casting solutions for automotive, heavy duty, agriculture, train component and general casting.',
       btn_view_product: 'View Products',
+      btn_our_facility: 'Our Facility',
+      hero2_eyebrow: 'Our Capability',
+      hero2_l1: 'Complete casting',
+      hero2_l2: 'capability',
+      hero2_lead: 'From melting, molding and core making to pouring, machining and inspection.',
+      hero3_eyebrow: 'Our Products',
+      hero3_l1: 'Castings for every',
+      hero3_l2: 'industry',
+      hero3_lead: 'Automotive, heavy duty, agriculture, train component and general casting.',
       plate_title: 'Company Profile',
       plate_established_label: 'Established',
       plate_experience_label: 'Foundry Experience',
@@ -141,11 +178,14 @@ $(function () {
       about_intro_eyebrow: 'About BUMM',
       about_intro_heading: 'MORE THAN JUST CASTING',
       about_intro_cta: 'Learn About BUMM',
+      about_us_heading: 'ABOUT US',
+      about_us_p1: 'PT Bina Usaha Mandiri Mizusawa (BUMM), is a trusted iron casting manufacturer based in Jatiuwung, Tangerang, Indonesia.',
+      about_us_p2: 'Committed to prioritizing customer satisfaction by optimizing production processes, protecting the environment, and maintaining high standards of occupational health and safety.',
       experience_heading_1: 'BUILT ON',
       experience_heading_2: 'EXPERIENCE',
       experience_lead: 'Decades of Foundry Expertise, Delivering Precision Iron Casting Solutions Engineered for Quality, Reliability, and Performance.',
       experience_stat_established: 'Established',
-      experience_stat_ownership: 'Bakrie Autoparts ownership',
+      experience_stat_ownership: 'Bakrie Autoparts Ownership',
       experience_stat_years: 'Years Of Experience',
       experience_stat_capacity: 'Ton Installed Capacity',
       about_eyebrow: 'Our Values',

@@ -50,7 +50,7 @@
   <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/ibm-plex-sans-latin-400-normal.woff2" crossorigin>
 
   <!-- Hero banner is the LCP element — preload it, don't lazy-load it. -->
-  <link rel="preload" as="image" href="./assets/img/hero-pour.webp" imagesrcset="./assets/img/hero-pour-mobile.webp 900w, ./assets/img/hero-pour.webp 1600w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/img/hero-office.webp" imagesrcset="./assets/img/hero-office-mobile.webp 900w, ./assets/img/hero-office.webp 1600w" imagesizes="100vw" fetchpriority="high">
 
   <link rel="stylesheet" href="./assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
@@ -111,14 +111,13 @@
                      `navbar_overlay: true` = transparan di atas hero (dipakai beranda). -->
   <nav class="navbar navbar-expand-lg bumm-navbar bumm-navbar--overlay">
     <div class="container">
-      <a class="navbar-brand" href="./" aria-label="BUMM — Home"><img src="./assets/img/logo-bumm-96.png" alt="BUMM" class="bumm-navbar-logo" width="44" height="44"></a>
+      <a class="navbar-brand" href="./" aria-label="BUMM — Home"><img src="./assets/img/logo-bumm.png" alt="BUMM" class="bumm-navbar-logo" width="60" height="60"></a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bummNav" aria-controls="bummNav" aria-expanded="false" aria-label="Open menu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="bummNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="./" data-i18n="nav_home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="./career/" data-i18n="nav_career">Career</a></li>
           <li class="nav-item dropdown bumm-dropdown">
             <a class="nav-link dropdown-toggle" href="./about/company-profile/" id="navAbout" aria-haspopup="true" aria-expanded="false" data-i18n="nav_about">About</a>
             <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navAbout">
@@ -139,6 +138,7 @@
               <li><a class="dropdown-item" href="./product/train.html" data-i18n="nav_prod_train">Train Component</a></li>
             </ul>
           </li>
+          <li class="nav-item"><a class="nav-link" href="./career/" data-i18n="nav_career">Career</a></li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
             <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">
               <i class="bi bi-moon-stars" aria-hidden="true"></i>
@@ -165,81 +165,81 @@
          being baked into the JPEG and duplicated in a visually-hidden
          block. The photo itself is decorative (alt=""). A video (if
          eligible — see custom.js) still fades in over it. -->
-    <div class="bumm-hero-media">
+    <div class="bumm-hero-media carousel slide carousel-fade" id="bummHeroCarousel" data-bs-ride="carousel" data-bs-interval="7000" data-bs-pause="hover" aria-roledescription="carousel" aria-label="BUMM highlights">
+      <div class="carousel-inner">
+        <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 / 3">
+          <div class="bumm-hero-slide">
       <picture>
-        <source media="(max-width: 575.98px)" type="image/webp" srcset="./assets/img/hero-pour-mobile.webp">
-        <source media="(max-width: 575.98px)" srcset="./assets/img/hero-pour-mobile.jpg">
-        <source type="image/webp" srcset="./assets/img/hero-pour.webp">
+        <source media="(max-width: 575.98px)" type="image/webp" srcset="./assets/img/hero-office-mobile.webp">
+        <source media="(max-width: 575.98px)" srcset="./assets/img/hero-office-mobile.jpg">
+        <source type="image/webp" srcset="./assets/img/hero-office.webp">
         <img
-          class="bumm-hero-bg-image"
-          src="./assets/img/hero-pour.jpg"
+          class="bumm-hero-bg-image bumm-hero-bg-image--office"
+          src="./assets/img/hero-office.jpg"
           alt=""
-          width="1600" height="1103"
+          width="1600" height="2133"
           loading="eager"
           fetchpriority="high"
           onerror="this.style.display='none'">
       </picture>
 
-      <div class="container bumm-hero-copy">
-        <div class="row align-items-end gy-4">
-
-          <div class="col-lg-7 col-xl-6">
-            <p class="bumm-hero-eyebrow">
-              <strong>PT Bina Usaha Mandiri Mizusawa</strong>
-              <span class="bumm-hero-eyebrow-rule" aria-hidden="true"></span>
-              <span data-i18n="hero_eyebrow_group">a subsidiary of Bakrie Autoparts</span>
-            </p>
-
-            <!-- Two lines, two states of the same part: the first is solid
-                 (the finished casting), the second is outlined (the mould it
-                 came out of). Falls back to solid white on small screens and
-                 where text-stroke isn't supported. -->
-            <h1 class="bumm-hero-headline">
-              <span class="bumm-hero-headline-solid" data-i18n="hero_headline_cast">CASTING PERFECTION</span>
-              <span class="bumm-hero-headline-outline" data-i18n="hero_headline_last">THROUGH QUALITY</span>
-            </h1>
-
-            <p class="bumm-hero-lead" data-i18n="hero_lead">
-              A trusted foundry partner for high quality iron casting solutions for automotive, heavy duty, agriculture, train component and general casting.
-            </p>
-
-            <div class="bumm-hero-actions">
-              <a href="./product/" class="btn btn-bumm-primary" data-i18n="btn_view_product">View Products</a>
-              <a href="#contact" class="btn btn-bumm-secondary btn-bumm-secondary--on-photo" data-i18n="contact_us">Contact Us</a>
+      <div class="container-fluid bumm-hero-copy">
+        <div class="bumm-hero-copy-inner">
+          <h1 class="bumm-hero-headline">
+            <span data-i18n="hero_headline_cast">CASTING PERFECTION</span>
+            <span data-i18n="hero_headline_last">THROUGH QUALITY</span>
+          </h1>
+          <p class="bumm-hero-lead" data-i18n="hero_lead">
+            A trusted foundry partner for high quality iron casting solutions for automotive, heavy duty, agriculture, train component and general casting.
+          </p>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 / 3">
+          <div class="bumm-hero-slide">
+            <picture>
+              <source type="image/webp" srcset="./assets/img/foundry.webp">
+              <img class="bumm-hero-bg-image" src="./assets/img/foundry.webp" alt="" width="1500" height="1060" loading="lazy" onerror="this.style.display='none'">
+            </picture>
+            <div class="container-fluid bumm-hero-copy">
+              <div class="bumm-hero-copy-inner">
+                <h2 class="bumm-hero-headline">
+                  <span data-i18n="hero2_l1">Complete casting</span>
+                  <span data-i18n="hero2_l2">capability</span>
+                </h2>
+                <p class="bumm-hero-lead" data-i18n="hero2_lead">From melting, molding and core making to pouring, machining and inspection.</p>
+              </div>
             </div>
           </div>
-
-          <!-- Spec plate — sits on the photo now, so it uses the --hero
-               variant: smoked glass instead of the page surface colour. -->
-          <!-- <div class="col-lg-5 col-xl-6">
-            <div class="bumm-plate bumm-plate--hero">
-              <span class="bumm-plate-rivet tl"></span>
-              <span class="bumm-plate-rivet tr"></span>
-              <span class="bumm-plate-rivet bl"></span>
-              <span class="bumm-plate-rivet br"></span>
-
-              <div class="bumm-plate-title" data-i18n="plate_title">Company Profile</div>
-
-              <div class="bumm-plate-row">
-                <span class="bumm-plate-label" data-i18n="plate_established_label">Established</span>
-                <span class="bumm-plate-value">1983</span>
-              </div>
-              <div class="bumm-plate-row">
-                <span class="bumm-plate-label" data-i18n="plate_experience_label">Foundry Experience</span>
-                <span class="bumm-plate-value" data-i18n="plate_experience_value">40+ years</span>
-              </div>
-              <div class="bumm-plate-row">
-                <span class="bumm-plate-label" data-i18n="plate_oem_label">OEM Partners</span>
-                <span class="bumm-plate-value">40+</span>
-              </div>
-              <div class="bumm-plate-row">
-                <span class="bumm-plate-label" data-i18n="plate_parent_label">Parent Company</span>
-                <span class="bumm-plate-value">Bakrie Autoparts</span>
+        </div>
+        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 / 3">
+          <div class="bumm-hero-slide">
+            <picture>
+              <source type="image/webp" srcset="./assets/img/capability.webp">
+              <img class="bumm-hero-bg-image" src="./assets/img/capability.webp" alt="" width="1600" height="900" loading="lazy" onerror="this.style.display='none'">
+            </picture>
+            <div class="container-fluid bumm-hero-copy">
+              <div class="bumm-hero-copy-inner">
+                <h2 class="bumm-hero-headline">
+                  <span data-i18n="hero3_l1">Castings for every</span>
+                  <span data-i18n="hero3_l2">industry</span>
+                </h2>
+                <p class="bumm-hero-lead" data-i18n="hero3_lead">Automotive, heavy duty, agriculture, train component and general casting.</p>
               </div>
             </div>
-          </div> -->
-
+          </div>
         </div>
+      </div>
+      <button type="button" class="bumm-hero-arrow bumm-hero-arrow--prev" data-bs-target="#bummHeroCarousel" data-bs-slide="prev" aria-label="Previous slide"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+      <button type="button" class="bumm-hero-arrow bumm-hero-arrow--next" data-bs-target="#bummHeroCarousel" data-bs-slide="next" aria-label="Next slide"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      <div class="bumm-hero-controls">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#bummHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#bummHeroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#bummHeroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <button type="button" class="bumm-hero-pause" aria-label="Pause slideshow" aria-pressed="false"><i class="bi bi-pause-fill" aria-hidden="true"></i></button>
       </div>
     </div>
   </header>
@@ -298,35 +298,19 @@
        surface colour via a CSS gradient (not baked into the JPEG), so it
        reads correctly in both light and dark mode and the copy stays real,
        selectable HTML. Stacks to a short banner + copy below on phones. -->
-  <section class="bumm-about-intro" id="about">
-    <div class="bumm-about-intro-media">
-      <picture>
-        <source media="(max-width: 991.98px)" type="image/webp" srcset="./assets/img/about-foundry-mobile.webp">
-        <source media="(max-width: 991.98px)" srcset="./assets/img/about-foundry-mobile.jpg">
-        <source type="image/webp" srcset="./assets/img/about-foundry.webp">
-        <img
-          src="./assets/img/about-foundry.jpg"
-          alt="Foundry operator directing a ladle pour on the BUMM casting floor"
-          loading="lazy"
-          width="760" height="898">
-      </picture>
-    </div>
-
+  <section class="bumm-about-intro bumm-about-intro--red" id="about">
+    <picture>
+      <source media="(max-width: 767.98px)" type="image/webp" srcset="./assets/img/about-bg-mobile.webp">
+      <source media="(max-width: 767.98px)" srcset="./assets/img/about-bg-mobile.jpg">
+      <source type="image/webp" srcset="./assets/img/about-bg.webp">
+      <img class="bumm-about-bg" src="./assets/img/about-bg.jpg" alt="" loading="lazy" width="1600" height="800">
+    </picture>
     <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-lg-6 col-xl-5">
-          <div class="bumm-about-intro-copy">
-            <p class="bumm-eyebrow" data-i18n="about_intro_eyebrow">About BUMM</p>
-            <h2 class="bumm-about-heading" data-i18n="about_intro_heading">More than just casting.</h2>
-            <p class="bumm-about-lead" data-i18n="about_lead">
-              PT. Bina Usaha Mandiri Mizusawa (BUMM) was established in 1983 and is a
-              subsidiary of Bakrie Autoparts, based in Jatiuwung, Tangerang. We specialize
-              in auto components and general casting — foundry manufacturing built to meet
-              the demands of Indonesia's automotive and heavy-equipment industry.
-            </p>
-            <a href="./about/company-profile/" class="btn btn-bumm-primary mt-2" data-i18n="about_intro_cta">Learn About BUMM</a>
-          </div>
-        </div>
+      <div class="bumm-about-intro-copy">
+        <h2 class="bumm-about-heading" data-i18n="about_us_heading">ABOUT US</h2>
+        <p data-i18n="about_us_p1">PT Bina Usaha Mandiri Mizusawa (BUMM), is a trusted iron casting manufacturer based in Jatiuwung, Tangerang, Indonesia.</p>
+        <p data-i18n="about_us_p2">Committed to prioritizing customer satisfaction by optimizing production processes, protecting the environment, and maintaining high standards of occupational health and safety.</p>
+        <a href="./about/company-profile/" class="bumm-about-btn"><span data-i18n="about_intro_cta">Learn About BUMM</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </section>
@@ -335,71 +319,41 @@
   <!-- Stat band. The foundry photo behind it is a real <img> so it can be
        art-directed and lazy-loaded; the white fade is a CSS scrim on top,
        not baked into the file, so it also works in dark mode. -->
-  <section class="bumm-experience">
-    <div class="bumm-experience-media" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 991.98px)" type="image/webp" srcset="./assets/img/experience-foundry-mobile.webp">
-        <source media="(max-width: 991.98px)" srcset="./assets/img/experience-foundry-mobile.jpeg">
-        <source type="image/webp" srcset="./assets/img/experience-foundry.webp">
-        <img src="./assets/img/experience-foundry.jpeg" alt="" loading="lazy" width="1600" height="900">
-      </picture>
-    </div>
-
+  <section class="bumm-experience bumm-experience--kpi">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-7">
-          <h2 class="bumm-experience-heading">
-            <span data-i18n="experience_heading_1">BUILT ON</span>
-            <span class="bumm-experience-heading-accent" data-i18n="experience_heading_2">EXPERIENCE</span>
-          </h2>
-          <p class="bumm-experience-lead" data-i18n="experience_lead">
-            Decades of Foundry Expertise, Delivering Precision Iron Casting Solutions Engineered for Quality, Reliability, and Performance.
-          </p>
-        </div>
-      </div>
-
-      <div class="row g-3 g-lg-4 bumm-experience-stats">
-        <div class="col-6 col-lg-3">
-          <div class="bumm-stat-card">
-            <div class="bumm-stat-top">
-              <span class="bumm-stat-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></span>
-              <span class="bumm-stat-value" data-count-to="1983" data-count-decimals="0" data-count-plain="1">1983</span>
-            </div>
-            <div class="bumm-stat-label" data-i18n="experience_stat_established">Established</div>
-            <span class="bumm-stat-dash"></span>
-          </div>
-        </div>
-
-        <div class="col-6 col-lg-3">
-          <div class="bumm-stat-card">
-            <div class="bumm-stat-top">
-              <span class="bumm-stat-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
-              <span class="bumm-stat-value" data-count-to="99.99" data-count-decimals="2" data-count-suffix="%">99.99%</span>
-            </div>
+      <div class="row g-3 g-lg-4 bumm-experience-stats bumm-kpis">
+        <div class="col-12 col-md-4">
+          <div class="bumm-stat-card bumm-kpi">
+            <span class="bumm-kpi-icon"><svg class="bumm-kpi-svg" viewBox="0 0 80 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="40" cy="14" r="9"/><path d="M24 40c0-9 7-15 16-15s16 6 16 15"/><circle cx="14" cy="26" r="8"/><path d="M2 52c0-8 5-13 12-13 3 0 5 1 7 2"/><circle cx="66" cy="26" r="8"/><path d="M78 52c0-8-5-13-12-13-3 0-5 1-7 2"/><path d="M26 56c0-6 6-10 14-10s14 4 14 10"/></svg></span>
+            <span class="bumm-stat-value" data-count-to="99.99" data-count-decimals="2" data-count-suffix="%">99.99%</span>
             <div class="bumm-stat-label" data-i18n="experience_stat_ownership">Bakrie Autoparts ownership</div>
-            <span class="bumm-stat-dash"></span>
           </div>
         </div>
 
-        <div class="col-6 col-lg-3">
-          <div class="bumm-stat-card">
-            <div class="bumm-stat-top">
-              <span class="bumm-stat-icon"><i class="bi bi-briefcase-fill" aria-hidden="true"></i></span>
-              <span class="bumm-stat-value" data-count-to="40" data-count-decimals="0" data-count-suffix="+">40+</span>
+        <div class="col-12 col-md-4">
+          <div class="bumm-stat-card bumm-kpi bumm-kpi--split">
+            <div class="bumm-kpi-row">
+              <span class="bumm-kpi-icon"><i class="bi bi-briefcase" aria-hidden="true"></i></span>
+              <div>
+                <span class="bumm-stat-value" data-count-to="40" data-count-decimals="0" data-count-suffix="+">40+</span>
+                <div class="bumm-stat-label" data-i18n="experience_stat_years">Years Of Experience</div>
+              </div>
             </div>
-            <div class="bumm-stat-label" data-i18n="experience_stat_years">Years Of Experience</div>
-            <span class="bumm-stat-dash"></span>
+            <div class="bumm-kpi-row bumm-kpi-row--filled">
+              <span class="bumm-kpi-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></span>
+              <div>
+                <span class="bumm-stat-value" data-count-to="1983" data-count-decimals="0" data-count-plain="1">1983</span>
+                <div class="bumm-stat-label" data-i18n="experience_stat_established">Established</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="col-6 col-lg-3">
-          <div class="bumm-stat-card">
-            <div class="bumm-stat-top">
-              <span class="bumm-stat-icon"><i class="bi bi-buildings-fill" aria-hidden="true"></i></span>
-              <span class="bumm-stat-value" data-count-to="6" data-count-decimals="0" data-count-suffix="k+">6K+</span>
-            </div>
+        <div class="col-12 col-md-4">
+          <div class="bumm-stat-card bumm-kpi">
+            <span class="bumm-kpi-icon"><svg class="bumm-kpi-svg" viewBox="0 0 80 72" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 68V40l12-6v6l12-6v6l12-6v6l12-6v34z"/><path d="M8 68h60"/><path d="M12 40V26h10v8"/><path d="M52 34V18h10v50"/><path d="M12 22h10M52 14h10"/><path d="M16 14c-4 0-5-5-2-7s6 0 6-3c2-3 8-2 8 2 3 0 4 4 1 6"/><path d="M56 10c-3 0-4-4-1-6 2-2 6-1 7 1 3-1 5 3 2 5"/><path d="M18 54h6M32 54h6M46 54h6"/></svg></span>
+            <span class="bumm-stat-value" data-count-to="6" data-count-decimals="0" data-count-suffix="k+">6k+</span>
             <div class="bumm-stat-label" data-i18n="experience_stat_capacity">Ton Installed Capacity</div>
-            <span class="bumm-stat-dash"></span>
           </div>
         </div>
       </div>
