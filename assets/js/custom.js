@@ -178,6 +178,7 @@ $(function () {
       about_intro_eyebrow: 'About BUMM',
       about_intro_heading: 'MORE THAN JUST CASTING',
       about_intro_cta: 'Learn About BUMM',
+      group_heading: 'OUR GROUP',
       about_us_heading: 'ABOUT US',
       about_us_p1: 'PT Bina Usaha Mandiri Mizusawa (BUMM), is a trusted iron casting manufacturer based in Jatiuwung, Tangerang, Indonesia.',
       about_us_p2: 'Committed to prioritizing customer satisfaction by optimizing production processes, protecting the environment, and maintaining high standards of occupational health and safety.',
@@ -502,4 +503,24 @@ $(function () {
     els[i].textContent = format(els[i], 0);
     io.observe(els[i]);
   }
+})();
+
+// ----------------------------------------------------------------------
+// "Our Group" — memicu animasi peta (sel, pin, garis, kartu) sekali saat
+// section masuk layar. Tanpa JS / reduce motion / tanpa IntersectionObserver,
+// semua elemen langsung tampil di keadaan akhir (lihat .js-ready di CSS).
+// ----------------------------------------------------------------------
+(function () {
+  var sec = document.querySelector('.bumm-group');
+  if (!sec) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  sec.classList.add('js-ready');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      sec.classList.add('is-in');
+      io.disconnect();
+    });
+  }, { threshold: 0.25 });
+  io.observe(sec);
 })();
