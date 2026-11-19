@@ -576,3 +576,38 @@ $(function () {
   }, { threshold: 0.25 });
   io.observe(sec);
 })();
+
+
+// ----------------------------------------------------------------------
+// VICTORY (beranda): judul kartu diperkecil seragam sampai kata terpanjang
+// ("RESPONSIBILITY") muat di kartu tanpa terpotong atau patah huruf.
+// Diukur langsung di browser, jadi tidak bergantung pada font yang terpasang.
+// ----------------------------------------------------------------------
+(function () {
+  var titles = document.querySelectorAll('.bumm-values .bumm-vb-title');
+  if (!titles.length) return;
+
+  function overflows() {
+    for (var i = 0; i < titles.length; i++) {
+      if (titles[i].scrollWidth > titles[i].clientWidth + 0.5) return true;
+    }
+    return false;
+  }
+
+  function fit() {
+    var size = 15.2, MIN = 9;
+    for (var i = 0; i < titles.length; i++) titles[i].style.fontSize = size + 'px';
+    while (size > MIN && overflows()) {
+      size -= 0.4;
+      for (var j = 0; j < titles.length; j++) titles[j].style.fontSize = size + 'px';
+    }
+  }
+
+  var t;
+  function later() { clearTimeout(t); t = setTimeout(fit, 120); }
+
+  fit();
+  window.addEventListener('resize', later);
+  window.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();

@@ -5459,11 +5459,11 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
    kartu. Teks yang tetap kepanjangan dipatahkan, bukan meluber.
    ========================================================================== */
 .bumm-values .bumm-vb-card { padding-left: .9rem; padding-right: .9rem; min-width: 0; }
-.bumm-values .bumm-vb-title { font-size: .8rem; overflow-wrap: anywhere; }
+.bumm-values .bumm-vb-title { font-size: .8rem; overflow-wrap: normal; word-break: normal; hyphens: manual; }
 .bumm-values .bumm-vb-desc  { overflow-wrap: break-word; hyphens: auto; }
 @supports (width: 1cqw) {
   .bumm-values .bumm-vb-card { container-type: inline-size; }
-  .bumm-values .bumm-vb-title { font-size: min(.95rem, 10.5cqw); }
+  .bumm-values .bumm-vb-title { font-size: min(.95rem, 8.6cqw); }
 }
 @media (max-width: 767.98px) {
   .bumm-values .bumm-vb-card { padding-left: .8rem; padding-right: .8rem; }
