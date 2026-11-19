@@ -50,7 +50,7 @@
   <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/ibm-plex-sans-latin-400-normal.woff2" crossorigin>
 
   <!-- Hero banner is the LCP element — preload it, don't lazy-load it. -->
-  <link rel="preload" as="image" href="./assets/img/hero-office.webp" imagesrcset="./assets/img/hero-office-mobile.webp 900w, ./assets/img/hero-office.webp 1600w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/img/hero-quality.webp" fetchpriority="high">
 
   <link rel="stylesheet" href="./assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
@@ -167,53 +167,24 @@
          eligible — see custom.js) still fades in over it. -->
     <div class="bumm-hero-media carousel slide carousel-fade" id="bummHeroCarousel" data-bs-ride="carousel" data-bs-interval="7000" data-bs-pause="hover" aria-roledescription="carousel" aria-label="BUMM highlights">
       <div class="carousel-inner">
-        <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 / 3">
-          <div class="bumm-hero-slide">
-      <picture>
-        <source media="(max-width: 575.98px)" type="image/webp" srcset="./assets/img/hero-office-mobile.webp">
-        <source media="(max-width: 575.98px)" srcset="./assets/img/hero-office-mobile.jpg">
-        <source type="image/webp" srcset="./assets/img/hero-office.webp">
-        <img
-          class="bumm-hero-bg-image bumm-hero-bg-image--office"
-          src="./assets/img/hero-office.jpg"
-          alt=""
-          width="1600" height="2133"
-          loading="eager"
-          fetchpriority="high"
-          onerror="this.style.display='none'">
-      </picture>
-
-      <div class="container-fluid bumm-hero-copy">
-        <div class="bumm-hero-copy-inner">
-          <h1 class="bumm-hero-headline">
-            <span data-i18n="hero_headline_cast">CASTING PERFECTION</span>
-            <span data-i18n="hero_headline_last">THROUGH QUALITY</span>
-          </h1>
-          <p class="bumm-hero-lead" data-i18n="hero_lead">
-            A trusted foundry partner for high quality iron casting solutions for automotive, heavy duty, agriculture, train component and general casting.
-          </p>
-        </div>
-      </div>
-          </div>
-        </div>
-        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 / 3">
+        <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 / 2">
           <div class="bumm-hero-slide">
             <picture>
               <source type="image/webp" srcset="./assets/img/hero-quality.webp">
-              <img class="bumm-hero-bg-image bumm-hero-bg-image--quality" src="./assets/img/hero-quality.jpg" alt="" width="1536" height="864" loading="lazy" onerror="this.style.display='none'">
+              <img class="bumm-hero-bg-image bumm-hero-bg-image--quality" src="./assets/img/hero-quality.jpg" alt="" width="1536" height="864" loading="eager" fetchpriority="high" onerror="this.style.display='none'">
             </picture>
             <div class="container-fluid bumm-hero-copy">
               <div class="bumm-hero-copy-inner">
-                <h2 class="bumm-hero-headline">
+                <h1 class="bumm-hero-headline">
                   <span data-i18n="hero2_l1">Casting Perfection</span>
                   <span data-i18n="hero2_l2">Through Quality</span>
-                </h2>
+                </h1>
                 <p class="bumm-hero-lead" data-i18n="hero2_lead">BUMM is a trusted foundry for high-quality iron casting solutions.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 / 3">
+        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 / 2">
           <div class="bumm-hero-slide">
             <picture>
               <source type="image/webp" srcset="./assets/img/hero-capability.webp">
@@ -237,61 +208,11 @@
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#bummHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#bummHeroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#bummHeroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <button type="button" class="bumm-hero-pause" aria-label="Pause slideshow" aria-pressed="false"><i class="bi bi-pause-fill" aria-hidden="true"></i></button>
       </div>
     </div>
   </header>
-
-  <!-- ============ TRUSTED BY MARQUEE ============ -->
-  <section class="bumm-trusted">
-    <div class="container">
-      <div class="d-flex align-items-center bumm-marquee-wrap">
-        <div class="bumm-trusted-label d-none d-md-block" data-i18n="trusted_label">Trusted by</div>
-        <div class="bumm-marquee-viewport ms-md-4">
-          <div class="bumm-marquee-track">
-            <img src="./assets/img/clients/komatsu.png" alt="Komatsu" loading="lazy" style="width:196px;height:37px" width="420" height="79">
-            <img src="./assets/img/clients/yanmar.png" alt="Yanmar" loading="lazy" style="width:117px;height:62px" width="317" height="168">
-            <img src="./assets/img/clients/tomoe.png" alt="Tomoe" loading="lazy" style="width:174px;height:41px" width="420" height="100">
-            <img src="./assets/img/clients/mk.png" alt="MK" loading="lazy" style="width:132px;height:55px" width="253" height="105">
-            <img src="./assets/img/clients/velasto.png" alt="Velasto Indonesia" loading="lazy" style="width:172px;height:42px" width="362" height="88">
-            <img src="./assets/img/clients/nice.png" alt="Nice" loading="lazy" style="width:59px;height:64px" width="154" height="168">
-            <img src="./assets/img/clients/gobel-panasonic.png" alt="Gobel Panasonic" loading="lazy" style="width:69px;height:64px" width="182" height="168">
-            <img src="./assets/img/clients/fuso.png" alt="Mitsubishi Fuso" loading="lazy" style="width:64px;height:64px" width="168" height="168">
-            <img src="./assets/img/clients/isuzu.png" alt="Isuzu" loading="lazy" style="width:157px;height:46px" width="420" height="122">
-            <img src="./assets/img/clients/denso.png" alt="Denso" loading="lazy" style="width:193px;height:37px" width="420" height="81">
-            <img src="./assets/img/clients/sankei-gohsyu.png" alt="Sankei Gohsyu Industries" loading="lazy" style="width:70px;height:64px" width="183" height="168">
-            <img src="./assets/img/clients/garuda-metal-utama.png" alt="Garuda Metal Utama" loading="lazy" style="width:200px;height:27px" width="420" height="56">
-            <img src="./assets/img/clients/toyota-indonesia.png" alt="Toyota Indonesia" loading="lazy" style="width:124px;height:58px" width="317" height="149">
-            <img src="./assets/img/clients/tjokro-group.png" alt="Tjokro Group" loading="lazy" style="width:48px;height:64px" width="127" height="168">
-            <img src="./assets/img/clients/daihatsu.png" alt="Daihatsu" loading="lazy" style="width:140px;height:51px" width="380" height="139">
-            <img src="./assets/img/clients/hino.png" alt="Hino" loading="lazy" style="width:68px;height:64px" width="153" height="143">
-            <img src="./assets/img/clients/fukoku.png" alt="Fukoku" loading="lazy" style="width:71px;height:64px" width="103" height="93">
-
-            <!-- Diulang supaya loop marquee terlihat mulus -->
-            <img src="./assets/img/clients/komatsu.png" alt="" aria-hidden="true" loading="lazy" style="width:196px;height:37px" width="420" height="79">
-            <img src="./assets/img/clients/yanmar.png" alt="" aria-hidden="true" loading="lazy" style="width:117px;height:62px" width="317" height="168">
-            <img src="./assets/img/clients/tomoe.png" alt="" aria-hidden="true" loading="lazy" style="width:174px;height:41px" width="420" height="100">
-            <img src="./assets/img/clients/mk.png" alt="" aria-hidden="true" loading="lazy" style="width:132px;height:55px" width="253" height="105">
-            <img src="./assets/img/clients/velasto.png" alt="" aria-hidden="true" loading="lazy" style="width:172px;height:42px" width="362" height="88">
-            <img src="./assets/img/clients/nice.png" alt="" aria-hidden="true" loading="lazy" style="width:59px;height:64px" width="154" height="168">
-            <img src="./assets/img/clients/gobel-panasonic.png" alt="" aria-hidden="true" loading="lazy" style="width:69px;height:64px" width="182" height="168">
-            <img src="./assets/img/clients/fuso.png" alt="" aria-hidden="true" loading="lazy" style="width:64px;height:64px" width="168" height="168">
-            <img src="./assets/img/clients/isuzu.png" alt="" aria-hidden="true" loading="lazy" style="width:157px;height:46px" width="420" height="122">
-            <img src="./assets/img/clients/denso.png" alt="" aria-hidden="true" loading="lazy" style="width:193px;height:37px" width="420" height="81">
-            <img src="./assets/img/clients/sankei-gohsyu.png" alt="" aria-hidden="true" loading="lazy" style="width:70px;height:64px" width="183" height="168">
-            <img src="./assets/img/clients/garuda-metal-utama.png" alt="" aria-hidden="true" loading="lazy" style="width:200px;height:27px" width="420" height="56">
-            <img src="./assets/img/clients/toyota-indonesia.png" alt="" aria-hidden="true" loading="lazy" style="width:124px;height:58px" width="317" height="149">
-            <img src="./assets/img/clients/tjokro-group.png" alt="" aria-hidden="true" loading="lazy" style="width:48px;height:64px" width="127" height="168">
-            <img src="./assets/img/clients/daihatsu.png" alt="" aria-hidden="true" loading="lazy" style="width:140px;height:51px" width="380" height="139">
-            <img src="./assets/img/clients/hino.png" alt="" aria-hidden="true" loading="lazy" style="width:68px;height:64px" width="153" height="143">
-            <img src="./assets/img/clients/fukoku.png" alt="" aria-hidden="true" loading="lazy" style="width:71px;height:64px" width="103" height="93">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============ ABOUT INTRO ============ -->
   <!-- Photo bleeds from the left edge and fades into the section's own
@@ -307,7 +228,7 @@
     </picture>
     <div class="container">
       <div class="bumm-about-intro-copy">
-        <h2 class="bumm-about-heading" data-i18n="about_us_heading">ABOUT US</h2>
+        <h2 class="bumm-about-heading bumm-title" data-i18n="about_us_heading">ABOUT US</h2>
         <p data-i18n="about_us_p1">PT Bina Usaha Mandiri Mizusawa (BUMM), is a trusted iron casting manufacturer based in Jatiuwung, Tangerang, Indonesia.</p>
         <p data-i18n="about_us_p2">Committed to prioritizing customer satisfaction by optimizing production processes, protecting the environment, and maintaining high standards of occupational health and safety.</p>
         <a href="./about/company-profile/" class="bumm-about-btn"><span data-i18n="about_intro_cta">Learn About BUMM</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a>
@@ -372,7 +293,7 @@
     <div class="container">
       <div class="bumm-group-stage">
         <div class="bumm-group-title">
-          <h2 id="groupTitle"><span data-i18n="group_heading_1">OUR</span> <span class="bumm-group-title-accent" data-i18n="group_heading_2">GROUP</span></h2>
+          <h2 id="groupTitle" class="bumm-title"><span data-i18n="group_heading_1">OUR</span> <span class="bumm-group-title-accent" data-i18n="group_heading_2">GROUP</span></h2>
           <p data-i18n="group_tagline">One Vision, Connected Strengths.</p>
         </div>
         <div class="bumm-group-map">
@@ -452,7 +373,7 @@
     </div>
     <div class="container position-relative">
       <div class="bumm-values-copy">
-        <h2 class="bumm-values-heading"><span data-i18n="vb_heading_1">The Values We</span> <span class="bumm-values-heading-accent" data-i18n="vb_heading_2">Uphold</span></h2>
+        <h2 class="bumm-values-heading bumm-title"><span data-i18n="vb_heading_1">The Values We</span> <span class="bumm-values-heading-accent" data-i18n="vb_heading_2">Uphold</span></h2>
         <p class="bumm-values-lead" data-i18n="vb_lead">The principles that shape our culture, guide our decisions and drive our commitment to excellence</p>
       </div>
 
@@ -507,7 +428,7 @@
   <section class="bumm-products bumm-segpro">
     <div class="container">
       <div class="bumm-segpro-head">
-        <h2 class="bumm-segpro-heading" data-i18n="home_segment_heading">Segment <span class="bumm-heading-accent">Product</span></h2>
+        <h2 class="bumm-segpro-heading bumm-title" data-i18n="home_segment_heading">Segment <span class="bumm-heading-accent">Product</span></h2>
         <p class="bumm-segpro-lead" data-i18n="home_segment_lead">High-quality casting solutions for various industries, driving stronger and more sustainable industrial growth.</p>
       </div>
 
@@ -560,7 +481,7 @@
       <div class="bumm-cert-head">
         <div class="bumm-cert-head-text">
           <p class="bumm-eyebrow bumm-cert-eyebrow" data-i18n="cert_eyebrow">Certifications</p>
-          <h2 class="bumm-cert-heading">
+          <h2 class="bumm-cert-heading bumm-title">
             <span data-i18n="cert_heading_1">Quality,</span>
             <span class="bumm-cap-accent" data-i18n="cert_heading_2">Certified</span>
           </h2>
@@ -659,6 +580,90 @@
     </div>
   </section>
 
+  <!-- ============ OUR CUSTOMER (marquee 2 baris, arah berlawanan) ============ -->
+  <section class="bumm-trusted bumm-customer" id="customers" aria-labelledby="customerTitle">
+    <div class="container">
+      <h2 id="customerTitle" class="bumm-title bumm-customer-title"><span data-i18n="customer_heading_1">OUR</span> <span class="bumm-title-accent" data-i18n="customer_heading_2">CUSTOMER</span></h2>
+      <div class="bumm-marquee-wrap">
+        <div class="bumm-marquee-viewport">
+          <div class="bumm-marquee-track" style="--marquee-dur:107s">
+            <img src="./assets/img/clients/komatsu.png" alt="Komatsu" loading="lazy" style="width:196px;height:37px" width="420" height="79">
+            <img src="./assets/img/clients/yanmar.png" alt="Yanmar" loading="lazy" style="width:117px;height:62px" width="317" height="168">
+            <img src="./assets/img/clients/tomoe.png" alt="Tomoe" loading="lazy" style="width:174px;height:41px" width="420" height="100">
+            <img src="./assets/img/clients/mk.png" alt="MK" loading="lazy" style="width:132px;height:55px" width="253" height="105">
+            <img src="./assets/img/clients/velasto.png" alt="Velasto Indonesia" loading="lazy" style="width:172px;height:42px" width="362" height="88">
+            <img src="./assets/img/clients/nice.png" alt="Nice" loading="lazy" style="width:59px;height:64px" width="154" height="168">
+            <img src="./assets/img/clients/gobel-panasonic.png" alt="Gobel Panasonic" loading="lazy" style="width:69px;height:64px" width="182" height="168">
+            <img src="./assets/img/clients/fuso.png" alt="Mitsubishi Fuso" loading="lazy" style="width:64px;height:64px" width="168" height="168">
+            <img src="./assets/img/clients/isuzu.png" alt="Isuzu" loading="lazy" style="width:157px;height:46px" width="420" height="122">
+            <img src="./assets/img/clients/komatsu.png" alt="" aria-hidden="true" loading="lazy" style="width:196px;height:37px" width="420" height="79">
+            <img src="./assets/img/clients/yanmar.png" alt="" aria-hidden="true" loading="lazy" style="width:117px;height:62px" width="317" height="168">
+            <img src="./assets/img/clients/tomoe.png" alt="" aria-hidden="true" loading="lazy" style="width:174px;height:41px" width="420" height="100">
+            <img src="./assets/img/clients/mk.png" alt="" aria-hidden="true" loading="lazy" style="width:132px;height:55px" width="253" height="105">
+            <img src="./assets/img/clients/velasto.png" alt="" aria-hidden="true" loading="lazy" style="width:172px;height:42px" width="362" height="88">
+            <img src="./assets/img/clients/nice.png" alt="" aria-hidden="true" loading="lazy" style="width:59px;height:64px" width="154" height="168">
+            <img src="./assets/img/clients/gobel-panasonic.png" alt="" aria-hidden="true" loading="lazy" style="width:69px;height:64px" width="182" height="168">
+            <img src="./assets/img/clients/fuso.png" alt="" aria-hidden="true" loading="lazy" style="width:64px;height:64px" width="168" height="168">
+            <img src="./assets/img/clients/isuzu.png" alt="" aria-hidden="true" loading="lazy" style="width:157px;height:46px" width="420" height="122">
+            <img src="./assets/img/clients/komatsu.png" alt="" aria-hidden="true" loading="lazy" style="width:196px;height:37px" width="420" height="79">
+            <img src="./assets/img/clients/yanmar.png" alt="" aria-hidden="true" loading="lazy" style="width:117px;height:62px" width="317" height="168">
+            <img src="./assets/img/clients/tomoe.png" alt="" aria-hidden="true" loading="lazy" style="width:174px;height:41px" width="420" height="100">
+            <img src="./assets/img/clients/mk.png" alt="" aria-hidden="true" loading="lazy" style="width:132px;height:55px" width="253" height="105">
+            <img src="./assets/img/clients/velasto.png" alt="" aria-hidden="true" loading="lazy" style="width:172px;height:42px" width="362" height="88">
+            <img src="./assets/img/clients/nice.png" alt="" aria-hidden="true" loading="lazy" style="width:59px;height:64px" width="154" height="168">
+            <img src="./assets/img/clients/gobel-panasonic.png" alt="" aria-hidden="true" loading="lazy" style="width:69px;height:64px" width="182" height="168">
+            <img src="./assets/img/clients/fuso.png" alt="" aria-hidden="true" loading="lazy" style="width:64px;height:64px" width="168" height="168">
+            <img src="./assets/img/clients/isuzu.png" alt="" aria-hidden="true" loading="lazy" style="width:157px;height:46px" width="420" height="122">
+            <img src="./assets/img/clients/komatsu.png" alt="" aria-hidden="true" loading="lazy" style="width:196px;height:37px" width="420" height="79">
+            <img src="./assets/img/clients/yanmar.png" alt="" aria-hidden="true" loading="lazy" style="width:117px;height:62px" width="317" height="168">
+            <img src="./assets/img/clients/tomoe.png" alt="" aria-hidden="true" loading="lazy" style="width:174px;height:41px" width="420" height="100">
+            <img src="./assets/img/clients/mk.png" alt="" aria-hidden="true" loading="lazy" style="width:132px;height:55px" width="253" height="105">
+            <img src="./assets/img/clients/velasto.png" alt="" aria-hidden="true" loading="lazy" style="width:172px;height:42px" width="362" height="88">
+            <img src="./assets/img/clients/nice.png" alt="" aria-hidden="true" loading="lazy" style="width:59px;height:64px" width="154" height="168">
+            <img src="./assets/img/clients/gobel-panasonic.png" alt="" aria-hidden="true" loading="lazy" style="width:69px;height:64px" width="182" height="168">
+            <img src="./assets/img/clients/fuso.png" alt="" aria-hidden="true" loading="lazy" style="width:64px;height:64px" width="168" height="168">
+            <img src="./assets/img/clients/isuzu.png" alt="" aria-hidden="true" loading="lazy" style="width:157px;height:46px" width="420" height="122">
+          </div>
+          <div class="bumm-marquee-track bumm-marquee-track--reverse" style="--marquee-dur:89s">
+            <img src="./assets/img/clients/denso.png" alt="Denso" loading="lazy" style="width:193px;height:37px" width="420" height="81">
+            <img src="./assets/img/clients/sankei-gohsyu.png" alt="Sankei Gohsyu Industries" loading="lazy" style="width:70px;height:64px" width="183" height="168">
+            <img src="./assets/img/clients/garuda-metal-utama.png" alt="Garuda Metal Utama" loading="lazy" style="width:200px;height:27px" width="420" height="56">
+            <img src="./assets/img/clients/toyota-indonesia.png" alt="Toyota Indonesia" loading="lazy" style="width:124px;height:58px" width="317" height="149">
+            <img src="./assets/img/clients/tjokro-group.png" alt="Tjokro Group" loading="lazy" style="width:48px;height:64px" width="127" height="168">
+            <img src="./assets/img/clients/daihatsu.png" alt="Daihatsu" loading="lazy" style="width:140px;height:51px" width="380" height="139">
+            <img src="./assets/img/clients/hino.png" alt="Hino" loading="lazy" style="width:68px;height:64px" width="153" height="143">
+            <img src="./assets/img/clients/fukoku.png" alt="Fukoku" loading="lazy" style="width:71px;height:64px" width="103" height="93">
+            <img src="./assets/img/clients/denso.png" alt="" aria-hidden="true" loading="lazy" style="width:193px;height:37px" width="420" height="81">
+            <img src="./assets/img/clients/sankei-gohsyu.png" alt="" aria-hidden="true" loading="lazy" style="width:70px;height:64px" width="183" height="168">
+            <img src="./assets/img/clients/garuda-metal-utama.png" alt="" aria-hidden="true" loading="lazy" style="width:200px;height:27px" width="420" height="56">
+            <img src="./assets/img/clients/toyota-indonesia.png" alt="" aria-hidden="true" loading="lazy" style="width:124px;height:58px" width="317" height="149">
+            <img src="./assets/img/clients/tjokro-group.png" alt="" aria-hidden="true" loading="lazy" style="width:48px;height:64px" width="127" height="168">
+            <img src="./assets/img/clients/daihatsu.png" alt="" aria-hidden="true" loading="lazy" style="width:140px;height:51px" width="380" height="139">
+            <img src="./assets/img/clients/hino.png" alt="" aria-hidden="true" loading="lazy" style="width:68px;height:64px" width="153" height="143">
+            <img src="./assets/img/clients/fukoku.png" alt="" aria-hidden="true" loading="lazy" style="width:71px;height:64px" width="103" height="93">
+            <img src="./assets/img/clients/denso.png" alt="" aria-hidden="true" loading="lazy" style="width:193px;height:37px" width="420" height="81">
+            <img src="./assets/img/clients/sankei-gohsyu.png" alt="" aria-hidden="true" loading="lazy" style="width:70px;height:64px" width="183" height="168">
+            <img src="./assets/img/clients/garuda-metal-utama.png" alt="" aria-hidden="true" loading="lazy" style="width:200px;height:27px" width="420" height="56">
+            <img src="./assets/img/clients/toyota-indonesia.png" alt="" aria-hidden="true" loading="lazy" style="width:124px;height:58px" width="317" height="149">
+            <img src="./assets/img/clients/tjokro-group.png" alt="" aria-hidden="true" loading="lazy" style="width:48px;height:64px" width="127" height="168">
+            <img src="./assets/img/clients/daihatsu.png" alt="" aria-hidden="true" loading="lazy" style="width:140px;height:51px" width="380" height="139">
+            <img src="./assets/img/clients/hino.png" alt="" aria-hidden="true" loading="lazy" style="width:68px;height:64px" width="153" height="143">
+            <img src="./assets/img/clients/fukoku.png" alt="" aria-hidden="true" loading="lazy" style="width:71px;height:64px" width="103" height="93">
+            <img src="./assets/img/clients/denso.png" alt="" aria-hidden="true" loading="lazy" style="width:193px;height:37px" width="420" height="81">
+            <img src="./assets/img/clients/sankei-gohsyu.png" alt="" aria-hidden="true" loading="lazy" style="width:70px;height:64px" width="183" height="168">
+            <img src="./assets/img/clients/garuda-metal-utama.png" alt="" aria-hidden="true" loading="lazy" style="width:200px;height:27px" width="420" height="56">
+            <img src="./assets/img/clients/toyota-indonesia.png" alt="" aria-hidden="true" loading="lazy" style="width:124px;height:58px" width="317" height="149">
+            <img src="./assets/img/clients/tjokro-group.png" alt="" aria-hidden="true" loading="lazy" style="width:48px;height:64px" width="127" height="168">
+            <img src="./assets/img/clients/daihatsu.png" alt="" aria-hidden="true" loading="lazy" style="width:140px;height:51px" width="380" height="139">
+            <img src="./assets/img/clients/hino.png" alt="" aria-hidden="true" loading="lazy" style="width:68px;height:64px" width="153" height="143">
+            <img src="./assets/img/clients/fukoku.png" alt="" aria-hidden="true" loading="lazy" style="width:71px;height:64px" width="103" height="93">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ============ NEWS & ACTIVITY ============ -->
   <!-- TODO(client): this is a static template with 3 placeholder cards.
        In the old site, this section is populated dynamically from the
@@ -715,6 +720,33 @@
     </div>
   </section> -->
 
+  <!-- ============ OUR MANAGEMENT ============ -->
+  <section class="bumm-home-mgmt" id="management" aria-labelledby="mgmtTitle">
+    <div class="container">
+      <h2 id="mgmtTitle" class="bumm-title bumm-home-mgmt-title"><span data-i18n="mgmt_home_heading_1">OUR</span> <span class="bumm-title-accent" data-i18n="mgmt_home_heading_2">MANAGEMENT</span></h2>
+      <div class="bumm-home-mgmt-grid">
+        <figure class="bumm-home-mgmt-card">
+          <div class="bumm-home-mgmt-photo" data-initials="VB">
+            <img src="./assets/img/management/bimo-kurniatmoko.webp" alt="V. Bimo Kurniatmoko, Commissioner" width="320" height="400" loading="lazy" onerror="this.remove()">
+          </div>
+          <figcaption>
+            <h3 class="bumm-home-mgmt-name">V. Bimo Kurniatmoko</h3>
+            <p class="bumm-home-mgmt-role">Commissioner</p>
+          </figcaption>
+        </figure>
+        <figure class="bumm-home-mgmt-card">
+          <div class="bumm-home-mgmt-photo" data-initials="MF">
+            <img src="./assets/img/management/mahzil-febri.webp" alt="Mahzil Febri, Director" width="320" height="400" loading="lazy" onerror="this.remove()">
+          </div>
+          <figcaption>
+            <h3 class="bumm-home-mgmt-name">Mahzil Febri</h3>
+            <p class="bumm-home-mgmt-role">Director</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CONTACT ============ -->
   <section class="bumm-contact" id="contact">
     <!-- Decorative backdrop: single full-bleed image (flange part, site photo
@@ -725,7 +757,7 @@
     <div class="container bumm-contact-inner">
       <div class="bumm-contact-head">
         <p class="bumm-contact-eyebrow" data-i18n="contact_eyebrow">Contact Us</p>
-        <h2 class="bumm-contact-heading">
+        <h2 class="bumm-contact-heading bumm-title">
           <span class="bumm-contact-heading-line" data-i18n="contact_heading_1">Let's talk about your</span>
           <span class="bumm-contact-heading-line bumm-contact-heading-accent" data-i18n="contact_heading_2">production needs.</span>
         </h2>

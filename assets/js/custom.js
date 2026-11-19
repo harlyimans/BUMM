@@ -173,7 +173,10 @@ $(function () {
       plate_experience_value: '40+ years',
       plate_oem_label: 'OEM Partners',
       plate_parent_label: 'Parent Company',
-      trusted_label: 'Trusted by',
+      customer_heading_1: 'OUR',
+      customer_heading_2: 'CUSTOMER',
+      mgmt_home_heading_1: 'OUR',
+      mgmt_home_heading_2: 'MANAGEMENT',
       about_intro_eyebrow: 'About BUMM',
       about_intro_heading: 'MORE THAN JUST CASTING',
       about_intro_cta: 'Learn About BUMM',
@@ -460,6 +463,10 @@ $(function () {
     '.bumm-cert-card',
 
     '.bumm-contact-head',
+
+    '.bumm-home-mgmt-title',
+
+    '.bumm-home-mgmt-card',
 
     '.bumm-contact .col-lg-7',
 

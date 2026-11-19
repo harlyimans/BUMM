@@ -4474,6 +4474,8 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
   .bumm-cert-head,
   .bumm-cert-card,
   .bumm-contact-head,
+  .bumm-home-mgmt-title,
+  .bumm-home-mgmt-card,
   .bumm-contact .col-lg-7,
   .bumm-contact .col-lg-5,
   .bumm-about-intro-media
@@ -4498,6 +4500,8 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
   .bumm-cert-head,
   .bumm-cert-card,
   .bumm-contact-head,
+  .bumm-home-mgmt-title,
+  .bumm-home-mgmt-card,
   .bumm-contact .col-lg-7,
   .bumm-contact .col-lg-5,
   .bumm-about-intro-media
@@ -4959,7 +4963,7 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
       pink/alternating tints). The red About banner and the footer are left as is.
    ========================================================================== */
 [data-bumm-theme] .bumm-navbar--overlay:not(.is-scrolled) .bumm-navbar-logo {
-  filter: drop-shadow(0 0 3px rgba(255,255,255,.9)) drop-shadow(0 0 10px rgba(255,255,255,.45));
+  filter: none; /* logo tanpa bayangan/glow */
 }
 
 [data-bumm-theme="light"] .bumm-trusted,
@@ -5305,4 +5309,145 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
   .bumm-group .bumm-group-type { font-size: .8em; line-height: 1.3; margin-bottom: .35em; }
   .bumm-group .bumm-group-addr { font-size: .85em; line-height: 1.4; }
   .bumm-group .bumm-group-logo { align-self: center; }
+}
+
+
+/* ==========================================================================
+   Our Customer — logo marquee 2 baris, arah gerak berlawanan
+   (baris 1 ke kiri, baris 2 ke kanan). Durasi tiap baris diatur lewat
+   --marquee-dur di HTML supaya kecepatan kedua baris sama.
+   ========================================================================== */
+.bumm-customer { padding: 3.5rem 0 4rem; }
+.bumm-customer-title { text-align: center; margin-bottom: 2rem !important; }
+
+.bumm-customer .bumm-marquee-viewport {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-left: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.bumm-customer .bumm-marquee-track { animation-duration: var(--marquee-dur, 40s); }
+.bumm-customer .bumm-marquee-track--reverse { animation-direction: reverse; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bumm-customer .bumm-marquee-track { justify-content: center; }
+  .bumm-customer .bumm-marquee-track img[aria-hidden="true"] { display: none; }
+}
+
+/* ==========================================================================
+   Judul section beranda: satu font, satu ukuran, satu desain
+   (huruf kapital, Archivo 800, kata terakhir merah). Dipakai lewat class
+   .bumm-title pada h2 di index.html.
+   ========================================================================== */
+#main h2.bumm-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--bumm-ink);
+  margin: 0 0 1.1rem;
+}
+#main h2.bumm-title :is(.bumm-title-accent, .bumm-group-title-accent, .bumm-values-heading-accent,
+                        .bumm-heading-accent, .bumm-cap-accent, .bumm-contact-heading-accent) {
+  color: #b3141b;
+}
+[data-bumm-theme="dark"] #main h2.bumm-title :is(.bumm-title-accent, .bumm-group-title-accent, .bumm-values-heading-accent,
+                        .bumm-heading-accent, .bumm-cap-accent, .bumm-contact-heading-accent) {
+  color: var(--bumm-accent);
+}
+/* About Us berlatar merah: judul putih */
+#main .bumm-about-intro--red h2.bumm-title { color: #fff; margin-bottom: 1.5rem; }
+/* "Quality, Certified" satu baris seperti judul lain */
+#main h2.bumm-cert-heading.bumm-title > span { display: inline; }
+/* Judul yang posisinya diatur container-nya */
+#main .bumm-group-title h2.bumm-title,
+#main h2.bumm-contact-heading.bumm-title { margin: 0; }
+
+/* Our Customer: logo lebih besar (ukuran asli), gerakan lebih pelan */
+.bumm-customer .bumm-marquee-track { zoom: 1; }
+.bumm-customer .bumm-marquee-viewport { gap: 2.25rem; }
+@media (max-width: 767.98px) {
+  .bumm-customer .bumm-marquee-track { zoom: .8; }
+  .bumm-customer .bumm-marquee-viewport { gap: 1.5rem; }
+}
+
+/* Segment Product (beranda): background gambar cor pudar di kanan atas.
+   Menggantikan dekorasi ::before lama. Hanya mode terang (gambarnya putih). */
+.bumm-segpro::before { display: none; }
+[data-bumm-theme="light"] .bumm-products.bumm-segpro {
+  background-color: #fff;
+  background-image: image-set(url("../img/segment-bg.webp") type("image/webp"), url("../img/segment-bg.jpg") type("image/jpeg"));
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: max(100%, 900px) auto;
+}
+
+/* ==========================================================================
+   Our Management (beranda): foto, nama, jabatan — singkat
+   ========================================================================== */
+.bumm-home-mgmt { padding: 4rem 0 4.5rem; background-color: var(--bumm-bg); }
+.bumm-home-mgmt-title { text-align: center; margin-bottom: 2.5rem !important; }
+.bumm-home-mgmt-grid {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 2.5rem 3.5rem;
+}
+.bumm-home-mgmt-card { margin: 0; width: 240px; text-align: center; }
+.bumm-home-mgmt-photo {
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
+  border-radius: var(--bumm-radius-md);
+  background: linear-gradient(160deg, var(--bumm-bg-alt), var(--bumm-line));
+  box-shadow: var(--bumm-shadow-sm);
+}
+.bumm-home-mgmt-photo::before {
+  content: attr(data-initials);
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 3.2rem; letter-spacing: .04em;
+  color: var(--bumm-accent-dim); opacity: .55;
+}
+[data-bumm-theme="dark"] .bumm-home-mgmt-photo::before { color: var(--bumm-accent); }
+.bumm-home-mgmt-photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+.bumm-home-mgmt-name {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 1.2rem; line-height: 1.25; color: var(--bumm-ink);
+  margin: 1.1rem 0 .3rem;
+}
+.bumm-home-mgmt-role {
+  margin: 0; font-size: .8rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: #b3141b;
+}
+[data-bumm-theme="dark"] .bumm-home-mgmt-role { color: var(--bumm-accent); }
+
+
+/* Our Management: efek hover (kartu naik, foto zoom, garis merah memanjang) */
+.bumm-home-mgmt-card { transition: transform .35s cubic-bezier(.22,.61,.36,1); }
+.bumm-home-mgmt-photo { transition: box-shadow .35s ease; }
+.bumm-home-mgmt-photo img { transition: transform .6s cubic-bezier(.22,.61,.36,1); }
+.bumm-home-mgmt-photo::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+  background: #b3141b; transform: scaleX(0); transform-origin: left;
+  transition: transform .45s cubic-bezier(.22,.61,.36,1);
+}
+.bumm-home-mgmt-role { position: relative; display: inline-block; padding-bottom: .55rem; }
+.bumm-home-mgmt-role::after {
+  content: ""; position: absolute; left: 50%; bottom: 0; width: 1.6rem; height: 3px;
+  background: #b3141b; transform: translateX(-50%); transition: width .4s ease;
+}
+@media (hover: hover) {
+  .bumm-home-mgmt-card:hover { transform: translateY(-8px); }
+  .bumm-home-mgmt-card:hover .bumm-home-mgmt-photo { box-shadow: 0 18px 36px rgba(107, 30, 23, .22); }
+  .bumm-home-mgmt-card:hover .bumm-home-mgmt-photo img { transform: scale(1.06); }
+  .bumm-home-mgmt-card:hover .bumm-home-mgmt-photo::after { transform: scaleX(1); }
+  .bumm-home-mgmt-card:hover .bumm-home-mgmt-role::after { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bumm-home-mgmt-card, .bumm-home-mgmt-photo, .bumm-home-mgmt-photo img,
+  .bumm-home-mgmt-photo::after, .bumm-home-mgmt-role::after { transition: none; }
+  .bumm-home-mgmt-card:hover, .bumm-home-mgmt-card:hover .bumm-home-mgmt-photo img { transform: none; }
 }
