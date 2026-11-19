@@ -155,19 +155,18 @@ $(function () {
       // Split across two lines in the hero so each line can take its own
       // type treatment (solid / outlined); hero_headline above stays as the
       // single-string version for any other surface that needs it.
-      hero_headline_cast: 'Casting perfection',
-      hero_headline_last: 'through quality',
-      hero_lead: 'A trusted foundry partner for high quality iron casting solutions for automotive, heavy duty, agriculture, train component and general casting.',
+      hero_headline_cast: 'Delivering Excellence in',
+      hero_headline_last: 'Foundry Manufacturing',
+      hero_lead: 'Committed to quality, precision, and innovation in every casting.',
       btn_view_product: 'View Products',
       btn_our_facility: 'Our Facility',
       hero2_eyebrow: 'Our Capability',
-      hero2_l1: 'Complete casting',
-      hero2_l2: 'capability',
-      hero2_lead: 'From melting, molding and core making to pouring, machining and inspection.',
-      hero3_eyebrow: 'Our Products',
-      hero3_l1: 'Castings for every',
-      hero3_l2: 'industry',
-      hero3_lead: 'Automotive, heavy duty, agriculture, train component and general casting.',
+      hero2_l1: 'Casting Perfection',
+      hero2_l2: 'Through Quality',
+      hero2_lead: 'BUMM is a trusted foundry for high-quality iron casting solutions.',
+      hero3_l1: 'Complete Casting',
+      hero3_l2: 'Capability',
+      hero3_lead: 'From melting, molding and core making to pouring, machining and inspection.',
       plate_title: 'Company Profile',
       plate_established_label: 'Established',
       plate_experience_label: 'Foundry Experience',
@@ -179,6 +178,9 @@ $(function () {
       about_intro_heading: 'MORE THAN JUST CASTING',
       about_intro_cta: 'Learn About BUMM',
       group_heading: 'OUR GROUP',
+      group_heading_1: 'OUR',
+      group_heading_2: 'GROUP',
+      group_tagline: 'One Vision, Connected Strengths.',
       about_us_heading: 'ABOUT US',
       about_us_p1: 'PT Bina Usaha Mandiri Mizusawa (BUMM), is a trusted iron casting manufacturer based in Jatiuwung, Tangerang, Indonesia.',
       about_us_p2: 'Committed to prioritizing customer satisfaction by optimizing production processes, protecting the environment, and maintaining high standards of occupational health and safety.',
@@ -193,6 +195,23 @@ $(function () {
       about_heading: 'THE VALUES WE UPHOLD',
       about_home_lead: 'The principles that shape our culture, guide our decisions, and drive our commitment to excellence.',
       about_lead: "PT Bina Usaha Mandiri Mizusawa (BUMM), established in 1983 as a subsidiary of Bakrie Autoparts, is a trusted iron casting manufacturer based in Jatiuwung, Tangerang, Indonesia. Specializing in foundry solutions for automotive, heavy equipment, agricultural machinery, railway components, and general industrial applications, BUMM is committed to producing high-quality castings that meet the evolving demands of various industries.",
+      vb_heading_1: 'The Values We',
+      vb_heading_2: 'Uphold',
+      vb_lead: 'The principles that shape our culture, guide our decisions and drive our commitment to excellence',
+      vb_v_title: 'Visionary',
+      vb_v_desc: 'Be able to see to what we want to achieve as a part of organization',
+      vb_i_title: 'Integrity',
+      vb_i_desc: 'Integrity is the most important aspect to produce the trust in running the company well in a point of customers view.',
+      vb_c_title: 'Customer Oriented',
+      vb_c_desc: 'Customers will repay to goods we produce and it will impact to wealth of employee’s life',
+      vb_t_title: 'Team Work',
+      vb_t_desc: 'Being one heart as one company not a part will effect the speed of achievement within organization.',
+      vb_o_title: 'Operational Excellence',
+      vb_o_desc: 'Every employee is charged to have an excellence way of doing jobs in order to achieve excellent outcomes that make customers satisfied.',
+      vb_r_title: 'Responsibility',
+      vb_r_desc: 'When doing jobs, every employee must starts with value of being responsible and reliable which will effect excellent outcomes.',
+      vb_y_title: 'Yield Orientation',
+      vb_y_desc: 'Focused on results that repay for our efforts which could be contributed to wealth of employee, organization, family and nation',
       victory_v_desc: 'Looking ahead to anticipate what our industry and customers will need next.',
       victory_i_desc: "Doing what's right, consistently, even when no one's checking.",
       victory_c_desc: "Every process is built around what makes our customers' operations succeed.",
@@ -403,23 +422,40 @@ $(function () {
   if (!document.documentElement.classList.contains('bumm-reveal')) return;
 
   var REVEAL_SELECTORS = [
-    '.bumm-trusted .container',
-    '.bumm-about-intro-copy',
-    '.bumm-experience .col-lg-7',
-    '.bumm-stat-card',
-    '.bumm-about .col-lg-8',
-    '.bumm-vb-card',
-    '.bumm-cap-banner-text',
-    '.bumm-cap-card',
-    '.bumm-cert-strip',
-    '.bumm-insp-card',
-    '.bumm-products .col-lg-8',
-    '.bumm-segment-card',
-    '.bumm-cert-head',
-    '.bumm-cert-card',
-    '.bumm-contact-head',
-    '.bumm-contact .col-lg-7',
-    '.bumm-contact .col-lg-5',
+    '.bumm-trusted .container',
+
+    '.bumm-about-intro-copy',
+
+    '.bumm-experience .col-lg-7',
+
+    '.bumm-stat-card',
+
+    '.bumm-about .col-lg-8',
+
+    '.bumm-vb-card',
+
+    '.bumm-cap-banner-text',
+
+    '.bumm-cap-card',
+
+    '.bumm-cert-strip',
+
+    '.bumm-insp-card',
+
+    '.bumm-products .col-lg-8',
+
+    '.bumm-segment-card',
+
+    '.bumm-cert-head',
+
+    '.bumm-cert-card',
+
+    '.bumm-contact-head',
+
+    '.bumm-contact .col-lg-7',
+
+    '.bumm-contact .col-lg-5',
+
     '.bumm-about-intro-media'
   ];
 

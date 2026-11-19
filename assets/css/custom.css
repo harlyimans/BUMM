@@ -4941,3 +4941,212 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 }
 .bumm-group .pin-body { fill: #fff; stroke: none; }
 .bumm-group .pin-body circle { fill: var(--g-hot); }
+
+
+/* Hero slide 2 ("Casting Perfection Through Quality"): the flange sits on the
+   right of the frame, so keep that side in view when the image is cropped. */
+.bumm-hero-bg-image--quality { object-position: 85% 50%; }
+@media (max-width: 767.98px) {
+  .bumm-hero-bg-image--quality { object-position: 82% 50%; }
+}
+
+
+/* ==========================================================================
+   Corrections (19 Nov)
+   1) Navbar logo over the hero keeps its original red colours (no white
+      silhouette); a soft light halo keeps it readable on the dark photo.
+   2) Light mode: every plain section sits on a white background (no more
+      pink/alternating tints). The red About banner and the footer are left as is.
+   ========================================================================== */
+[data-bumm-theme] .bumm-navbar--overlay:not(.is-scrolled) .bumm-navbar-logo {
+  filter: drop-shadow(0 0 3px rgba(255,255,255,.9)) drop-shadow(0 0 10px rgba(255,255,255,.45));
+}
+
+[data-bumm-theme="light"] .bumm-trusted,
+[data-bumm-theme="light"] .bumm-experience,
+[data-bumm-theme="light"] .bumm-group,
+[data-bumm-theme="light"] .bumm-about,
+[data-bumm-theme="light"] .bumm-cap-flow,
+[data-bumm-theme="light"] .bumm-insp,
+[data-bumm-theme="light"] .bumm-products,
+[data-bumm-theme="light"] .bumm-cert,
+[data-bumm-theme="light"] .bumm-contact {
+  background: #fff;
+}
+[data-bumm-theme="light"] .bumm-contact-bg,
+[data-bumm-theme="light"] .bumm-contact::before,
+[data-bumm-theme="light"] .bumm-contact::after { display: none; }
+
+
+/* ==========================================================================
+   Corporate values (VICTORY) — header with faded building photo, seven cards
+   with letter tile, title, red dash, description and a grey corner wedge.
+   Hover / keyboard focus: card turns deep red and zooms in.
+   ========================================================================== */
+.bumm-values { position: relative; overflow: hidden; padding-top: 4rem; padding-bottom: 5rem; }
+
+.bumm-values-photo {
+  position: absolute; top: 0; right: 0; width: min(62%, 52rem); height: 17rem;
+  pointer-events: none; z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%), linear-gradient(to bottom, #000 70%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to right, transparent 0%, #000 45%), linear-gradient(to bottom, #000 70%, transparent 100%);
+          mask-composite: intersect;
+}
+.bumm-values-photo img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%;
+  filter: grayscale(1) contrast(.95) brightness(1.05);
+}
+.bumm-values-photo::after {           /* red corner tint, top right */
+  content: ""; position: absolute; top: 0; right: 0; width: 22%; height: 55%;
+  background: linear-gradient(225deg, rgba(190,20,30,.75) 0%, rgba(190,20,30,0) 70%);
+}
+[data-bumm-theme="dark"] .bumm-values-photo img { filter: grayscale(1) brightness(.55); }
+
+.bumm-values-copy { position: relative; z-index: 1; max-width: 40rem; margin-bottom: 2.5rem; }
+.bumm-values-heading {
+  font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem); line-height: 1.05; letter-spacing: -.01em;
+  color: var(--bumm-ink); margin: 0 0 1.1rem;
+}
+.bumm-values-heading-accent { color: #b3141b; }
+.bumm-values-lead { font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.6; color: var(--bumm-ink); max-width: 30rem; margin: 0; }
+
+/* cards */
+.bumm-values .bumm-victory-b { gap: 1rem; padding: .5rem 0 1rem; position: relative; z-index: 1; }
+.bumm-values .bumm-vb-card {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 21rem; padding: 1.35rem 1.05rem 1.2rem;
+  text-decoration: none; color: var(--bumm-ink);
+  background: linear-gradient(180deg, #fff 0%, #fbf8f8 100%);
+  border: 1px solid rgba(28,18,19,.05);
+  border-radius: 1.4rem;
+  box-shadow: 0 8px 26px rgba(28,18,19,.10);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, background .35s ease, color .25s ease;
+  will-change: transform;
+}
+[data-bumm-theme="dark"] .bumm-values .bumm-vb-card { background: linear-gradient(180deg, #2a2627 0%, #232021 100%); border-color: rgba(243,239,240,.08); }
+
+.bumm-values .bumm-vb-card::before {   /* red gradient layer, fades in on hover */
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0;
+  background: linear-gradient(170deg, #a5000f 0%, #7d0710 55%, #5a0409 100%);
+  transition: opacity .35s ease;
+}
+.bumm-values .bumm-vb-card::after {    /* grey wedge, bottom right */
+  content: ""; position: absolute; right: 0; bottom: 0; width: 62%; height: 3.4rem; z-index: -1;
+  background: rgba(120,100,100,.16);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  transition: background .35s ease;
+}
+
+.bumm-values .bumm-vb-letter {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem; margin-bottom: 1.1rem;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; line-height: 1;
+  color: #7d0710; background: #fde6e6; border-radius: .8rem;
+  transition: background .3s ease, color .3s ease;
+}
+[data-bumm-theme="dark"] .bumm-values .bumm-vb-letter { background: rgba(217,103,92,.18); color: #f08a80; }
+
+.bumm-values .bumm-vb-title {
+  font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+  font-size: .95rem; line-height: 1.2; letter-spacing: .01em; min-height: 2.4em;
+  color: inherit; margin: 0 0 .8rem;
+}
+.bumm-values .bumm-vb-dash { width: 1.8rem; height: 3px; background: #b3141b; transition: background .3s ease; }
+.bumm-values .bumm-vb-desc { margin: 1rem 0 0; font-size: .74rem; line-height: 1.55; color: var(--bumm-ink-muted); transition: color .3s ease; }
+
+.bumm-values .bumm-vb-card:hover,
+.bumm-values .bumm-vb-card:focus-visible {
+  transform: scale(1.08); z-index: 3; color: #fff; border-color: transparent;
+  box-shadow: 0 18px 40px rgba(110,5,12,.38);
+}
+.bumm-values .bumm-vb-card:hover::before,
+.bumm-values .bumm-vb-card:focus-visible::before { opacity: 1; }
+.bumm-values .bumm-vb-card:hover::after,
+.bumm-values .bumm-vb-card:focus-visible::after { background: rgba(255,255,255,.12); }
+.bumm-values .bumm-vb-card:hover .bumm-vb-letter,
+.bumm-values .bumm-vb-card:focus-visible .bumm-vb-letter { background: rgba(255,255,255,.2); color: #fff; }
+.bumm-values .bumm-vb-card:hover .bumm-vb-dash,
+.bumm-values .bumm-vb-card:focus-visible .bumm-vb-dash { background: #fff; }
+.bumm-values .bumm-vb-card:hover .bumm-vb-desc,
+.bumm-values .bumm-vb-card:focus-visible .bumm-vb-desc { color: rgba(255,255,255,.92); }
+.bumm-values .bumm-vb-card:focus-visible { outline: 2px solid #fff; outline-offset: -6px; }
+
+@media (max-width: 1199.98px) {
+  .bumm-values .bumm-vb-card { min-height: 17rem; }
+  .bumm-values .bumm-vb-desc { font-size: .8rem; }
+}
+@media (max-width: 767.98px) {
+  .bumm-values-photo { width: 100%; height: 12rem; opacity: .35; }
+  .bumm-values .bumm-vb-card { min-height: 15rem; }
+  .bumm-values .bumm-vb-card:hover, .bumm-values .bumm-vb-card:focus-visible { transform: scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bumm-values .bumm-vb-card, .bumm-values .bumm-vb-card::before { transition: none; }
+  .bumm-values .bumm-vb-card:hover, .bumm-values .bumm-vb-card:focus-visible { transform: none; }
+}
+
+
+/* ==========================================================================
+   Our Group — follows the new Canva slide: no header bar, "OUR GROUP" title +
+   tagline bottom-left, square cards with a thick maroon outline, soft grey
+   wave at the top and a red wave with a faded factory photo at the bottom.
+   ========================================================================== */
+.bumm-group { position: relative; padding-top: 1rem; padding-bottom: 11rem; }
+.bumm-group > .container { position: relative; z-index: 2; }
+
+.bumm-group-deco { position: absolute; left: 0; width: 100%; pointer-events: none; z-index: 0; }
+.bumm-group-deco--top { top: 0; height: clamp(5rem, 10vw, 9rem); }
+.bumm-group-deco--bottom { bottom: 0; height: clamp(9rem, 16vw, 14rem); }
+.bumm-group-deco--bottom svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.bumm-group-deco--bottom img {
+  position: absolute; right: 0; bottom: 18%; width: 55%; height: 85%; object-fit: cover; object-position: 50% 40%;
+  filter: grayscale(1) contrast(.9) brightness(1.15); opacity: .45;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 55%), linear-gradient(to bottom, transparent 0%, #000 50%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to right, transparent 0%, #000 55%), linear-gradient(to bottom, transparent 0%, #000 50%);
+          mask-composite: intersect;
+}
+
+.bumm-group-stage { margin-top: 3.5rem; }
+
+.bumm-group-title { position: absolute; left: 3%; top: 69%; z-index: 3; }
+.bumm-group-title h2 {
+  margin: 0; font-family: var(--font-display); font-weight: 800; text-transform: uppercase; line-height: 1;
+  font-size: clamp(1.9rem, 4.4cqw, 3.4rem); color: #111;
+}
+.bumm-group-title-accent { color: #b3141b; }
+.bumm-group-title p { margin: .7rem 0 0; font-size: clamp(.9rem, 1.7cqw, 1.2rem); color: #111; }
+
+.bumm-group .bumm-group-card {
+  border: 4px solid var(--g-red); border-radius: 0; box-shadow: none;
+}
+.bumm-group .bumm-group-card:hover { box-shadow: 0 14px 30px rgba(107,30,23,.25); }
+
+.bumm-group.js-ready .bumm-group-title { opacity: 0; }
+.bumm-group.is-in .bumm-group-title { animation: g-title .7s cubic-bezier(.22,.61,.36,1) both; }
+
+@media (max-width: 991.98px) {
+  .bumm-group { padding-bottom: 8rem; }
+  .bumm-group-title { position: static; order: -1; text-align: center; margin-top: 1rem; }
+  .bumm-group-title h2 { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .bumm-group-title p { font-size: 1rem; }
+  .bumm-group-stage { margin-top: 1rem; }
+  .bumm-group .bumm-group-card { border-width: 3px; }
+}
+
+
+/* Jabodetabek map: card anchors matched to the pins (1000x450 viewBox) */
+@media (min-width: 992px) {
+  .bumm-group .bumm-group-card--tang { top: 30.83%; }
+  .bumm-group .bumm-group-card--bekA { top: 22%; }
+  .bumm-group .bumm-group-card--bekB { top: 58%; }
+  .bumm-group-title { top: 66%; }
+}
+.bumm-group .cell { stroke: #fff; stroke-width: 1.6; stroke-linejoin: round; }
+.bumm-group .lbl { font-size: 13px; font-weight: 600; letter-spacing: .12em; fill: #6a6a6a; }
+.bumm-group .links .link { stroke-linejoin: round; }
+@media (max-width: 991.98px) {
+  .bumm-group-svg { width: 215%; margin-left: -57%; margin-top: 0; margin-bottom: 0; }
+}
