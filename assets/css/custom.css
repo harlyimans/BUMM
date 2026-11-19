@@ -5150,3 +5150,159 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 @media (max-width: 991.98px) {
   .bumm-group-svg { width: 215%; margin-left: -57%; margin-top: 0; margin-bottom: 0; }
 }
+
+
+/* ==========================================================================
+   Segment Product — kartu horizontal (foto kiri + tepi miring merah,
+   ikon + judul + deskripsi + Learn More di kanan). Dipakai product/index.html
+   ========================================================================== */
+.bumm-segrow-section { padding: 2.5rem 0 3.5rem; border-bottom: 1px solid var(--bumm-line); }
+.bumm-segrow-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.bumm-segrow {
+  --segrow-photo: 40%;            /* lebar area foto */
+  --segrow-slant: 3.2rem;         /* kemiringan tepi merah */
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--segrow-photo) 1fr;
+  min-height: 11rem;
+  background: var(--bumm-bg);
+  border-radius: 22px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--bumm-ink);
+  box-shadow: var(--bumm-shadow-sm);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.bumm-segrow:hover { transform: translateY(-3px); box-shadow: var(--bumm-shadow-md); }
+.bumm-segrow[id] { scroll-margin-top: 6rem; }
+
+/* foto dipotong miring; garis merah = lapisan di belakang foto */
+.bumm-segrow-photo {
+  position: relative;
+  background: linear-gradient(135deg, var(--bumm-seg-tint-1), var(--bumm-seg-tint-2));
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--segrow-slant)) 100%, 0 100%);
+  z-index: 1;
+}
+.bumm-segrow-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bumm-segrow::before {            /* strip merah di tepi miring */
+  content: "";
+  position: absolute; top: 0; bottom: 0; left: 0;
+  width: calc(var(--segrow-photo) + .55rem);
+  background: var(--bumm-accent);
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--segrow-slant)) 100%, 0 100%);
+}
+
+.bumm-segrow-body {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 1.4rem 2rem 1.4rem 1.2rem;
+  gap: .55rem;
+}
+.bumm-segrow-head { display: flex; align-items: center; gap: .9rem; }
+.bumm-segrow-icon { font-size: 2.1rem; line-height: 1; color: var(--bumm-accent); }
+.bumm-segrow-title {
+  margin: 0; font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1rem + .7vw, 1.55rem);
+  font-weight: 800; letter-spacing: .01em; color: var(--bumm-accent);
+}
+.bumm-segrow-desc { margin: 0; font-size: 1rem; line-height: 1.55; color: var(--bumm-ink); max-width: 38rem; }
+.bumm-segrow-more { display: inline-flex; align-items: center; gap: .6rem; margin-top: .2rem; }
+.bumm-segrow-link {
+  font-weight: 700; color: var(--bumm-accent);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.bumm-segrow-arrow {
+  display: inline-grid; place-items: center; width: 1.6rem; height: 1.6rem;
+  border: 1.5px solid var(--bumm-accent); border-radius: 50%;
+  color: var(--bumm-accent); font-size: .9rem;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+.bumm-segrow:hover .bumm-segrow-arrow { background: var(--bumm-accent); color: var(--bumm-on-accent); transform: translateX(3px); }
+
+@media (max-width: 767.98px) {
+  .bumm-segrow { grid-template-columns: 1fr; --segrow-slant: 0rem; }
+  .bumm-segrow-photo { aspect-ratio: 16 / 9; clip-path: none; }
+  .bumm-segrow::before { display: none; }
+  .bumm-segrow-body { padding: 1.2rem 1.25rem 1.4rem; border-top: 4px solid var(--bumm-accent); }
+}
+
+
+/* Homepage Segment Product: header dengan foto cor pudar di kanan atas */
+.bumm-segpro { position: relative; background-color: var(--bumm-bg); overflow: hidden; }
+.bumm-segpro::before {
+  content: ""; position: absolute; top: 0; right: 0; width: min(55%, 46rem); height: 17rem;
+  background: url("../img/product-hero.webp") center / cover no-repeat;
+  opacity: .22; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to left, #000 25%, transparent 100%), linear-gradient(to bottom, #000 45%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to left, #000 25%, transparent 100%), linear-gradient(to bottom, #000 45%, transparent 100%);
+  mask-composite: intersect;
+}
+.bumm-segpro > .container { position: relative; }
+.bumm-segpro-head { margin-bottom: 2rem; max-width: 36rem; }
+.bumm-segpro-heading {
+  margin: 0 0 .75rem; font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.1rem); color: var(--bumm-ink);
+}
+.bumm-segpro-heading .bumm-heading-accent { color: var(--bumm-accent); }
+.bumm-segpro-lead { margin: 0; font-size: 1.15rem; line-height: 1.6; color: var(--bumm-ink); }
+
+
+/* ==========================================================================
+   Merah tegas (light mode): kartu Contact, kartu Capability, kartu Certification dan
+   tile huruf VICTORY yang tadinya merah muda -> merah solid + teks putih.
+   Mode gelap tidak diubah.
+   ========================================================================== */
+:root { --bumm-red-strong: #6b1e17; --bumm-red-strong-dark: #4a120e; }
+
+/* Footer: putih */
+[data-bumm-theme="light"] .bumm-footer { background-color: #fff; border-top: 1px solid var(--bumm-line); }
+[data-bumm-theme="light"] .bumm-footer-video { background-color: var(--bumm-bg-alt); }
+
+/* Kartu Contact Details: merah tegas, teks putih */
+[data-bumm-theme="light"] .bumm-contact-card--info { background-color: var(--bumm-red-strong); border-color: var(--bumm-red-strong); }
+[data-bumm-theme="light"] .bumm-contact-card--info .bumm-contact-card-title { color: #fff; }
+[data-bumm-theme="light"] .bumm-contact-card--info .bumm-contact-card-title::after { background: #fff; }
+[data-bumm-theme="light"] .bumm-contact-card--info .bumm-contact-icon { background-color: #fff; color: var(--bumm-red-strong); }
+[data-bumm-theme="light"] .bumm-contact-card--info .bumm-contact-label { color: rgba(255,255,255,.78); }
+[data-bumm-theme="light"] .bumm-contact-card--info .bumm-contact-value,
+[data-bumm-theme="light"] .bumm-contact-card--info .bumm-contact-value a { color: #fff; }
+
+/* Kartu Capability: kepala kartu */
+[data-bumm-theme="light"] .bumm-cap-card-head { background-color: var(--bumm-red-strong); }
+[data-bumm-theme="light"] .bumm-cap-card-num,
+[data-bumm-theme="light"] .bumm-cap-card-label { color: #fff; }
+[data-bumm-theme="light"] .bumm-cap-card-dash { background-color: #fff; }
+
+/* Kartu Certification: kembali putih */
+[data-bumm-theme="light"] .bumm-cert-card,
+[data-bumm-theme="light"] .bumm-cert-card:hover { background-color: #fff; border-color: var(--bumm-line); }
+
+/* Tile huruf VICTORY */
+[data-bumm-theme="light"] .bumm-values .bumm-vb-letter { background: var(--bumm-red-strong); color: #fff; }
+
+
+/* ==========================================================================
+   Our Group: judul tidak menabrak peta + tiga kotak informasi sama ukuran
+   ========================================================================== */
+@media (min-width: 992px) {
+  /* judul diperkecil supaya berhenti sebelum tepi kiri peta */
+  .bumm-group-title h2 { font-size: clamp(1.7rem, 3.1cqw, 2.7rem); }
+  .bumm-group-title p  { font-size: clamp(.85rem, 1.45cqw, 1.05rem); max-width: 22em; }
+
+  /* semua kartu: lebar sama (24.8%) + tinggi sama; isi di tengah vertikal.
+     Tinggi dibatasi (15cqw) supaya dua kartu kanan (jarak garis = 16.2cqw)
+     tidak saling menumpuk; isi dirapatkan agar kartu BUMM (judul 3 baris) muat. */
+  .bumm-group .bumm-group-card {
+    box-sizing: border-box;
+    min-height: 15cqw;
+    padding: .8em 1em;
+    gap: .9em;
+    align-items: center;
+  }
+  .bumm-group .bumm-group-info { flex: 1 1 auto; min-width: 0; }
+  .bumm-group .bumm-group-info h3 { font-size: 1em; line-height: 1.25; margin-bottom: .35em; }
+  .bumm-group .bumm-group-type { font-size: .8em; line-height: 1.3; margin-bottom: .35em; }
+  .bumm-group .bumm-group-addr { font-size: .85em; line-height: 1.4; }
+  .bumm-group .bumm-group-logo { align-self: center; }
+}

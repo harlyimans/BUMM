@@ -267,6 +267,13 @@ $(function () {
       segment_general_casting_title: 'General Casting',
       segment_train_title: 'Train Component',
       segment_learn_more: 'Learn More',
+      home_segment_heading: 'Segment <span class="bumm-heading-accent">Product</span>',
+      home_segment_lead: 'High-quality casting solutions for various industries, driving stronger and more sustainable industrial growth.',
+      segment_automotive_desc: 'High quality iron cast components engineered to meet automotive industry standards, supporting passenger and commercial vehicle applications.',
+      segment_agriculture_desc: 'Durable iron cast components for agricultural machinery, built to withstand demanding field conditions and long operating hours.',
+      segment_heavy_duty_desc: 'Robust iron cast components for heavy equipment and construction machinery, engineered for strength under extreme loads.',
+      segment_general_casting_desc: 'High quality casting solutions for various industries, supporting a stronger and more sustainable future.',
+      segment_train_desc: 'Precision iron cast components for railway rolling stock, meeting the safety and reliability standards of rail transport.',
       product_eyebrow: 'Product',
       product_heading1: 'CASTING EXCELLENCE,',
       product_heading2: 'BUILT TO LAST',
@@ -445,6 +452,8 @@ $(function () {
     '.bumm-products .col-lg-8',
 
     '.bumm-segment-card',
+
+    '.bumm-segrow',
 
     '.bumm-cert-head',
 
