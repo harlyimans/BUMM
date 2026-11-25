@@ -4459,25 +4459,44 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
    Daftar selector di sini harus sama dengan REVEAL_SELECTORS di custom.js.
    ==================================================================== */
 .bumm-reveal :is(
-  .bumm-trusted .container,
-  .bumm-about-intro-copy,
-  .bumm-experience .col-lg-7,
-  .bumm-stat-card,
-  .bumm-about .col-lg-8,
-  .bumm-vb-card,
-  .bumm-cap-banner-text,
-  .bumm-cap-card,
-  .bumm-cert-strip,
-  .bumm-insp-card,
-  .bumm-products .col-lg-8,
-  .bumm-segment-card,
-  .bumm-cert-head,
-  .bumm-cert-card,
-  .bumm-contact-head,
-  .bumm-home-mgmt-title,
-  .bumm-home-mgmt-card,
-  .bumm-contact .col-lg-7,
-  .bumm-contact .col-lg-5,
+  .bumm-trusted .container,
+
+  .bumm-about-intro-copy,
+
+  .bumm-experience .col-lg-7,
+
+  .bumm-stat-card,
+
+  .bumm-about .col-lg-8,
+
+  .bumm-vb-card,
+
+  .bumm-cap-banner-text,
+
+  .bumm-cap-card,
+
+  .bumm-cert-strip,
+
+  .bumm-insp-card,
+
+  .bumm-products .col-lg-8,
+
+  .bumm-segment-card,
+
+  .bumm-cert-head,
+
+  .bumm-cert-card,
+
+  .bumm-contact-head,
+
+  .bumm-home-mgmt-title,
+
+  .bumm-home-mgmt-card,
+
+  .bumm-contact .col-lg-7,
+
+  .bumm-contact .col-lg-5,
+
   .bumm-about-intro-media
 ):not(.is-in) {
   opacity: 0;
@@ -4485,25 +4504,44 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 }
 
 .bumm-reveal :is(
-  .bumm-trusted .container,
-  .bumm-about-intro-copy,
-  .bumm-experience .col-lg-7,
-  .bumm-stat-card,
-  .bumm-about .col-lg-8,
-  .bumm-vb-card,
-  .bumm-cap-banner-text,
-  .bumm-cap-card,
-  .bumm-cert-strip,
-  .bumm-insp-card,
-  .bumm-products .col-lg-8,
-  .bumm-segment-card,
-  .bumm-cert-head,
-  .bumm-cert-card,
-  .bumm-contact-head,
-  .bumm-home-mgmt-title,
-  .bumm-home-mgmt-card,
-  .bumm-contact .col-lg-7,
-  .bumm-contact .col-lg-5,
+  .bumm-trusted .container,
+
+  .bumm-about-intro-copy,
+
+  .bumm-experience .col-lg-7,
+
+  .bumm-stat-card,
+
+  .bumm-about .col-lg-8,
+
+  .bumm-vb-card,
+
+  .bumm-cap-banner-text,
+
+  .bumm-cap-card,
+
+  .bumm-cert-strip,
+
+  .bumm-insp-card,
+
+  .bumm-products .col-lg-8,
+
+  .bumm-segment-card,
+
+  .bumm-cert-head,
+
+  .bumm-cert-card,
+
+  .bumm-contact-head,
+
+  .bumm-home-mgmt-title,
+
+  .bumm-home-mgmt-card,
+
+  .bumm-contact .col-lg-7,
+
+  .bumm-contact .col-lg-5,
+
   .bumm-about-intro-media
 ).is-in {
   animation: bumm-rv .65s cubic-bezier(.22, .61, .36, 1) var(--rv-d, 0ms) backwards;
@@ -5464,8 +5502,4 @@ a.bumm-mail:focus-visible { color: var(--bumm-accent); text-decoration: underlin
 @supports (width: 1cqw) {
   .bumm-values .bumm-vb-card { container-type: inline-size; }
   .bumm-values .bumm-vb-title { font-size: min(.95rem, 8.6cqw); }
-}
-@media (max-width: 767.98px) {
-  .bumm-values .bumm-vb-card { padding-left: .8rem; padding-right: .8rem; }
-  .bumm-values .bumm-vb-desc { font-size: .76rem; }
 }

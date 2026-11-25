@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('bumm-theme');
+      var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+      document.documentElement.setAttribute('data-bumm-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-bumm-theme', 'light');
+    }
+  })();
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Company History — Since 1983 | PT BUMM</title>
+  <meta name="description" content="BUMM company history: established in 1983, renamed PT Bina Usaha Mandiri Mizusawa in 1993, and part of Bakrie Autoparts since 2011.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#6b1e17">
+  <link rel="canonical" href="https://bumm.co.id/about/history/">
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PT. Bina Usaha Mandiri Mizusawa">
+  <meta property="og:title" content="Company History — Since 1983 | PT BUMM">
+  <meta property="og:description" content="BUMM company history: established in 1983, renamed in 1993, and part of Bakrie Autoparts since 2011.">
+  <meta property="og:image" content="https://bumm.co.id/assets/img/foundry.webp">
+  <meta property="og:url" content="https://bumm.co.id/about/history/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@bummizusawa">
+  <meta name="twitter:title" content="Company History — Since 1983 | PT BUMM">
+  <meta name="twitter:description" content="BUMM company history since 1983.">
+  <meta name="twitter:image" content="https://bumm.co.id/assets/img/foundry.webp">
+
+  <link rel="icon" href="../../assets/img/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="../../assets/img/logo-bumm.png">
+
+  <link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/archivo-latin-wght-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/ibm-plex-sans-latin-400-normal.woff2" crossorigin>
+
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons-1.13.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bumm.co.id/"},
+      {"@type": "ListItem", "position": 2, "name": "History", "item": "https://bumm.co.id/about/history/"}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
+  <!-- ============ NAVBAR ============ -->
+  <!-- Satu navbar untuk semua halaman. Menu diatur di _data/navigation.yml.
+       Front matter: `nav: <id>` menandai menu aktif,
+                     `navbar_overlay: true` = transparan di atas hero (dipakai beranda). -->
+  <nav class="navbar navbar-expand-lg bumm-navbar bumm-navbar--overlay bumm-navbar--on-photo">
+    <div class="container">
+      <a class="navbar-brand" href="../../" aria-label="BUMM — Home"><img src="../../assets/img/logo-bumm.png" alt="BUMM" class="bumm-navbar-logo" width="60" height="60"></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bummNav" aria-controls="bummNav" aria-expanded="false" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bummNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../../" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item dropdown bumm-dropdown">
+            <a class="nav-link dropdown-toggle active" href="../../about/company-profile/" id="navAbout" aria-haspopup="true" aria-expanded="false" data-i18n="nav_about">About</a>
+            <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navAbout">
+              <li><a class="dropdown-item" href="../../about/company-profile/" data-i18n="nav_about_profile">Company Profile</a></li>
+              <li><a class="dropdown-item active" href="../../about/history/" aria-current="page">History</a></li>
+              <li><a class="dropdown-item" href="../../about/vision-mission/" data-i18n="nav_about_vision">Vision &amp; Mission</a></li>
+              <li><a class="dropdown-item" href="../../about/corporate-value/" data-i18n="nav_about_value">Corporate Value</a></li>
+              <li><a class="dropdown-item" href="../../about/management/" data-i18n="nav_about_management">Management</a></li>
+              <li><a class="dropdown-item" href="../../about/facility/" data-i18n="nav_about_facility">Facility</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown bumm-dropdown">
+            <a class="nav-link dropdown-toggle" href="../../product/" id="navProduct" aria-haspopup="true" aria-expanded="false" data-i18n="nav_product">Product</a>
+            <ul class="dropdown-menu bumm-dropdown-menu" aria-labelledby="navProduct">
+              <li><a class="dropdown-item" href="../../product/automotive.html" data-i18n="nav_prod_automotive">Automotive</a></li>
+              <li><a class="dropdown-item" href="../../product/general-casting.html" data-i18n="nav_prod_general">General Casting</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../../career/" data-i18n="nav_career">Career</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button type="button" class="bumm-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode" data-label="Dark mode">
+              <i class="bi bi-moon-stars" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="../../#contact" class="btn btn-bumm-outline" data-i18n="contact_us">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main id="main">
+
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="bumm-page-header" style="background-image:url('../../assets/img/about-header.webp')">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bumm-breadcrumb">
+          <li class="breadcrumb-item"><a href="../../">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About</li>
+          <li class="breadcrumb-item active" aria-current="page">History</li>
+        </ol>
+      </nav>
+      <p class="bumm-eyebrow">About Us</p>
+      <h1 class="bumm-about-heading">OUR JOURNEY.<span class="bumm-heading-accent"> OUR HISTORY.</span></h1>
+      <p class="bumm-about-lead">From a local foundry in 1983 to a member of the Bakrie Autoparts group, a long track record of iron casting for industry.</p>
+      <div class="bumm-subnav">
+        <a href="../../about/company-profile/">Company Profile</a>
+        <a href="../../about/history/" class="is-active">History</a>
+        <a href="../../about/vision-mission/">Vision &amp; Mission</a>
+        <a href="../../about/corporate-value/">Corporate Value</a>
+        <a href="../../about/management/">Management</a>
+        <a href="../../about/facility/">Facility</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HISTORY TIMELINE ============ -->
+  <section class="bumm-history" aria-label="Company history timeline">
+    <div class="container">
+      <div class="bumm-history-panel">
+        <button type="button" class="bumm-history-nav bumm-history-prev" aria-label="Previous"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+        <div class="bumm-history-viewport" tabindex="0">
+          <ul class="bumm-history-track" role="list">
+          <li class="bumm-history-card" role="listitem">
+            <div class="bumm-history-body">
+              <h2 class="bumm-history-year">1983</h2>
+              <span class="bumm-history-dot" aria-hidden="true"></span>
+              <p>PT Bina Usaha Mandiri was established to support Indonesia’s growing industrial and manufacturing needs.</p>
+            </div>
+            <img src="../../assets/img/history/1983.webp" alt="" width="400" height="300" loading="lazy">
+          </li>
+          <li class="bumm-history-card" role="listitem">
+            <div class="bumm-history-body">
+              <h2 class="bumm-history-year">1993</h2>
+              <span class="bumm-history-dot" aria-hidden="true"></span>
+              <p>The company changed its name to PT Bina Usaha Mandiri Mizusawa (BUMM).</p>
+            </div>
+            <img src="../../assets/img/history/1993.webp" alt="" width="400" height="300" loading="lazy">
+          </li>
+          <li class="bumm-history-card" role="listitem">
+            <div class="bumm-history-body">
+              <h2 class="bumm-history-year">2006</h2>
+              <span class="bumm-history-dot" aria-hidden="true"></span>
+              <p>Ownership was transferred to PT Kencana Untian Prima.</p>
+            </div>
+            <img src="../../assets/img/history/2006.webp" alt="" width="400" height="300" loading="lazy">
+          </li>
+          <li class="bumm-history-card" role="listitem">
+            <div class="bumm-history-body">
+              <h2 class="bumm-history-year">2011</h2>
+              <span class="bumm-history-dot" aria-hidden="true"></span>
+              <p>BUMM became part of PT Bakrie Autoparts, strengthening its position within the automotive and manufacturing industry.</p>
+            </div>
+            <img src="../../assets/img/history/2011.webp" alt="" width="400" height="300" loading="lazy">
+          </li>
+          </ul>
+        </div>
+        <button type="button" class="bumm-history-nav bumm-history-next" aria-label="Next"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- Satu footer untuk semua halaman. Link diatur di _data/navigation.yml.
+       Front matter `footer_map: true` menambah kolom peta lokasi (dipakai beranda). -->
+  <footer class="bumm-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-12">
+          <a class="bumm-footer-brand" href="../../" aria-label="BUMM — Home"><img src="../../assets/img/logo-bumm-96.png" alt="BUMM" class="bumm-footer-logo" width="44" height="44" loading="lazy"></a>
+          <p class="bumm-footer-desc">
+            PT. Bina Usaha Mandiri Mizusawa — Jl. KH. EZ Muttaqien, Kec. Jatiuwung,
+            Kel. Alam Jaya, Kota Tangerang, Banten 15133, Indonesia
+          </p>
+          <div class="bumm-footer-social">
+            <a href="https://www.facebook.com/PT-BUMM-981977421946203" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/bummizusawa" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/bummizusawa" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="bumm-footer-heading" data-i18n="footer_company">Company</div>
+          <ul class="bumm-footer-links">
+            <li><a href="../../about/company-profile/" data-i18n="nav_about">About</a></li>
+            <li><a href="../../career/" data-i18n="nav_career">Career</a></li>
+            <li><a href="../../product/" data-i18n="nav_product">Product</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-8 col-6">
+          <div class="bumm-footer-heading" data-i18n="footer_video">Company Video</div>
+          <div class="bumm-footer-video">
+            <video muted loop playsinline preload="none" poster="../../assets/img/foundry.webp" aria-label="PT BUMM company video">
+              <source src="../../assets/video/footer-video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-12">
+          <div class="bumm-footer-heading" data-i18n="footer_location">Location</div>
+          <div class="bumm-map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=PT.+Bina+Usaha+Mandiri+Mizusawa,+Jl.+KH.+EZ+Muttaqien,+Jatiuwung,+Tangerang&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="BUMM location map">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="bumm-footer-bottom">
+        <span data-i18n="footer_copyright">© PT. Bina Usaha Mandiri Mizusawa. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script defer src="../../assets/jquery-4.0.0.min.js"></script>
+  <script defer src="../../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="../../assets/js/custom.js"></script>
+
+
+  <script>
+  (function () {
+    var vp = document.querySelector('.bumm-history-viewport');
+    if (!vp) return;
+    var prev = document.querySelector('.bumm-history-prev'), next = document.querySelector('.bumm-history-next');
+    function step() { var c = vp.querySelector('.bumm-history-card'); return c ? c.getBoundingClientRect().width + 24 : 300; }
+    function sync() {
+      prev.disabled = vp.scrollLeft <= 2;
+      next.disabled = vp.scrollLeft + vp.clientWidth >= vp.scrollWidth - 2;
+    }
+    prev.addEventListener('click', function () { vp.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { vp.scrollBy({ left: step(), behavior: 'smooth' }); });
+    vp.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  })();
+  </script>
+</body>
+</html>
